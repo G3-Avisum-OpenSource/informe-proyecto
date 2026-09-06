@@ -21,10 +21,10 @@
 ### 2.1.2. Estrategia y tácticas frente a competidores
 
 **Frente al Visor ATU-PNP contra la extorsión (SICM):**
-Avisum se posiciona como un complemento ágil y no como un sustituto de la fiscalización estatal — mientras el sistema de la ATU depende de la integración regulatoria y de que la empresa cumpla especificaciones técnicas estrictas de GPS, Avisum puede adoptarse de inmediato por cualquier consorcio, sin trámites previos, funcionando como una primera capa de seguridad mientras la empresa eventualmente se integra (o no) al sistema estatal.
+Avisum se posiciona como un complemento ágil y no como un sustituto de la fiscalización estatal  mientras el sistema de la ATU depende de la integración regulatoria y de que la empresa cumpla especificaciones técnicas estrictas de GPS, Avisum puede adoptarse de inmediato por cualquier consorcio, sin trámites previos, funcionando como una primera capa de seguridad mientras la empresa eventualmente se integra (o no) al sistema estatal.
 
 **Frente al Sistema IVU del Corredor Rojo:**
-Avisum toma como validación de mercado que el propio Estado ya reconoce el valor de que un conductor pueda reportar incidentes en tiempo real — pero mientras el IVU está limitado a una sola ruta con infraestructura fija instalada por el Estado, Avisum está diseñado para escalar a cualquier consorcio de transporte urbano de Lima y Callao sin depender de inversión en infraestructura física.
+Avisum toma como validación de mercado que el propio Estado ya reconoce el valor de que un conductor pueda reportar incidentes en tiempo real , pero mientras el IVU está limitado a una sola ruta con infraestructura fija instalada por el Estado, Avisum está diseñado para escalar a cualquier consorcio de transporte urbano de Lima y Callao sin depender de inversión en infraestructura física.
 
 **Diferenciación tecnológica y funcional:**
 1. **Verificación de identidad como puerta de entrada.** A diferencia de los sistemas estatales, que se centran en monitorear la unidad, Avisum parte de verificar primero que la persona al volante sea quien dice ser — una capa de seguridad que ningún competidor actual ofrece de forma accesible para consorcios pequeños.
