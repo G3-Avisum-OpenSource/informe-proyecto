@@ -20,24 +20,49 @@ Concretamente, la plataforma resuelve tres necesidades simultáneas dentro del e
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-*(Pendiente — se completará con la información de los nuevos integrantes: nombre, código, breve perfil profesional/académico y rol asumido en el proyecto)*
+
+|                     Foto de perfil                      | Nombre Completo                      | Carrera                | Habilidades                                                                                                         |
+| :-----------------------------------------------------: | :----------------------------------- | :--------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| !  |    | Ingenieria de Software |                                                                        |
+|     !     |  | Ingenieria de Software |                     |
+| ![CarlosFoto](Resources/img/carlos.png) | Blancas Chávez, Carlos Franco      | Ingenieria de Software | Typscript, React,Vue, Java, MySQL,PostgreSQL,MongoDB, Python, C#                                                               |
+| ! |                      | Ingenieria de Software |  |
+|  !  |  | Ingenieria de Software |                    
+---
+
 
 ## 1.2. Solution Profile
 
 ### 1.2.1. Antecedentes y problemática
 
-El transporte público urbano en el Perú convive desde hace años con un nivel de informalidad que lo vuelve estructuralmente vulnerable: unidades sin control de quién las conduce, rutas sin monitoreo, y una brecha total entre lo que ocurre dentro del vehículo y lo que la empresa o las autoridades pueden saber al respecto.
+**Qué:** Los pasajeros del transporte público urbano no tienen forma de verificar si el conductor que opera la unidad es la persona autorizada, y los propios conductores no cuentan con ningún canal digital para pedir auxilio inmediato ante una situación de riesgo. A esto se suma que las empresas de transporte no tienen visibilidad en tiempo real de la ubicación ni el estado de sus unidades una vez que salen a ruta.
 
-Este problema no es exclusivo de una ciudad — se arrastra desde hace más de una década en el norte del país (Trujillo, Chiclayo, Piura) y hoy es igual de visible en Lima Metropolitana, donde conviven empresas formales con operadores informales bajo el mismo sistema de transporte.
+**Cuándo:** El problema está presente en cada servicio de transporte, desde que el pasajero aborda hasta que llega a su destino, y se intensifica en horarios nocturnos o en rutas con menor supervisión policial.
 
-Los afectados son varios: el pasajero, que no tiene manera de saber si viaja con un conductor autorizado; el propio conductor, que en muchos casos es blanco de extorsión o asalto sin tener cómo pedir auxilio de forma rápida; y la empresa operadora, que opera "a ciegas" respecto a lo que sucede con sus unidades una vez que salen a ruta.
+**Dónde:** Esta problemática tiene una data de más de una década en el norte del Perú (Trujillo, Chiclayo, Piura) y hoy es igual de visible en Lima Metropolitana y Callao, donde conviven empresas formales con operadores informales bajo el mismo sistema de transporte urbano.
 
-La causa de fondo no es la falta de voluntad, sino la ausencia de herramientas: no existe un sistema accesible que centralice identificación, comunicación de emergencia y ubicación en tiempo real para el transporte urbano promedio — ese vacío es, justamente, el problema que motiva la manera de tres actores clave: pasajeros, conductores y operadoras.
+**Quién:** Afecta principalmente a tres actores: los pasajeros, que no tienen manera de saber si viajan con un conductor autorizado; los conductores, quienes en muchos casos son blanco directo de extorsión, asalto o violencia sin tener cómo pedir auxilio de forma rápida; y las empresas operadoras de transporte, que actúan "a ciegas" respecto a lo que ocurre con sus unidades una vez en ruta.
 
-Algunas cifras que respaldan la magnitud del problema:
-- El Ministerio de Transportes y Comunicaciones reportó más de 90,000 accidentes de tránsito en un año reciente, con cerca de un tercio vinculado a unidades de transporte público.
-- La Defensoría del Pueblo documentó que más de 6 de cada 10 mujeres ha experimentado alguna forma de acoso o inseguridad usando transporte público.
-- Gremios del sector estiman que hasta un 40% de las empresas de transporte en Lima y Callao han enfrentado exigencias de pago de cupos por parte de organizaciones criminales.
+**Por qué:** La causa de fondo es la ausencia de herramientas tecnológicas accesibles: no existe un sistema que centralice identificación del conductor, comunicación de emergencia en tiempo real y visibilidad de ubicación para el transporte urbano promedio en el Perú.
+
+**Cómo afecta:** La combinación de informalidad del sector y débil regulación tecnológica genera un entorno propicio para la violencia organizada contra el transporte, el cobro de cupos, la renuncia forzada de conductores por miedo, y un fuerte impacto psicológico tanto en quienes conducen como en quienes usan el servicio a diario.
+
+**Cuánto:** La magnitud del problema está documentada con evidencia reciente y verificable:
+- Casos como el de la empresa Translima muestran que los conductores son obligados a pagar cupos diarios, con amenazas de incremento de hasta 20 a 30 soles por unidad; producto de esta violencia, al menos dos conductores han perdido la vida desde 2025 y cerca de veinte han abandonado sus puestos por miedo.
+- Solo entre enero y febrero de 2026, se registraron 898 denuncias de extorsión en Lima Centro, la cifra más alta reportada en el país durante ese periodo, según fuentes policiales.
+- Se estima que cerca del 80% de las empresas de transporte formal de Lima realizó pagos a organizaciones criminales durante 2025, y que el monto total exigido al sector transporte supera los S/10 millones mensuales a nivel nacional.
+- Como respuesta a esta crisis, el Estado peruano promulgó una nueva ley que exige a las empresas de transporte capacitar a su personal en la detección y denuncia de actos extorsivos — evidencia de que el problema ya es reconocido a nivel regulatorio, aunque aún sin una solución tecnológica integral como la que propone Avisum.
+
+### 1.2.2. Lean UX Process
+
+#### 1.2.2.1. Lean UX Problem Statements
+
+> Como **pasajero de transporte público**, no tengo ninguna forma de confirmar que el conductor de la unidad en la que viajo es la persona autorizada para operarla, lo cual me genera desconfianza e inseguridad en cada viaje.
+
+> Como **conductor de una unidad de transporte**, no cuento con ningún canal directo para pedir ayuda si me encuentro en una situación de peligro durante mi turno, lo que me deja completamente expuesto ante un asalto o emergencia.
+
+> Como **empresa de transporte**, no tengo visibilidad de dónde se encuentran mis unidades ni de qué está pasando con ellas en tiempo real, lo cual me impide reaccionar a tiempo ante cualquier incidente.
+
 
 ### 1.2.2. Lean UX Process
 
