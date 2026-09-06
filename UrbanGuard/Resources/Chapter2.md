@@ -27,7 +27,7 @@ Avisum se posiciona como un complemento ágil y no como un sustituto de la fisca
 Avisum toma como validación de mercado que el propio Estado ya reconoce el valor de que un conductor pueda reportar incidentes en tiempo real , pero mientras el IVU está limitado a una sola ruta con infraestructura fija instalada por el Estado, Avisum está diseñado para escalar a cualquier consorcio de transporte urbano de Lima y Callao sin depender de inversión en infraestructura física.
 
 **Diferenciación tecnológica y funcional:**
-1. **Verificación de identidad como puerta de entrada.** A diferencia de los sistemas estatales, que se centran en monitorear la unidad, Avisum parte de verificar primero que la persona al volante sea quien dice ser — una capa de seguridad que ningún competidor actual ofrece de forma accesible para consorcios pequeños.
+1. **Verificación de identidad como puerta de entrada.** A diferencia de los sistemas estatales, que se centran en monitorear la unidad, Avisum parte de verificar primero que la persona al volante sea quien dice ser  una capa de seguridad que ningún competidor actual ofrece de forma accesible para consorcios pequeños.
 2. **Botón de pánico orientado al conductor individual.** Mientras los sistemas estatales priorizan la coordinación institucional (ATU-PNP), Avisum pone el control directamente en manos del conductor, con una respuesta que llega primero a su propia empresa.
 3. **Sin barrera de entrada regulatoria.** Cualquier consorcio, formal o en proceso de formalización, puede empezar a usar Avisum sin esperar a cumplir los lineamientos técnicos exigidos por la ATU para integrarse al SICM.
 
