@@ -35,7 +35,7 @@ Proyecto
 |--------|---------------------|
 |  |  |
 |  |  |
-|  ||
+| U202423262 | Reyes Muñoz, Joaquin Leonardo |
 | U20241A322 | Blancas Chavez, Carlos Franco |
 | |  |
 
