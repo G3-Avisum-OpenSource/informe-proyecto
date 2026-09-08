@@ -25,7 +25,7 @@ Concretamente, la plataforma resuelve tres necesidades simultáneas dentro del e
 | :-----------------------------------------------------: | :----------------------------------- | :--------------------- | :------------------------------------------------------------------------------------------------------------------ |
 | !  |    | Ingenieria de Software |                                                                        |
 |     !     | Reyes Muñoz, Joaquin Leonardo | Ingenieria de Software |  C++, Java, MySQL,PostgreSQL,MongoDB, Python, C#                      |
-| !<img src="imgs/"> | Blancas Chávez, Carlos Franco      | Ingenieria de Software | Typscript, React,Vue, Java, MySQL,PostgreSQL,MongoDB, Python, C#                                                               |
+| !<img src="imgs/carlos-blancas.jpg"> | Blancas Chávez, Carlos Franco      | Ingenieria de Software | Typscript, React,Vue, Java, MySQL,PostgreSQL,MongoDB, Python, C#                                                               |
 | ! |                      | Ingenieria de Software |  |
 |  !  |  | Ingenieria de Software |                    
 ---
