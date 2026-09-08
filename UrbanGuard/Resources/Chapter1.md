@@ -115,7 +115,7 @@ Aquí se aplica Lean UX Process y abarca la visión del modelo de negocio que se
 
 #### 1.2.2.4. Lean UX Canvas
 
-*(Pendiente de formato visual )*
+[LeanUxCanvas](UrbanGuard/Resources/LenUxCanvassAvisum.png) 
 
 ## 1.3. Segmentos objetivo
 
