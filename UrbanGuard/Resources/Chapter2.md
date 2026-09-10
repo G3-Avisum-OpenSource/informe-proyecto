@@ -204,6 +204,18 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 *[Adjuntar captura del tablero FigJam — Paso 5: Comandos]*
 
 
+
+**Paso 6. Políticas**
+
+- Cuando se activa una **Alerta de Pánico**, entonces el sistema genera automáticamente una **Alerta Crítica** y la envía a la Central de Monitoreo.
+- Cuando una unidad genera el evento **Unidad ingresó a zona de riesgo**, entonces el sistema incrementa la frecuencia de actualización de ubicación.
+- Cuando la **Identidad de conductor** es rechazada, entonces el sistema bloquea el comando "Iniciar viaje" y notifica a la empresa.
+- Cuando una Alerta Crítica no ha sido atendida dentro del tiempo objetivo, entonces el sistema reenvía la notificación y escala su Alert Level.
+- Cuando se ejecuta "Cerrar alerta", entonces el sistema registra automáticamente un Incidente en el historial de la unidad y del conductor.
+
+*[Adjuntar captura del tablero FigJam — Paso 6: Políticas]*
+
+
 ### 2.5. Ubiquitous Language
 
 **Transport Unit (Unidad de Transporte):** Vehículo que forma parte del sistema y es objeto de monitoreo, sobre el cual se realiza seguimiento de ubicación, estado y eventos.
