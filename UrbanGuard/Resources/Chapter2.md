@@ -229,6 +229,18 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 *[Adjuntar captura del tablero FigJam — Paso 7: Read Models]*
 
 
+**Paso 8. Agregados**
+
+- **Turno (Shift):** administra el Código de Verificación y el estado de verificación; procesa los comandos de inicio y fin de turno.
+- **Viaje (Trip):** administra la ubicación y el Estado de Unidad; procesa el inicio, la actualización de ubicación y el fin del viaje.
+- **Alerta de Pánico (Panic Alert):** administra el Alert Level, el estado de la alerta y la respuesta asignada; procesa la activación, asignación y cierre de la alerta.
+- **Unidad de Transporte (Transport Unit):** administra el estado de la unidad y su asociación a una Flota.
+
+*[Adjuntar captura del tablero FigJam — Paso 8: Agregados]*
+
+El contenido identificado en esta sesión (eventos, comandos, políticas y agregados) sirve de insumo directo para el Design-Level EventStorming (ver 4.6.1), donde se profundizará hasta llegar a la identificación formal de Bounded Contexts, Aggregates, Events, Commands y Queries.
+
+
 ### 2.5. Ubiquitous Language
 
 **Transport Unit (Unidad de Transporte):** Vehículo que forma parte del sistema y es objeto de monitoreo, sobre el cual se realiza seguimiento de ubicación, estado y eventos.
