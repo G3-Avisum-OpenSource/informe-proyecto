@@ -216,6 +216,19 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 *[Adjuntar captura del tablero FigJam — Paso 6: Políticas]*
 
 
+
+
+**Paso 7. Read Models**
+
+- **Panel de Monitoreo de Flota en Tiempo Real** (Central de Monitoreo) — para decidir el comando "Asignar respuesta".
+- **Estado de Verificación del Turno** (Conductor / Empresa) — para saber si la unidad puede iniciar el viaje.
+- **Detalle de Alerta Activa** (Central de Monitoreo) — ubicación, tiempo transcurrido y datos del conductor, para decidir cómo responder.
+- **Mapa de Zonas de Riesgo** (Sistema / Conductor) — apoya la decisión de tomar rutas alternativas durante el viaje.
+- **Historial de Alertas por Unidad** (Empresa) — para evaluar patrones de riesgo por ruta o conductor.
+
+*[Adjuntar captura del tablero FigJam — Paso 7: Read Models]*
+
+
 ### 2.5. Ubiquitous Language
 
 **Transport Unit (Unidad de Transporte):** Vehículo que forma parte del sistema y es objeto de monitoreo, sobre el cual se realiza seguimiento de ubicación, estado y eventos.
