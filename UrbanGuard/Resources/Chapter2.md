@@ -172,6 +172,16 @@ Ordenando los eventos anteriores de izquierda a derecha, se identificó un camin
 
 *[Adjuntar captura del tablero FigJam — Paso 3: Puntos de dolor]*
 
+**Paso 4. Puntos pivote**
+
+- **Verificado vs. rechazado:** el resultado de la verificación de identidad determina si el conductor puede iniciar el viaje o queda bloqueado — separa el contexto de "Gestión de Turno" del resto del flujo.
+- **Ingreso a zona de riesgo:** puede intensificar la frecuencia de monitoreo de forma proactiva, antes de que ocurra un incidente real.
+- **Activación de la alerta de pánico:** es el evento más crítico del dominio; marca la transición del contexto de "Operación Normal" al contexto de "Gestión de Emergencias".
+- **Incidente resuelto:** determina si el caso se cierra directamente o requiere derivarse a autoridades o a un seguimiento posterior.
+
+Estos puntos pivote son un primer indicio de los Bounded Contexts que se profundizarán en el Design-Level EventStorming (ver 4.6.1).
+
+*[Adjuntar captura del tablero FigJam — Paso 4: Puntos pivote]*
 
 
 ### 2.5. Ubiquitous Language
