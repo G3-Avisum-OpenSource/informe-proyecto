@@ -161,6 +161,18 @@ Ordenando los eventos anteriores de izquierda a derecha, se identificó un camin
 
 *[Adjuntar captura del tablero FigJam — Paso 2: Líneas de tiempo]*
 
+**Paso 3. Puntos de dolor**
+
+- No existe hoy una manera de confirmar que el conductor sea la persona autorizada antes de que el pasajero aborde la unidad.
+- Ausencia de un protocolo claro cuando ocurre "Identidad de conductor rechazada": existe el riesgo de que la unidad salga a ruta sin verificación completa.
+- La cobertura de señal GPS/datos es limitada en las zonas de mayor riesgo (Cono Norte, Cono Sur, Cono Este — ver 1.3. Segmentos objetivo), lo que puede retrasar "Ubicación de unidad actualizada".
+- El botón de pánico corre el riesgo de falsos positivos, saturando a la central de monitoreo y reduciendo la confianza en las alertas reales.
+- La demora entre "Alerta crítica generada" y "Respuesta asignada" es el punto de dolor más crítico del flujo, validado directamente por la Hypothesis Statement 2 (objetivo: menos de 2 minutos de primera atención en al menos el 70% de los casos).
+- No existe un protocolo homogéneo para "Autoridades notificadas": depende de cada empresa y no existe integración actual con el sistema estatal SICM (ver 2.1.1. Análisis Competitivo).
+
+*[Adjuntar captura del tablero FigJam — Paso 3: Puntos de dolor]*
+
+
 
 ### 2.5. Ubiquitous Language
 
