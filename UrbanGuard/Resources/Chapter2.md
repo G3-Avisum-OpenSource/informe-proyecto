@@ -127,7 +127,14 @@ Para identificar las necesidades reales de nuestros usuarios, complementamos las
 
 ### 2.4. Big Picture EventStorming
 
-*(Pendiente — sesión de Event Storming a realizar con el equipo, cubriendo los pasos: 1. Exploración no estructurada de eventos, 2. Líneas de tiempo, 3. Puntos de dolor, 4. Puntos pivote, 5. Comandos, 6. Políticas, 7. Read Models, 8. Agregados. Documentar cada paso con una captura del tablero colaborativo, en Miro o FigJam.)*
+Para comprender el panorama general del negocio, el equipo realizó una sesión colaborativa de Big Picture EventStorming en FigJam. La sesión se enfocó en el flujo central de seguridad de Avisum — desde el inicio de turno del conductor hasta el cierre de una alerta de pánico — por concentrar las tres funcionalidades núcleo del producto (verificación de identidad, botón de pánico y monitoreo en tiempo real) validadas en los Problem Statements del Capítulo I. Procesos de negocio complementarios (suscripción y facturación, onboarding de empresas, gestión administrativa) quedan fuera del alcance de esta primera sesión y se consideran candidatos para una futura iteración de EventStorming conforme el modelo de negocio se desarrolle.
+
+Si bien el Pasajero no constituye un segmento objetivo de investigación (ver 1.3. Segmentos objetivo), se le incluyó como actor secundario únicamente en el evento de verificación de identidad, dado que la propuesta de valor de Avisum contempla explícitamente informar al pasajero sobre la identidad del conductor (ver 1.1.1. Descripción de la Startup).
+
+La sesión siguió las ocho etapas del proceso: (1) exploración no estructurada de eventos, (2) construcción de líneas de tiempo, (3) identificación de puntos de dolor, (4) identificación de puntos pivote, (5) definición de comandos, (6) definición de políticas, (7) identificación de read models y (8) identificación de agregados. A continuación se detalla el contenido elaborado por el equipo en cada etapa, trasladado y organizado en el tablero colaborativo de FigJam.
+
+**Actores considerados:** Conductor (Driver), Empresa de Transporte / Central de Monitoreo (Company / Operations), Pasajero (Passenger, actor secundario), Sistema Avisum (System).
+
 
 ### 2.5. Ubiquitous Language
 
