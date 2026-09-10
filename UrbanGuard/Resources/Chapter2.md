@@ -183,6 +183,26 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 
 *[Adjuntar captura del tablero FigJam — Paso 4: Puntos pivote]*
 
+**Paso 5. Comandos**
+
+| Comando | Actor | Evento resultante |
+|---|---|---|
+| Iniciar turno | Conductor | Turno iniciado |
+| Generar código de verificación | Sistema | Código de verificación generado |
+| Ingresar código de verificación | Conductor | Identidad de conductor verificada / rechazada |
+| Consultar identidad del conductor | Pasajero | Identidad de conductor consultada por pasajero |
+| Iniciar viaje | Conductor | Viaje iniciado |
+| Actualizar ubicación | Sistema (GPS) | Ubicación de unidad actualizada |
+| Activar alerta de pánico | Conductor | Alerta de pánico activada |
+| Asignar respuesta | Central de Monitoreo | Respuesta asignada |
+| Contactar al conductor | Central de Monitoreo | Contacto con conductor establecido |
+| Notificar a autoridades | Central de Monitoreo | Autoridades notificadas |
+| Cerrar alerta | Central de Monitoreo | Alerta cerrada |
+| Finalizar viaje | Conductor | Viaje finalizado |
+| Finalizar turno | Conductor | Turno finalizado |
+
+*[Adjuntar captura del tablero FigJam — Paso 5: Comandos]*
+
 
 ### 2.5. Ubiquitous Language
 
