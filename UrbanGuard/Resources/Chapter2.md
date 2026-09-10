@@ -144,6 +144,22 @@ Turno iniciado · Código de verificación generado · Identidad de conductor ve
 
 *[Adjuntar captura del tablero FigJam — Paso 1: Exploración no estructurada de eventos]*
 
+**Paso 2. Líneas de tiempo**
+
+Ordenando los eventos anteriores de izquierda a derecha, se identificó un camino principal (sin incidentes) y una rama alterna que se activa ante una emergencia:
+
+| # | Camino principal | Rama alterna (bifurca en el punto indicado) |
+|---|---|---|
+| 1 | Turno iniciado | |
+| 2 | Código de verificación generado | |
+| 3 | Identidad de conductor verificada | → *Identidad de conductor rechazada* (bloquea el flujo) |
+| 4 | Identidad de conductor consultada por pasajero | |
+| 5 | Viaje iniciado | |
+| 6 | Ubicación de unidad actualizada (evento recurrente) | → *Unidad ingresó a zona de riesgo* → *Alerta de pánico activada* → *Alerta crítica generada* → *Alerta recibida por central de monitoreo* → *Respuesta asignada* → *Contacto con conductor establecido* → *Autoridades notificadas* (condicional) → *Incidente resuelto* → *Alerta cerrada* |
+| 7 | Viaje finalizado | |
+| 8 | Turno finalizado | |
+
+*[Adjuntar captura del tablero FigJam — Paso 2: Líneas de tiempo]*
 
 
 ### 2.5. Ubiquitous Language
