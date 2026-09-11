@@ -254,10 +254,250 @@ Avisum es una plataforma orientada a mejorar la seguridad del transporte públic
 
 ## 4.7. Software Object-Oriented Design
 
+Esta sección presenta el diseño orientado a objetos de la RESTful API de Avisum (Spring Boot + Spring Data JPA + Java), correspondiente a los tres Epics del Product Backlog con lógica de dominio propia: **EPAV01 – Verificación de identidad**, **EPAV02 – Gestión de emergencias** y **EPAV03 – Monitoreo de flota** (ver 3.1. User Stories). El Epic EPAV05 (API RESTful) no introduce clases de dominio adicionales, ya que corresponde a la capa de exposición (controllers/DTOs) sobre estos mismos modelos; el Epic EPAV04 (Plataforma web informativa) corresponde al sitio estático del Landing Page y no requiere diseño orientado a objetos de dominio.
+
+El diseño se organiza en tres Bounded Contexts, cada uno con su propio Class Diagram: **Gestión de Identidad y Turnos**, **Gestión de Emergencias** y **Monitoreo de Flota**. Estos contextos son consistentes con los Aggregates propuestos en el Big Picture EventStorming (Turno, Alerta de Pánico, Unidad de Transporte — ver 2.4) y con los términos definidos en el Ubiquitous Language (ver 2.5).
+
+Para todos los diagramas se aplica la siguiente notación UML estándar de visibilidad de miembros: `-` atributo/método **private**, `+` **public**, `#` **protected**. Las relaciones se anotan con nombre de rol (calificación), dirección de navegación cuando aplica, y multiplicidad en ambos extremos, según lo requerido. Las clases marcadas con el estereotipo `<<reference>>` representan una referencia liviana (por identificador) a un Aggregate Root que pertenece a otro Bounded Context, evitando duplicar su modelo completo — práctica estándar en Domain-Driven Design para mantener la autonomía de cada contexto.
+
+
 ### 4.7.1. Class Diagrams
 
- **Imagen a insertar:** Diagrama de clases con las entidades principales del sistema (Conductor, Unidad, Alerta) y sus relaciones. Guardar como `Resources/img/class-diagram-avisum.png`.
+**Bounded Context 1 — Gestión de Identidad y Turnos (Identity & Shift Management)**
 
+```mermaid
+classDiagram
+    class Company {
+        -id: UUID
+        -businessName: String
+        -ruc: String
+        -contactEmail: String
+        +registerDriver(driver: Driver) void
+    }
+
+    class Driver {
+        -id: UUID
+        -firstName: String
+        -lastName: String
+        -licenseNumber: String
+        -phone: String
+        -status: DriverStatus
+        +authorize() boolean
+        +deactivate() void
+        +getFullName() String
+    }
+
+    class Shift {
+        -id: UUID
+        -startTime: LocalDateTime
+        -endTime: LocalDateTime
+        -status: ShiftStatus
+        +start() void
+        +close() void
+        +verifyIdentity(code: String) boolean
+        +isActive() boolean
+    }
+
+    class VerificationCode {
+        -code: String
+        -issuedAt: LocalDateTime
+        -expiresAt: LocalDateTime
+        +isValid() boolean
+        +isExpired() boolean
+    }
+
+    class TransportUnit {
+        <<reference>>
+        -id: UUID
+    }
+
+    class DriverStatus {
+        <<enumeration>>
+        ACTIVE
+        INACTIVE
+        SUSPENDED
+    }
+
+    class ShiftStatus {
+        <<enumeration>>
+        PENDING_VERIFICATION
+        ACTIVE
+        CLOSED
+        REJECTED
+    }
+
+    Company "1" --> "0..*" Driver : employs
+    Driver "1" --> "0..*" Shift : performs
+    Shift "1" *-- "1" VerificationCode : validatesWith
+    Shift "0..*" --> "0..1" TransportUnit : assignedTo
+    Driver ..> DriverStatus
+    Shift ..> ShiftStatus
+```
+
+Este contexto cubre EPAV01 y las historias US01, US02, US14, US15, US25, US26, US39. `Driver` representa al conductor y expone `authorize()` para soportar la validación de autorización (US14); `Shift` es el Aggregate Root del turno de trabajo, con `verifyIdentity()` implementando la verificación por código (US01) y `isActive()` dando soporte a la regla de negocio de US39 (un conductor no puede tener más de un turno activo simultáneamente — esta invariante se valida antes de ejecutar `Shift.start()`). `VerificationCode` es un Value Object compuesto dentro de `Shift` (composición `"1" *-- "1"`, ya que no tiene identidad ni ciclo de vida propio fuera del turno). `Company` emplea (`"1" --> "0..*"`) a sus `Driver`, y `Shift` se asocia opcionalmente (`"0..1"`) a una `TransportUnit`, referenciada aquí solo por su identificador porque su modelo completo pertenece al Bounded Context de Monitoreo de Flota.
+
+
+**Bounded Context 2 — Gestión de Emergencias (Emergency & Alert Management)**
+
+```mermaid
+classDiagram
+    class PanicAlert {
+        -id: UUID
+        -triggeredAt: LocalDateTime
+        -severity: AlertLevel
+        -status: AlertStatus
+        -respondedAt: LocalDateTime
+        -confirmedAt: LocalDateTime
+        +trigger() void
+        +classify() AlertLevel
+        +escalate() void
+        +confirmReception() void
+        +assignResponse(response: Response) void
+        +close() void
+        +getResponseTime() Duration
+    }
+
+    class GeoLocation {
+        -latitude: double
+        -longitude: double
+        -recordedAt: LocalDateTime
+    }
+
+    class Response {
+        -id: UUID
+        -assignedTo: String
+        -assignedAt: LocalDateTime
+        -contactedDriver: boolean
+        -authoritiesNotified: boolean
+        +assign() void
+        +notifyAuthorities() void
+    }
+
+    class NotificationRecipient {
+        -id: UUID
+        -name: String
+        -contactInfo: String
+        -preferredChannel: NotificationChannel
+        +notify(alert: PanicAlert) void
+    }
+
+    class NotificationChannel {
+        <<interface>>
+        +send(alert: PanicAlert, recipient: NotificationRecipient) void
+    }
+
+    class AbstractNotifier {
+        <<abstract>>
+        #buildMessage(alert: PanicAlert) String
+        +send(alert: PanicAlert, recipient: NotificationRecipient) void
+    }
+
+    class SmsNotifier {
+        -gatewayNumber: String
+    }
+
+    class EmailNotifier {
+        -smtpAccount: String
+    }
+
+    class Shift {
+        <<reference>>
+        -id: UUID
+    }
+
+    class AlertLevel {
+        <<enumeration>>
+        LOW
+        MEDIUM
+        HIGH
+        CRITICAL
+    }
+
+    class AlertStatus {
+        <<enumeration>>
+        SENT
+        RECEIVED
+        CONFIRMED
+        ESCALATED
+        RESOLVED
+        CLOSED
+    }
+
+    NotificationChannel <|.. AbstractNotifier
+    AbstractNotifier <|-- SmsNotifier
+    AbstractNotifier <|-- EmailNotifier
+    PanicAlert "1" *-- "1" GeoLocation : occurredAt
+    PanicAlert "1" --> "0..1" Response : handledBy
+    PanicAlert "1" --> "1..*" NotificationRecipient : notifies
+    PanicAlert "0..*" --> "1" Shift : reportedDuring
+    NotificationRecipient "1" --> "1" NotificationChannel : prefers
+    PanicAlert ..> AlertLevel
+    PanicAlert ..> AlertStatus
+```
+
+Este contexto cubre EPAV02 y las historias US03, US04, US05, US16, US23, US24, US33, US34, US40, US41, US42. `PanicAlert` es el Aggregate Root: `classify()` asigna el `AlertLevel` (US40), `escalate()` soporta el reenvío ante alertas sin atender (US41, US24), `confirmReception()` cubre US23, y `getResponseTime()` da soporte al cálculo de tiempos de atención (US34). `GeoLocation` se compone dentro de `PanicAlert` para registrar dónde ocurrió el evento (US42). Para atender el requisito de notificar a más de un destinatario (US33), se introdujo la interfaz `NotificationChannel` con la clase abstracta `AbstractNotifier` (método protegido `#buildMessage()`, reutilizado por las subclases `SmsNotifier` y `EmailNotifier`) — esta estructura permite añadir nuevos canales de notificación sin modificar `PanicAlert` ni `NotificationRecipient`. `PanicAlert` se asocia con `"0..*" --> "1"` hacia `Shift`, referenciado del Bounded Context de Identidad, ya que toda alerta ocurre durante un turno activo.
+
+
+**Bounded Context 3 — Monitoreo de Flota (Fleet & Real-Time Monitoring)**
+
+```mermaid
+classDiagram
+    class Fleet {
+        -id: UUID
+        -name: String
+        +addUnit(unit: TransportUnit) void
+        +getActiveUnits() List~TransportUnit~
+        +compareUnits() FleetReport
+    }
+
+    class TransportUnit {
+        -id: UUID
+        -plateNumber: String
+        -status: UnitStatus
+        -lastLocation: GeoLocation
+        -lastSignalAt: LocalDateTime
+        +updateLocation(location: GeoLocation) void
+        +updateStatus(status: UnitStatus) void
+        +isInactive(threshold: Duration) boolean
+        +detectRouteDeviation() boolean
+    }
+
+    class Route {
+        -id: UUID
+        -name: String
+        -startPoint: GeoLocation
+        -endPoint: GeoLocation
+        -waypoints: List~GeoLocation~
+        +isWithinPath(location: GeoLocation) boolean
+    }
+
+    class GeoLocation {
+        -latitude: double
+        -longitude: double
+        -recordedAt: LocalDateTime
+    }
+
+    class Company {
+        <<reference>>
+        -id: UUID
+    }
+
+    class UnitStatus {
+        <<enumeration>>
+        OPERATIONAL
+        STOPPED
+        ALERT
+        INACTIVE
+    }
+
+    Fleet "1" --> "1..*" TransportUnit : contains
+    TransportUnit "0..*" --> "1" Route : follows
+    TransportUnit "1" *-- "1" GeoLocation : lastKnownAt
+    Company "1" --> "1" Fleet : owns
+    TransportUnit ..> UnitStatus
+```
+
+Este contexto cubre EPAV03 y las historias US06, US07, US17, US27, US28, US35, US36, US43, US44. `Fleet` es el Aggregate Root que agrupa (`"1" --> "1..*"`) a las `TransportUnit` de una empresa; `compareUnits()` da soporte a US44. `TransportUnit.isInactive()` implementa la detección de unidades sin señal (US17), y `detectRouteDeviation()` compara la última ubicación contra la `Route` asignada para soportar US36; `Route.isWithinPath()` encapsula esa regla geográfica. `TransportUnit` compone (`"1" *-- "1"`) su última `GeoLocation` conocida, reutilizada como Value Object desde el contexto de Gestión de Emergencias. `Company` se referencia aquí de forma liviana como dueña (`"1" --> "1"`) de la `Fleet`.
 ---
 
 ## 4.8. Database Design
