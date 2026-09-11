@@ -438,6 +438,66 @@ classDiagram
 Este contexto cubre EPAV02 y las historias US03, US04, US05, US16, US23, US24, US33, US34, US40, US41, US42. `PanicAlert` es el Aggregate Root: `classify()` asigna el `AlertLevel` (US40), `escalate()` soporta el reenvío ante alertas sin atender (US41, US24), `confirmReception()` cubre US23, y `getResponseTime()` da soporte al cálculo de tiempos de atención (US34). `GeoLocation` se compone dentro de `PanicAlert` para registrar dónde ocurrió el evento (US42). Para atender el requisito de notificar a más de un destinatario (US33), se introdujo la interfaz `NotificationChannel` con la clase abstracta `AbstractNotifier` (método protegido `#buildMessage()`, reutilizado por las subclases `SmsNotifier` y `EmailNotifier`) — esta estructura permite añadir nuevos canales de notificación sin modificar `PanicAlert` ni `NotificationRecipient`. `PanicAlert` se asocia con `"0..*" --> "1"` hacia `Shift`, referenciado del Bounded Context de Identidad, ya que toda alerta ocurre durante un turno activo.
 
 
+**Bounded Context 3 — Monitoreo de Flota (Fleet & Real-Time Monitoring)**
+
+```mermaid
+classDiagram
+    class Fleet {
+        -id: UUID
+        -name: String
+        +addUnit(unit: TransportUnit) void
+        +getActiveUnits() List~TransportUnit~
+        +compareUnits() FleetReport
+    }
+
+    class TransportUnit {
+        -id: UUID
+        -plateNumber: String
+        -status: UnitStatus
+        -lastLocation: GeoLocation
+        -lastSignalAt: LocalDateTime
+        +updateLocation(location: GeoLocation) void
+        +updateStatus(status: UnitStatus) void
+        +isInactive(threshold: Duration) boolean
+        +detectRouteDeviation() boolean
+    }
+
+    class Route {
+        -id: UUID
+        -name: String
+        -startPoint: GeoLocation
+        -endPoint: GeoLocation
+        -waypoints: List~GeoLocation~
+        +isWithinPath(location: GeoLocation) boolean
+    }
+
+    class GeoLocation {
+        -latitude: double
+        -longitude: double
+        -recordedAt: LocalDateTime
+    }
+
+    class Company {
+        <<reference>>
+        -id: UUID
+    }
+
+    class UnitStatus {
+        <<enumeration>>
+        OPERATIONAL
+        STOPPED
+        ALERT
+        INACTIVE
+    }
+
+    Fleet "1" --> "1..*" TransportUnit : contains
+    TransportUnit "0..*" --> "1" Route : follows
+    TransportUnit "1" *-- "1" GeoLocation : lastKnownAt
+    Company "1" --> "1" Fleet : owns
+    TransportUnit ..> UnitStatus
+```
+
+Este contexto cubre EPAV03 y las historias US06, US07, US17, US27, US28, US35, US36, US43, US44. `Fleet` es el Aggregate Root que agrupa (`"1" --> "1..*"`) a las `TransportUnit` de una empresa; `compareUnits()` da soporte a US44. `TransportUnit.isInactive()` implementa la detección de unidades sin señal (US17), y `detectRouteDeviation()` compara la última ubicación contra la `Route` asignada para soportar US36; `Route.isWithinPath()` encapsula esa regla geográfica. `TransportUnit` compone (`"1" *-- "1"`) su última `GeoLocation` conocida, reutilizada como Value Object desde el contexto de Gestión de Emergencias. `Company` se referencia aquí de forma liviana como dueña (`"1" --> "1"`) de la `Fleet`.
 ---
 
 ## 4.8. Database Design
