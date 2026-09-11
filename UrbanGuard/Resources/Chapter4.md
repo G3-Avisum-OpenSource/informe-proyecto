@@ -19,15 +19,15 @@ Buscamos que el usuario perciba el sistema como:
 - Siempre activo
 - Con respuesta inmediata ante emergencias
 
-**Color Palette**
+(( **Color Palette** ))
 
- **Imagen a insertar:** Captura o diseño en Figma con 3 muestras de color en formato círculo/swatch, igual al ejemplo de referencia — cada una con su nombre y código hexadecimal debajo. Guardar como `Resources/img/paleta-colores-avisum.png`.
+(( **Imagen a insertar:** Captura o diseño en Figma con 3 muestras de color en formato círculo/swatch, igual al ejemplo de referencia — cada una con su nombre y código hexadecimal debajo. Guardar como `Resources/img/paleta-colores-avisum.png`. ))
 
 - **Negro (#000000):** Base de toda la interfaz. Aporta seriedad y genera un entorno visual libre de distracciones, reforzando la percepción de vigilancia constante.
 - **Verde neón (#C3F400):** Color principal de acento, usado en botones, indicadores de estado activo y títulos. Se asocia a monitoreo digital y confirmación de que "todo está en orden". Como color secundario de contraste se usa un verde oscuro (#596D0B).
 - **Rojo:** Reservado únicamente para elementos críticos — botón de pánico, alertas activas y estados de emergencia — para que el usuario lo asocie de inmediato con "atención urgente" y no lo confunda con ninguna otra acción del sistema.
 
-**Typography**
+ (( **Typography** ))
 
 Usamos **Space Grotesk** para títulos y **Inter** para texto de lectura, porque ambas tipografías tienen alta legibilidad en pantallas oscuras y una estética técnica que refuerza la identidad de "sistema de monitoreo" que buscamos para Avisum.
 
@@ -37,7 +37,7 @@ Usamos **Space Grotesk** para títulos y **Inter** para texto de lectura, porque
 | Subtítulos | Space Grotesk Bold | 48-60px |
 | Párrafos | Inter Light/Bold | 12-24px |
 
- **Imagen a insertar:** Captura de la jerarquía tipográfica en Figma, mostrando una muestra de cada tamaño con su etiqueta. Guardar como `Resources/img/tipografia-avisum.png`.
+(( **Imagen a insertar:** Captura de la jerarquía tipográfica en Figma, mostrando una muestra de cada tamaño con su etiqueta. Guardar como `Resources/img/tipografia-avisum.png`. ))
 
 **Spacing y Layout**
 
