@@ -201,9 +201,7 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 | Finalizar viaje | Conductor | Viaje finalizado |
 | Finalizar turno | Conductor | Turno finalizado |
 
-*[Adjuntar captura del tablero FigJam — Paso 5: Comandos]*
-
-
+<img src="imgs/paso-5-comandos.jpg">
 
 **Paso 6. Políticas**
 
