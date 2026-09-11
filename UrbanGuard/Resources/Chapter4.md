@@ -337,6 +337,107 @@ classDiagram
 Este contexto cubre EPAV01 y las historias US01, US02, US14, US15, US25, US26, US39. `Driver` representa al conductor y expone `authorize()` para soportar la validación de autorización (US14); `Shift` es el Aggregate Root del turno de trabajo, con `verifyIdentity()` implementando la verificación por código (US01) y `isActive()` dando soporte a la regla de negocio de US39 (un conductor no puede tener más de un turno activo simultáneamente — esta invariante se valida antes de ejecutar `Shift.start()`). `VerificationCode` es un Value Object compuesto dentro de `Shift` (composición `"1" *-- "1"`, ya que no tiene identidad ni ciclo de vida propio fuera del turno). `Company` emplea (`"1" --> "0..*"`) a sus `Driver`, y `Shift` se asocia opcionalmente (`"0..1"`) a una `TransportUnit`, referenciada aquí solo por su identificador porque su modelo completo pertenece al Bounded Context de Monitoreo de Flota.
 
 
+**Bounded Context 2 — Gestión de Emergencias (Emergency & Alert Management)**
+
+```mermaid
+classDiagram
+    class PanicAlert {
+        -id: UUID
+        -triggeredAt: LocalDateTime
+        -severity: AlertLevel
+        -status: AlertStatus
+        -respondedAt: LocalDateTime
+        -confirmedAt: LocalDateTime
+        +trigger() void
+        +classify() AlertLevel
+        +escalate() void
+        +confirmReception() void
+        +assignResponse(response: Response) void
+        +close() void
+        +getResponseTime() Duration
+    }
+
+    class GeoLocation {
+        -latitude: double
+        -longitude: double
+        -recordedAt: LocalDateTime
+    }
+
+    class Response {
+        -id: UUID
+        -assignedTo: String
+        -assignedAt: LocalDateTime
+        -contactedDriver: boolean
+        -authoritiesNotified: boolean
+        +assign() void
+        +notifyAuthorities() void
+    }
+
+    class NotificationRecipient {
+        -id: UUID
+        -name: String
+        -contactInfo: String
+        -preferredChannel: NotificationChannel
+        +notify(alert: PanicAlert) void
+    }
+
+    class NotificationChannel {
+        <<interface>>
+        +send(alert: PanicAlert, recipient: NotificationRecipient) void
+    }
+
+    class AbstractNotifier {
+        <<abstract>>
+        #buildMessage(alert: PanicAlert) String
+        +send(alert: PanicAlert, recipient: NotificationRecipient) void
+    }
+
+    class SmsNotifier {
+        -gatewayNumber: String
+    }
+
+    class EmailNotifier {
+        -smtpAccount: String
+    }
+
+    class Shift {
+        <<reference>>
+        -id: UUID
+    }
+
+    class AlertLevel {
+        <<enumeration>>
+        LOW
+        MEDIUM
+        HIGH
+        CRITICAL
+    }
+
+    class AlertStatus {
+        <<enumeration>>
+        SENT
+        RECEIVED
+        CONFIRMED
+        ESCALATED
+        RESOLVED
+        CLOSED
+    }
+
+    NotificationChannel <|.. AbstractNotifier
+    AbstractNotifier <|-- SmsNotifier
+    AbstractNotifier <|-- EmailNotifier
+    PanicAlert "1" *-- "1" GeoLocation : occurredAt
+    PanicAlert "1" --> "0..1" Response : handledBy
+    PanicAlert "1" --> "1..*" NotificationRecipient : notifies
+    PanicAlert "0..*" --> "1" Shift : reportedDuring
+    NotificationRecipient "1" --> "1" NotificationChannel : prefers
+    PanicAlert ..> AlertLevel
+    PanicAlert ..> AlertStatus
+```
+
+Este contexto cubre EPAV02 y las historias US03, US04, US05, US16, US23, US24, US33, US34, US40, US41, US42. `PanicAlert` es el Aggregate Root: `classify()` asigna el `AlertLevel` (US40), `escalate()` soporta el reenvío ante alertas sin atender (US41, US24), `confirmReception()` cubre US23, y `getResponseTime()` da soporte al cálculo de tiempos de atención (US34). `GeoLocation` se compone dentro de `PanicAlert` para registrar dónde ocurrió el evento (US42). Para atender el requisito de notificar a más de un destinatario (US33), se introdujo la interfaz `NotificationChannel` con la clase abstracta `AbstractNotifier` (método protegido `#buildMessage()`, reutilizado por las subclases `SmsNotifier` y `EmailNotifier`) — esta estructura permite añadir nuevos canales de notificación sin modificar `PanicAlert` ni `NotificationRecipient`. `PanicAlert` se asocia con `"0..*" --> "1"` hacia `Shift`, referenciado del Bounded Context de Identidad, ya que toda alerta ocurre durante un turno activo.
+
+
 ---
 
 ## 4.8. Database Design
