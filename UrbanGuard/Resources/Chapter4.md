@@ -263,6 +263,80 @@ Para todos los diagramas se aplica la siguiente notación UML estándar de visib
 
 ### 4.7.1. Class Diagrams
 
+**Bounded Context 1 — Gestión de Identidad y Turnos (Identity & Shift Management)**
+
+```mermaid
+classDiagram
+    class Company {
+        -id: UUID
+        -businessName: String
+        -ruc: String
+        -contactEmail: String
+        +registerDriver(driver: Driver) void
+    }
+
+    class Driver {
+        -id: UUID
+        -firstName: String
+        -lastName: String
+        -licenseNumber: String
+        -phone: String
+        -status: DriverStatus
+        +authorize() boolean
+        +deactivate() void
+        +getFullName() String
+    }
+
+    class Shift {
+        -id: UUID
+        -startTime: LocalDateTime
+        -endTime: LocalDateTime
+        -status: ShiftStatus
+        +start() void
+        +close() void
+        +verifyIdentity(code: String) boolean
+        +isActive() boolean
+    }
+
+    class VerificationCode {
+        -code: String
+        -issuedAt: LocalDateTime
+        -expiresAt: LocalDateTime
+        +isValid() boolean
+        +isExpired() boolean
+    }
+
+    class TransportUnit {
+        <<reference>>
+        -id: UUID
+    }
+
+    class DriverStatus {
+        <<enumeration>>
+        ACTIVE
+        INACTIVE
+        SUSPENDED
+    }
+
+    class ShiftStatus {
+        <<enumeration>>
+        PENDING_VERIFICATION
+        ACTIVE
+        CLOSED
+        REJECTED
+    }
+
+    Company "1" --> "0..*" Driver : employs
+    Driver "1" --> "0..*" Shift : performs
+    Shift "1" *-- "1" VerificationCode : validatesWith
+    Shift "0..*" --> "0..1" TransportUnit : assignedTo
+    Driver ..> DriverStatus
+    Shift ..> ShiftStatus
+```
+
+Este contexto cubre EPAV01 y las historias US01, US02, US14, US15, US25, US26, US39. `Driver` representa al conductor y expone `authorize()` para soportar la validación de autorización (US14); `Shift` es el Aggregate Root del turno de trabajo, con `verifyIdentity()` implementando la verificación por código (US01) y `isActive()` dando soporte a la regla de negocio de US39 (un conductor no puede tener más de un turno activo simultáneamente — esta invariante se valida antes de ejecutar `Shift.start()`). `VerificationCode` es un Value Object compuesto dentro de `Shift` (composición `"1" *-- "1"`, ya que no tiene identidad ni ciclo de vida propio fuera del turno). `Company` emplea (`"1" --> "0..*"`) a sus `Driver`, y `Shift` se asocia opcionalmente (`"0..1"`) a una `TransportUnit`, referenciada aquí solo por su identificador porque su modelo completo pertenece al Bounded Context de Monitoreo de Flota.
+
+
 ---
 
 ## 4.8. Database Design
