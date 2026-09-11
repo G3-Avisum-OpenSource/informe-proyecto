@@ -41,7 +41,7 @@ Avisum toma como validación de mercado que el propio Estado ya reconoce el valo
 
 #### 2.2.1. Diseño de entrevistas
 
-**Segmento: Conductores (operarios) de transporte público**
+**Segmento #1: Conductores (operarios) de transporte público**
 
 1. ¿Cómo es un día típico para ti desde que inicias hasta que terminas tu jornada manejando?
 2. ¿En qué momentos del día te sientes más expuesto al peligro o inseguro mientras trabajas?
@@ -54,7 +54,7 @@ Avisum toma como validación de mercado que el propio Estado ya reconoce el valo
 9. ¿Qué opinas de validar tu identidad con un código digital antes de manejar?
 10. ¿En qué momento del día usarías más una solución como esta?
 
-**Segmento: Empresas o consorcios de transporte público**
+**Segmento #2: Empresas o consorcios de transporte público**
 
 1. ¿Cómo gestionan actualmente la seguridad de sus conductores y pasajeros?
 2. ¿Cuáles son los principales problemas de seguridad que enfrentan hoy?
