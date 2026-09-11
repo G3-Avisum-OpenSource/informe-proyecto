@@ -142,7 +142,7 @@ En una primera ronda, sin ordenar cronológicamente, el equipo identificó los s
 
 Turno iniciado · Código de verificación generado · Identidad de conductor verificada · Identidad de conductor rechazada · Identidad de conductor consultada por pasajero · Viaje iniciado · Ubicación de unidad actualizada · Unidad ingresó a zona de riesgo · Alerta de pánico activada · Alerta crítica generada · Alerta recibida por central de monitoreo · Respuesta asignada · Contacto con conductor establecido · Autoridades notificadas · Incidente resuelto · Alerta cerrada · Viaje finalizado · Turno finalizado.
 
-*[Adjuntar captura del tablero FigJam — Paso 1: Exploración no estructurada de eventos]*
+<img src="imgs/paso-1-exploracion-de-eventos.jpg">
 
 **Paso 2. Líneas de tiempo**
 
