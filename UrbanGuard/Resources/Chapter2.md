@@ -146,7 +146,114 @@ Para identificar las necesidades reales de nuestros usuarios, complementamos las
 
 ### 2.4. Big Picture EventStorming
 
-*(Pendiente — sesión de Event Storming a realizar con el equipo, cubriendo los pasos: 1. Exploración no estructurada de eventos, 2. Líneas de tiempo, 3. Puntos de dolor, 4. Puntos pivote, 5. Comandos, 6. Políticas, 7. Read Models, 8. Agregados. Documentar cada paso con una captura del tablero colaborativo, en Miro o FigJam.)*
+Para comprender el panorama general del negocio, el equipo realizó una sesión colaborativa de Big Picture EventStorming en FigJam. La sesión se enfocó en el flujo central de seguridad de Avisum — desde el inicio de turno del conductor hasta el cierre de una alerta de pánico — por concentrar las tres funcionalidades núcleo del producto (verificación de identidad, botón de pánico y monitoreo en tiempo real) validadas en los Problem Statements del Capítulo I. Procesos de negocio complementarios (suscripción y facturación, onboarding de empresas, gestión administrativa) quedan fuera del alcance de esta primera sesión y se consideran candidatos para una futura iteración de EventStorming conforme el modelo de negocio se desarrolle.
+
+Si bien el Pasajero no constituye un segmento objetivo de investigación (ver 1.3. Segmentos objetivo), se le incluyó como actor secundario únicamente en el evento de verificación de identidad, dado que la propuesta de valor de Avisum contempla explícitamente informar al pasajero sobre la identidad del conductor (ver 1.1.1. Descripción de la Startup).
+
+La sesión siguió las ocho etapas del proceso: (1) exploración no estructurada de eventos, (2) construcción de líneas de tiempo, (3) identificación de puntos de dolor, (4) identificación de puntos pivote, (5) definición de comandos, (6) definición de políticas, (7) identificación de read models y (8) identificación de agregados. A continuación se detalla el contenido elaborado por el equipo en cada etapa, trasladado y organizado en el tablero colaborativo de FigJam.
+
+**Actores considerados:** Conductor (Driver), Empresa de Transporte / Central de Monitoreo (Company / Operations), Pasajero (Passenger, actor secundario), Sistema Avisum (System).
+
+
+**Paso 1. Exploración no estructurada de eventos**
+
+En una primera ronda, sin ordenar cronológicamente, el equipo identificó los siguientes Domain Events (redactados en pasado, tal como ocurren en el negocio):
+
+Turno iniciado · Código de verificación generado · Identidad de conductor verificada · Identidad de conductor rechazada · Identidad de conductor consultada por pasajero · Viaje iniciado · Ubicación de unidad actualizada · Unidad ingresó a zona de riesgo · Alerta de pánico activada · Alerta crítica generada · Alerta recibida por central de monitoreo · Respuesta asignada · Contacto con conductor establecido · Autoridades notificadas · Incidente resuelto · Alerta cerrada · Viaje finalizado · Turno finalizado.
+
+<img src="imgs/paso-1-exploracion-de-eventos.jpg">
+
+**Paso 2. Líneas de tiempo**
+
+Ordenando los eventos anteriores de izquierda a derecha, se identificó un camino principal (sin incidentes) y una rama alterna que se activa ante una emergencia:
+
+| # | Camino principal | Rama alterna (bifurca en el punto indicado) |
+|---|---|---|
+| 1 | Turno iniciado | |
+| 2 | Código de verificación generado | |
+| 3 | Identidad de conductor verificada | → *Identidad de conductor rechazada* (bloquea el flujo) |
+| 4 | Identidad de conductor consultada por pasajero | |
+| 5 | Viaje iniciado | |
+| 6 | Ubicación de unidad actualizada (evento recurrente) | → *Unidad ingresó a zona de riesgo* → *Alerta de pánico activada* → *Alerta crítica generada* → *Alerta recibida por central de monitoreo* → *Respuesta asignada* → *Contacto con conductor establecido* → *Autoridades notificadas* (condicional) → *Incidente resuelto* → *Alerta cerrada* |
+| 7 | Viaje finalizado | |
+| 8 | Turno finalizado | |
+
+<img src="imgs/paso-1-exploracion-de-eventos.jpg">
+
+**Paso 3. Puntos de dolor**
+
+- No existe hoy una manera de confirmar que el conductor sea la persona autorizada antes de que el pasajero aborde la unidad.
+- Ausencia de un protocolo claro cuando ocurre "Identidad de conductor rechazada": existe el riesgo de que la unidad salga a ruta sin verificación completa.
+- La cobertura de señal GPS/datos es limitada en las zonas de mayor riesgo (Cono Norte, Cono Sur, Cono Este — ver 1.3. Segmentos objetivo), lo que puede retrasar "Ubicación de unidad actualizada".
+- El botón de pánico corre el riesgo de falsos positivos, saturando a la central de monitoreo y reduciendo la confianza en las alertas reales.
+- La demora entre "Alerta crítica generada" y "Respuesta asignada" es el punto de dolor más crítico del flujo, validado directamente por la Hypothesis Statement 2 (objetivo: menos de 2 minutos de primera atención en al menos el 70% de los casos).
+- No existe un protocolo homogéneo para "Autoridades notificadas": depende de cada empresa y no existe integración actual con el sistema estatal SICM (ver 2.1.1. Análisis Competitivo).
+
+<img src="imgs/paso-3-puntos-de-dolor.jpg">
+
+**Paso 4. Puntos pivote**
+
+- **Verificado vs. rechazado:** el resultado de la verificación de identidad determina si el conductor puede iniciar el viaje o queda bloqueado — separa el contexto de "Gestión de Turno" del resto del flujo.
+- **Ingreso a zona de riesgo:** puede intensificar la frecuencia de monitoreo de forma proactiva, antes de que ocurra un incidente real.
+- **Activación de la alerta de pánico:** es el evento más crítico del dominio; marca la transición del contexto de "Operación Normal" al contexto de "Gestión de Emergencias".
+- **Incidente resuelto:** determina si el caso se cierra directamente o requiere derivarse a autoridades o a un seguimiento posterior.
+
+Estos puntos pivote son un primer indicio de los Bounded Contexts que se profundizarán en el Design-Level EventStorming (ver 4.6.1).
+
+<img src="imgs/paso-4-puntos-pivote.jpg">
+
+**Paso 5. Comandos**
+
+| Comando | Actor | Evento resultante |
+|---|---|---|
+| Iniciar turno | Conductor | Turno iniciado |
+| Generar código de verificación | Sistema | Código de verificación generado |
+| Ingresar código de verificación | Conductor | Identidad de conductor verificada / rechazada |
+| Consultar identidad del conductor | Pasajero | Identidad de conductor consultada por pasajero |
+| Iniciar viaje | Conductor | Viaje iniciado |
+| Actualizar ubicación | Sistema (GPS) | Ubicación de unidad actualizada |
+| Activar alerta de pánico | Conductor | Alerta de pánico activada |
+| Asignar respuesta | Central de Monitoreo | Respuesta asignada |
+| Contactar al conductor | Central de Monitoreo | Contacto con conductor establecido |
+| Notificar a autoridades | Central de Monitoreo | Autoridades notificadas |
+| Cerrar alerta | Central de Monitoreo | Alerta cerrada |
+| Finalizar viaje | Conductor | Viaje finalizado |
+| Finalizar turno | Conductor | Turno finalizado |
+
+<img src="imgs/paso-5-comandos.jpg">
+
+**Paso 6. Políticas**
+
+- Cuando se activa una **Alerta de Pánico**, entonces el sistema genera automáticamente una **Alerta Crítica** y la envía a la Central de Monitoreo.
+- Cuando una unidad genera el evento **Unidad ingresó a zona de riesgo**, entonces el sistema incrementa la frecuencia de actualización de ubicación.
+- Cuando la **Identidad de conductor** es rechazada, entonces el sistema bloquea el comando "Iniciar viaje" y notifica a la empresa.
+- Cuando una Alerta Crítica no ha sido atendida dentro del tiempo objetivo, entonces el sistema reenvía la notificación y escala su Alert Level.
+- Cuando se ejecuta "Cerrar alerta", entonces el sistema registra automáticamente un Incidente en el historial de la unidad y del conductor.
+
+<img src="imgs/paso-6-politicas.jpg">
+
+
+**Paso 7. Read Models**
+
+- **Panel de Monitoreo de Flota en Tiempo Real** (Central de Monitoreo) — para decidir el comando "Asignar respuesta".
+- **Estado de Verificación del Turno** (Conductor / Empresa) — para saber si la unidad puede iniciar el viaje.
+- **Detalle de Alerta Activa** (Central de Monitoreo) — ubicación, tiempo transcurrido y datos del conductor, para decidir cómo responder.
+- **Mapa de Zonas de Riesgo** (Sistema / Conductor) — apoya la decisión de tomar rutas alternativas durante el viaje.
+- **Historial de Alertas por Unidad** (Empresa) — para evaluar patrones de riesgo por ruta o conductor.
+
+<img src="imgs/paso-7-read-models.jpg">
+
+**Paso 8. Agregados**
+
+- **Turno (Shift):** administra el Código de Verificación y el estado de verificación; procesa los comandos de inicio y fin de turno.
+- **Viaje (Trip):** administra la ubicación y el Estado de Unidad; procesa el inicio, la actualización de ubicación y el fin del viaje.
+- **Alerta de Pánico (Panic Alert):** administra el Alert Level, el estado de la alerta y la respuesta asignada; procesa la activación, asignación y cierre de la alerta.
+- **Unidad de Transporte (Transport Unit):** administra el estado de la unidad y su asociación a una Flota.
+
+<img src="imgs/paso-8-agregados.jpg">
+
+El contenido identificado en esta sesión (eventos, comandos, políticas y agregados) sirve de insumo directo para el Design-Level EventStorming (ver 4.6.1), donde se profundizará hasta llegar a la identificación formal de Bounded Contexts, Aggregates, Events, Commands y Queries.
+
 
 ### 2.5. Ubiquitous Language
 
