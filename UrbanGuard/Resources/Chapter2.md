@@ -69,8 +69,16 @@ Avisum toma como validación de mercado que el propio Estado ya reconoce el valo
 
 #### 2.2.2. Registro de entrevistas
 
-User: 
+User: Conductores (operarios) de transporte público
 
+Entrevistado: Matías Aguilar
+
+•	Edad
+•	Distrito
+•	Link del video:	https://youtu.be/Rs30FpZu3PA 
+
+
+   
 
 *(Pendiente — se completará una vez el equipo realice las entrevistas reales a conductores y representantes de empresas de transporte. Formato sugerido por entrevistado: nombre, edad, distrito, link de video, y resumen de 5-8 líneas destacando su rutina, percepción de riesgo, medidas de seguridad actuales, y disposición a usar Avisum.)*
 
