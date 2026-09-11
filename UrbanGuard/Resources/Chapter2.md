@@ -211,9 +211,7 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 - Cuando una Alerta Crítica no ha sido atendida dentro del tiempo objetivo, entonces el sistema reenvía la notificación y escala su Alert Level.
 - Cuando se ejecuta "Cerrar alerta", entonces el sistema registra automáticamente un Incidente en el historial de la unidad y del conductor.
 
-*[Adjuntar captura del tablero FigJam — Paso 6: Políticas]*
-
-
+<img src="imgs/paso-6-politicas.jpg">
 
 
 **Paso 7. Read Models**
