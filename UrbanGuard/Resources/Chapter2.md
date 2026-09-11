@@ -231,7 +231,7 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 - **Alerta de Pánico (Panic Alert):** administra el Alert Level, el estado de la alerta y la respuesta asignada; procesa la activación, asignación y cierre de la alerta.
 - **Unidad de Transporte (Transport Unit):** administra el estado de la unidad y su asociación a una Flota.
 
-*[Adjuntar captura del tablero FigJam — Paso 8: Agregados]*
+<img src="imgs/paso-8-agregados.jpg">
 
 El contenido identificado en esta sesión (eventos, comandos, políticas y agregados) sirve de insumo directo para el Design-Level EventStorming (ver 4.6.1), donde se profundizará hasta llegar a la identificación formal de Bounded Contexts, Aggregates, Events, Commands y Queries.
 
