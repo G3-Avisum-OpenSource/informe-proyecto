@@ -170,7 +170,7 @@ Ordenando los eventos anteriores de izquierda a derecha, se identificó un camin
 - La demora entre "Alerta crítica generada" y "Respuesta asignada" es el punto de dolor más crítico del flujo, validado directamente por la Hypothesis Statement 2 (objetivo: menos de 2 minutos de primera atención en al menos el 70% de los casos).
 - No existe un protocolo homogéneo para "Autoridades notificadas": depende de cada empresa y no existe integración actual con el sistema estatal SICM (ver 2.1.1. Análisis Competitivo).
 
-*[Adjuntar captura del tablero FigJam — Paso 3: Puntos de dolor]*
+<img src="imgs/paso-3-puntos-de-dolor.jpg">
 
 **Paso 4. Puntos pivote**
 
