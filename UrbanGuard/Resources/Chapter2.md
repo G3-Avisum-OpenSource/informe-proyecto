@@ -75,7 +75,13 @@ Avisum toma como validación de mercado que el propio Estado ya reconoce el valo
 
 - **Edad:** 23 años
 - **Distrito:** San Juan de Lugarincho
-- **Link del video:** https://youtu.be/Rs30FpZu3PA 
+- **Link del video:** https://youtu.be/Rs30FpZu3PA
+  <img src = "">
+
+  **Resumen de la entrevista:**
+
+  
+  
 
 
    
