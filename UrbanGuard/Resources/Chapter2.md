@@ -222,8 +222,7 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 - **Mapa de Zonas de Riesgo** (Sistema / Conductor) — apoya la decisión de tomar rutas alternativas durante el viaje.
 - **Historial de Alertas por Unidad** (Empresa) — para evaluar patrones de riesgo por ruta o conductor.
 
-*[Adjuntar captura del tablero FigJam — Paso 7: Read Models]*
-
+<img src="imgs/paso-7-read-models.jpg">
 
 **Paso 8. Agregados**
 
