@@ -69,13 +69,13 @@ Avisum toma como validación de mercado que el propio Estado ya reconoce el valo
 
 #### 2.2.2. Registro de entrevistas
 
-User: Conductores (operarios) de transporte público
+**User: Conductores (operarios) de transporte público**
 
-Entrevistado: Matías Aguilar
+**Entrevistado: Matías Aguilar**
 
-•	Edad
-•	Distrito
-•	Link del video:	https://youtu.be/Rs30FpZu3PA 
+- **Edad:** 23 años
+- **Distrito:** San Juan de Lugarincho
+- **Link del video:** https://youtu.be/Rs30FpZu3PA 
 
 
    
