@@ -254,9 +254,14 @@ Avisum es una plataforma orientada a mejorar la seguridad del transporte públic
 
 ## 4.7. Software Object-Oriented Design
 
-### 4.7.1. Class Diagrams
+Esta sección presenta el diseño orientado a objetos de la RESTful API de Avisum (Spring Boot + Spring Data JPA + Java), correspondiente a los tres Epics del Product Backlog con lógica de dominio propia: **EPAV01 – Verificación de identidad**, **EPAV02 – Gestión de emergencias** y **EPAV03 – Monitoreo de flota** (ver 3.1. User Stories). El Epic EPAV05 (API RESTful) no introduce clases de dominio adicionales, ya que corresponde a la capa de exposición (controllers/DTOs) sobre estos mismos modelos; el Epic EPAV04 (Plataforma web informativa) corresponde al sitio estático del Landing Page y no requiere diseño orientado a objetos de dominio.
 
- **Imagen a insertar:** Diagrama de clases con las entidades principales del sistema (Conductor, Unidad, Alerta) y sus relaciones. Guardar como `Resources/img/class-diagram-avisum.png`.
+El diseño se organiza en tres Bounded Contexts, cada uno con su propio Class Diagram: **Gestión de Identidad y Turnos**, **Gestión de Emergencias** y **Monitoreo de Flota**. Estos contextos son consistentes con los Aggregates propuestos en el Big Picture EventStorming (Turno, Alerta de Pánico, Unidad de Transporte — ver 2.4) y con los términos definidos en el Ubiquitous Language (ver 2.5).
+
+Para todos los diagramas se aplica la siguiente notación UML estándar de visibilidad de miembros: `-` atributo/método **private**, `+` **public**, `#` **protected**. Las relaciones se anotan con nombre de rol (calificación), dirección de navegación cuando aplica, y multiplicidad en ambos extremos, según lo requerido. Las clases marcadas con el estereotipo `<<reference>>` representan una referencia liviana (por identificador) a un Aggregate Root que pertenece a otro Bounded Context, evitando duplicar su modelo completo — práctica estándar en Domain-Driven Design para mantener la autonomía de cada contexto.
+
+
+### 4.7.1. Class Diagrams
 
 ---
 
