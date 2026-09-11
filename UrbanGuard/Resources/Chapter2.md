@@ -159,7 +159,7 @@ Ordenando los eventos anteriores de izquierda a derecha, se identificó un camin
 | 7 | Viaje finalizado | |
 | 8 | Turno finalizado | |
 
-*[Adjuntar captura del tablero FigJam — Paso 2: Líneas de tiempo]*
+<img src="imgs/paso-1-exploracion-de-eventos.jpg">
 
 **Paso 3. Puntos de dolor**
 
