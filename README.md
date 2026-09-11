@@ -31,13 +31,13 @@ Proyecto
 
 ### **Integrantes**
 
-| Código | Apellidos y Nombres |
-|--------|---------------------|
-|  |  |
-|  |  |
+| Código     | Apellidos y Nombres           |
+|------------|-------------------------------|
+|            |                               |
+| U202319398 | Llamozas Diaz, Edson Diego    |
 | U202423262 | Reyes Muñoz, Joaquin Leonardo |
 | U20241A322 | Blancas Chavez, Carlos Franco |
-| U202412447 | Portal Inga, Waldo Alonso |
+| U202412447 | Portal Inga, Waldo Alonso     |
 
 ### **Período 202620**
 
