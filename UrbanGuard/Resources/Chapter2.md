@@ -181,7 +181,7 @@ Ordenando los eventos anteriores de izquierda a derecha, se identificó un camin
 
 Estos puntos pivote son un primer indicio de los Bounded Contexts que se profundizarán en el Design-Level EventStorming (ver 4.6.1).
 
-*[Adjuntar captura del tablero FigJam — Paso 4: Puntos pivote]*
+<img src="imgs/paso-4-puntos-pivote.jpg">
 
 **Paso 5. Comandos**
 
