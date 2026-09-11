@@ -106,7 +106,7 @@ El Impact Mapping permite organizar y priorizar las funcionalidades del producto
 - Plataforma web informativa (EPAV04).
 - API RESTful (EPAV05).
 
-<img src="imgs/ImpactMapping.jpg"> 
+<img src="imgs/ImpactMapAvisum.png"> 
 
 ## 3.3. Product Backlog
 
