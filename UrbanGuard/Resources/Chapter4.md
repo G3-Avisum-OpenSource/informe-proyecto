@@ -557,3 +557,46 @@ erDiagram
 
 `shift.driver_id` es `NOT NULL` (todo turno pertenece a exactamente un conductor), mientras que `shift.transport_unit_id` es `NULLABLE` — reflejando la multiplicidad `"0..1"` del Class Diagram, ya que un turno puede estar pendiente de verificación antes de asignársele una unidad. `driver.license_number` y `company.ruc` llevan restricción `UNIQUE` al ser identificadores naturales del negocio. `transport_unit` aparece aquí solo con su `id`, como referencia liviana a la tabla completa definida en el Bounded Context de Monitoreo de Flota (4.8.1, BC3) — la foreign key existe a nivel de base de datos, pero el modelo completo de esa entidad no se duplica en este contexto.
 
+**Bounded Context 2 — Gestión de Emergencias**
+
+```mermaid
+erDiagram
+    PANIC_ALERT {
+        uuid id PK
+        uuid shift_id FK
+        timestamp triggered_at
+        string severity
+        string status
+        decimal latitude
+        decimal longitude
+        timestamp location_recorded_at
+        timestamp responded_at
+        timestamp confirmed_at
+    }
+    ALERT_RESPONSE {
+        uuid id PK
+        uuid panic_alert_id FK, UK
+        string assigned_to
+        timestamp assigned_at
+        boolean contacted_driver
+        boolean authorities_notified
+    }
+    NOTIFICATION_RECIPIENT {
+        uuid id PK
+        uuid panic_alert_id FK
+        string name
+        string contact_info
+        string channel_type
+    }
+    SHIFT {
+        uuid id PK
+    }
+
+    SHIFT ||--o{ PANIC_ALERT : reportedDuring
+    PANIC_ALERT ||--o| ALERT_RESPONSE : handledBy
+    PANIC_ALERT ||--|{ NOTIFICATION_RECIPIENT : notifies
+```
+
+`panic_alert.latitude/longitude/location_recorded_at` son las columnas embebidas del Value Object `GeoLocation` (US42). `alert_response.panic_alert_id` lleva `UNIQUE` además de `FK`, forzando a nivel de base de datos la multiplicidad `"0..1"` (una alerta tiene, cuando mucho, una respuesta asociada). `panic_alert` se relaciona con `notification_recipient` como `"one-or-many"` (`||--|{`), no `"zero-or-many"`, porque toda alerta activada debe notificar al menos a un destinatario (US33). `shift` aparece aquí solo como referencia liviana desde el Bounded Context de Identidad, ya que `panic_alert.shift_id` es `NOT NULL` (US03: no puede activarse una alerta sin un turno activo).
+
+
