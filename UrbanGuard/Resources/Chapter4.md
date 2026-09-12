@@ -516,4 +516,44 @@ Se aplican las siguientes decisiones de mapeo objeto-relacional:
 
 ### 4.8.1. Database Diagrams
 
-📌 **Imagen a insertar:** Diagrama entidad-relación de la base de datos, con las tablas principales y sus llaves foráneas. Guardar como `Resources/img/database-diagram-avisum.png`.
+**Bounded Context 1 — Gestión de Identidad y Turnos**
+
+```mermaid
+erDiagram
+    COMPANY {
+        uuid id PK
+        string business_name
+        string ruc UK
+        string contact_email
+    }
+    DRIVER {
+        uuid id PK
+        uuid company_id FK
+        string first_name
+        string last_name
+        string license_number UK
+        string phone
+        string status
+    }
+    SHIFT {
+        uuid id PK
+        uuid driver_id FK
+        uuid transport_unit_id FK
+        string verification_code
+        timestamp code_issued_at
+        timestamp code_expires_at
+        timestamp start_time
+        timestamp end_time
+        string status
+    }
+    TRANSPORT_UNIT {
+        uuid id PK
+    }
+
+    COMPANY ||--o{ DRIVER : employs
+    DRIVER ||--o{ SHIFT : performs
+    TRANSPORT_UNIT o|--o{ SHIFT : assignedTo
+```
+
+`shift.driver_id` es `NOT NULL` (todo turno pertenece a exactamente un conductor), mientras que `shift.transport_unit_id` es `NULLABLE` — reflejando la multiplicidad `"0..1"` del Class Diagram, ya que un turno puede estar pendiente de verificación antes de asignársele una unidad. `driver.license_number` y `company.ruc` llevan restricción `UNIQUE` al ser identificadores naturales del negocio. `transport_unit` aparece aquí solo con su `id`, como referencia liviana a la tabla completa definida en el Bounded Context de Monitoreo de Flota (4.8.1, BC3) — la foreign key existe a nivel de base de datos, pero el modelo completo de esa entidad no se duplica en este contexto.
+
