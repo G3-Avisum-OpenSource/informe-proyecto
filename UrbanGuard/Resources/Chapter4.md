@@ -498,10 +498,149 @@ classDiagram
 ```
 
 Este contexto cubre EPAV03 y las historias US06, US07, US17, US27, US28, US35, US36, US43, US44. `Fleet` es el Aggregate Root que agrupa (`"1" --> "1..*"`) a las `TransportUnit` de una empresa; `compareUnits()` da soporte a US44. `TransportUnit.isInactive()` implementa la detección de unidades sin señal (US17), y `detectRouteDeviation()` compara la última ubicación contra la `Route` asignada para soportar US36; `Route.isWithinPath()` encapsula esa regla geográfica. `TransportUnit` compone (`"1" *-- "1"`) su última `GeoLocation` conocida, reutilizada como Value Object desde el contexto de Gestión de Emergencias. `Company` se referencia aquí de forma liviana como dueña (`"1" --> "1"`) de la `Fleet`.
+
 ---
 
 ## 4.8. Database Design
 
+Esta sección traduce los Class Diagrams de 4.7 a un modelo relacional (PostgreSQL/MySQL vía Spring Data JPA), manteniendo la misma organización por Bounded Context. Los tres contextos residen en un único esquema físico —Avisum expone una sola RESTful API, no un despliegue de microservicios independiente por contexto—, por lo que las referencias cruzadas entre contextos (mostradas como entidades `<<reference>>` en 4.7) se implementan aquí como **foreign keys reales**, no solo como identificadores lógicos.
+
+Se aplican las siguientes decisiones de mapeo objeto-relacional:
+
+- **Claves primarias:** todas las tablas usan `id` de tipo `UUID`, consistente con los atributos `id: UUID` de cada Aggregate en 4.7.
+- **Value Objects embebidos:** `VerificationCode` (dentro de `Shift`) y `GeoLocation` (dentro de `PanicAlert` y `TransportUnit`) no reciben tabla propia — al no tener identidad ni ciclo de vida independiente, se mapean como columnas embebidas en la tabla de su Aggregate dueño (`@Embeddable` de JPA), evitando joins innecesarios.
+- **Colecciones de Value Objects:** `Route.waypoints` sí requiere tabla propia (`route_waypoint`), porque es una colección de tamaño variable y no puede aplanarse en columnas fijas.
+- **Enumeraciones:** `DriverStatus`, `ShiftStatus`, `AlertLevel`, `AlertStatus` y `UnitStatus` se mapean como columnas `VARCHAR` con `CHECK constraint` sobre los valores permitidos, en lugar de tablas de catálogo separadas, dado que son conjuntos cerrados y estables de valores.
+- **Interfaz y jerarquía de notificadores:** `NotificationChannel` / `AbstractNotifier` / `SmsNotifier` / `EmailNotifier` (ver 4.7.1, BC2) colapsan en una sola tabla `notification_recipient` con una columna discriminadora `channel_type` (`SINGLE_TABLE` de JPA), en vez de una tabla por subclase, ya que las subclases no agregan columnas propias significativas.
+
+
 ### 4.8.1. Database Diagrams
 
-📌 **Imagen a insertar:** Diagrama entidad-relación de la base de datos, con las tablas principales y sus llaves foráneas. Guardar como `Resources/img/database-diagram-avisum.png`.
+**Bounded Context 1 — Gestión de Identidad y Turnos**
+
+```mermaid
+erDiagram
+    COMPANY {
+        uuid id PK
+        string business_name
+        string ruc UK
+        string contact_email
+    }
+    DRIVER {
+        uuid id PK
+        uuid company_id FK
+        string first_name
+        string last_name
+        string license_number UK
+        string phone
+        string status
+    }
+    SHIFT {
+        uuid id PK
+        uuid driver_id FK
+        uuid transport_unit_id FK
+        string verification_code
+        timestamp code_issued_at
+        timestamp code_expires_at
+        timestamp start_time
+        timestamp end_time
+        string status
+    }
+    TRANSPORT_UNIT {
+        uuid id PK
+    }
+
+    COMPANY ||--o{ DRIVER : employs
+    DRIVER ||--o{ SHIFT : performs
+    TRANSPORT_UNIT o|--o{ SHIFT : assignedTo
+```
+
+`shift.driver_id` es `NOT NULL` (todo turno pertenece a exactamente un conductor), mientras que `shift.transport_unit_id` es `NULLABLE` — reflejando la multiplicidad `"0..1"` del Class Diagram, ya que un turno puede estar pendiente de verificación antes de asignársele una unidad. `driver.license_number` y `company.ruc` llevan restricción `UNIQUE` al ser identificadores naturales del negocio. `transport_unit` aparece aquí solo con su `id`, como referencia liviana a la tabla completa definida en el Bounded Context de Monitoreo de Flota (4.8.1, BC3) — la foreign key existe a nivel de base de datos, pero el modelo completo de esa entidad no se duplica en este contexto.
+
+**Bounded Context 2 — Gestión de Emergencias**
+
+```mermaid
+erDiagram
+    PANIC_ALERT {
+        uuid id PK
+        uuid shift_id FK
+        timestamp triggered_at
+        string severity
+        string status
+        decimal latitude
+        decimal longitude
+        timestamp location_recorded_at
+        timestamp responded_at
+        timestamp confirmed_at
+    }
+    ALERT_RESPONSE {
+        uuid id PK
+        uuid panic_alert_id FK, UK
+        string assigned_to
+        timestamp assigned_at
+        boolean contacted_driver
+        boolean authorities_notified
+    }
+    NOTIFICATION_RECIPIENT {
+        uuid id PK
+        uuid panic_alert_id FK
+        string name
+        string contact_info
+        string channel_type
+    }
+    SHIFT {
+        uuid id PK
+    }
+
+    SHIFT ||--o{ PANIC_ALERT : reportedDuring
+    PANIC_ALERT ||--o| ALERT_RESPONSE : handledBy
+    PANIC_ALERT ||--|{ NOTIFICATION_RECIPIENT : notifies
+```
+
+`panic_alert.latitude/longitude/location_recorded_at` son las columnas embebidas del Value Object `GeoLocation` (US42). `alert_response.panic_alert_id` lleva `UNIQUE` además de `FK`, forzando a nivel de base de datos la multiplicidad `"0..1"` (una alerta tiene, cuando mucho, una respuesta asociada). `panic_alert` se relaciona con `notification_recipient` como `"one-or-many"` (`||--|{`), no `"zero-or-many"`, porque toda alerta activada debe notificar al menos a un destinatario (US33). `shift` aparece aquí solo como referencia liviana desde el Bounded Context de Identidad, ya que `panic_alert.shift_id` es `NOT NULL` (US03: no puede activarse una alerta sin un turno activo).
+
+**Bounded Context 3 — Monitoreo de Flota**
+
+```mermaid
+erDiagram
+    COMPANY {
+        uuid id PK
+    }
+    FLEET {
+        uuid id PK
+        uuid company_id FK, UK
+        string name
+    }
+    TRANSPORT_UNIT {
+        uuid id PK
+        uuid fleet_id FK
+        uuid route_id FK
+        string plate_number UK
+        string status
+        decimal last_latitude
+        decimal last_longitude
+        timestamp last_signal_at
+    }
+    ROUTE {
+        uuid id PK
+        string name
+        decimal start_latitude
+        decimal start_longitude
+        decimal end_latitude
+        decimal end_longitude
+    }
+    ROUTE_WAYPOINT {
+        uuid id PK
+        uuid route_id FK
+        int sequence_order
+        decimal latitude
+        decimal longitude
+    }
+
+    COMPANY ||--|| FLEET : owns
+    FLEET ||--|{ TRANSPORT_UNIT : contains
+    ROUTE o|--o{ TRANSPORT_UNIT : follows
+    ROUTE ||--o{ ROUTE_WAYPOINT : composedOf
+```
+
+`fleet.company_id` lleva `UNIQUE` porque cada empresa posee exactamente una flota (`"1"--"1"` en 4.7.1, BC3). `transport_unit.route_id` es `NULLABLE`: a diferencia del Class Diagram, donde `Route` aparecía como obligatoria (`"1"`), aquí se relaja a opcional (`"0..1"`) porque una unidad puede existir sin tener aún una ruta asignada (por ejemplo, recién registrada) — un refinamiento razonable al pasar del modelo de objetos a la persistencia, que conviene reflejar de vuelta en 4.7.1 en la próxima revisión. `route_waypoint` es una tabla propia (no columnas embebidas) porque `Route.waypoints` es una colección de tamaño variable; `sequence_order` preserva el orden del recorrido. `company` aparece aquí solo como referencia liviana, con la foreign key real viviendo en `fleet.company_id`.
