@@ -498,9 +498,21 @@ classDiagram
 ```
 
 Este contexto cubre EPAV03 y las historias US06, US07, US17, US27, US28, US35, US36, US43, US44. `Fleet` es el Aggregate Root que agrupa (`"1" --> "1..*"`) a las `TransportUnit` de una empresa; `compareUnits()` da soporte a US44. `TransportUnit.isInactive()` implementa la detección de unidades sin señal (US17), y `detectRouteDeviation()` compara la última ubicación contra la `Route` asignada para soportar US36; `Route.isWithinPath()` encapsula esa regla geográfica. `TransportUnit` compone (`"1" *-- "1"`) su última `GeoLocation` conocida, reutilizada como Value Object desde el contexto de Gestión de Emergencias. `Company` se referencia aquí de forma liviana como dueña (`"1" --> "1"`) de la `Fleet`.
+
 ---
 
 ## 4.8. Database Design
+
+Esta sección traduce los Class Diagrams de 4.7 a un modelo relacional (PostgreSQL/MySQL vía Spring Data JPA), manteniendo la misma organización por Bounded Context. Los tres contextos residen en un único esquema físico —Avisum expone una sola RESTful API, no un despliegue de microservicios independiente por contexto—, por lo que las referencias cruzadas entre contextos (mostradas como entidades `<<reference>>` en 4.7) se implementan aquí como **foreign keys reales**, no solo como identificadores lógicos.
+
+Se aplican las siguientes decisiones de mapeo objeto-relacional:
+
+- **Claves primarias:** todas las tablas usan `id` de tipo `UUID`, consistente con los atributos `id: UUID` de cada Aggregate en 4.7.
+- **Value Objects embebidos:** `VerificationCode` (dentro de `Shift`) y `GeoLocation` (dentro de `PanicAlert` y `TransportUnit`) no reciben tabla propia — al no tener identidad ni ciclo de vida independiente, se mapean como columnas embebidas en la tabla de su Aggregate dueño (`@Embeddable` de JPA), evitando joins innecesarios.
+- **Colecciones de Value Objects:** `Route.waypoints` sí requiere tabla propia (`route_waypoint`), porque es una colección de tamaño variable y no puede aplanarse en columnas fijas.
+- **Enumeraciones:** `DriverStatus`, `ShiftStatus`, `AlertLevel`, `AlertStatus` y `UnitStatus` se mapean como columnas `VARCHAR` con `CHECK constraint` sobre los valores permitidos, en lugar de tablas de catálogo separadas, dado que son conjuntos cerrados y estables de valores.
+- **Interfaz y jerarquía de notificadores:** `NotificationChannel` / `AbstractNotifier` / `SmsNotifier` / `EmailNotifier` (ver 4.7.1, BC2) colapsan en una sola tabla `notification_recipient` con una columna discriminadora `channel_type` (`SINGLE_TABLE` de JPA), en vez de una tabla por subclase, ya que las subclases no agregan columnas propias significativas.
+
 
 ### 4.8.1. Database Diagrams
 
