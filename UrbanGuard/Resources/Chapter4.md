@@ -599,4 +599,48 @@ erDiagram
 
 `panic_alert.latitude/longitude/location_recorded_at` son las columnas embebidas del Value Object `GeoLocation` (US42). `alert_response.panic_alert_id` lleva `UNIQUE` además de `FK`, forzando a nivel de base de datos la multiplicidad `"0..1"` (una alerta tiene, cuando mucho, una respuesta asociada). `panic_alert` se relaciona con `notification_recipient` como `"one-or-many"` (`||--|{`), no `"zero-or-many"`, porque toda alerta activada debe notificar al menos a un destinatario (US33). `shift` aparece aquí solo como referencia liviana desde el Bounded Context de Identidad, ya que `panic_alert.shift_id` es `NOT NULL` (US03: no puede activarse una alerta sin un turno activo).
 
+**Bounded Context 3 — Monitoreo de Flota**
 
+```mermaid
+erDiagram
+    COMPANY {
+        uuid id PK
+    }
+    FLEET {
+        uuid id PK
+        uuid company_id FK, UK
+        string name
+    }
+    TRANSPORT_UNIT {
+        uuid id PK
+        uuid fleet_id FK
+        uuid route_id FK
+        string plate_number UK
+        string status
+        decimal last_latitude
+        decimal last_longitude
+        timestamp last_signal_at
+    }
+    ROUTE {
+        uuid id PK
+        string name
+        decimal start_latitude
+        decimal start_longitude
+        decimal end_latitude
+        decimal end_longitude
+    }
+    ROUTE_WAYPOINT {
+        uuid id PK
+        uuid route_id FK
+        int sequence_order
+        decimal latitude
+        decimal longitude
+    }
+
+    COMPANY ||--|| FLEET : owns
+    FLEET ||--|{ TRANSPORT_UNIT : contains
+    ROUTE o|--o{ TRANSPORT_UNIT : follows
+    ROUTE ||--o{ ROUTE_WAYPOINT : composedOf
+```
+
+`fleet.company_id` lleva `UNIQUE` porque cada empresa posee exactamente una flota (`"1"--"1"` en 4.7.1, BC3). `transport_unit.route_id` es `NULLABLE`: a diferencia del Class Diagram, donde `Route` aparecía como obligatoria (`"1"`), aquí se relaja a opcional (`"0..1"`) porque una unidad puede existir sin tener aún una ruta asignada (por ejemplo, recién registrada) — un refinamiento razonable al pasar del modelo de objetos a la persistencia, que conviene reflejar de vuelta en 4.7.1 en la próxima revisión. `route_waypoint` es una tabla propia (no columnas embebidas) porque `Route.waypoints` es una colección de tamaño variable; `sequence_order` preserva el orden del recorrido. `company` aparece aquí solo como referencia liviana, con la foreign key real viviendo en `fleet.company_id`.
