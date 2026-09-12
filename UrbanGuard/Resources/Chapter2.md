@@ -78,11 +78,12 @@ Avisum toma como validación de mercado que el propio Estado ya reconoce el valo
 - **Link del video:** https://youtu.be/Rs30FpZu3PA
   <img src = "imgs/Entrevista1_Avisum.png">
 
-  **Resumen de la entrevista:**
+**Resumen de la entrevista:**
+
+Matías inicia su jornada entre las 5 a.m. y las 6 a.m. y concluye alrededor de las 6 p.m., percibiendo mayor peligro durante las noches debido al riesgo constante en sus rutas. Señala que las extorsiones y cobros de cupos son cotidianos, manifestándose en avisos y amenazas por mensajes de WhatsApp hacia conductores y locales. En cuanto a seguridad, su unidad cuenta apenas con un botón de emergencia en el celular para llamar al 105, sin otra protección relevante de la empresa. Ante una emergencia, reconoce que pedir ayuda resulta lento y poco efectivo, ya que la policía demora en llegar al lugar. Considera que el monitoreo en tiempo real sería de gran ayuda para detectar paradas sospechosas y emitir alertas inmediatas. Mostró buena disposición a usar una aplicación con validación digital de identidad para mejorar el orden y la organización de sus turnos. Usaría la solución principalmente al inicio y al final de cada jornada laboral.
 
 
-
-  ---
+---
   
 
 
