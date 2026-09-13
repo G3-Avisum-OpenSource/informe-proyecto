@@ -162,11 +162,11 @@ Para que las empresas no se sientan perdidas al gestionar decenas de conductores
 
 ### 4.3.1. Landing Page Wireframe
 
- **Imágenes a insertar:** 2-3 capturas de Figma mostrando el wireframe (en escala de grises, sin color final) de la Landing Page completa, dividida en bloques por sección (Hero, Problema, Funcionalidades, etc.). Guardar como `Resources/img/wireframe-landing-1.png`, `wireframe-landing-2.png`, `wireframe-landing-3.png`.
+<img src="imgs/wireframe-landing.png">
 
 ### 4.3.2. Landing Page Mock-up
 
- **Imagen a insertar:** Captura del mock-up final con color, de la Landing Page completa (o un scroll largo). Guardar como `Resources/img/mockup-landing-avisum.png`.
+ <img src="imgs/mockup-landing-avisum.png">
 
 ---
 
