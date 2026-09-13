@@ -268,6 +268,8 @@ Siguiendo el proceso de Big Picture EventStorming, una vez ordenados los eventos
 | Proveedor de geolocalización | Sistema externo (pendiente) | El comando "Actualizar ubicación" (ver Paso 5) ya se asigna al actor "Sistema (GPS)", pero aún no se ha seleccionado ni documentado un proveedor externo concreto de mapas/geolocalización. | Ubicación de unidad actualizada |
 | SICM (Sistema estatal ATU-PNP) | Sistema externo — no integrado (decisión de producto) | Confirmado en el Análisis Competitivo (ver 2.1.1) como una diferenciación deliberada frente al Visor ATU-PNP: Avisum no depende de integración con el SICM para operar, aunque se identifica como oportunidad de interoperabilidad a futuro. | Ninguno directamente; referenciado como Punto de Dolor (ver Paso 3) |
 
+<img src="imgs/paso-9-actores-sistemas-externos.jpg">
+
 A diferencia de la versión preliminar de este paso, la tabla anterior ya no describe el sistema externo como un vacío total: el diseño de clases (ver 4.7.1) confirma que la notificación saldrá por SMS y correo electrónico, y el Análisis Competitivo (ver 2.1.1) confirma que la no integración con el SICM es una decisión de producto y no un olvido. Lo que permanece abierto — y debe resolverse antes de completar el Context Diagram y el Container Diagram (ver 4.6.2, 4.6.3) — es únicamente la elección de proveedor concreto para SMS/correo y para geolocalización.
 
 **Paso 10. Storytelling**
