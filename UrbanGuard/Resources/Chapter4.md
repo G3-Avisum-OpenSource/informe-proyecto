@@ -21,7 +21,7 @@ Buscamos que el usuario perciba el sistema como:
 
 (( **Color Palette** ))
 
-(( **Imagen a insertar:** Captura o diseño en Figma con 3 muestras de color en formato círculo/swatch, igual al ejemplo de referencia — cada una con su nombre y código hexadecimal debajo. Guardar como `Resources/img/paleta-colores-avisum.png`. ))
+<img src="imgs/paleta-colores-avisum.png">
 
 - **Negro (#000000):** Base de toda la interfaz. Aporta seriedad y genera un entorno visual libre de distracciones, reforzando la percepción de vigilancia constante.
 - **Verde neón (#C3F400):** Color principal de acento, usado en botones, indicadores de estado activo y títulos. Se asocia a monitoreo digital y confirmación de que "todo está en orden". Como color secundario de contraste se usa un verde oscuro (#596D0B).
@@ -37,7 +37,7 @@ Usamos **Space Grotesk** para títulos y **Inter** para texto de lectura, porque
 | Subtítulos | Space Grotesk Bold | 48-60px |
 | Párrafos | Inter Light/Bold | 12-24px |
 
-(( **Imagen a insertar:** Captura de la jerarquía tipográfica en Figma, mostrando una muestra de cada tamaño con su etiqueta. Guardar como `Resources/img/tipografia-avisum.png`. ))
+<img src="imgs/tipografia-avisum.png">
 
 **Spacing y Layout**
 
@@ -54,7 +54,7 @@ El diseño se organiza mediante espacios consistentes en múltiplos de 2px, y es
 - **Cards:** Contenedores oscuros con borde sutil, usados para mostrar unidades, alertas y conductores de forma organizada.
 - **Iconografía:** Estilo lineal simple, de fácil reconocimiento incluso a tamaños pequeños.
 
- **Imagen a insertar:** Captura de Figma mostrando los 3 estilos de botones lado a lado (principal, crítico, secundario). Guardar como `Resources/img/botones-avisum.png`.
+<img src="imgs/botones-avisum.png">
 
 **Responsive Design Standards (Mobile-first)**
 
@@ -74,7 +74,7 @@ El tono de Avisum es serio, directo y profesional — evitamos lenguaje informal
 
 ### 4.1.2. Web Style Guidelines
 
- **Imagen a insertar:** Captura de Figma mostrando el navbar y los estados de los botones (normal, hover, activo) del entorno web. Guardar como `Resources/img/navbar-botones-avisum.png`.
+<img src="imgs/navbar-botones-avisum.png">
 
 ---
 
