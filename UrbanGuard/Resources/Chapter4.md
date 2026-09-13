@@ -182,7 +182,7 @@ Los wireframes definen la estructura funcional de las pantallas principales del 
 
 ### 4.4.2. Web Applications Wireflow Diagrams
 
- **Imagen a insertar:** Diagrama de wireflow conectando las pantallas anteriores con flechas de navegación, mostrando cómo el usuario se mueve entre ellas. Guardar como `Resources/img/wireflow-avisum.png`.
+<img src="imgs/wireflow-avisum.png">
 
 ### 4.4.3. Web Applications Mock-ups
 
