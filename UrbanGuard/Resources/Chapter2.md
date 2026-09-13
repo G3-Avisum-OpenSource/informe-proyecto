@@ -254,6 +254,23 @@ Estos puntos pivote son un primer indicio de los Bounded Contexts que se profund
 
 El contenido identificado en esta sesión (eventos, comandos, políticas y agregados) sirve de insumo directo para el Design-Level EventStorming (ver 4.6.1), donde se profundizará hasta llegar a la identificación formal de Bounded Contexts, Aggregates, Events, Commands y Queries.
 
+**Paso 9. Actores y Sistemas Externos**
+
+Siguiendo el proceso de Big Picture EventStorming, una vez ordenados los eventos se identificaron los actores (personas con un rol) que disparan o responden a dichos eventos, así como los sistemas externos con los que interactúa el dominio.
+
+| Actor / Sistema | Tipo | Rol / Descripción | Eventos en los que participa |
+|---|---|---|---|
+| Conductor | Actor (persona) | Opera la unidad de transporte durante su turno; dispara la mayoría de los eventos del flujo principal. | Turno iniciado, Identidad de conductor verificada/rechazada, Viaje iniciado, Alerta de pánico activada, Viaje finalizado, Turno finalizado |
+| Central de Monitoreo (Empresa) | Actor (rol organizacional) | Supervisa las unidades en operación y gestiona la respuesta ante alertas críticas. | Respuesta asignada, Contacto con conductor establecido, Autoridades notificadas, Alerta cerrada |
+| Pasajero | Actor secundario | No es un segmento objetivo de investigación (ver 1.3), pero interactúa con el flujo al consultar la identidad del conductor antes de abordar. | Identidad de conductor consultada por pasajero |
+| Sistema Avisum | Sistema (interno) | Genera el código de verificación y evalúa automáticamente las políticas que escalan una alerta. | Código de verificación generado, Alerta crítica generada |
+| Canales de notificación (SmsNotifier / EmailNotifier) | Sistema externo (parcialmente definido) | Ya modelados como subclases de `NotificationChannel` (ver 4.7.1. Class Diagrams) para llevar la notificación fuera de la plataforma. El proveedor concreto (pasarela SMS, servicio de correo transaccional) aún no se fija, ya que los diagramas de Contexto y Contenedores (ver 4.6.2, 4.6.3) siguen pendientes de elaborar. | Contacto con conductor establecido, Autoridades notificadas |
+| Proveedor de geolocalización | Sistema externo (pendiente) | El comando "Actualizar ubicación" (ver Paso 5) ya se asigna al actor "Sistema (GPS)", pero aún no se ha seleccionado ni documentado un proveedor externo concreto de mapas/geolocalización. | Ubicación de unidad actualizada |
+| SICM (Sistema estatal ATU-PNP) | Sistema externo — no integrado (decisión de producto) | Confirmado en el Análisis Competitivo (ver 2.1.1) como una diferenciación deliberada frente al Visor ATU-PNP: Avisum no depende de integración con el SICM para operar, aunque se identifica como oportunidad de interoperabilidad a futuro. | Ninguno directamente; referenciado como Punto de Dolor (ver Paso 3) |
+
+
+
+A diferencia de la versión preliminar de este paso, la tabla anterior ya no describe el sistema externo como un vacío total: el diseño de clases (ver 4.7.1) confirma que la notificación saldrá por SMS y correo electrónico, y el Análisis Competitivo (ver 2.1.1) confirma que la no integración con el SICM es una decisión de producto y no un olvido. Lo que permanece abierto — y debe resolverse antes de completar el Context Diagram y el Container Diagram (ver 4.6.2, 4.6.3) — es únicamente la elección de proveedor concreto para SMS/correo y para geolocalización.
 
 ### 2.5. Ubiquitous Language
 
