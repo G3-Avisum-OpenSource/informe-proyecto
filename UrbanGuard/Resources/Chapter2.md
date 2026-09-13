@@ -268,9 +268,18 @@ Siguiendo el proceso de Big Picture EventStorming, una vez ordenados los eventos
 | Proveedor de geolocalización | Sistema externo (pendiente) | El comando "Actualizar ubicación" (ver Paso 5) ya se asigna al actor "Sistema (GPS)", pero aún no se ha seleccionado ni documentado un proveedor externo concreto de mapas/geolocalización. | Ubicación de unidad actualizada |
 | SICM (Sistema estatal ATU-PNP) | Sistema externo — no integrado (decisión de producto) | Confirmado en el Análisis Competitivo (ver 2.1.1) como una diferenciación deliberada frente al Visor ATU-PNP: Avisum no depende de integración con el SICM para operar, aunque se identifica como oportunidad de interoperabilidad a futuro. | Ninguno directamente; referenciado como Punto de Dolor (ver Paso 3) |
 
-
-
 A diferencia de la versión preliminar de este paso, la tabla anterior ya no describe el sistema externo como un vacío total: el diseño de clases (ver 4.7.1) confirma que la notificación saldrá por SMS y correo electrónico, y el Análisis Competitivo (ver 2.1.1) confirma que la no integración con el SICM es una decisión de producto y no un olvido. Lo que permanece abierto — y debe resolverse antes de completar el Context Diagram y el Container Diagram (ver 4.6.2, 4.6.3) — es únicamente la elección de proveedor concreto para SMS/correo y para geolocalización.
+
+**Paso 10. Storytelling**
+
+Como cierre de la sesión, Llamozas Diaz, Edson Diego narró de forma cronológica, evento por evento, la historia completa del dominio ante el resto del equipo, con el fin de validar que el flujo construido en los Pasos 1 a 9 tuviera sentido de principio a fin.
+
+La narración siguió el camino principal identificado en el Paso 2: el conductor inicia su turno, el sistema genera un código de verificación que, de ser aceptado, activa la cuenta y permite iniciar el viaje; a partir de ahí, el pasajero puede consultar la identidad del conductor antes de abordar, mientras el sistema actualiza la ubicación de la unidad de forma recurrente. Si la unidad ingresa a una zona de riesgo o el conductor activa el botón de pánico, se dispara la rama alterna: se genera una alerta crítica, la central de monitoreo la recibe, asigna una respuesta, contacta al conductor y, de ser necesario, notifica a las autoridades, hasta que el incidente se resuelve y la alerta se cierra. El flujo principal se retoma con el fin del viaje y el cierre de turno.
+
+Durante la narración surgieron algunas preguntas menores de aclaración por parte del equipo: si el código de verificación se genera nuevamente en cada turno o se mantiene fijo para el conductor, si el pasajero puede consultar la identidad del conductor incluso antes de que el viaje haya iniciado, y si la alerta de pánico puede activarse más de una vez durante un mismo viaje. Estas dudas se resolvieron de forma conversacional en la misma sesión, sin requerir cambios al modelo de eventos ya construido.
+
+Como resultado de esta revisión, el equipo advirtió que el informe aún no documentaba de manera explícita la identificación de actores y sistemas externos, ni la propia sesión de storytelling como paso independiente del proceso — lo que motivó la incorporación formal de los Pasos 9 y 10 en esta sección.
+
 
 ### 2.5. Ubiquitous Language
 
