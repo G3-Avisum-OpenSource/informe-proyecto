@@ -87,10 +87,10 @@ Matías inicia su jornada entre las 5 a.m. y las 6 a.m. y concluye alrededor de 
 
 **Entrevistado: Juan Diego Sierra **
 
-- **Edad:**  años
+- **Edad:** 25 años
 - **Distrito:** Pueblo libre
 - **Link del video:** https://youtu.be/S3MS06OLvYg 
-  <img src = "imgs/.png">
+  <img src = "imgs/Entrevista2_Avisum.png">
 
 **Resumen de la entrevista:**
 
