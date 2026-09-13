@@ -85,15 +85,16 @@ Matías inicia su jornada entre las 5 a.m. y las 6 a.m. y concluye alrededor de 
 
 ---
 
-**Entrevistado: **
+**Entrevistado: Juan Diego Sierra **
 
 - **Edad:**  años
-- **Distrito:** 
-- **Link del video:** 
+- **Distrito:** Pueblo libre
+- **Link del video:** https://youtu.be/S3MS06OLvYg 
   <img src = "imgs/.png">
 
 **Resumen de la entrevista:**
 
+Juan Diego, un conductor de bus de transporte público de 25 años residente en Pueblo Libre, enfrenta diariamente jornadas laborales de 4:00 a. m. a 10:00 p. m. transitando hacia San Juan de Lurigancho, donde vive bajo el constante temor a la ola de extorsiones y violencia que afecta al sector debido a la falta de medidas de protección en su empresa. Ante la dificultad de reaccionar frente a un ataque armado directo, valora positivamente herramientas tecnológicas como la validación de identidad mediante QR y las aplicaciones de monitoreo conectadas a serenazgo o la policía, aunque recalca que estas son solo complementos y que la solución definitiva requiere la intervención activa de las autoridades para combatir la extorsión y resguardar la vida de trabajadores y pasajeros.
 
 
 
