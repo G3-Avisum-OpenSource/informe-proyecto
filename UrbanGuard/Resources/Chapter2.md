@@ -107,6 +107,41 @@ Juan Diego, un conductor de bus de transporte público de 25 años residente en 
 
 #### 2.2.3. Análisis de entrevistas
 
+**User: Conductores (operarios) de transporte público**
+
+**Entrevista 1:** El segmento objetivo del entrevistado es conductor de transporte público urbano que opera largas jornadas en rutas con alta incidencia de inseguridad y extorsión, especialmente en horarios nocturnos.
+
+Los aspectos más comunes que señala el entrevistado son:
+
+- Jornada extensa (4 a. m. a 10 p. m.) con alta exposición a la delincuencia en el trayecto desde Pueblo Libre a San Juan de Lurigancho.
+
+- Inseguridad y temor constante debido a la ola de extorsiones y ataques violentos hacia los conductores.
+
+- Nula seguridad en la empresa (ausencia de lunas blindadas o resguardo policial en paraderos).
+
+- Capacidad de respuesta ante emergencias casi nula para reaccionar o pedir ayuda a tiempo durante un ataque armado.
+
+- Necesidad de un compromiso real de las autoridades y la policía para erradicar la extorsión desde la raíz.
+
+- Disposición positiva al uso de tecnología como validación de identidad por QR y apps de monitoreo integradas con Serenazgo/Policía, aunque las considera un complemento a la seguridad física.
+
+**Entrevista 2:** El segmento objetivo del entrevistado es conductor de transporte público urbano enfocado en el monitoreo operativo, control de pasajeros y la prevención de cobros ilegales durante la ruta.
+
+- Los aspectos más comunes que señala el entrevistado son:
+
+- Alta vulnerabilidad en paraderos informales y zonas desprotegidas durante el recorrido.
+
+- Riesgo constante de robos y agresiones tanto a tripulantes como a pasajeros dentro de la unidad.
+
+- Ausencia de sistemas efectivos de alerta rápida o botones de pánico conectados directamente con las fuerzas del orden.
+
+- Necesidad de implementar conteo de pasajeros y validación de identidad para evitar el ingreso de personas sospechosas o delincuentes.
+
+- Buena recepción hacia soluciones de monitoreo por GPS en tiempo real para rastrear la unidad ante cualquier desviación o incidente.
+
+- Interés en adoptar aplicaciones móviles de seguridad siempre que no distraigan la conducción y cuenten con soporte inmediato de la central.
+
+
 *(Pendiente — se completará tras el registro de entrevistas)*
 
 ### 2.3. Needfinding
