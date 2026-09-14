@@ -100,7 +100,21 @@ Juan Diego, un conductor de bus de transporte público de 25 años residente en 
 
 ---
 
-**Entrevistado: Matías Aguilar**
+### Entrevistado: Carlos Ramírez Torres
+
+- **Edad:** 26 años
+- **Cargo:** Operador del Centro de Monitoreo
+- **Empresa:** Consorcio Transporte Arequipa S. A.
+- **Sector:** Transporte público – Corredor Azul
+- **Experiencia:** Aproximadamente 2 años
+- **Link del video:** *(Pendiente — E4)*
+
+*(Pendiente — img del E4)*
+
+### Resumen de la entrevista:
+
+Carlos Ramírez explicó que la empresa monitorea sus unidades mediante GPS y mantiene comunicación constante con los conductores para atender emergencias. Los principales problemas son robos, discusiones, vandalismo, accidentes y agresiones verbales, mientras que la supervisión en tiempo real se dificulta por la cantidad de unidades y las limitaciones del GPS. Considera útil una herramienta digital que permita verificar automáticamente la identidad del conductor, recibir alertas de emergencia, acceder a cámaras y conocer de inmediato la ubicación de la unidad, siempre que se evalúen aspectos como el costo, la privacidad, las falsas alarmas y la conectividad.
+
    
 
 *(Pendiente — se completará una vez el equipo realice las entrevistas reales a conductores y representantes de empresas de transporte. Formato sugerido por entrevistado: nombre, edad, distrito, link de video, y resumen de 5-8 líneas destacando su rutina, percepción de riesgo, medidas de seguridad actuales, y disposición a usar Avisum.)*
