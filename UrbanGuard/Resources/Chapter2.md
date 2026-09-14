@@ -100,6 +100,8 @@ Juan Diego, un conductor de bus de transporte público de 25 años residente en 
 
 ---
 
+**User: Personal de operaciones y monitoreo de empresas de transporte público**
+
 ### Entrevistado: Diego Fernández Rojas
 
 - **Edad:** 25 años
@@ -125,6 +127,7 @@ Diego Fernández explicó que la empresa utiliza protocolos de emergencia, super
 - **Sector:** Transporte público – Corredor Azul
 - **Experiencia:** Aproximadamente 2 años
 - **Link del video:** *(Pendiente — E4)*
+
 *(Pendiente — img del E4)*
 
 ### Resumen de la entrevista:
@@ -141,32 +144,23 @@ Carlos Ramírez explicó que la empresa monitorea sus unidades mediante GPS y ma
 Los aspectos más comunes que señala el entrevistado son:
 
 - Jornada extensa (4 a. m. a 10 p. m.) con alta exposición a la delincuencia en el trayecto desde Pueblo Libre a San Juan de Lurigancho.
-
 - Inseguridad y temor constante debido a la ola de extorsiones y ataques violentos hacia los conductores.
-
 - Nula seguridad en la empresa (ausencia de lunas blindadas o resguardo policial en paraderos).
-
 - Capacidad de respuesta ante emergencias casi nula para reaccionar o pedir ayuda a tiempo durante un ataque armado.
-
 - Necesidad de un compromiso real de las autoridades y la policía para erradicar la extorsión desde la raíz.
-
 - Disposición positiva al uso de tecnología como validación de identidad por QR y apps de monitoreo integradas con Serenazgo/Policía, aunque las considera un complemento a la seguridad física.
 
 **Entrevista 2:** El segmento objetivo del entrevistado es conductor de transporte público urbano enfocado en el monitoreo operativo, control de pasajeros y la prevención de cobros ilegales durante la ruta.
 
 - Los aspectos más comunes que señala el entrevistado son:
-
 - Alta vulnerabilidad en paraderos informales y zonas desprotegidas durante el recorrido.
-
 - Riesgo constante de robos y agresiones tanto a tripulantes como a pasajeros dentro de la unidad.
-
 - Ausencia de sistemas efectivos de alerta rápida o botones de pánico conectados directamente con las fuerzas del orden.
-
 - Necesidad de implementar conteo de pasajeros y validación de identidad para evitar el ingreso de personas sospechosas o delincuentes.
-
 - Buena recepción hacia soluciones de monitoreo por GPS en tiempo real para rastrear la unidad ante cualquier desviación o incidente.
-
 - Interés en adoptar aplicaciones móviles de seguridad siempre que no distraigan la conducción y cuenten con soporte inmediato de la central.
+
+
 
 **User: Personal de operaciones y monitoreo de empresas de transporte público**
 
@@ -194,7 +188,6 @@ Los aspectos más comunes que señala el entrevistado son:
 - Interés en integrar verificación automática de identidad y acceso a cámaras dentro de una herramienta digital.
 - Preocupación por la privacidad, las falsas alarmas, el costo y el funcionamiento del sistema cuando hay poca señal.
 
-
 ### 2.3. Needfinding
 
 Para identificar las necesidades reales de nuestros usuarios, complementamos las entrevistas con herramientas de needfinding que nos permiten representar y comprender a profundidad a cada segmento objetivo.
@@ -210,6 +203,10 @@ Para identificar las necesidades reales de nuestros usuarios, complementamos las
 
 <img src="imgs/UserPersona_Segmento02.png">
 
+
+#### 2.3.2. User Task Matrix
+
+**Segmento objetivo #1 — Conductores**
 
 | Actividades | Frecuencia | Importancia |
 |---|---|---|
