@@ -236,15 +236,17 @@ El prototipo interactivo de Avisum simula la navegación y los flujos principale
 
 Avisum es una plataforma orientada a mejorar la seguridad del transporte público mediante monitoreo en tiempo real, verificación de identidad y respuesta inmediata ante emergencias entre conductores, empresas y central de operaciones.
 
-<img src="imgs/eventstorming-alert-avisum.png">
-
-<img src="imgs/eventstorming-monitoreo-avisum.png">
-
-<img src="imgs/eventstorming-iot-avisum.png">
+<img src="imgs/eventstorming-iam-avisum.png">
 
 <img src="imgs/eventstorming-user-avisum.png">
 
-<img src="imgs/eventstorming-iam-avisum.png">
+<img src="imgs/eventstorming-iot-avisum.png">
+
+<img src="imgs/eventstorming-monitoreo-avisum.png">
+
+<img src="imgs/eventstorming-alert-avisum.png">
+
+
 
  **Imágenes a insertar:** Capturas del tablero de Event Storming a nivel de diseño (Miro/FigJam), una por cada bounded context: **Autenticación de conductores**, **Monitoreo de flota**, **Gestión de alertas**. Guardar como `Resources/img/eventstorming-auth-avisum.png`, `eventstorming-monitoreo-avisum.png`, `eventstorming-alertas-avisum.png`.
 
