@@ -69,3 +69,23 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 
 ### 5.1.4. Software Deployment Configuration
 
+## 5.2. Landing Page, Services & Applications Implementation
+
+### 5.2.1. Sprint 1
+
+#### 5.2.1.1. Sprint Planning 1
+
+| Sprint # | Sprint 1 |
+|---|---|
+| **Sprint Planning Background** | |
+| Date | > **PENDIENTE** |
+| Time | > **PENDIENTE** |
+| Location | > **PENDIENTE** |
+| Prepared By | > **PENDIENTE** (Team Leader) |
+| Attendees | > **PENDIENTE** |
+| Sprint 0 Review Summary | |
+| Sprint 0 Retrospective Summary |  |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | *Propuesta:* "Our focus is on presenting Avisum's value proposition and problem context through a public Landing Page. We believe it delivers a clear first understanding of the service to visitors from both target segments — drivers and transport companies. This will be confirmed when the Landing Page is deployed and visitors can navigate through the problem, solution, and value proposition sections without assistance." |
+| Sprint 1 Velocity | > **PENDIENTE** (Story Points que el equipo acuerda poder asumir) |
+| Sum of Story Points | 32 (según propuesta de alcance en 5.2.1.3) |
