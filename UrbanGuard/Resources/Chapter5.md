@@ -152,3 +152,11 @@ Se listan las funcionalidades del sistema (US09): Verificación de Identidad, Al
 <img src="imgs/landing-how-it-works.png">
 
 Se presenta el flujo operativo en cuatro pasos (inicio de turno verificado, monitoreo constante, alerta inmediata, intervención y coordinación), reforzando la comprensión de la propuesta de valor (US08/US38) mediante una narrativa secuencial del servicio.
+
+**Sección de cierre (CTA) y footer**
+
+<img src="imgs/landing-cta-footer.png">
+
+Incluye un llamado a la acción ("Solicita una auditoría de seguridad para tu flota") orientado al segmento de empresas, con dos botones ("Solicitar Demo", "Hablar con Operaciones"), y el footer con enlaces de navegación repetidos. *Pendiente:* el enunciado exige un call-to-action por cada segmento objetivo, redirigiendo a la vista correspondiente en la Web Application. Actualmente solo existe un CTA orientado a empresas; falta un CTA equivalente para el segmento de conductores (p. ej. "Regístrate como conductor"). Dado que la Web Application se implementa recién en TB1, se puede dejar el enlace apuntando a un ancla temporal o página "próximamente", documentando la limitación.
+
+> **PENDIENTE:** screenshot de un cuadro de video y enlace a Microsoft Stream de la demostración de navegación del prototipo/producto.
