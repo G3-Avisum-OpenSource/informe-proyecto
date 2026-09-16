@@ -69,3 +69,94 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 
 ### 5.1.4. Software Deployment Configuration
 
+## 5.2. Landing Page, Services & Applications Implementation
+
+### 5.2.1. Sprint 1
+
+#### 5.2.1.1. Sprint Planning 1
+
+| Sprint # | Sprint 1 |
+|---|---|
+| **Sprint Planning Background** | |
+| Date | > **PENDIENTE** |
+| Time | > **PENDIENTE** |
+| Location | > **PENDIENTE** |
+| Prepared By | > **PENDIENTE** (Team Leader) |
+| Attendees | > **PENDIENTE** |
+| Sprint 0 Review Summary | |
+| Sprint 0 Retrospective Summary |  |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | *Propuesta:* "Our focus is on presenting Avisum's value proposition and problem context through a public Landing Page. We believe it delivers a clear first understanding of the service to visitors from both target segments — drivers and transport companies. This will be confirmed when the Landing Page is deployed and visitors can navigate through the problem, solution, and value proposition sections without assistance." |
+| Sprint 1 Velocity | > **PENDIENTE** (Story Points que el equipo acuerda poder asumir) |
+| Sum of Story Points | 32 (según propuesta de alcance en 5.2.1.3) |
+
+#### 5.2.1.2. Aspect Leaders and Collaborators
+
+| Team Member (Last Name, First Name) | GitHub Username | Contenido & Copy | UI / Estilos (Tailwind) | Arquitectura Angular/DDD | Documentación del Informe |
+|---|---|---|---|---|---|
+| Edson Diego Llamozas Diaz | DiegoLlamozas | | | | |
+
+#### 5.2.1.3. Sprint Backlog 1
+
+Dado que el alcance de AV1 requiere únicamente la primera versión del Landing Page desplegada, el Sprint 1 prioriza las User Stories del Product Backlog (ver Cap. 3.3) directamente relacionadas con el Epic EPAV04 (Plataforma web informativa), ordenadas según su prioridad ya establecida:
+
+> **PENDIENTE:** screenshot del board (Trello/Jira/YouTrack) y URL pública.
+
+| Sprint # | Sprint 1 | | | | | | |
+|---|---|---|---|---|---|---|---|
+| **Story Id** | **Story Title** | **Task Id** | **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| US08 | Visualizar propuesta del servicio | | > PENDIENTE descomposición en tasks | | | | |
+| US38 | Visualizar propuesta de valor | | | | | | |
+| US09 | Visualizar funcionalidades del sistema | | | | | | |
+| US21 | Navegar entre secciones del sitio | | | | | | |
+| US45 | Visualizar beneficios del sistema | | | | | | |
+| US46 | Visualizar equipo de trabajo | | | | | | |
+| US18 | Visualizar estadísticas de impacto | | | | | | |
+| US30 | Visualizar misión y visión | | | | | | |
+| US29 | Visualizar segmentos objetivo | | | | | | |
+| US37 | Visualizar la problemática del transporte | | | | | | |
+
+#### 5.2.1.4. Development Evidence for Sprint Review
+
+> **PENDIENTE:** exportar el historial real de commits (`git log`) del repositorio del Landing Page.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| > PENDIENTE | | | | | |
+
+#### 5.2.1.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 1 se implementó y desplegó la primera versión del Landing Page de Avisum, cubriendo las siguientes vistas:
+
+**Sección Hero y navegación principal**
+
+<img src="imgs/landing-hero.png">
+
+La vista de entrada presenta el navbar con acceso a las secciones "Características", "Cómo Funciona", "Estadística" y "Apoyo" (US21), junto con el mensaje principal de propuesta de valor ("Cortamos la amenaza antes de que suba") y una descripción del servicio orientada a ambos frentes del negocio: verificación de identidad, botón de pánico y seguimiento GPS de flota (US08, US38). Se incluye además un mockup del panel "Central de Operaciones" que anticipa visualmente el panel de monitoreo descrito en el Impact Map (Cap. 3.2).
+
+
+**Sección de estadísticas de impacto**
+
+<img src="imgs/landing-stats.png">
+
+Se presentan tres cifras destacadas (rutas monitoreadas, conductores protegidos, reducción de incidentes reportados), correspondientes a US18. *Pendiente de definición:* dado que Avisum aún no opera comercialmente, el equipo debe decidir si estas cifras se presentan como métricas objetivo/proyectadas (con el rótulo correspondiente) o si se sustituyen por las estadísticas de la problemática ya documentadas en el Cap. 1.2.1 (p. ej. los datos de la PNP y el Ministerio Público), para mantener coherencia y transparencia con el resto del informe.
+
+**Sección "Tres capas de defensa operativa"**
+
+<img src="imgs/landing-features.png">
+
+Se listan las funcionalidades del sistema (US09): Verificación de Identidad, Alerta de Pánico en Tiempo Real, Seguimiento GPS de la Flota, Conteo de Pasajeros, y Alertas Inteligentes. *Nota de consistencia:* "reconocimiento facial" (mencionado en la descripción de Verificación de Identidad) y "Conteo de Pasajeros" no cuentan aún con User Stories propias en el Product Backlog (Cap. 3.1); se recomienda añadirlas o ajustar la copy para que el informe y el producto cuenten la misma historia ante el jurado.
+
+**Sección "Cómo funciona"**
+
+<img src="imgs/landing-how-it-works.png">
+
+Se presenta el flujo operativo en cuatro pasos (inicio de turno verificado, monitoreo constante, alerta inmediata, intervención y coordinación), reforzando la comprensión de la propuesta de valor (US08/US38) mediante una narrativa secuencial del servicio.
+
+**Sección de cierre (CTA) y footer**
+
+<img src="imgs/landing-cta-footer.png">
+
+Incluye un llamado a la acción ("Solicita una auditoría de seguridad para tu flota") orientado al segmento de empresas, con dos botones ("Solicitar Demo", "Hablar con Operaciones"), y el footer con enlaces de navegación repetidos. *Pendiente:* el enunciado exige un call-to-action por cada segmento objetivo, redirigiendo a la vista correspondiente en la Web Application. Actualmente solo existe un CTA orientado a empresas; falta un CTA equivalente para el segmento de conductores (p. ej. "Regístrate como conductor"). Dado que la Web Application se implementa recién en TB1, se puede dejar el enlace apuntando a un ancla temporal o página "próximamente", documentando la limitación.
+
+> **PENDIENTE:** screenshot de un cuadro de video y enlace a Microsoft Stream de la demostración de navegación del prototipo/producto.
