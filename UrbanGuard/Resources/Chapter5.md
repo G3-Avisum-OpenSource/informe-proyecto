@@ -115,3 +115,12 @@ Dado que el alcance de AV1 requiere únicamente la primera versión del Landing 
 | US30 | Visualizar misión y visión | | | | | | |
 | US29 | Visualizar segmentos objetivo | | | | | | |
 | US37 | Visualizar la problemática del transporte | | | | | | |
+
+#### 5.2.1.4. Development Evidence for Sprint Review
+
+> **PENDIENTE:** exportar el historial real de commits (`git log`) del repositorio del Landing Page.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| > PENDIENTE | | | | | |
+
