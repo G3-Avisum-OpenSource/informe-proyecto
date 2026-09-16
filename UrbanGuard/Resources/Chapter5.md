@@ -50,3 +50,22 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 **Conventional Commits:** se aplican los tipos estándar (`feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `chore:`, `test:`), redactados en inglés y en modo imperativo (p. ej. `feat: add hero section with live monitoring widget`).
 
 
+### 5.1.3. Source Code Style Guide & Coding Conventions
+
+- **Angular / TypeScript:** se sigue el [Angular coding style guide](https://angular.io/guide/styleguide) y el [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html). Todo el código (variables, clases, componentes, archivos) se nombra en inglés.
+- **Formateo automático:** Prettier, ejecutado vía `npm run format` sobre `src/**/*.{ts,html,scss}`, garantiza un estilo consistente sin intervención manual.
+- **Nomenclatura de archivos:** kebab-case para archivos (`hero.component.ts`), PascalCase para clases e interfaces (`LandingContentService`), camelCase para métodos y propiedades.
+- **Organización por capas (DDD):** cada feature del Landing Page (por ahora, `landing/`) se organiza en cuatro carpetas:
+
+  ```
+  landing/
+  ├── domain/            Modelos y contratos (LandingContentRepository), sin dependencias externas
+  ├── application/        Casos de uso (LandingContentService)
+  ├── infrastructure/      Implementaciones concretas (InMemoryLandingContentRepository)
+  └── presentation/        Componentes y páginas Angular (navbar, hero, stats-section, etc.)
+  ```
+
+  Esta separación evita que el dominio conozca detalles de Angular o de la fuente de datos concreta, y es consistente con el vocabulario de Bounded Contexts que el equipo usará en el diseño de la Web Application (ver Cap. 4.6).
+
+### 5.1.4. Software Deployment Configuration
+
