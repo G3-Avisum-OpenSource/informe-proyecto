@@ -89,3 +89,9 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 | Sprint 1 Goal | *Propuesta:* "Our focus is on presenting Avisum's value proposition and problem context through a public Landing Page. We believe it delivers a clear first understanding of the service to visitors from both target segments — drivers and transport companies. This will be confirmed when the Landing Page is deployed and visitors can navigate through the problem, solution, and value proposition sections without assistance." |
 | Sprint 1 Velocity | > **PENDIENTE** (Story Points que el equipo acuerda poder asumir) |
 | Sum of Story Points | 32 (según propuesta de alcance en 5.2.1.3) |
+
+#### 5.2.1.2. Aspect Leaders and Collaborators
+
+| Team Member (Last Name, First Name) | GitHub Username | Contenido & Copy | UI / Estilos (Tailwind) | Arquitectura Angular/DDD | Documentación del Informe |
+|---|---|---|---|---|---|
+| Edson Diego Llamozas Diaz | DiegoLlamozas | | | | |
