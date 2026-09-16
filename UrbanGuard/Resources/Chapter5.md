@@ -95,3 +95,23 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 | Team Member (Last Name, First Name) | GitHub Username | Contenido & Copy | UI / Estilos (Tailwind) | Arquitectura Angular/DDD | Documentación del Informe |
 |---|---|---|---|---|---|
 | Edson Diego Llamozas Diaz | DiegoLlamozas | | | | |
+
+#### 5.2.1.3. Sprint Backlog 1
+
+Dado que el alcance de AV1 requiere únicamente la primera versión del Landing Page desplegada, el Sprint 1 prioriza las User Stories del Product Backlog (ver Cap. 3.3) directamente relacionadas con el Epic EPAV04 (Plataforma web informativa), ordenadas según su prioridad ya establecida:
+
+> **PENDIENTE:** screenshot del board (Trello/Jira/YouTrack) y URL pública.
+
+| Sprint # | Sprint 1 | | | | | | |
+|---|---|---|---|---|---|---|---|
+| **Story Id** | **Story Title** | **Task Id** | **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| US08 | Visualizar propuesta del servicio | | > PENDIENTE descomposición en tasks | | | | |
+| US38 | Visualizar propuesta de valor | | | | | | |
+| US09 | Visualizar funcionalidades del sistema | | | | | | |
+| US21 | Navegar entre secciones del sitio | | | | | | |
+| US45 | Visualizar beneficios del sistema | | | | | | |
+| US46 | Visualizar equipo de trabajo | | | | | | |
+| US18 | Visualizar estadísticas de impacto | | | | | | |
+| US30 | Visualizar misión y visión | | | | | | |
+| US29 | Visualizar segmentos objetivo | | | | | | |
+| US37 | Visualizar la problemática del transporte | | | | | | |
