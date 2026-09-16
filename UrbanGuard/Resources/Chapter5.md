@@ -29,3 +29,24 @@ En esta sección se documentan las decisiones y convenciones adoptadas por el eq
 
 Esta decisión se documenta de forma transparente como una desviación deliberada, sujeta a la validación del docente durante la sustentación de AV1.
 
+### 5.1.2. Source Code Management
+
+El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitFlow como workflow de branching.
+
+| Repositorio | URL |
+|---|---|
+| Landing Page (`avisum-landing`) | https://github.com/G3-Avisum-OpenSource/avisum-landing.git |
+
+**Convenciones de branches:**
+
+| Branch | Convención de nombre | Ejemplo |
+|---|---|---|
+| Principal | `main` | `main` |
+| Desarrollo | `develop` | `develop` |
+| Feature |  | |
+| Release |  | |
+| Hotfix |  |  |
+
+**Conventional Commits:** se aplican los tipos estándar (`feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `chore:`, `test:`), redactados en inglés y en modo imperativo (p. ej. `feat: add hero section with live monitoring widget`).
+
+
