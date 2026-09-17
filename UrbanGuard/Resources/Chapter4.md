@@ -174,7 +174,7 @@ Para que las empresas no se sientan perdidas al gestionar decenas de conductores
 
 Los wireframes definen la estructura funcional de las pantallas principales del sistema antes de aplicar estilo visual, permitiendo validar la distribución de información según las tareas identificadas en el User Task Matrix del Capítulo 2.
 
-<img src="imgs/wireframe-conductor-avisum.png">
+<img src="imgs/wireframe-avisum.png">
 
 ### 4.4.2. Web Applications Wireflow Diagrams
 
