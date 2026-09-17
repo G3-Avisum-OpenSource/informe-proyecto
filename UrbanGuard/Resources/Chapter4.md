@@ -88,11 +88,11 @@ Para la aplicación web se usa además un **esquema según audiencia**, dividien
 
 - **Conductor:** El recorrido inicia al verificar su identidad. Su acción principal es iniciar turno y, si ocurre una emergencia, activar el botón de pánico. El flujo termina al finalizar el servicio.
 
-<img src="imgs/flujo-conductor-avisum.png">
+
 
 - **Central de operaciones / Empresa:** El recorrido inicia de forma reactiva, al recibir una alerta. La empresa consulta el panel de control, revisa la unidad y el conductor involucrado, y marca la alerta como resuelta una vez atendida.
 
-<img src="imgs/flujo-empresa-avisum.png">
+
 
 | Nivel | Sección | Propósito dentro de la arquitectura |
 |---|---|---|
@@ -192,11 +192,10 @@ Los wireframes definen la estructura funcional de las pantallas principales del 
 
 ### 4.4.4. Web Applications User Flow Diagrams
 
- **Imagen a insertar (Admin):** Diagrama de flujo del recorrido del administrador desde que recibe una alerta hasta que la resuelve. Guardar como `Resources/img/userflow-admin-avisum.png`.
+<img src="imgs/flujo-empresa-avisum.png">
 
- **Imagen a insertar (Conductor):** Diagrama de flujo del recorrido del conductor desde que verifica su identidad hasta que finaliza su turno. Guardar como `Resources/img/userflow-conductor-avisum.png`.
+<img src="imgs/flujo-conductor-avisum.png">
 
----
 
 ## 4.5. Web Applications Prototyping
 
