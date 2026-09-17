@@ -71,50 +71,51 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
-### 5.2.1. Sprint 1
+#### 5.2.1. Sprint 1
 
-#### 5.2.1.1. Sprint Planning 1
+##### 5.2.1.1. Sprint Planning 1
 
+Para este primer Sprint, el equipo estableció como objetivo principal la implementación y despliegue de la primera versión de la Landing Page del sistema Avisum.
+
+| Campo | Detalle |
+|-------|---------|
 | Sprint # | Sprint 1 |
-|---|---|
-| **Sprint Planning Background** | |
-| Date | > **PENDIENTE** |
-| Time | > **PENDIENTE** |
-| Location | > **PENDIENTE** |
-| Prepared By | > **PENDIENTE** (Team Leader) |
-| Attendees | > **PENDIENTE** |
-| Sprint 0 Review Summary | |
-| Sprint 0 Retrospective Summary |  |
-| **Sprint Goal & User Stories** | |
-| Sprint 1 Goal | *Propuesta:* "Our focus is on presenting Avisum's value proposition and problem context through a public Landing Page. We believe it delivers a clear first understanding of the service to visitors from both target segments — drivers and transport companies. This will be confirmed when the Landing Page is deployed and visitors can navigate through the problem, solution, and value proposition sections without assistance." |
-| Sprint 1 Velocity | > **PENDIENTE** (Story Points que el equipo acuerda poder asumir) |
-| Sum of Story Points | 32 (según propuesta de alcance en 5.2.1.3) |
+| Date | 2026-04-10 |
+| Time | 08:00 PM |
+| Location | Reunión virtual vía Google Meet |
+| Prepared By | Blancas Chavez, Carlos |
+| Attendees | Portal Inga, Waldo Alonso / Diego Llamozas / Blancas Chavez, Carlos / Reyes, Joaquin / Rodrigo Miraval |
+| Sprint N-1 Review Summary | Al ser el primer Sprint del proyecto, no existe un Sprint anterior que revisar. Se inicia desde cero con la implementación del producto. |
+| Sprint N-1 Retrospective Summary | Al ser el primer Sprint, no existe retrospectiva previa. El equipo acordó mantener comunicación constante y respetar los tiempos establecidos. |
+| Sprint 1 Goal | Our focus is on developing and deploying the first version of the Avisum Landing Page, aimed at communicating the value proposition of improving security in public transportation. We believe it delivers a clear understanding of the system's benefits (driver verification, panic button, and passenger monitoring) to potential clients. This will be confirmed when the Landing Page is accessible, includes all key sections, and allows smooth navigation for users. |
+| Sprint N Velocity | 10 |
+| Sum of Story Points | 10 |
 
-#### 5.2.1.2. Aspect Leaders and Collaborators
+##### 5.2.1.2. Aspect Leaders and Collaborators
 
-| Team Member (Last Name, First Name) | GitHub Username | Contenido & Copy | UI / Estilos (Tailwind) | Arquitectura Angular/DDD | Documentación del Informe |
-|---|---|---|---|---|---|
-| Edson Diego Llamozas Diaz | DiegoLlamozas | | | | |
+| Team Member | GitHub Username | Configuración del Repositorio y CI/CD (L/C) | Estructura Base del Landing Page (L/C) | Funcionalidades Interactivas (L/C) | Corrección de Contenido (L/C) |
+|------------|-----------------|---------------------------------------------|----------------------------------------|-----------------------------------|-------------------------------|
+| Portal Inga, Waldo Alonso | apiw-07 | L | C | C | C |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | C | C | C | L |
+| Blancas Chavez, Carlos | CarlosBlancas969 | C | L | L | C |
+| Reyes, Joaquin | JoakoRM | C | C | C | L |
+|  | RodMiraval | C | C | C | L |
 
-#### 5.2.1.3. Sprint Backlog 1
+##### 5.2.1.3. Sprint Backlog 1
 
-Dado que el alcance de AV1 requiere únicamente la primera versión del Landing Page desplegada, el Sprint 1 prioriza las User Stories del Product Backlog (ver Cap. 3.3) directamente relacionadas con el Epic EPAV04 (Plataforma web informativa), ordenadas según su prioridad ya establecida:
-
-> **PENDIENTE:** screenshot del board (Trello/Jira/YouTrack) y URL pública.
+El objetivo principal de este Sprint fue implementar y desplegar la primera versión de la Landing Page del sistema Avisum.
 
 | Sprint # | Sprint 1 | | | | | | |
-|---|---|---|---|---|---|---|---|
-| **Story Id** | **Story Title** | **Task Id** | **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
-| US08 | Visualizar propuesta del servicio | | > PENDIENTE descomposición en tasks | | | | |
-| US38 | Visualizar propuesta de valor | | | | | | |
-| US09 | Visualizar funcionalidades del sistema | | | | | | |
-| US21 | Navegar entre secciones del sitio | | | | | | |
-| US45 | Visualizar beneficios del sistema | | | | | | |
-| US46 | Visualizar equipo de trabajo | | | | | | |
-| US18 | Visualizar estadísticas de impacto | | | | | | |
-| US30 | Visualizar misión y visión | | | | | | |
-| US29 | Visualizar segmentos objetivo | | | | | | |
-| US37 | Visualizar la problemática del transporte | | | | | | |
+|----------|----------|-|-|-|-|-|-|
+| **User Story** | | **Work-item / Task** | | | | | |
+| Id | Title | Id | Title | Description | Estimation | Assigned To | Status |
+| US-08 | Visualizar información del servicio | T-01 | Configuración inicial del repositorio | Crear repositorio en GitHub, inicializar proyecto con HTML/CSS/JS y configurar archivos base (.gitignore, README). | 2 | Waldo Portal | Done |
+| US-08 | Visualizar información del servicio | T-02 | Configurar despliegue | Configurar Vercel para publicar la Landing Page. | 3 | Carlos Blancas | Done |
+| US-08 | Visualizar información del servicio | T-03 | Desarrollo estructura base | Implementar secciones principales: hero, problemática, propuesta, beneficios y footer. | 4 | Carlos Blancas | Done |
+| US-08 | Visualizar información del servicio | T-04 | Implementar funcionalidades del sistema | Mostrar funcionalidades clave: QR, botón de pánico y conteo de pasajeros. | 3 | Carlos Blancas | Done |
+| US-08 | Visualizar información del servicio | T-05 | Implementar navegación | Permitir navegación entre secciones (scroll y menú). | 2 | Joaquin Reyes | Done |
+| US-08 | Visualizar información del servicio | T-06 | Integración de contenido | Redactar contenido basado en problemática y solución Avisum. | 2 | Llamozas Diaz, Edson Diego | Done |
+| US-08 | Visualizar información del servicio | T-07 | Revisión y validación | Corrección de errores, ortografía y pruebas de navegación. | 2 | [RodMiraval] | Done |
 
 #### 5.2.1.4. Development Evidence for Sprint Review
 
