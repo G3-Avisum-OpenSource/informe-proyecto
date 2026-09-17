@@ -248,20 +248,17 @@ Avisum es una plataforma orientada a mejorar la seguridad del transporte públic
 <img src="imgs/eventstorming-alert-avisum.png">
 
 
-
- **Imágenes a insertar:** Capturas del tablero de Event Storming a nivel de diseño (Miro/FigJam), una por cada bounded context: **Autenticación de conductores**, **Monitoreo de flota**, **Gestión de alertas**. Guardar como `Resources/img/eventstorming-auth-avisum.png`, `eventstorming-monitoreo-avisum.png`, `eventstorming-alertas-avisum.png`.
-
 ### 4.6.2. Software Architecture Context Diagram
 
- **Imagen a insertar:** Diagrama de contexto (nivel C4 - System Context) mostrando Avisum como sistema central, y sus actores externos (Conductor, Empresa, Central de Operaciones). Guardar como `Resources/img/context-diagram-avisum.png`.
+<img src="Resources/img/context-diagram-avisum.png">
 
 ### 4.6.3. Software Architecture Container Diagrams
-
- **Imagen a insertar:** Diagrama de contenedores (nivel C4 - Container) mostrando el frontend web, el backend API REST y la base de datos. Guardar como `Resources/img/container-diagram-avisum.png`.
+<img src="Resources/img/container-diagram-avisum.png">
 
 ### 4.6.4. Software Architecture Components Diagrams
 
- **Imagen a insertar:** Diagrama de componentes mostrando los bounded contexts del backend (Autenticación, Monitoreo, Alertas) y sus relaciones internas. Guardar como `Resources/img/components-diagram-avisum.png`.
+<img src="Resources/img/components-diagram1-avisum.png">
+<img src="Resources/img/components-diagram2-avisum.png">
 
 ---
 
