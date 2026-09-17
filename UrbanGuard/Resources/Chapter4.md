@@ -90,11 +90,11 @@ Para la aplicación web se usa además un **esquema según audiencia**, dividien
 
 - **Conductor:** El recorrido inicia al verificar su identidad. Su acción principal es iniciar turno y, si ocurre una emergencia, activar el botón de pánico. El flujo termina al finalizar el servicio.
 
- **Imagen a insertar:** Diagrama de flujo simple en Figma/draw.io con la secuencia: `Verificar identidad → Iniciar turno → Ver mapa/ruta → (Activar pánico si aplica) → Finalizar servicio`. Guardar como `Resources/img/flujo-conductor-avisum.png`.
+<img src="imgs/flujo-conductor-avisum.png">
 
 - **Central de operaciones / Empresa:** El recorrido inicia de forma reactiva, al recibir una alerta. La empresa consulta el panel de control, revisa la unidad y el conductor involucrado, y marca la alerta como resuelta una vez atendida.
 
- **Imagen a insertar:** Diagrama de flujo con la secuencia: `Recibe alerta → Ingresa al panel → Revisa detalle (conductor, unidad, ubicación) → Atiende → Marca como resuelta`. Guardar como `Resources/img/flujo-empresa-avisum.png`.
+<img src="imgs/flujo-empresa-avisum.png">
 
 | Nivel | Sección | Propósito dentro de la arquitectura |
 |---|---|---|
