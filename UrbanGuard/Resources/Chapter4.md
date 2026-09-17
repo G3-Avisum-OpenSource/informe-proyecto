@@ -250,15 +250,14 @@ Avisum es una plataforma orientada a mejorar la seguridad del transporte públic
 
 ### 4.6.2. Software Architecture Context Diagram
 
-<img src="Resources/img/context-diagram-avisum.png">
+<img src="UrbanGuard/Resources/imgs/context-diagram-avisum.png">
 
 ### 4.6.3. Software Architecture Container Diagrams
-<img src="Resources/img/container-diagram-avisum.png">
-
+<img src="UrbanGuard/Resources/imgs/container-diagram-avisum.png">
 ### 4.6.4. Software Architecture Components Diagrams
 
-<img src="Resources/img/components-diagram1-avisum.png">
-<img src="Resources/img/components-diagram2-avisum.png">
+<img src="UrbanGuard/Resources/imgs/components-diagram1-avisum.png">
+<img src="UrbanGuard/Resources/imgs/components-diagram2-avisum.png">
 
 ---
 
