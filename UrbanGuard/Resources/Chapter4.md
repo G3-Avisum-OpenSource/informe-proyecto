@@ -46,8 +46,6 @@ El diseño se organiza mediante espacios consistentes en múltiplos de 2px, y es
 - **Grid:** Márgenes de 24px para mantener armonía visual entre secciones.
 - **Breakpoints:** Ancho de referencia de 1440px para escritorio.
 
- **Imagen a insertar:** Diagrama simple en Figma mostrando el sistema de espaciado (ej. una tarjeta con las medidas de padding marcadas). Guardar como `Resources/img/spacing-avisum.png`.
-
 **Componentes visuales**
 
 - **Botones:** Verde neón para acciones principales, rojo para acciones críticas (pánico, resolver alerta), gris para acciones secundarias.
@@ -183,8 +181,14 @@ Los wireframes definen la estructura funcional de las pantallas principales del 
 <img src="imgs/wireflow-avisum.png">
 
 ### 4.4.3. Web Applications Mock-ups
+<img src="imgs/mockup-acceso-conductor.png">
 
- **Imágenes a insertar:** Mock-ups finales con color de: (1) pantalla de verificación/acceso del conductor, (2) pantalla de inicio/dashboard del conductor, (3) mapa en tiempo real, (4) panel de control del administrador. Guardar como `Resources/img/mockup-acceso-conductor.png`, `mockup-dashboard-conductor.png`, `mockup-mapa-avisum.png`, `mockup-panel-admin.png`.
+<img src="imgs/mockup-dashboard-conductor.png">
+
+<img src="imgs/mockup-mapa-avisum.png">
+
+<img src="imgs/mockup-panel-admin.png">
+
 
 ### 4.4.4. Web Applications User Flow Diagrams
 
