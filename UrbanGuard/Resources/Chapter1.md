@@ -21,13 +21,13 @@ Concretamente, la plataforma resuelve tres necesidades simultáneas dentro del e
 ### 1.1.2. Perfiles de integrantes del equipo
 
 
-|                     Foto de perfil                      | Nombre Completo                      | Carrera                | Habilidades                                                                                                         |
-| :-----------------------------------------------------: | :----------------------------------- | :--------------------- | :------------------------------------------------------------------------------------------------------------------ |
-| !  |    | Ingenieria de Software |                                                                        |
-|     !     | Reyes Muñoz, Joaquin Leonardo | Ingenieria de Software |  C++, Java, MySQL,PostgreSQL,MongoDB, Python, C#                      |
-| !<img src="imgs/carlos-blancas.jpg"> | Blancas Chávez, Carlos Franco      | Ingenieria de Software | Typscript, React,Vue, Java, MySQL,PostgreSQL,MongoDB, Python, C#                                                               |
-| ! |                      | Ingenieria de Software |  |
-|  !  |  | Ingenieria de Software |                    
+|            Foto de perfil            | Nombre Completo               | Carrera                | Habilidades                                                      |
+|:------------------------------------:|:------------------------------| :--------------------- |:-----------------------------------------------------------------|
+| <img src="imgs/Diego-Llamozas.jpg">  | Edson Diego Llamozas Diaz     | Ingenieria de Software | Javascript, Python, Assembly 6802, Vuejs, Typescript, C++        |
+|                  !                   | Reyes Muñoz, Joaquin Leonardo | Ingenieria de Software | C++, Java, MySQL,PostgreSQL,MongoDB, Python, C#                  |
+| !<img src="imgs/carlos-blancas.jpg"> | Blancas Chávez, Carlos Franco | Ingenieria de Software | Typscript, React,Vue, Java, MySQL,PostgreSQL,MongoDB, Python, C# |
+|                  !                   |                               | Ingenieria de Software |                                                                  |
+|                  !                   |                               | Ingenieria de Software |                    
 ---
 
 
