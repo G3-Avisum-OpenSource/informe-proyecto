@@ -67,7 +67,6 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 
   Esta separación evita que el dominio conozca detalles de Angular o de la fuente de datos concreta, y es consistente con el vocabulario de Bounded Contexts que el equipo usará en el diseño de la Web Application (ver Cap. 4.6).
 
-### 5.1.4. Software Deployment Configuration
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
