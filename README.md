@@ -143,7 +143,15 @@ En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC
 
 ---
 
+## Student Outcome
 
+En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC 3:
+> *"Demonstrates an ability to communicate effectively with a range of audiences"*
+
+| Criterio Específico | Evidencias por entrega | Conclusiones |
+|---------------------|-------------------------|--------------|
+| **3.c1. Comunica oralmente con efectividad a diferentes rangos de audiencia** | **TB1**<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 2.<br>• Portal Inga, Waldo Alonso: Execution Evidence. | A través de la TB1, el equipo fortaleció su capacidad para comunicar oralmente los avances y resultados del proyecto, participando en la presentación de las evidencias y explicando de manera clara los aportes realizados durante el desarrollo del proyecto. |
+| **3.c2. Comunica por escrito con efectividad a diferentes rangos de audiencia** | **TB1**<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 2.<br>• Portal Inga, Waldo Alonso: Execution Evidence. | En la TB1, el equipo desarrolló y organizó la documentación correspondiente a los diferentes artefactos del proyecto, permitiendo comunicar de manera clara y estructurada los avances, actividades y resultados obtenidos durante el desarrollo. |
 
 
 
