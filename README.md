@@ -133,16 +133,6 @@ Proyecto
 
 ---
 
-# Student Outcome
-
-En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC 3: "Demonstrates an ability to communicate effectively with a range of audiences". En el siguiente cuadro se describen las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro de ABET-EAC-Student Outcome 3.
-
-| Criterio Específico | Acciones realizadas | Conclusiones |
-|:---:|:---:|:---:|
-| 3.c.1. Comunica oralmente con efectividad a diferentes rangos de audiencia | **Llamozas Diaz, Edson Diego:** </br>AV1: *(completar)* </br> **Reyes Muñoz, Joaquin Leonardo:** </br>AV1: *(completar)* </br> **Blancas Chavez, Carlos Franco:** </br>AV1: *(completar)* </br> **Portal Inga, Waldo Alonso:** </br>AV1: *(completar)* | **AV1:** *(completar al finalizar la entrega)* |
-
----
-
 ## Student Outcome
 
 En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC 3:
@@ -150,8 +140,8 @@ En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC
 
 | Criterio Específico | Evidencias por entrega | Conclusiones |
 |---------------------|-------------------------|--------------|
-| **3.c1. Comunica oralmente con efectividad a diferentes rangos de audiencia** | **TB1**<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 2.<br>• Portal Inga, Waldo Alonso: Execution Evidence. | A través de la TB1, el equipo fortaleció su capacidad para comunicar oralmente los avances y resultados del proyecto, participando en la presentación de las evidencias y explicando de manera clara los aportes realizados durante el desarrollo del proyecto. |
-| **3.c2. Comunica por escrito con efectividad a diferentes rangos de audiencia** | **TB1**<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 2.<br>• Portal Inga, Waldo Alonso: Execution Evidence. | En la TB1, el equipo desarrolló y organizó la documentación correspondiente a los diferentes artefactos del proyecto, permitiendo comunicar de manera clara y estructurada los avances, actividades y resultados obtenidos durante el desarrollo. |
+| **3.c1. Comunica oralmente con efectividad a diferentes rangos de audiencia** | **AV1**<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 2.<br>• Portal Inga, Waldo Alonso: Execution Evidence. | A través de la AV1, el equipo fortaleció su capacidad para comunicar oralmente los avances y resultados del proyecto, participando en la presentación de las evidencias y explicando de manera clara los aportes realizados durante el desarrollo del proyecto. |
+| **3.c2. Comunica por escrito con efectividad a diferentes rangos de audiencia** | **AV1**<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 2.<br>• Portal Inga, Waldo Alonso: Execution Evidence. | En la TB1, el equipo desarrolló y organizó la documentación correspondiente a los diferentes artefactos del proyecto, permitiendo comunicar de manera clara y estructurada los avances, actividades y resultados obtenidos durante el desarrollo. |
 
 
 
