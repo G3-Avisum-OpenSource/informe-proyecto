@@ -21,7 +21,7 @@ Buscamos que el usuario perciba el sistema como:
 
 (( **Color Palette** ))
 
-(( **Imagen a insertar:** Captura o diseño en Figma con 3 muestras de color en formato círculo/swatch, igual al ejemplo de referencia — cada una con su nombre y código hexadecimal debajo. Guardar como `Resources/img/paleta-colores-avisum.png`. ))
+<img src="imgs/paleta-colores-avisum.png">
 
 - **Negro (#000000):** Base de toda la interfaz. Aporta seriedad y genera un entorno visual libre de distracciones, reforzando la percepción de vigilancia constante.
 - **Verde neón (#C3F400):** Color principal de acento, usado en botones, indicadores de estado activo y títulos. Se asocia a monitoreo digital y confirmación de que "todo está en orden". Como color secundario de contraste se usa un verde oscuro (#596D0B).
@@ -37,7 +37,7 @@ Usamos **Space Grotesk** para títulos y **Inter** para texto de lectura, porque
 | Subtítulos | Space Grotesk Bold | 48-60px |
 | Párrafos | Inter Light/Bold | 12-24px |
 
-(( **Imagen a insertar:** Captura de la jerarquía tipográfica en Figma, mostrando una muestra de cada tamaño con su etiqueta. Guardar como `Resources/img/tipografia-avisum.png`. ))
+<img src="imgs/tipografia-avisum.png">
 
 **Spacing y Layout**
 
@@ -46,15 +46,13 @@ El diseño se organiza mediante espacios consistentes en múltiplos de 2px, y es
 - **Grid:** Márgenes de 24px para mantener armonía visual entre secciones.
 - **Breakpoints:** Ancho de referencia de 1440px para escritorio.
 
- **Imagen a insertar:** Diagrama simple en Figma mostrando el sistema de espaciado (ej. una tarjeta con las medidas de padding marcadas). Guardar como `Resources/img/spacing-avisum.png`.
-
 **Componentes visuales**
 
 - **Botones:** Verde neón para acciones principales, rojo para acciones críticas (pánico, resolver alerta), gris para acciones secundarias.
 - **Cards:** Contenedores oscuros con borde sutil, usados para mostrar unidades, alertas y conductores de forma organizada.
 - **Iconografía:** Estilo lineal simple, de fácil reconocimiento incluso a tamaños pequeños.
 
- **Imagen a insertar:** Captura de Figma mostrando los 3 estilos de botones lado a lado (principal, crítico, secundario). Guardar como `Resources/img/botones-avisum.png`.
+<img src="imgs/botones-avisum.png">
 
 **Responsive Design Standards (Mobile-first)**
 
@@ -74,7 +72,7 @@ El tono de Avisum es serio, directo y profesional — evitamos lenguaje informal
 
 ### 4.1.2. Web Style Guidelines
 
- **Imagen a insertar:** Captura de Figma mostrando el navbar y los estados de los botones (normal, hover, activo) del entorno web. Guardar como `Resources/img/navbar-botones-avisum.png`.
+<img src="imgs/navbar-botones-avisum.png">
 
 ---
 
@@ -90,11 +88,11 @@ Para la aplicación web se usa además un **esquema según audiencia**, dividien
 
 - **Conductor:** El recorrido inicia al verificar su identidad. Su acción principal es iniciar turno y, si ocurre una emergencia, activar el botón de pánico. El flujo termina al finalizar el servicio.
 
- **Imagen a insertar:** Diagrama de flujo simple en Figma/draw.io con la secuencia: `Verificar identidad → Iniciar turno → Ver mapa/ruta → (Activar pánico si aplica) → Finalizar servicio`. Guardar como `Resources/img/flujo-conductor-avisum.png`.
+
 
 - **Central de operaciones / Empresa:** El recorrido inicia de forma reactiva, al recibir una alerta. La empresa consulta el panel de control, revisa la unidad y el conductor involucrado, y marca la alerta como resuelta una vez atendida.
 
- **Imagen a insertar:** Diagrama de flujo con la secuencia: `Recibe alerta → Ingresa al panel → Revisa detalle (conductor, unidad, ubicación) → Atiende → Marca como resuelta`. Guardar como `Resources/img/flujo-empresa-avisum.png`.
+
 
 | Nivel | Sección | Propósito dentro de la arquitectura |
 |---|---|---|
@@ -162,11 +160,11 @@ Para que las empresas no se sientan perdidas al gestionar decenas de conductores
 
 ### 4.3.1. Landing Page Wireframe
 
- **Imágenes a insertar:** 2-3 capturas de Figma mostrando el wireframe (en escala de grises, sin color final) de la Landing Page completa, dividida en bloques por sección (Hero, Problema, Funcionalidades, etc.). Guardar como `Resources/img/wireframe-landing-1.png`, `wireframe-landing-2.png`, `wireframe-landing-3.png`.
+<img src="imgs/wireframe-landing.png">
 
 ### 4.3.2. Landing Page Mock-up
 
- **Imagen a insertar:** Captura del mock-up final con color, de la Landing Page completa (o un scroll largo). Guardar como `Resources/img/mockup-landing-avisum.png`.
+ <img src="imgs/mockup-landing-avisum.png">
 
 ---
 
@@ -176,25 +174,28 @@ Para que las empresas no se sientan perdidas al gestionar decenas de conductores
 
 Los wireframes definen la estructura funcional de las pantallas principales del sistema antes de aplicar estilo visual, permitiendo validar la distribución de información según las tareas identificadas en el User Task Matrix del Capítulo 2.
 
- **Imagen a insertar:** Wireframe de las pantallas principales del conductor (login/verificación, dashboard, mapa, pánico). Guardar como `Resources/img/wireframe-conductor-avisum.png`.
-
- **Imagen a insertar:** Wireframe de las pantallas principales de administración (panel de control, gestión de conductores, alertas). Guardar como `Resources/img/wireframe-admin-avisum.png`.
+<img src="imgs/wireframe-avisum.png">
 
 ### 4.4.2. Web Applications Wireflow Diagrams
 
- **Imagen a insertar:** Diagrama de wireflow conectando las pantallas anteriores con flechas de navegación, mostrando cómo el usuario se mueve entre ellas. Guardar como `Resources/img/wireflow-avisum.png`.
+<img src="imgs/wireflow-avisum.png">
 
 ### 4.4.3. Web Applications Mock-ups
+<img src="imgs/mockup-acceso-conductor.png">
 
- **Imágenes a insertar:** Mock-ups finales con color de: (1) pantalla de verificación/acceso del conductor, (2) pantalla de inicio/dashboard del conductor, (3) mapa en tiempo real, (4) panel de control del administrador. Guardar como `Resources/img/mockup-acceso-conductor.png`, `mockup-dashboard-conductor.png`, `mockup-mapa-avisum.png`, `mockup-panel-admin.png`.
+<img src="imgs/mockup-dashboard-conductor.png">
+
+<img src="imgs/mockup-mapa-avisum.png">
+
+<img src="imgs/mockup-panel-admin.png">
+
 
 ### 4.4.4. Web Applications User Flow Diagrams
 
- **Imagen a insertar (Admin):** Diagrama de flujo del recorrido del administrador desde que recibe una alerta hasta que la resuelve. Guardar como `Resources/img/userflow-admin-avisum.png`.
+<img src="imgs/flujo-empresa-avisum.png">
 
- **Imagen a insertar (Conductor):** Diagrama de flujo del recorrido del conductor desde que verifica su identidad hasta que finaliza su turno. Guardar como `Resources/img/userflow-conductor-avisum.png`.
+<img src="imgs/flujo-conductor-avisum.png">
 
----
 
 ## 4.5. Web Applications Prototyping
 
@@ -212,21 +213,21 @@ El prototipo interactivo de Avisum simula la navegación y los flujos principale
 
 **Accesibilidad y objetivos táctiles:** Todos los elementos interactivos tienen mínimo 48×48px, relevante porque el conductor interactúa con la app mientras maneja. El botón de pánico usa dimensiones ampliadas y alto contraste para garantizar su activación bajo estrés.
 
- **Imagen a insertar:** Captura general del prototipo de Figma mostrando varios frames conectados con las líneas de prototipado visibles. Guardar como `Resources/img/prototipo-general-avisum.png`.
+<img src="imgs/prototipo-general-avisum.png">
 
 ### Flujos de interacción cubiertos por el prototipo
 
 **Flujo 1 — Verificación e inicio de servicio del conductor**
 
- **Imagen a insertar:** Captura del flujo interactivo desde la verificación de identidad hasta la pantalla de servicio activo. Guardar como `Resources/img/flujo-verificacion-avisum.png`.
+<img src="imgs/flujo-verificacion-avisum.png">
 
 **Flujo 2 — Activación y gestión de alertas de emergencia**
 
- **Imagen a insertar:** Captura del flujo desde la activación del botón de pánico hasta la recepción y resolución de la alerta en el panel de la central. Guardar como `Resources/img/flujo-alerta-avisum.png`.
+ <img src="imgs/flujo-alerta-avisum.png">
 
 **Flujo 3 — Monitoreo de flota por la empresa administradora**
 
- **Imagen a insertar:** Captura del flujo del dashboard con el estado en tiempo real de todas las unidades activas. Guardar como `Resources/img/flujo-monitoreo-avisum.png`.
+  <img src="imgs/flujo-monitoreo-avisum.png">
 
 ---
 
@@ -236,19 +237,29 @@ El prototipo interactivo de Avisum simula la navegación y los flujos principale
 
 Avisum es una plataforma orientada a mejorar la seguridad del transporte público mediante monitoreo en tiempo real, verificación de identidad y respuesta inmediata ante emergencias entre conductores, empresas y central de operaciones.
 
- **Imágenes a insertar:** Capturas del tablero de Event Storming a nivel de diseño (Miro/FigJam), una por cada bounded context: **Autenticación de conductores**, **Monitoreo de flota**, **Gestión de alertas**. Guardar como `Resources/img/eventstorming-auth-avisum.png`, `eventstorming-monitoreo-avisum.png`, `eventstorming-alertas-avisum.png`.
+<img src="imgs/eventstorming-iam-avisum.png">
+
+<img src="imgs/eventstorming-user-avisum.png">
+
+<img src="imgs/eventstorming-iot-avisum.png">
+
+<img src="imgs/eventstorming-monitoreo-avisum.png">
+
+<img src="imgs/eventstorming-alert-avisum.png">
+
 
 ### 4.6.2. Software Architecture Context Diagram
 
- **Imagen a insertar:** Diagrama de contexto (nivel C4 - System Context) mostrando Avisum como sistema central, y sus actores externos (Conductor, Empresa, Central de Operaciones). Guardar como `Resources/img/context-diagram-avisum.png`.
+<img src="imgs/context-diagram-avisum.png">
 
 ### 4.6.3. Software Architecture Container Diagrams
 
- **Imagen a insertar:** Diagrama de contenedores (nivel C4 - Container) mostrando el frontend web, el backend API REST y la base de datos. Guardar como `Resources/img/container-diagram-avisum.png`.
+<img src="imgs/container-diagram-avisum.png">
 
 ### 4.6.4. Software Architecture Components Diagrams
 
- **Imagen a insertar:** Diagrama de componentes mostrando los bounded contexts del backend (Autenticación, Monitoreo, Alertas) y sus relaciones internas. Guardar como `Resources/img/components-diagram-avisum.png`.
+<img src="imgs/components-diagram1-avisum.png">
+<img src="imgs/components-diagram2-avisum.png">
 
 ---
 

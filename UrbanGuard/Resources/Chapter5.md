@@ -67,62 +67,64 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 
   Esta separación evita que el dominio conozca detalles de Angular o de la fuente de datos concreta, y es consistente con el vocabulario de Bounded Contexts que el equipo usará en el diseño de la Web Application (ver Cap. 4.6).
 
-### 5.1.4. Software Deployment Configuration
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
-### 5.2.1. Sprint 1
+#### 5.2.1. Sprint 1
 
-#### 5.2.1.1. Sprint Planning 1
+##### 5.2.1.1. Sprint Planning 1
 
+Para este primer Sprint, el equipo estableció como objetivo principal la implementación y despliegue de la primera versión de la Landing Page del sistema Avisum.
+
+| Campo | Detalle |
+|-------|---------|
 | Sprint # | Sprint 1 |
-|---|---|
-| **Sprint Planning Background** | |
-| Date | > **PENDIENTE** |
-| Time | > **PENDIENTE** |
-| Location | > **PENDIENTE** |
-| Prepared By | > **PENDIENTE** (Team Leader) |
-| Attendees | > **PENDIENTE** |
-| Sprint 0 Review Summary | |
-| Sprint 0 Retrospective Summary |  |
-| **Sprint Goal & User Stories** | |
-| Sprint 1 Goal | *Propuesta:* "Our focus is on presenting Avisum's value proposition and problem context through a public Landing Page. We believe it delivers a clear first understanding of the service to visitors from both target segments — drivers and transport companies. This will be confirmed when the Landing Page is deployed and visitors can navigate through the problem, solution, and value proposition sections without assistance." |
-| Sprint 1 Velocity | > **PENDIENTE** (Story Points que el equipo acuerda poder asumir) |
-| Sum of Story Points | 32 (según propuesta de alcance en 5.2.1.3) |
+| Date | 2026-04-10 |
+| Time | 08:00 PM |
+| Location | Reunión virtual vía Google Meet |
+| Prepared By | Blancas Chavez, Carlos |
+| Attendees | Portal Inga, Waldo Alonso / Diego Llamozas / Blancas Chavez, Carlos / Reyes, Joaquin / Rodrigo Miraval |
+| Sprint N-1 Review Summary | Al ser el primer Sprint del proyecto, no existe un Sprint anterior que revisar. Se inicia desde cero con la implementación del producto. |
+| Sprint N-1 Retrospective Summary | Al ser el primer Sprint, no existe retrospectiva previa. El equipo acordó mantener comunicación constante y respetar los tiempos establecidos. |
+| Sprint 1 Goal | Our focus is on developing and deploying the first version of the Avisum Landing Page, aimed at communicating the value proposition of improving security in public transportation. We believe it delivers a clear understanding of the system's benefits (driver verification, panic button, and passenger monitoring) to potential clients. This will be confirmed when the Landing Page is accessible, includes all key sections, and allows smooth navigation for users. |
+| Sprint N Velocity | 10 |
+| Sum of Story Points | 10 |
 
-#### 5.2.1.2. Aspect Leaders and Collaborators
+##### 5.2.1.2. Aspect Leaders and Collaborators
 
-| Team Member (Last Name, First Name) | GitHub Username | Contenido & Copy | UI / Estilos (Tailwind) | Arquitectura Angular/DDD | Documentación del Informe |
-|---|---|---|---|---|---|
-| Edson Diego Llamozas Diaz | DiegoLlamozas | | | | |
+| Team Member | GitHub Username | Configuración del Repositorio y CI/CD (L/C) | Estructura Base del Landing Page (L/C) | Funcionalidades Interactivas (L/C) | Corrección de Contenido (L/C) |
+|------------|-----------------|---------------------------------------------|----------------------------------------|-----------------------------------|-------------------------------|
+| Portal Inga, Waldo Alonso | apiw-07 | L | C | C | C |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | C | C | C | L |
+| Blancas Chavez, Carlos | CarlosBlancas969 | C | L | L | C |
+| Reyes, Joaquin | JoakoRM | C | C | C | L |
+|  | RodMiraval | C | C | C | L |
 
-#### 5.2.1.3. Sprint Backlog 1
+##### 5.2.1.3. Sprint Backlog 1
 
-Dado que el alcance de AV1 requiere únicamente la primera versión del Landing Page desplegada, el Sprint 1 prioriza las User Stories del Product Backlog (ver Cap. 3.3) directamente relacionadas con el Epic EPAV04 (Plataforma web informativa), ordenadas según su prioridad ya establecida:
-
-> **PENDIENTE:** screenshot del board (Trello/Jira/YouTrack) y URL pública.
+El objetivo principal de este Sprint fue implementar y desplegar la primera versión de la Landing Page del sistema Avisum.
 
 | Sprint # | Sprint 1 | | | | | | |
-|---|---|---|---|---|---|---|---|
-| **Story Id** | **Story Title** | **Task Id** | **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
-| US08 | Visualizar propuesta del servicio | | > PENDIENTE descomposición en tasks | | | | |
-| US38 | Visualizar propuesta de valor | | | | | | |
-| US09 | Visualizar funcionalidades del sistema | | | | | | |
-| US21 | Navegar entre secciones del sitio | | | | | | |
-| US45 | Visualizar beneficios del sistema | | | | | | |
-| US46 | Visualizar equipo de trabajo | | | | | | |
-| US18 | Visualizar estadísticas de impacto | | | | | | |
-| US30 | Visualizar misión y visión | | | | | | |
-| US29 | Visualizar segmentos objetivo | | | | | | |
-| US37 | Visualizar la problemática del transporte | | | | | | |
+|----------|----------|-|-|-|-|-|-|
+| **User Story** | | **Work-item / Task** | | | | | |
+| Id | Title | Id | Title | Description | Estimation | Assigned To | Status |
+| US-08 | Visualizar información del servicio | T-01 | Configuración inicial del repositorio | Crear repositorio en GitHub, inicializar proyecto con HTML/CSS/JS y configurar archivos base (.gitignore, README). | 2 | Waldo Portal | Done |
+| US-08 | Visualizar información del servicio | T-02 | Configurar despliegue | Configurar Vercel para publicar la Landing Page. | 3 | Carlos Blancas | Done |
+| US-08 | Visualizar información del servicio | T-03 | Desarrollo estructura base | Implementar secciones principales: hero, problemática, propuesta, beneficios y footer. | 4 | Carlos Blancas | Done |
+| US-08 | Visualizar información del servicio | T-04 | Implementar funcionalidades del sistema | Mostrar funcionalidades clave: QR, botón de pánico y conteo de pasajeros. | 3 | Carlos Blancas | Done |
+| US-08 | Visualizar información del servicio | T-05 | Implementar navegación | Permitir navegación entre secciones (scroll y menú). | 2 | Joaquin Reyes | Done |
+| US-08 | Visualizar información del servicio | T-06 | Integración de contenido | Redactar contenido basado en problemática y solución Avisum. | 2 | Llamozas Diaz, Edson Diego | Done |
+| US-08 | Visualizar información del servicio | T-07 | Revisión y validación | Corrección de errores, ortografía y pruebas de navegación. | 2 | [RodMiraval] | Done |
 
 #### 5.2.1.4. Development Evidence for Sprint Review
 
-> **PENDIENTE:** exportar el historial real de commits (`git log`) del repositorio del Landing Page.
+Esta sección detalla los pasos necesarios para desplegar de forma satisfactoria los productos digitales que componen la solución:
 
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
-|---|---|---|---|---|---|
-| > PENDIENTE | | | | | |
+**1\. Landing Page \- HTML, CSS y TypeScript**
+
+Para que nuestra landing page esté disponible para todos nuestros usuarios, la publicamos como un sitio web utilizando la plataforma de GitHub. El proceso se llevó a cabo de la siguiente manera:
+
+Registro en GitHub Creamos una cuenta en GitHub para poder gestionar los repositorios del proyecto y almacenar el código de la Landing Page de Avisum
 
 #### 5.2.1.5. Execution Evidence for Sprint Review
 
@@ -159,4 +161,49 @@ Se presenta el flujo operativo en cuatro pasos (inicio de turno verificado, moni
 
 Incluye un llamado a la acción ("Solicita una auditoría de seguridad para tu flota") orientado al segmento de empresas, con dos botones ("Solicitar Demo", "Hablar con Operaciones"), y el footer con enlaces de navegación repetidos. *Pendiente:* el enunciado exige un call-to-action por cada segmento objetivo, redirigiendo a la vista correspondiente en la Web Application. Actualmente solo existe un CTA orientado a empresas; falta un CTA equivalente para el segmento de conductores (p. ej. "Regístrate como conductor"). Dado que la Web Application se implementa recién en TB1, se puede dejar el enlace apuntando a un ancla temporal o página "próximamente", documentando la limitación.
 
-> **PENDIENTE:** screenshot de un cuadro de video y enlace a Microsoft Stream de la demostración de navegación del prototipo/producto.
+##### 5.2.1.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 1, el alcance de implementación se limitó exclusivamente al Landing Page estático. No se desarrollaron ni desplegaron Web Services (RESTful API) en esta iteración, por lo que no aplicadocumentación de endpoints para este Sprint. La documentación de servicios web se incorporará a partir del Sprint 2, conforme a lo planificado en el Product Backlog.
+
+##### 5.2.1.7. Software Deployment Evidence for Sprint Review
+
+Las principales funcionalidades implementadas durante este sprint abarcan desde la estructura básica de navegación hasta características avanzadas de experiencia de usuario. Se estableció una arquitectura sólida que incluye la implementación de componentes reutilizables, un sistema de enrutamiento eficiente, y la integración de estilos globales que reflejan la identidad visual de SafeBus definida previamente en las guías de estilo.
+El trabajo de desarrollo se organizó siguiendo las mejores prácticas de versionado con Git Flow, donde cada funcionalidad fue desarrollada en ramas específicas y posteriormente integrada a través de pull requests debidamente revisados. Esto garantizó la calidad del código y la colaboración efectiva entre los miembros del equipo de UrbanGuard, cada uno especializado en diferentes aspectos del desarrollo front-end.
+Adicionalmente, se implementaron mejoras significativas en diseño responsive para asegurar una experiencia óptima en diferentes dispositivos, optimizaciones de rendimiento para cargas rápidas de página, y consideraciones de accesibilidad web siguiendo estándares WCAG para garantizar que la plataforma sea inclusiva para todos los operadores de transporte, conductores y usuarios potenciales de SafeBus.
+
+1. Primera funcionalidad: Sección Hero con título principal, estadísticas de impacto (340+ Rutas monitoreadas en Lima y Callao, +1000 conductores protegidos, 68% Reduccion de incidentes reportados) y llamada a la acción.
+2. Segunda funcionalidad: Sección de características con las 6 funcionalidades del sistema (Verificación QR, Botón de Pánico, Conteo de Pasajeros, Monitoreo Real, Alertas Inteligentes, Soporte 24/7).
+3. Tercera funcionalidad: Sección ¿Cómo funciona SafeBus? con los 4 pasos del flujo operativo (Inicio de Turno, Monitoreo Constante, Alerta Inmediata, Intervención).
+Otras mejoras: Banda de estadísticas, sección CTA de auditoría de seguridad, footer con información de UrbanGuard, ajustes de diseño responsive y optimización de rendimiento.
+Durante el Sprint 1 se realizó el despliegue de la Landing Page de SafeBus utilizando dos plataformas de hosting: GitHub Pages y Vercel. La lading page fue desarrollado con **React + Vite** y el código fuente se encuentra alojado en el repositorio público de la organización UrbanGuard en GitHub.
+---
+
+### Despliegue en GitHub Pages
+
+1. Se creó el repositorio público en la organización de GitHub del equipo UrbanGuard y se subió el código fuente de la landing page construida con React + Vite.
+2. Se accedió a la sección **Settings** del repositorio. Dentro de **Pages**, se seleccionó la rama `main` como origen de publicación y se guardaron los cambios para activar la publicación automática.
+3. Se configuró el archivo `vite.config.js` con el parámetro `base: '/avisum-landing/'` para que las rutas de los assets funcionen correctamente bajo el subdominio de GitHub Pages.
+4. Se creó el archivo de workflow `.github/workflows/deploy.yml` para automatizar el build y despliegue mediante GitHub Actions cada vez que se realice un push a la rama `main`.
+5. Una vez activado el despliegue, GitHub Pages generó la URL pública del sitio desde donde cualquier usuario puede acceder a la landing page de SafeBus sin necesidad de credenciales.
+
+---
+
+### Despliegue en Vercel
+
+1. Se vinculó el repositorio de GitHub con una cuenta de Vercel mediante la integración oficial de GitHub en la plataforma.
+2. Vercel detectó automáticamente el framework Angular y configuró el build sin necesidad de parámetros adicionales.
+3. Se generó la URL pública del sitio:
+
+   > **https://lading-page-six-psi.vercel.app/**
+
+
+4. Vercel realiza redeploy automático cada vez que se hace un push a la rama `main`, garantizando que la versión publicada siempre refleje el estado más reciente del repositorio.
+
+##### 5.2.1.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 1, todos los miembros del equipo participaron activamente en la implementación del Landing Page, evidenciando a traves de los commits registrados en el repositorio `informe-del-proyecto`. El trabajo se distribuyó de manera colaborativa: Fernando Espiritu lideró la configuración del repositorio y el pipeline de despliegue; Carlos Blancas y Leonardo Delgado se encargaron del desarrollo de funcionalidades interactivas y animaciones; Boris Alvarado e Ivonne Ibañez contribuyeron con correcciones de contenido y en la estructura base de la página.
+
+El equipo aplicó GitFlow como estrategia de control de versiones, trabajando en la rama `develop` y realizando la integración a `main` mediante Pull Requests revisados y aprobados por otros miembros. Se realizaron un total de 4 Pull Requests durante el Sprint.
+
+<img src="imgs/commits_sprint1.png">
+

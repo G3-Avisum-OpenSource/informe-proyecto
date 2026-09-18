@@ -78,21 +78,115 @@ Avisum toma como validación de mercado que el propio Estado ya reconoce el valo
 - **Link del video:** https://youtu.be/Rs30FpZu3PA
   <img src = "imgs/Entrevista1_Avisum.png">
 
-  **Resumen de la entrevista:**
+**Resumen de la entrevista:**
+
+Matías inicia su jornada entre las 5 a.m. y las 6 a.m. y concluye alrededor de las 6 p.m., percibiendo mayor peligro durante las noches debido al riesgo constante en sus rutas. Señala que las extorsiones y cobros de cupos son cotidianos, manifestándose en avisos y amenazas por mensajes de WhatsApp hacia conductores y locales. En cuanto a seguridad, su unidad cuenta apenas con un botón de emergencia en el celular para llamar al 105, sin otra protección relevante de la empresa. Ante una emergencia, reconoce que pedir ayuda resulta lento y poco efectivo, ya que la policía demora en llegar al lugar. Considera que el monitoreo en tiempo real sería de gran ayuda para detectar paradas sospechosas y emitir alertas inmediatas. Mostró buena disposición a usar una aplicación con validación digital de identidad para mejorar el orden y la organización de sus turnos. Usaría la solución principalmente al inicio y al final de cada jornada laboral.
+
+
+---
+
+**Entrevistado: Juan Diego Sierra**
+
+- **Edad:** 25 años
+- **Distrito:** Pueblo libre
+- **Link del video:** https://youtu.be/S3MS06OLvYg 
+  <img src = "imgs/Entrevista2_Avisum.png">
+
+**Resumen de la entrevista:**
+
+Juan Diego, un conductor de bus de transporte público de 25 años residente en Pueblo Libre, enfrenta diariamente jornadas laborales de 4:00 a. m. a 10:00 p. m. transitando hacia San Juan de Lurigancho, donde vive bajo el constante temor a la ola de extorsiones y violencia que afecta al sector debido a la falta de medidas de protección en su empresa. Ante la dificultad de reaccionar frente a un ataque armado directo, valora positivamente herramientas tecnológicas como la validación de identidad mediante QR y las aplicaciones de monitoreo conectadas a serenazgo o la policía, aunque recalca que estas son solo complementos y que la solución definitiva requiere la intervención activa de las autoridades para combatir la extorsión y resguardar la vida de trabajadores y pasajeros.
 
 
 
-  ---
-  
+---
 
+**User: Personal de operaciones y monitoreo de empresas de transporte público**
 
-   
+### Entrevistado: Diego Fernández Rojas
 
-*(Pendiente — se completará una vez el equipo realice las entrevistas reales a conductores y representantes de empresas de transporte. Formato sugerido por entrevistado: nombre, edad, distrito, link de video, y resumen de 5-8 líneas destacando su rutina, percepción de riesgo, medidas de seguridad actuales, y disposición a usar Avisum.)*
+- **Edad:** 25 años
+- **Cargo:** Asistente de Operaciones
+- **Empresa:** Consorcio Transporte Arequipa S. A.
+- **Sector:** Transporte público – Corredor Azul
+- **Experiencia:** 2 años
+- **Link del video:** https://drive.google.com/file/d/1_i27aX4M-0jv3koFDIqHPxX8TA4iqlqA/view?usp=sharing
+
+<img src="imgs/Entrevista3_Avisum.png">
+
+### Resumen de la entrevista:
+
+Diego Fernández explicó que la empresa utiliza protocolos de emergencia, supervisores, GPS y cámaras para gestionar la seguridad de sus unidades. Los principales problemas son robos, agresiones, vandalismo y accidentes, mientras que la supervisión en tiempo real y la verificación de conductores aún presentan limitaciones. Considera útil implementar una herramienta digital con verificación de identidad, monitoreo de unidades, alertas y botón de pánico, siempre que cuente con soporte técnico, protección de datos y buen funcionamiento incluso con poca conexión a internet.
+
+---
+
+### Entrevistado: Carlos Ramírez Torres
+
+- **Edad:** 26 años
+- **Cargo:** Operador del Centro de Monitoreo
+- **Empresa:** Consorcio Transporte Arequipa S. A.
+- **Sector:** Transporte público – Corredor Azul
+- **Experiencia:** Aproximadamente 2 años
+- **Link del video:** *(Pendiente — E4)*
+
+*(Pendiente — img del E4)*
+
+### Resumen de la entrevista:
+
+Carlos Ramírez explicó que la empresa monitorea sus unidades mediante GPS y mantiene comunicación constante con los conductores para atender emergencias. Los principales problemas son robos, discusiones, vandalismo, accidentes y agresiones verbales, mientras que la supervisión en tiempo real se dificulta por la cantidad de unidades y las limitaciones del GPS. Considera útil una herramienta digital que permita verificar automáticamente la identidad del conductor, recibir alertas de emergencia, acceder a cámaras y conocer de inmediato la ubicación de la unidad, siempre que se evalúen aspectos como el costo, la privacidad, las falsas alarmas y la conectividad.
+
 
 #### 2.2.3. Análisis de entrevistas
 
-*(Pendiente — se completará tras el registro de entrevistas)*
+**User: Conductores (operarios) de transporte público**
+
+**Entrevista 1:** El segmento objetivo del entrevistado es conductor de transporte público urbano que opera largas jornadas en rutas con alta incidencia de inseguridad y extorsión, especialmente en horarios nocturnos.
+
+Los aspectos más comunes que señala el entrevistado son:
+
+- Jornada extensa (4 a. m. a 10 p. m.) con alta exposición a la delincuencia en el trayecto desde Pueblo Libre a San Juan de Lurigancho.
+- Inseguridad y temor constante debido a la ola de extorsiones y ataques violentos hacia los conductores.
+- Nula seguridad en la empresa (ausencia de lunas blindadas o resguardo policial en paraderos).
+- Capacidad de respuesta ante emergencias casi nula para reaccionar o pedir ayuda a tiempo durante un ataque armado.
+- Necesidad de un compromiso real de las autoridades y la policía para erradicar la extorsión desde la raíz.
+- Disposición positiva al uso de tecnología como validación de identidad por QR y apps de monitoreo integradas con Serenazgo/Policía, aunque las considera un complemento a la seguridad física.
+
+**Entrevista 2:** El segmento objetivo del entrevistado es conductor de transporte público urbano enfocado en el monitoreo operativo, control de pasajeros y la prevención de cobros ilegales durante la ruta.
+
+- Los aspectos más comunes que señala el entrevistado son:
+- Alta vulnerabilidad en paraderos informales y zonas desprotegidas durante el recorrido.
+- Riesgo constante de robos y agresiones tanto a tripulantes como a pasajeros dentro de la unidad.
+- Ausencia de sistemas efectivos de alerta rápida o botones de pánico conectados directamente con las fuerzas del orden.
+- Necesidad de implementar conteo de pasajeros y validación de identidad para evitar el ingreso de personas sospechosas o delincuentes.
+- Buena recepción hacia soluciones de monitoreo por GPS en tiempo real para rastrear la unidad ante cualquier desviación o incidente.
+- Interés en adoptar aplicaciones móviles de seguridad siempre que no distraigan la conducción y cuenten con soporte inmediato de la central.
+
+
+
+**User: Personal de operaciones y monitoreo de empresas de transporte público**
+
+**Entrevista 3:** El segmento objetivo del entrevistado corresponde al personal de operaciones de una empresa de transporte público, encargado de supervisar unidades, conductores y reportar incidentes durante el servicio.
+
+Los aspectos más comunes que señala el entrevistado son:
+
+- Uso de protocolos de emergencia, supervisores de ruta, GPS y cámaras para gestionar la seguridad.
+- Presencia de robos, agresiones, vandalismo y accidentes de tránsito durante la operación.
+- Dificultad para supervisar en tiempo real lo que sucede dentro de todas las unidades.
+- Dependencia de llamadas o mensajes del conductor para reportar emergencias.
+- Procesos parcialmente manuales para verificar la identidad y asignación de los conductores.
+- Interés en una herramienta digital con verificación de identidad, monitoreo de unidades, alertas y botón de pánico.
+- Preocupación por el costo, la protección de datos, los errores de identificación y la falta de conexión a internet.
+
+**Entrevista 4:** El segmento objetivo del entrevistado corresponde al personal del centro de monitoreo de una empresa de transporte público, responsable de vigilar las unidades, recibir reportes de los conductores y comunicar emergencias.
+
+Los aspectos más comunes que señala el entrevistado son:
+
+- Monitoreo de unidades mediante GPS y comunicación constante con los conductores.
+- Incidencia de robos, discusiones, vandalismo, accidentes y agresiones verbales.
+- Dificultad para conocer lo que ocurre dentro de cada unidad únicamente mediante GPS.
+- Posibles confusiones en la identificación del conductor cuando existen reemplazos de último momento.
+- Necesidad de recibir alertas de emergencia y conocer inmediatamente la ubicación de la unidad afectada.
+- Interés en integrar verificación automática de identidad y acceso a cámaras dentro de una herramienta digital.
+- Preocupación por la privacidad, las falsas alarmas, el costo y el funcionamiento del sistema cuando hay poca señal.
 
 ### 2.3. Needfinding
 
@@ -102,11 +196,13 @@ Para identificar las necesidades reales de nuestros usuarios, complementamos las
 
 **Segmento #1: Conductores (operarios) de transporte público**
 
-*(Pendiente )*
+<img src="imgs/UserPersona_Segmento01.png">
+
 
 **Segmento #2: Empresas o consorcios de transporte público**
 
-*(Pendiente *
+<img src="imgs/UserPersona_Segmento02.png">
+
 
 #### 2.3.2. User Task Matrix
 
@@ -138,11 +234,23 @@ Para identificar las necesidades reales de nuestros usuarios, complementamos las
 
 #### 2.3.3. User Journey Mapping
 
-*(Pendiente — se construirá en Figma representando el recorrido del conductor durante un cambio de turno: desde que recibe la unidad hasta que la entrega, marcando puntos de fricción y emociones en cada etapa. Mismo ejercicio para el representante de empresa durante su jornada de supervisión.)*
+Se desarrollaron dos User Journey Maps correspondientes a los segmentos objetivo de UrbanGuard. El primero representa la experiencia del conductor desde la recepción de la unidad hasta la finalización de su turno, identificando como principales puntos de fricción la exposición a situaciones de inseguridad y las dificultades para solicitar ayuda durante una emergencia.
+
+El segundo representa la jornada del personal de operaciones y monitoreo, desde la verificación de conductores y unidades hasta la atención y registro de incidentes. Se identificaron dificultades relacionadas con procesos manuales, supervisión simultánea de múltiples unidades y dependencia de llamadas o mensajes para reportar emergencias.
+
+A partir de estos recorridos se identificaron oportunidades para implementar verificación digital de identidad, monitoreo GPS en tiempo real, alertas automáticas, botón de pánico y registro centralizado de incidentes.
+
+<img src="imgs/UJM_Segmento01.png">
+<img src="imgs/UJM_Segmento02.png">
 
 #### 2.3.4. Empathy Mapping
+Se desarrollaron dos mapas de empatía correspondientes a los segmentos objetivo de UrbanGuard. Estos permiten comprender mejor las percepciones, necesidades, preocupaciones y comportamientos de los usuarios frente a los problemas de inseguridad en el transporte público.
 
-*(Pendiente — mapa de empatía por segmento cubriendo qué piensa, siente, ve, dice y hace cada usuario, y sus frustraciones y motivaciones principales frente al problema de inseguridad en el transporte.)*
+### Segmento 1: Conductores de transporte público
+<img src="imgs/ME_Segmento01.png">
+
+### Segmento 2: Personal de operaciones y monitoreo
+<img src="imgs/ME_Segmento02.png">
 
 ### 2.4. Big Picture EventStorming
 
