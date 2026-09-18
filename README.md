@@ -67,8 +67,8 @@ Proyecto
 
 - [Capítulo II: Requirements Elicitation & Analysis](UrbanGuard/Chapter2.md)
     - [2.1. Competidores](UrbanGuard/Chapter2.md#21-competidores)
-        - [2.1.1. Análisis competitivo](UrbanGuard/Chapter2.md#211-análisis-competitivo)
-        - [2.1.2. Estrategias y tácticas frente a competidores](UrbanGuard/Chapter2.md#212-estrategia-y-tácticas-frente-a-competidores)
+        - [2.1.1. Análisis Competitivo](UrbanGuard/Chapter2.md#211-análisis-competitivo)
+        - [2.1.2. Estrategia y tácticas frente a competidores](UrbanGuard/Chapter2.md#212-estrategia-y-tácticas-frente-a-competidores)
     - [2.2. Entrevistas](UrbanGuard/Chapter2.md#22-entrevistas)
         - [2.2.1. Diseño de entrevistas](UrbanGuard/Chapter2.md#221-diseño-de-entrevistas)
         - [2.2.2. Registro de entrevistas](UrbanGuard/Chapter2.md#222-registro-de-entrevistas)
@@ -78,7 +78,7 @@ Proyecto
         - [2.3.2. User Task Matrix](UrbanGuard/Chapter2.md#232-user-task-matrix)
         - [2.3.3. User Journey Mapping](UrbanGuard/Chapter2.md#233-user-journey-mapping)
         - [2.3.4. Empathy Mapping](UrbanGuard/Chapter2.md#234-empathy-mapping)
-    - [2.4. Big Picture Event Storming](UrbanGuard/Chapter2.md#24-big-picture-event-storming)
+    - [2.4. Big Picture EventStorming](UrbanGuard/Chapter2.md#24-big-picture-eventstorming)
     - [2.5. Ubiquitous Language](UrbanGuard/Chapter2.md#25-ubiquitous-language)
 
 - [Capítulo III: Requirements Specification](UrbanGuard/Chapter3.md)
@@ -119,8 +119,7 @@ Proyecto
     - [5.1. Software Configuration Management](UrbanGuard/Chapter5.md#51-software-configuration-management)
         - [5.1.1. Software Development Environment Configuration](UrbanGuard/Chapter5.md#511-software-development-environment-configuration)
         - [5.1.2. Source Code Management](UrbanGuard/Chapter5.md#512-source-code-management)
-        - [5.1.3. Source Code Style Guide & Conventions](UrbanGuard/Chapter5.md#513-source-code-style-guide--conventions)
-        - [5.1.4. Software Deployment Configuration](UrbanGuard/Chapter5.md#514-software-deployment-configuration)
+        - [5.1.3. Source Code Style Guide & Coding Conventions](UrbanGuard/Chapter5.md#513-source-code-style-guide--coding-conventions)
     - [5.2. Landing Page, Services & Applications Implementation](UrbanGuard/Chapter5.md#52-landing-page-services--applications-implementation)
         - [5.2.1. Sprint 1](UrbanGuard/Chapter5.md#521-sprint-1)
             - [5.2.1.1. Sprint Planning 1](UrbanGuard/Chapter5.md#5211-sprint-planning-1)
@@ -131,7 +130,6 @@ Proyecto
             - [5.2.1.6. Services Documentation Evidence for Sprint Review](UrbanGuard/Chapter5.md#5216-services-documentation-evidence-for-sprint-review)
             - [5.2.1.7. Software Deployment Evidence for Sprint Review](UrbanGuard/Chapter5.md#5217-software-deployment-evidence-for-sprint-review)
             - [5.2.1.8. Team Collaboration Insights during Sprint](UrbanGuard/Chapter5.md#5218-team-collaboration-insights-during-sprint)
-    - *(5.3. Validation Interviews y 5.4. Video About-the-Product se agregarán en próximas entregas)*
 
 ---
 
