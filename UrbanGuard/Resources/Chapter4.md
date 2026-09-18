@@ -213,21 +213,21 @@ El prototipo interactivo de Avisum simula la navegación y los flujos principale
 
 **Accesibilidad y objetivos táctiles:** Todos los elementos interactivos tienen mínimo 48×48px, relevante porque el conductor interactúa con la app mientras maneja. El botón de pánico usa dimensiones ampliadas y alto contraste para garantizar su activación bajo estrés.
 
- **Imagen a insertar:** Captura general del prototipo de Figma mostrando varios frames conectados con las líneas de prototipado visibles. Guardar como `Resources/img/prototipo-general-avisum.png`.
+<img src="imgs/prototipo-general-avisum.png">
 
 ### Flujos de interacción cubiertos por el prototipo
 
 **Flujo 1 — Verificación e inicio de servicio del conductor**
 
- **Imagen a insertar:** Captura del flujo interactivo desde la verificación de identidad hasta la pantalla de servicio activo. Guardar como `Resources/img/flujo-verificacion-avisum.png`.
+<img src="imgs/flujo-verificacion-avisum.png">
 
 **Flujo 2 — Activación y gestión de alertas de emergencia**
 
- **Imagen a insertar:** Captura del flujo desde la activación del botón de pánico hasta la recepción y resolución de la alerta en el panel de la central. Guardar como `Resources/img/flujo-alerta-avisum.png`.
+ <img src="imgs/flujo-alerta-avisum.png">
 
 **Flujo 3 — Monitoreo de flota por la empresa administradora**
 
- **Imagen a insertar:** Captura del flujo del dashboard con el estado en tiempo real de todas las unidades activas. Guardar como `Resources/img/flujo-monitoreo-avisum.png`.
+  <img src="imgs/flujo-monitoreo-avisum.png">
 
 ---
 
