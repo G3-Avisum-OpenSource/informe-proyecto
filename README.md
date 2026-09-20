@@ -45,7 +45,7 @@ Proyecto
 ---
 | Versión | Fecha | Autor/es | Descripción de Modificación |
 |---------|-------|----------|-----------------------------|
-| 0.1 | 05/04/2026 | Todos los integrantes | Agregación de: Carátula, Registro de Versiones del Informe, Project Report Collaboration Insights, Contenido (Índice), Student Outcome, Capítulo I: Introducción, Capítulo II: Requirements Elicitation & Analysis, Capítulo III: Requirements Specification, Capítulo IV: Product Design, Capítulo V: Product Implementation, Validation & Deployment. Avance de: Conclusiones, Bibliografía, Anexos. |
+| 0.1 | 20/09/2026 | Todos los integrantes | Agregación de: Carátula, Registro de Versiones del Informe, Project Report Collaboration Insights, Contenido (Índice), Student Outcome, Capítulo I: Introducción, Capítulo II: Requirements Elicitation & Analysis, Capítulo III: Requirements Specification, Capítulo IV: Product Design, Capítulo V: Product Implementation, Validation & Deployment. Avance de: Conclusiones, Bibliografía, Anexos. |
 ---
 </div>
 
