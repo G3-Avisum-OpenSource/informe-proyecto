@@ -25,7 +25,7 @@ Concretamente, la plataforma resuelve tres necesidades simultáneas dentro del e
 |:------------------------------------:|:------------------------------| :--------------------- |:-----------------------------------------------------------------|
 | <img src="imgs/Diego-Llamozas.jpg">  | Edson Diego Llamozas Diaz     | Ingenieria de Software | Javascript, Python, Assembly 6802, Vuejs, Typescript, C++        |
 | <img src="imgs/rodrigo-miraval.jpg">  | Miraval Pomalaya, Rodrigo Jesus | Ingenieria de Software | C++, Java, MySQL,PostgreSQL,MongoDB, Python, C#                  |                 
-| !  |    | Ingenieria de Software |                                                                        |
+| <img src="imgs/waldo_foto.jpg">  |    | Ingenieria de Software |   C++, Java, MySQL, Html                                    |
 | !<img src="imgs/Joaquin-Reyes.jpg"> | Reyes Muñoz, Joaquin Leonardo | Ingenieria de Software |  C++, Java, MySQL,PostgreSQL,MongoDB, Python, C#                      |
 | !<img src="imgs/carlos-blancas.jpg"> | Blancas Chávez, Carlos Franco      | Ingenieria de Software | Typscript, React,Vue, Java, MySQL,PostgreSQL,MongoDB, Python, C#                                                               |
 | ! |                      | Ingenieria de Software |  |
