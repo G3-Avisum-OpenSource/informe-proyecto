@@ -20,16 +20,13 @@ Concretamente, la plataforma resuelve tres necesidades simultáneas dentro del e
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-
-|            Foto de perfil            | Nombre Completo               | Carrera                | Habilidades                                                      |
-|:------------------------------------:|:------------------------------| :--------------------- |:-----------------------------------------------------------------|
-| <img src="imgs/Diego-Llamozas.jpg">  | Edson Diego Llamozas Diaz     | Ingenieria de Software | Javascript, Python, Assembly 6802, Vuejs, Typescript, C++        |
-| <img src="imgs/rodrigo-miraval.jpg">  | Miraval Pomalaya, Rodrigo Jesus | Ingenieria de Software | C++, Java, MySQL,PostgreSQL,MongoDB, Python, C#                  |                 
-| <img src="imgs/waldo_foto.jpg">  |  Portal Inga Waldo Alonso  | Ingenieria de Software |   C++, Java, MySQL, Html                                    |
-| !<img src="imgs/Joaquin-Reyes.jpg"> | Reyes Muñoz, Joaquin Leonardo | Ingenieria de Software |  C++, Java, MySQL,PostgreSQL,MongoDB, Python, C#                      |
-| !<img src="imgs/carlos-blancas.jpg"> | Blancas Chávez, Carlos Franco      | Ingenieria de Software | Typscript, React,Vue, Java, MySQL,PostgreSQL,MongoDB, Python, C#                                                               |
-| ! |                      | Ingenieria de Software |  |
-|  !  |  | Ingenieria de Software |                    
+|                  Foto de perfil                  | Nombre Completo                 | Carrera                | Habilidades                                                          |
+| :----------------------------------------------: | :------------------------------ | :--------------------- | :------------------------------------------------------------------- |
+| <img src="imgs/Diego-Llamozas.jpg" width="100">  | Edson Diego Llamozas Diaz       | Ingeniería de Software | Javascript, Python, Assembly 6802, Vue.js, Typescript, C++           |
+| <img src="imgs/rodrigo-miraval.jpg" width="100"> | Miraval Pomalaya, Rodrigo Jesus | Ingeniería de Software | C++, Java, MySQL, PostgreSQL, MongoDB, Python, C#                    |
+|   <img src="imgs/waldo_foto.jpg" width="100">    | Portal Inga Waldo Alonso        | Ingeniería de Software | C++, Java, MySQL, HTML                                               |
+|  <img src="imgs/Joaquin-Reyes.jpg" width="100">  | Reyes Muñoz, Joaquin Leonardo   | Ingeniería de Software | C++, Java, MySQL, PostgreSQL, MongoDB, Python, C#                    |
+| <img src="imgs/carlos-blancas.jpg" width="100">  | Blancas Chávez, Carlos Franco   | Ingeniería de Software | TypeScript, React, Vue, Java, MySQL, PostgreSQL, MongoDB, Python, C# |                
 ---
 
 
