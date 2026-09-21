@@ -77,7 +77,7 @@ Asimismo, todos los integrantes participaron activamente en la construcción del
 - [Student Outcome](#student-outcome)
 
 - [Capítulo I: Introducción](UrbanGuard/Chapter1.md)
-    - [1.1. Startup Profile](UrbanGuard/Chapter1.md#11-startup-profile)
+    - [1.1. Startup Profile](UrbanGuard/Resources/Chapter1.md#11-startup-profile)
         - [1.1.1. Descripción de la Startup](UrbanGuard/Chapter1.md#111-descripción-de-la-startup)
         - [1.1.2. Perfiles de integrantes del equipo](UrbanGuard/Chapter1.md#112-perfiles-de-integrantes-del-equipo)
     - [1.2. Solution Profile](UrbanGuard/Chapter1.md#12-solution-profile)
