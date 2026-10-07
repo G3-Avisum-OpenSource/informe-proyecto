@@ -217,6 +217,20 @@ El equipo aplicó GitFlow como estrategia de control de versiones, trabajando en
 ##### 5.2.2.1.Sprint Planning 2.
 
 ---
+| Campo | Detalle |
+|---|---|
+| Sprint # | Sprint 2 |
+| Date | 2026-10-07 |
+| Time | 07:00 PM |
+| Location | Reunión virtual vía Meet |
+| Prepared By | Reyes Muñoz, Joaquin Leonardo |
+| Attendees | Portal Inga, Waldo Alonso / Diego Llamozas / Blancas Chavez, Carlos / Reyes, Joaquin / Rodrigo Miraval |
+| Sprint 1 Review Summary | Durante el Sprint 1 se logró implementar exitosamente la primera versión funcional de la plataforma UrbanGuard, incluyendo autenticación del conductor, monitoreo básico y visualización inicial del sistema. El equipo cumplió los objetivos planteados y consolidó la estructura principal del proyecto. |
+| Sprint 1 Retrospective Summary | En la retrospectiva del Sprint 1, el equipo identificó como fortalezas la buena comunicación, la correcta distribución de tareas y el trabajo colaborativo mediante GitHub. Como mejora, se acordó optimizar la integración de componentes y realizar validaciones más frecuentes antes de los merges. |
+| Sprint 2 Goal | Our focus for Sprint 2 is implementing and integrating the core operational functionalities of UrbanGuard, including emergency alerts, real-time monitoring, passenger tracking, driver validation, and administrative dashboards. We believe this sprint will strengthen the platform’s operational flow and improve the monitoring experience for transport management personnel. This will be confirmed when all modules are functional, interconnected, and accessible through the application dashboard. |
+| Sprint 2 Velocity | 24 |
+| Sum of Story Points | 24 |
+
 
 ##### 5.2.2.2. Aspect Leaders and Collaborators
 
