@@ -262,7 +262,23 @@ Al validar la identidad, el sistema registra el inicio del turno en la API (`POS
 
 <img src="imgs/s2-conductor-dashboard.png">
 
-Muestra en tiempo real el avance del turno: tiempo transcurrido, distancia recorrida, pasajeros y recaudación, junto con la ruta operada, el estado del sistema y un mapa (US26). La barra superior indica la placa real de la unidad del conductor. Desde aquí el conductor puede activar el botón de pánico o finalizar el servicio. Las cifras de distancia, pasajeros y recaudación son **simuladas** por el frontend.
+**Perfil del conductor**
+
+<img src="imgs/s2-conductor-perfil.png">
+
+Pantalla adicional, no incluida en el Product Backlog, que presenta un carnet digital con los datos del conductor (nombre, código, DNI y unidad asignada) junto al estado de su turno actual en vivo. Se documenta como mejora de experiencia de usuario.
+
+**Mapa del Conductor**
+
+<img src="imgs/mapa-conductor.png">
+
+Muestra en tiempo real el avance del turno: tiempo transcurrido, distancia recorrida, pasajeros y recaudación, junto con la ruta operada, el estado del sistema y un mapa (US26). La barra superior indica la placa real de la unidad del conductor. Desde aquí el conductor puede activar el botón de pánico o finalizar el servicio, como tambien se puede observar el mapa en tiempo real del conductor. Las cifras de distancia, pasajeros y recaudación son **simuladas** por el frontend.
+
+**Conteo de Pasajeros**
+
+<img src="imgs/conteo-pasajeros.png">
+
+Muestra el conteo de pasajeros tanto a los que estan subiendo y bajando como los que estan actualmente en el bus.
 
 **Alerta de pánico**
 
@@ -270,17 +286,18 @@ Muestra en tiempo real el avance del turno: tiempo transcurrido, distancia recor
 
 El botón de pánico genera una alerta crítica asociada a la unidad y a las coordenadas del momento (US03, US42), la guarda en la API (`POST /alerts`) y muestra al conductor la confirmación con el estado de la central. La alerta aparece de inmediato en el Centro de control del administrador, sin recargar, incluso si está abierta en otra pestaña del mismo navegador.
 
+**Alert Logs**
+
+<img src="imgs/alert-logs.png">
+
+Muestra el resumen del viaje del conductor y cuantas alertas de panico envio al centro de operaciones
+
 **Reporte de turno finalizado**
 
 <img src="imgs/s2-reporte-turno.png">
 
 Al finalizar el servicio, el sistema cierra el turno en la API (`PATCH /shifts/:id/end`) y ofrece *Ver reporte* o *Salir* (US25). El reporte resume el conductor, la unidad, la ruta, la distancia con su velocidad promedio, el tiempo total, los pasajeros, la recaudación con el monto por pasajero, la línea de tiempo del turno y el protocolo de cierre.
 
-**Perfil del conductor**
-
-<img src="imgs/s2-conductor-perfil.png">
-
-Pantalla adicional, no incluida en el Product Backlog, que presenta un carnet digital con los datos del conductor (nombre, código, DNI y unidad asignada) junto al estado de su turno actual en vivo. Se documenta como mejora de experiencia de usuario.
 
 **Acceso del administrador**
 
@@ -297,6 +314,8 @@ Panel principal del administrador. Muestra los indicadores de unidades activas, 
 **Gestión de conductores**
 
 <img src="imgs/s2-admin-conductores.png">
+
+<img src="imgs/nuevo-conductor.png">
 
 CRUD completo de conductores sobre la API: crear, editar, desactivar, reactivar y eliminar, con ventanas de confirmación y validación en línea (DNI de 8 dígitos único, placa con formato `ABC-1234` única, ruta obligatoria). Al crear un conductor, el servidor le asigna su código de acceso automáticamente (`EMP-006`, `EMP-007`, ...), que no se reutiliza si luego se elimina. Un conductor desactivado deja de poder iniciar sesión (US14, US47, US48 a nivel de API).
 
