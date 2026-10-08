@@ -192,7 +192,7 @@ Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Pa
             - [5.2.1.8. Team Collaboration Insights during Sprint](UrbanGuard/Resources/Chapter5.md#5218-team-collaboration-insights-during-sprint)
    - [Conclusiones](UrbanGuard/Resources/6_Conclusions.md)
    - [Bibliografia](UrbanGuard/Resources/7_Bibliography.md)
-   - [Anexos](UrbanGuard/Resources/7_Bibliography.md)
+   - [Anexos](UrbanGuard/Resources/anexos.md)
 ---
 
 ## Student Outcome
