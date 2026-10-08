@@ -41,7 +41,7 @@ Proyecto
 
 ### **Período 202620**
 
-**Septiembre 2026**
+**Octubre 2026**
 ---
 | Versión | Fecha | Autor/es | Descripción de Modificación |
 |---------|-------|----------|-----------------------------|
