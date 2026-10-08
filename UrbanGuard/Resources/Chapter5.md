@@ -212,9 +212,6 @@ El equipo aplicó GitFlow como estrategia de control de versiones, trabajando en
 
 ##### 5.2. Sprint 2
 
-
-----
-
 ##### 5.2.2.1.Sprint Planning 2.
 
 ---
@@ -234,6 +231,14 @@ El equipo aplicó GitFlow como estrategia de control de versiones, trabajando en
 
 
 ##### 5.2.2.2. Aspect Leaders and Collaborators
+
+| Team Member | GitHub Username | Authentication | Emergency Alerts | Monitoring & Tracking | Driver Management | Dashboard & Reports |
+|---|---|---|---|---|---|---|
+| Blancas Chavez, Carlos | CarlosBlancas969 | L | C | L | C | C |
+| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | C | C | L | L | C |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | C | C | C | C | L |
+| Reyes Muñoz, Joaquin Leonardo| JoakoRM | C | L | C | C | L |
+| Portal Inga, Waldo Alonso | apiw-07 | C | L | C | C | L |
 
 ----
 
@@ -500,7 +505,98 @@ Para ver la sincronización en vivo, se abren dos pestañas del mismo navegador:
 
 
 
-##### 5.2.2.7.Software Deployment Evidence for Sprint Review
+##### 5.2.2.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 2 se desplegó la **Web Application de Avisum** (Angular 22) en la plataforma **Vercel**, con despliegue automático desde un repositorio de GitHub. El código se subió al repositorio con **GitHub Desktop**.
+
+| Producto | Plataforma de despliegue | URL pública | Repositorio |
+|---|---|---|---|
+| Web Application (Angular) | Vercel | > https://avisum-front.vercel.app/conductor/login | >  URL del repositorio en GitHub : https://github.com/orgs/G3-Avisum-OpenSource/repositories |
+
+###### Entornos de ejecución
+
+La aplicación se comporta igual en los dos entornos; lo único que cambia es quién responde a la API.
+
+| Entorno | Cómo se ejecuta | Quién responde a la API | Dónde viven los datos |
+|---|---|---|---|
+| Desarrollo (local) | `npm run server` y `npm start` | **json-server** (`server/server.js`) en `http://localhost:3000/api/v1` | `server/db.json` |
+| Producción (Vercel) | Build estático de Angular | Una copia de la API dentro del navegador (`src/app/shared/infrastructure/fake-api`), con las mismas rutas y respuestas que json-server | Almacenamiento local del navegador de cada visitante |
+
+Vercel solo sirve archivos estáticos, por lo que **json-server no se despliega**. El build de producción usa `src/environments/environment.ts` (con `useFakeApi: true`), y el de desarrollo reemplaza ese archivo por `environment.development.ts`, que apunta a json-server (configurado con `fileReplacements` en `angular.json`).
+
+###### Paso 1. Preparación del proyecto
+
+1. Se comprobó que el build de producción compila sin errores:
+
+```bash
+npm run build
+```
+
+2. Se creó el archivo `vercel.json` en la raíz del proyecto. Sin él, recargar la página en una ruta distinta a la principal (por ejemplo, `/admin/drivers`) produce un error 404, porque Angular resuelve las rutas en el navegador:
+
+```json
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+```
+
+3. Se ajustó en `angular.json` el presupuesto de estilos por componente (`anyComponentStyle`) de 8 kB a 16 kB, porque varias pantallas tienen estilos más extensos que el límite por defecto.
+4. Se dejó `server/db.json` con los datos iniciales (5 conductores con sus unidades, 4 turnos de ejemplo y sin alertas), para que quien ejecute `npm run server` parta de un estado limpio.
+5. Se verificó que el archivo `.gitignore` excluya `node_modules`, `dist` y `.angular/cache`, de modo que no se suban al repositorio.
+
+###### Paso 2. Subida del código a GitHub con GitHub Desktop
+
+1. En GitHub Desktop se agregó la carpeta del proyecto con **File → Add local repository…** y se creó el repositorio local (*create a repository*).
+2. Se revisó la lista de cambios para confirmar que no aparecieran `node_modules` ni `.angular`, y que sí estuvieran `package-lock.json`, `server/server.js`, `server/db.json` y `vercel.json`.
+3. Se registró el commit en la rama principal (`main`), siguiendo la convención de *Conventional Commits* del equipo (sección 5.1.2):
+
+```
+feat: add admin and driver areas with json-server fake API
+```
+
+4. Con **Publish repository** se publicó el repositorio en GitHub.
+
+<img src="imgs/s2-deploy-github-desktop.png">
+
+###### Paso 3. Despliegue en Vercel
+
+1. Se inició sesión en Vercel con la cuenta de GitHub (**Continue with GitHub**).
+2. Con **Add New → Project** se importó el repositorio de Avisum.
+3. Vercel detectó automáticamente el framework **Angular**, y se dejaron los comandos de instalación y de build por defecto.
+4. Se configuró la versión de **Node.js en 24.x**, porque Angular 22 requiere Node 22.22.3 o superior, o 24.15 o superior.
+5. Se ejecutó **Deploy**. Vercel construyó el proyecto y generó la URL pública de la aplicación.
+
+<img src="imgs/s2-deploy-vercel-import.png">
+
+<img src="imgs/s2-deploy-vercel-exito.png">
+
+----
+###### Paso 4. Despliegue continuo
+
+Cada vez que se hace un commit y un *push* a la rama principal desde GitHub Desktop, Vercel detecta el cambio, vuelve a construir el proyecto y publica la nueva versión sin pasos manuales. Así, la versión publicada siempre refleja el estado más reciente del repositorio.
+
+###### Paso 5. Verificación posterior al despliegue
+
+Con la aplicación publicada se realizó la siguiente prueba de humo:
+
+- [ ] `/conductor/login` carga y permite ingresar con `EMP-001`.
+- [ ] El conductor llega al dashboard y su cronómetro de turno avanza.
+- [ ] `/admin/login` carga y permite ingresar con `ADMIN-001`.
+- [ ] Al recargar la página (F5) estando en `/admin/drivers`, no aparece un error 404.
+- [ ] Un conductor que intenta abrir `/admin/drivers` es redirigido a su inicio de sesión (y viceversa).
+- [ ] En dos pestañas del mismo navegador, la alerta de pánico del conductor aparece en el Centro de control del administrador.
+- [ ] El administrador puede crear un conductor nuevo y este puede iniciar sesión con el código asignado.
+- [ ] El mapa y los íconos cargan correctamente.
+
+<img src="imgs/s2-deploy-app-online.png">
+<img src="imgs/s2-deploy-app-online1.png">
+
+###### Limitaciones del despliegue
+
+- En Vercel los datos se guardan en el navegador de cada visitante: lo que un usuario crea no lo ve otro, y cada visitante parte de los datos iniciales.
+- La sincronización en vivo entre las pestañas del conductor y del administrador funciona dentro del **mismo navegador**.
+- Para demostrar la API falsa con json-server hay que ejecutar el proyecto en local (`npm run server` y `npm start`), como se indica en la sección 5.2.2.5.
+- La separación entre administrador y conductor se controla desde el frontend; con un backend definitivo, la validación del rol debe hacerla el servidor.
 
 
 
