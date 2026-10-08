@@ -501,7 +501,89 @@ Para ver la sincronización en vivo, se abren dos pestañas del mismo navegador:
 
 ---
 
-##### 5.2.2.6.Services Documentation Evidence for Sprint Review
+##### 5.2.2.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 2 no se desplegaron Web Services propios con Spring Boot, dado que el alcance del sprint estuvo centrado en la implementación del frontend de Avisum. Para soportar la navegación y las pruebas funcionales de las interfaces, el equipo utilizó datos mock y servicios simulados que representan el comportamiento esperado del futuro RESTful API de UrbanGuard.
+
+A continuación se documentan los principales endpoints REST simulados considerados para las funcionalidades implementadas durante este sprint:
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Endpoint</th>
+    <th>Verb HTTP</th>
+    <th>Descripción</th>
+    <th>Ejemplo de Response</th>
+  </tr>
+  <tr>
+    <td>/drivers</td>
+    <td>GET</td>
+    <td>Retorna la lista de conductores registrados para la gestión administrativa.</td>
+    <td>{ "id": "drv-01", "name": "Carlos Ramos", "employeeCode": "SB-2048", "status": "active" }</td>
+  </tr>
+  <tr>
+    <td>/drivers?employeeCode=SB-2048</td>
+    <td>GET</td>
+    <td>Simula la validación de identidad del conductor mediante código de empleado o QR.</td>
+    <td>{ "id": "drv-01", "name": "Carlos Ramos", "authorized": true, "assignedVehicleId": "bus-12" }</td>
+  </tr>
+  <tr>
+    <td>/vehicles</td>
+    <td>GET</td>
+    <td>Retorna las unidades de transporte registradas con su estado operativo.</td>
+    <td>{ "id": "bus-12", "plate": "ABC-123", "route": "Ruta 08", "status": "in_service" }</td>
+  </tr>
+  <tr>
+    <td>/vehicles/:id</td>
+    <td>GET</td>
+    <td>Retorna el detalle de una unidad, incluyendo conductor asignado, ubicación, velocidad y pasajeros a bordo.</td>
+    <td>{ "id": "bus-12", "plate": "ABC-123", "driverId": "drv-01", "passengers": 34, "speed": 42 }</td>
+  </tr>
+  <tr>
+    <td>/shifts</td>
+    <td>POST</td>
+    <td>Registra el inicio de servicio del conductor validado y asocia el turno a una unidad.</td>
+    <td>{ "id": "shift-1001", "driverId": "drv-01", "vehicleId": "bus-12", "status": "active" }</td>
+  </tr>
+  <tr>
+    <td>/shifts/:id</td>
+    <td>PATCH</td>
+    <td>Actualiza el estado del turno para registrar la finalización del servicio y generar el resumen operativo.</td>
+    <td>{ "id": "shift-1001", "status": "finished", "distanceKm": 42.5, "passengersTransported": 186 }</td>
+  </tr>
+  <tr>
+    <td>/alerts</td>
+    <td>GET</td>
+    <td>Retorna las alertas de emergencia recibidas por la central de monitoreo.</td>
+    <td>{ "id": "alt-501", "vehicleId": "bus-12", "priority": "critical", "status": "pending" }</td>
+  </tr>
+  <tr>
+    <td>/alerts</td>
+    <td>POST</td>
+    <td>Registra una alerta de pánico enviada por el conductor durante un turno activo.</td>
+    <td>{ "id": "alt-501", "shiftId": "shift-1001", "type": "panic_button", "sent": true }</td>
+  </tr>
+  <tr>
+    <td>/alerts/:id</td>
+    <td>PATCH</td>
+    <td>Actualiza el estado de atención de una alerta desde el panel administrativo.</td>
+    <td>{ "id": "alt-501", "status": "resolved", "responseTimeSeconds": 95 }</td>
+  </tr>
+  <tr>
+    <td>/passenger-counts?vehicleId=bus-12</td>
+    <td>GET</td>
+    <td>Retorna el conteo actual e histórico de pasajeros para una unidad en servicio.</td>
+    <td>{ "vehicleId": "bus-12", "currentPassengers": 34, "capacity": 50, "updatedAt": "2026-05-12T20:00:00Z" }</td>
+  </tr>
+  <tr>
+    <td>/metrics</td>
+    <td>GET</td>
+    <td>Retorna los indicadores principales del dashboard administrativo y de impacto.</td>
+    <td>{ "activeUnits": 12, "activeAlerts": 3, "averageOccupancy": 68, "protectedDrivers": 48 }</td>
+  </tr>
+</table>
+
+Estos endpoints sirvieron como referencia para conectar las vistas del conductor y del administrador con datos estructurados durante la revisión del Sprint 2. La implementación formal del RESTful API con Spring Boot será abordada en el Sprint 3, manteniendo como base los recursos definidos para validación de conductores, gestión de unidades, turnos, alertas, ocupación y métricas del sistema.
+
 
 
 
