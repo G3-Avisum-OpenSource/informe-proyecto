@@ -207,3 +207,55 @@ El equipo aplicó GitFlow como estrategia de control de versiones, trabajando en
 
 <img src="imgs/commits_sprint1.png">
 
+##### 5.2.2.4. Development Evidence for Sprint Review
+
+
+###### Introducción
+
+Durante el Sprint 2, el equipo implementó el frontend de la Web Application de Avisum en Angular 18 (standalone components), cubriendo las funcionalidades núcleo del sistema: verificación de identidad del conductor, alerta de pánico, monitoreo de flota en tiempo real, gestión de conductores y paneles diferenciados por rol (conductor y administrador). La aplicación se organizó por Bounded Contexts —`iam`, `users`, `monitoring`, `alert-management`, `camera`, `profile`— replicando la misma estructura de capas adoptada para el Landing Page en el Sprint 1 (`domain → application ← infrastructure`, consumida por `presentation`), lo que permitió mantener la coherencia arquitectónica entre ambos productos digitales y facilitar la incorporación de los Web Services en el Sprint 3.
+
+Como el backend real (RESTful API en Spring Boot) se implementa recién en el Sprint 3, el equipo construyó una **API falsa** con `json-server` (`server/db.json`) y un `fake-api.interceptor.ts` en `shared/infrastructure`, que simula los endpoints RESTful diseñados en el Capítulo IV sin modificar el dominio ni la capa de presentación de la aplicación. La sincronización en vivo entre la vista del conductor y la del administrador se logró mediante `BroadcastChannel`, funcional entre pestañas del mismo navegador.
+
+El desarrollo se organizó aplicando GitFlow: el trabajo se realizó sobre la rama `develop`, con una rama de correcciones (`fix/sprint2-review-fixes`) creada a partir de la revisión interna del Sprint, e integrada a `main` mediante Pull Requests revisados. Se aplicaron **Conventional Commits** en las correcciones finales del Sprint (`fix(conductor):`, `docs:`); el equipo reconoce como oportunidad de mejora extender la convención a la totalidad de los commits desde el Sprint 3 en adelante.
+
+###### Tabla de commits del Sprint 2
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| `G3-Avisum-OpenSource/avisum-frontend` | `main` | `2d769ab` | Merge pull request #2 from G3-Avisum-OpenSource/develop | Develop | 2026-10-08 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `develop` | `e88ed29` | Merge pull request #1 from G3-Avisum-OpenSource/fix/sprint2-review-fixes | Fix/sprint2 review fixes | 2026-10-08 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `fix/sprint2-review-fixes` | `0d0095c` | fix(conductor): display shift revenue in Peruvian soles | — | 2026-10-08 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `fix/sprint2-review-fixes` | `55f8c8e` | docs: add class-level TSDoc to core services and views | — | 2026-10-08 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `fix/sprint2-review-fixes` | `e2457e7` | fix(conductor): set default GPS coordinates to Lima Metropolitana | — | 2026-10-08 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `develop` | `bbe5a87` | Update conductor-layout.ts | — | 2026-10-07 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `develop` | `0346009` | Update page-not-found.ts | — | 2026-10-07 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `develop` | `657daab` | Update api-console.ts | — | 2026-10-07 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `develop` | `f948e7a` | Update shift-history.ts | — | 2026-10-06 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `develop` | `cdf8565` | Update shifts-response.ts | — | 2026-10-06 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `develop` | `bffef8f` | Update README.md | — | 2026-10-06 |
+| `G3-Avisum-OpenSource/avisum-frontend` | `main` | `673a2cb` | Initial commit | — | 2026-10-06 |
+
+###### Relación de commits con los Bounded Contexts implementados
+
+A continuación se relaciona cada commit con el Bounded Context o módulo del frontend sobre el que impacta, evidenciando la trazabilidad entre el trabajo de implementación y la arquitectura definida en el Capítulo IV:
+
+| Bounded Context (Cap. IV) | Módulo en `src/app/` | Commits asociados | User Stories cubiertas |
+|---|---|---|---|
+| Identity & Access Management | `iam/` | `0346009`, `673a2cb` | US01, US14, US22 |
+| Driver Management | `users/` | `cdf8565`, `f948e7a` | US14, US47, US48 |
+| Emergency & Alert Management | `alert-management/` | `e2457e7`, `0d0095c`, `bbe5a87` | US03, US04, US05, US16, US23, US33, US34, US40, US42 |
+| Fleet & Real-Time Monitoring | `monitoring/`, `shared/fleet-tracking.service.ts` | `f948e7a`, `657daab` | US06, US07, US26, US27, US28, US35, US43, US44 |
+| Driver Profile (fuera del backlog) | `profile/` | `55f8c8e` | — (mejora de experiencia) |
+| QR Scanner (soporte a verificación) | `camera/` | `0346009` | US01 |
+| Infraestructura compartida | `shared/` (`fake-api`, `base-*`) | `673a2cb`, `0d0095c` | — (transversal) |
+| Documentación y configuración | `README.md`, TSDoc | `bffef8f`, `55f8c8e` | — (transversal) |
+
+Los commits `2d769ab` y `e88ed29` corresponden a merges de Pull Requests y no introducen cambios funcionales por sí mismos, pero se incluyen como evidencia de la aplicación de GitFlow y del flujo de revisión por pares durante el Sprint.
+
+###### Notas de cierre
+
+- La totalidad de los commits del Sprint 2 se registraron entre el 6 y el 8 de octubre de 2026, coincidiendo con la ventana de trabajo planificada en el Sprint Planning 2 (fecha del planning: 2026-10-07).
+- La corrección de los mensajes de commit para alinearlos al estándar de Conventional Commits queda registrada como acción de mejora para el Sprint 3, junto con la incorporación de pruebas unitarias y de integración al repositorio de Web Services (ver 5.2.3.4).
+- La evidencia de colaboración por autor (gráficos de commits de JoakoRM, DiegoLlamozas y CarlosBlancas969) se detalla y analiza en la sección 5.2.2.8. Team Collaboration Insights during Sprint.
+
+---
