@@ -198,15 +198,63 @@ Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Pa
 En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC 3:
 > *"Demonstrates an ability to communicate effectively with a range of audiences"*
 
-| Criterio Específico | Evidencias por entrega | Conclusiones |
-|---------------------|-------------------------|--------------|
-| **3.c1. Comunica oralmente con efectividad a diferentes rangos de audiencia** | **AV1**<br>• Miraval Pomalaya, Rodrigo Jesus: Development Evidence y Team Collaboration Insights.<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 1.<br>• Portal Inga, Waldo Alonso: Execution Evidence.<br><br>**TB1**<br>• Miraval Pomalaya, Rodrigo Jesus: Development Evidence y Team Collaboration Insights.<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 2 y Development Evidence.<br>• Portal Inga, Waldo Alonso: Execution Evidence y Team Collaboration Insights. | A través de AV1 y TB1, el equipo fortaleció su capacidad para comunicar oralmente los avances, decisiones y resultados del proyecto. Cada integrante participó en la presentación y explicación de las evidencias correspondientes a sus actividades, adaptando la comunicación técnica para facilitar la comprensión de los diferentes aspectos del proyecto. |
-| **3.c2. Comunica por escrito con efectividad a diferentes rangos de audiencia** | **AV1**<br>• Miraval Pomalaya, Rodrigo Jesus: Development Evidence y Team Collaboration Insights.<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 1.<br>• Portal Inga, Waldo Alonso: Execution Evidence.<br><br>**TB1**<br>• Miraval Pomalaya, Rodrigo Jesus: Development Evidence y Team Collaboration Insights.<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 2 y Development Evidence.<br>• Portal Inga, Waldo Alonso: Execution Evidence y Team Collaboration Insights. | Durante AV1 y TB1, el equipo desarrolló y organizó documentación relacionada con los diferentes artefactos y actividades del proyecto. Las evidencias, reportes y registros permitieron comunicar de manera clara, estructurada y comprensible los avances, responsabilidades y resultados obtenidos en cada entrega. |
-| **3.c3. Trabaja en equipo para proporcionar liderazgo en forma conjunta** | **AV1**<br>• Miraval Pomalaya, Rodrigo Jesus: Participación en la planificación del Sprint 1 y organización de evidencias.<br>• Llamozas Diaz, Edson Diego: Coordinación de la documentación de servicios y evidencias de despliegue.<br>• Reyes Muñoz, Joaquin Leonardo: Participación en el desarrollo y coordinación de actividades del equipo.<br>• Blancas Chavez, Carlos Franco: Liderazgo en la organización del Sprint Backlog 1 y distribución de tareas.<br>• Portal Inga, Waldo Alonso: Validación de funcionalidades y preparación de evidencias de ejecución.<br><br>**TB1**<br>• Miraval Pomalaya, Rodrigo Jesus: Coordinación del desarrollo e integración de funcionalidades asignadas.<br>• Llamozas Diaz, Edson Diego: Liderazgo en la implementación y documentación de servicios.<br>• Reyes Muñoz, Joaquin Leonardo: Coordinación del desarrollo de funcionalidades e integración de módulos.<br>• Blancas Chavez, Carlos Franco: Liderazgo en el desarrollo e integración de funcionalidades del módulo asignado.<br>• Portal Inga, Waldo Alonso: Validación e integración de funcionalidades con los demás módulos. | En AV1 y TB1, el equipo demostró liderazgo compartido mediante la distribución de responsabilidades y la participación activa de todos sus integrantes. El liderazgo se ejerció de acuerdo con las actividades y fortalezas de cada miembro, permitiendo coordinar el desarrollo, documentación, validación e integración de las diferentes funcionalidades del proyecto. |
-| **3.c4. Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos** | **AV1**<br>• Miraval Pomalaya, Rodrigo Jesus: Participación en la planificación del Sprint 1 y organización de tareas.<br>• Llamozas Diaz, Edson Diego: Organización de documentación y evidencias del proyecto.<br>• Reyes Muñoz, Joaquin Leonardo: Colaboración en el desarrollo y recopilación de evidencias.<br>• Blancas Chavez, Carlos Franco: Planificación del Sprint Backlog 1 y distribución de actividades.<br>• Portal Inga, Waldo Alonso: Ejecución de tareas y recopilación de evidencias de ejecución.<br><br>**TB1**<br>• Miraval Pomalaya, Rodrigo Jesus: Coordinación de actividades e integración de funcionalidades.<br>• Llamozas Diaz, Edson Diego: Implementación y documentación de servicios asignados.<br>• Reyes Muñoz, Joaquin Leonardo: Desarrollo e integración de funcionalidades.<br>• Blancas Chavez, Carlos Franco: Planificación e implementación de tareas asignadas.<br>• Portal Inga, Waldo Alonso: Implementación y validación de funcionalidades. | Durante AV1 y TB1, el equipo mantuvo un entorno colaborativo mediante la planificación conjunta, distribución de responsabilidades y comunicación constante. En AV1 se establecieron las bases del proyecto mediante el Sprint 1 y la organización de evidencias, mientras que en TB1 se fortaleció la colaboración mediante el desarrollo e integración de funcionalidades, permitiendo cumplir progresivamente las metas establecidas. |
-
-
-
+<table>
+  <thead>
+    <tr>
+      <th>Criterio específico</th>
+      <th>Acciones realizadas</th>
+      <th>Conclusiones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Trabaja en equipo para proporcionar liderazgo en forma conjunta.</td>
+      <td>
+        <strong>Miraval Pomalaya, Rodrigo Jesus</strong><br>
+        <em>AV1:</em> Participó en la planificación del Sprint 1 y colaboró en la organización de las actividades iniciales del proyecto, aportando en la coordinación del equipo y en la recopilación de evidencias.<br>
+        <em>TB1:</em> Lideró el desarrollo de las funcionalidades asignadas, coordinando con los demás integrantes la integración de los módulos y el cumplimiento de los objetivos del Sprint 2.<br><br>
+        <strong>Llamozas Diaz, Edson Diego</strong><br>
+        <em>AV1:</em> Participó en la planificación y desarrollo de las actividades iniciales, colaborando en la documentación de servicios y en la organización de las evidencias del proyecto.<br>
+        <em>TB1:</em> Lideró las actividades relacionadas con la implementación y documentación de los servicios asignados, coordinando con el equipo para mantener una estructura técnica consistente.<br><br>
+        <strong>Reyes Muñoz, Joaquin Leonardo</strong><br>
+        <em>AV1:</em> Colaboró en el desarrollo de las funcionalidades iniciales y en la organización de las evidencias de desarrollo, participando activamente en la coordinación del equipo.<br>
+        <em>TB1:</em> Lideró el desarrollo de las funcionalidades correspondientes a su módulo, coordinando con los demás integrantes la integración de los componentes implementados.<br><br>
+        <strong>Blancas Chavez, Carlos Franco</strong><br>
+        <em>AV1:</em> Lideró la planificación y organización del Sprint Backlog 1, coordinando la distribución de tareas y el desarrollo de las actividades iniciales del proyecto.<br>
+        <em>TB1:</em> Lideró el desarrollo de las funcionalidades asignadas a su módulo, coordinando su integración con los demás componentes desarrollados por el equipo.<br><br>
+        <strong>Portal Inga, Waldo Alonso</strong><br>
+        <em>AV1:</em> Participó en la implementación de las funcionalidades iniciales y en la preparación de las evidencias de ejecución, colaborando con el equipo en la validación de los resultados.<br>
+        <em>TB1:</em> Lideró las actividades de implementación y validación correspondientes a su módulo, coordinando con los demás integrantes para garantizar el correcto funcionamiento de las funcionalidades.
+      </td>
+      <td>
+        A lo largo de AV1 y TB1, el equipo demostró liderazgo compartido al distribuir responsabilidades según las fortalezas técnicas de cada integrante. En AV1 el liderazgo se concentró en la planificación, organización y desarrollo inicial del proyecto; mientras que en TB1 se orientó hacia la implementación e integración de las funcionalidades. Esta progresión evidencia que el equipo no dependió de un único líder, sino que cada integrante asumió responsabilidades de liderazgo en su área y colaboró con los demás para cumplir el objetivo común.
+      </td>
+    </tr>
+    <tr>
+      <td>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
+      <td>
+        <strong>Miraval Pomalaya, Rodrigo Jesus</strong><br>
+        <em>AV1:</em> Colaboró en la organización del Sprint 1 y en la recopilación de evidencias, contribuyendo a que el equipo mantuviera una planificación y documentación coherente.<br>
+        <em>TB1:</em> Coordinó sus avances con los demás integrantes, reportando dependencias y apoyando la integración de las funcionalidades desarrolladas durante el Sprint 2.<br><br>
+        <strong>Llamozas Diaz, Edson Diego</strong><br>
+        <em>AV1:</em> Colaboró en la organización de la documentación y evidencias del proyecto, manteniendo comunicación con los integrantes para cumplir las actividades asignadas.<br>
+        <em>TB1:</em> Planificó y desarrolló las tareas relacionadas con los servicios asignados, coordinando con el equipo para mantener consistencia entre los diferentes módulos.<br><br>
+        <strong>Reyes Muñoz, Joaquin Leonardo</strong><br>
+        <em>AV1:</em> Participó en las actividades de desarrollo y colaboró en la recopilación de evidencias, manteniendo comunicación constante con los demás integrantes para cumplir las tareas planificadas.<br>
+        <em>TB1:</em> Planificó e implementó las tareas correspondientes a su módulo, colaborando en la integración de funcionalidades y en los ajustes necesarios para alcanzar los objetivos del Sprint 2.<br><br>
+        <strong>Blancas Chavez, Carlos Franco</strong><br>
+        <em>AV1:</em> Colaboró con el equipo en la planificación del Sprint Backlog 1 y en la distribución de actividades, promoviendo una organización clara de las responsabilidades.<br>
+        <em>TB1:</em> Planificó e implementó las tareas asignadas, colaborando en la integración de los módulos y realizando las validaciones necesarias para cumplir con los objetivos establecidos.<br><br>
+        <strong>Portal Inga, Waldo Alonso</strong><br>
+        <em>AV1:</em> Participó en la ejecución de las tareas asignadas y en la recopilación de evidencias de ejecución, contribuyendo al seguimiento de los avances del equipo.<br>
+        <em>TB1:</em> Participó en la implementación y validación de las funcionalidades correspondientes a su módulo, coordinando con el equipo para identificar y resolver problemas durante la integración.
+      </td>
+      <td>
+        El equipo mantuvo un entorno colaborativo e inclusivo durante AV1 y TB1 mediante reuniones de planificación, división de tareas por sprint, uso de ramas en GitHub, seguimiento en Trello y revisión constante de evidencias. Las metas evolucionaron desde una primera organización y desarrollo inicial en AV1 hacia un trabajo más enfocado en la implementación e integración de funcionalidades en TB1. La participación de cada integrante demuestra que el equipo planificó, comunicó avances, resolvió dependencias y cumplió objetivos incrementales durante el desarrollo del proyecto.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
 
