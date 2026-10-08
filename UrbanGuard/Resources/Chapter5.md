@@ -207,6 +207,59 @@ El equipo aplicó GitFlow como estrategia de control de versiones, trabajando en
 
 <img src="imgs/commits_sprint1.png">
 
+
+------
+
+##### 5.2. Sprint 2
+
+
+----
+
+##### 5.2.2.1.Sprint Planning 2.
+
+---
+| Campo | Detalle |
+|---|---|
+| Sprint # | Sprint 2 |
+| Date | 2026-10-07 |
+| Time | 07:00 PM |
+| Location | Reunión virtual vía Meet |
+| Prepared By | Reyes Muñoz, Joaquin Leonardo |
+| Attendees | Portal Inga, Waldo Alonso / Diego Llamozas / Blancas Chavez, Carlos / Reyes, Joaquin / Rodrigo Miraval |
+| Sprint 1 Review Summary | Durante el Sprint 1 se logró implementar exitosamente la primera versión funcional de la plataforma UrbanGuard, incluyendo autenticación del conductor, monitoreo básico y visualización inicial del sistema. El equipo cumplió los objetivos planteados y consolidó la estructura principal del proyecto. |
+| Sprint 1 Retrospective Summary | En la retrospectiva del Sprint 1, el equipo identificó como fortalezas la buena comunicación, la correcta distribución de tareas y el trabajo colaborativo mediante GitHub. Como mejora, se acordó optimizar la integración de componentes y realizar validaciones más frecuentes antes de los merges. |
+| Sprint 2 Goal | Our focus for Sprint 2 is implementing and integrating the core operational functionalities of UrbanGuard, including emergency alerts, real-time monitoring, passenger tracking, driver validation, and administrative dashboards. We believe this sprint will strengthen the platform’s operational flow and improve the monitoring experience for transport management personnel. This will be confirmed when all modules are functional, interconnected, and accessible through the application dashboard. |
+| Sprint 2 Velocity | 24 |
+| Sum of Story Points | 24 |
+
+
+##### 5.2.2.2. Aspect Leaders and Collaborators
+
+----
+
+##### 5.2.2.3.Sprint Backlog 2.
+
+El objetivo del Sprint 2 fue implementar e integrar las funcionalidades principales de Avisum, incluyendo verificación del conductor, gestión de turnos, alertas de emergencia, monitoreo de flota y herramientas administrativas.
+
+| User Story ID | Título de la historia | Task ID | Tarea | Descripción | Estimación (horas) | Responsable propuesto | Estado |
+|---|---|---|---|---|---|---|---|
+| US01, US14 | Verificar identidad y autorización del conductor | T-01 | Implementar acceso del conductor | Validar el código contra la API simulada, mostrar errores y bloquear el ingreso de conductores desactivados. | 10 | Waldo Portal | Done |
+| US01 | Verificar identidad del conductor | T-02 | Implementar pantalla de verificación QR | Crear la interfaz de escaneo simulado y la alternativa de ingreso manual del código. | 6 | Rodrigo Miraval | Done |
+| US02 | Registrar inicio de turno | T-03 | Registrar acceso autorizado e inicio de turno | Mostrar la confirmación de acceso y guardar el turno asociado al conductor y su unidad en la API simulada. | 8 | Edson Diego Llamozas | Done |
+| US26 | Consultar estado del servicio | T-04 | Implementar dashboard del conductor | Presentar el estado del turno, tiempo transcurrido, ruta y cifras simuladas de distancia, pasajeros y recaudación. | 8 | Waldo Portal | Done |
+| US03, US42 | Activar alerta de pánico y registrar su ubicación | T-05 | Implementar botón de pánico | Registrar una alerta crítica con la unidad y sus coordenadas, y mostrar la confirmación al conductor. | 10 | Carlos Blancas | Done |
+| US04, US40 | Recepción y clasificación de alertas | T-06 | Implementar atención de alertas en la central | Mostrar las alertas recibidas y su gravedad, permitir resolverlas y sincronizar los cambios entre pestañas del mismo navegador. | 10 | Joaquin Reyes | Done |
+| US06, US07, US27, US28, US43 | Estado y ubicación de la flota | T-07 | Implementar monitoreo operacional | Integrar el mapa y la visualización de unidades activas, inactivas y en alerta en el centro de control. | 10 | Rodrigo Miraval | Done |
+| US14, US47, US48 | Autorización, actualización y desactivación de conductores | T-08 | Implementar gestión de conductores | Crear las opciones de registro, edición, desactivación, reactivación y eliminación sobre la API simulada, con validaciones de formulario. | 10 | Edson Diego Llamozas | Done |
+| US15 | Asociar conductor a unidad | T-09 | Implementar asignación de unidades | Mostrar las unidades y permitir reasignar conductores y rutas, guardando los cambios en la API simulada. | 8 | Carlos Blancas | Done |
+| US23, US33 | Confirmación de recepción y notificación a destinatarios | T-10 | Implementar gestión de notificaciones | Administrar destinatarios y mostrar el registro de entregas con confirmación simulada por tiempo. | 8 | Joaquin Reyes | Done |
+| US26 | Consultar estado del servicio | T-11 | Implementar historial de turnos | Mostrar turnos actuales y anteriores, incorporando filtros por conductor y estado y un resumen de totales. | 8 | Rodrigo Miraval | Done |
+| US34, US35, US44 | Tiempo de respuesta y comparación entre unidades | T-12 | Implementar panel de métricas | Calcular indicadores, tiempo promedio de respuesta y comparaciones de kilómetros, pasajeros y recaudación. | 6 | Edson Diego Llamozas | Done |
+| US25 | Registrar cierre de turno | T-13 | Implementar cierre y reporte del servicio | Guardar la finalización del turno y presentar un reporte con duración, recorrido, pasajeros, recaudación y eventos. | 6 | Carlos Blancas | Done |
+| US16 | Consultar historial de emergencias | T-14 | Implementar consulta de alertas registradas | Mostrar las alertas anteriores y el resumen de alertas de pánico asociadas al servicio. | 6 | Joaquin Reyes | Done |
+| US01, US02, US03, US25, US26 | Flujo operativo del conductor | T-15 | Validar integración del flujo | Revisar el recorrido de verificación, inicio de turno, dashboard, alerta y cierre, dentro del entorno de demostración. | 6 | Waldo Portal | Por verificar |
+---
+
 ##### 5.2.2.4. Development Evidence for Sprint Review
 
 
@@ -258,4 +311,197 @@ Los commits `2d769ab` y `e88ed29` corresponden a merges de Pull Requests y no in
 - La corrección de los mensajes de commit para alinearlos al estándar de Conventional Commits queda registrada como acción de mejora para el Sprint 3, junto con la incorporación de pruebas unitarias y de integración al repositorio de Web Services (ver 5.2.3.4).
 - La evidencia de colaboración por autor (gráficos de commits de JoakoRM, DiegoLlamozas y CarlosBlancas969) se detalla y analiza en la sección 5.2.2.8. Team Collaboration Insights during Sprint.
 
+
+----
+
+##### 5.2.2.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 2 se implementó el frontend de la Web Application de Avisum en Angular, consumiendo una API falsa construida con **json-server** (`server/db.json`) en lugar de un backend real. La aplicación quedó dividida en **dos áreas separadas por rol**, cada una con su propio acceso por código y su propia navegación: el área del **conductor** y el área del **administrador**. Un conductor no puede abrir pantallas de administración, ni un administrador las del conductor, aunque escriba la dirección directamente: el sistema lo redirige a su inicio de sesión.
+
+| Área | Pantalla | Ruta | User Stories relacionadas |
+|---|---|---|---|
+| Conductor | Verificación de identidad (código) | `/conductor/login` | US01, US14 |
+| Conductor | Verificación por QR | `/conductor/qr-scanner` | US01 |
+| Conductor | Acceso autorizado | `/conductor/access-authorized` | US02 |
+| Conductor | Dashboard del servicio | `/conductor/dashboard` | US26 |
+| Conductor | Alerta de pánico | `/conductor/panic-alert` | US03, US42 |
+| Conductor | Reporte de turno finalizado | `/conductor/service-summary` | US25 |
+| Conductor | Perfil del conductor | `/conductor/profile` | (mejora fuera del backlog) |
+| Administrador | Acceso de administrador | `/admin/login` | — |
+| Administrador | Centro de control | `/admin/control-center` | US04, US06, US07, US16, US27, US28, US40, US43 |
+| Administrador | Gestión de conductores | `/admin/drivers` | US14, US47, US48 |
+| Administrador | Asignación de unidades | `/admin/units` | US15 |
+| Administrador | Notificaciones | `/admin/notifications` | US23, US33 |
+| Administrador | Historial de turnos | `/admin/shifts` | US26 |
+| Administrador | Métricas | `/admin/impact` | US34, US35, US44 |
+
+----
+
+**Acceso del conductor: verificación de identidad**
+
+<img src="imgs/s2-conductor-login.png">
+
+El conductor inicia su jornada ingresando su código de empleado (por ejemplo `EMP-001`). El sistema acepta el código en mayúsculas o minúsculas y con el prefijo `QR-`, lo consulta en la API y, si existe y está activo, lo lleva a la pantalla de acceso autorizado (US01). Los tres mensajes de error se muestran de forma independiente: *Código inválido* cuando el código no existe, y *Conductor no autorizado* cuando el conductor fue desactivado por el administrador (US14). El mensaje *Conflicto de vehículo* está maquetado, pero no tiene una regla de negocio asociada todavía.
+
 ---
+
+**Verificación por QR**
+
+<img src="imgs/s2-conductor-qr.png">
+
+Pantalla alternativa de verificación con un recuadro de escaneo y un campo para ingresar el código manualmente. El escaneo es una **simulación**: a los pocos segundos se selecciona un conductor registrado, y la lectura real con la cámara no está implementada.
+
+---
+
+**Acceso autorizado e inicio de turno**
+
+<img src="imgs/s2-acceso-autorizado.png">
+
+Al validar la identidad, el sistema registra el inicio del turno en la API (`POST /shifts`) asociando al conductor con su unidad (US02), y el conductor continúa al dashboard. Si alguien entra al dashboard sin un turno activo, el sistema lo devuelve al inicio de sesión.
+
+----
+
+**Dashboard del servicio**
+
+<img src="imgs/s2-conductor-dashboard.png">
+
+-----
+
+**Perfil del conductor**
+
+<img src="imgs/s2-conductor-perfil.png">
+
+Pantalla adicional, no incluida en el Product Backlog, que presenta un carnet digital con los datos del conductor (nombre, código, DNI y unidad asignada) junto al estado de su turno actual en vivo. Se documenta como mejora de experiencia de usuario.
+
+----
+
+**Mapa del Conductor**
+
+<img src="imgs/mapa-conductor.png">
+
+Muestra en tiempo real el avance del turno: tiempo transcurrido, distancia recorrida, pasajeros y recaudación, junto con la ruta operada, el estado del sistema y un mapa (US26). La barra superior indica la placa real de la unidad del conductor. Desde aquí el conductor puede activar el botón de pánico o finalizar el servicio, como tambien se puede observar el mapa en tiempo real del conductor. Las cifras de distancia, pasajeros y recaudación son **simuladas** por el frontend.
+
+---
+
+**Conteo de Pasajeros**
+
+<img src="imgs/conteo-pasajeros.png">
+
+Muestra el conteo de pasajeros tanto a los que estan subiendo y bajando como los que estan actualmente en el bus.
+
+----
+
+**Alerta de pánico**
+
+<img src="imgs/s2-alerta-panico.png">
+
+El botón de pánico genera una alerta crítica asociada a la unidad y a las coordenadas del momento (US03, US42), la guarda en la API (`POST /alerts`) y muestra al conductor la confirmación con el estado de la central. La alerta aparece de inmediato en el Centro de control del administrador, sin recargar, incluso si está abierta en otra pestaña del mismo navegador.
+
+----
+**Alert Logs**
+
+<img src="imgs/alert-logs.png">
+
+Muestra el resumen del viaje del conductor y cuantas alertas de panico envio al centro de operaciones
+
+---
+
+**Reporte de turno finalizado**
+
+<img src="imgs/s2-reporte-turno.png">
+
+Al finalizar el servicio, el sistema cierra el turno en la API (`PATCH /shifts/:id/end`) y ofrece *Ver reporte* o *Salir* (US25). El reporte resume el conductor, la unidad, la ruta, la distancia con su velocidad promedio, el tiempo total, los pasajeros, la recaudación con el monto por pasajero, la línea de tiempo del turno y el protocolo de cierre.
+
+----
+
+**Acceso del administrador**
+
+<img src="imgs/s2-admin-login.png">
+
+El administrador ingresa con su propio código (`ADMIN-001`) desde una dirección distinta a la del conductor. Existe una sola cuenta de administrador fija; no hay gestión de administradores. La validación es del lado del frontend y sirve para separar los roles en esta etapa, pero no constituye seguridad real: con un backend definitivo, el servidor debe validar el rol en cada petición.
+
+
+---
+
+**Centro de control**
+
+<img src="imgs/s2-admin-centro-control.png">
+
+Panel principal del administrador. Muestra los indicadores de unidades activas, alertas activas y pasajeros a bordo, un mapa operacional con la posición de cada unidad (US07, US43, US28), el estado de cada una (activa, en alerta, inactiva) (US06, US27) y la lista de alertas recientes con su nivel de gravedad (US40, US04, US16). Desde la lista, el administrador resuelve las alertas, y la unidad vuelve a su estado normal.
+
+----
+
+**Gestión de conductores**
+
+<img src="imgs/s2-admin-conductores.png">
+
+<img src="imgs/nuevo-conductor.png">
+
+CRUD completo de conductores sobre la API: crear, editar, desactivar, reactivar y eliminar, con ventanas de confirmación y validación en línea (DNI de 8 dígitos único, placa con formato `ABC-1234` única, ruta obligatoria). Al crear un conductor, el servidor le asigna su código de acceso automáticamente (`EMP-006`, `EMP-007`, ...), que no se reutiliza si luego se elimina. Un conductor desactivado deja de poder iniciar sesión (US14, US47, US48 a nivel de API).
+
+----
+**Asignación de unidades**
+
+<img src="imgs/s2-admin-unidades.png">
+
+Muestra cada unidad con su estado en vivo, su conductor, su ruta, los pasajeros y la velocidad. El botón *Reasignar* permite cambiar el conductor de la unidad (los dos conductores intercambian de unidad) y su ruta (US15). Los cambios se guardan en la API.
+
+---
+**Notificaciones**
+
+<img src="imgs/s2-admin-notificaciones.png">
+
+El administrador gestiona los destinatarios de las alertas (policía, operaciones, empresa, gestión): puede activarlos o desactivarlos, agregar nuevos y eliminarlos. Cada alerta guarda a qué destinatarios activos se notificó (US33), y el registro de entregas muestra, por alerta, el estado de la entrega a cada destinatario (US23). El paso de *pendiente* a *entregada* es **simulado** por tiempo; no hay envío real de mensajes.
+
+----
+**Historial de turnos**
+
+<img src="imgs/s2-admin-historial-turnos.png">
+
+Tablero con una fila por conductor que se actualiza cada segundo. Cuando un conductor inicia sesión desde otra pestaña, su fila pasa a *En ruta* con sus cifras reales, y a *Finalizado* cuando termina su turno. Los conductores sin sesión abierta muestran un estado simulado (en ruta, finalizado o no laborable) para efectos de la demostración. Debajo se listan los *turnos anteriores* guardados en la API, con filtros por conductor y por estado y una franja de totales (US26).
+
+-----
+**Métricas**
+
+<img src="imgs/s2-admin-metricas.png">
+
+Indicadores calculados con los datos del sistema: conductores activos, unidades en ruta, alertas activas, alertas resueltas, turnos finalizados y **tiempo de respuesta promedio**, medido desde que se genera una alerta hasta que el administrador la resuelve (US34, US35). Incluye una comparación entre unidades por kilómetros, pasajeros o recaudación (US44) y un gráfico de alertas por tipo. El tiempo de respuesta permite contrastar la *Hypothesis Statement 2* (primera atención en menos de 2 minutos).
+
+----
+**Reproducción de la demostración**
+
+Para ejecutar la aplicación con la API falsa:
+
+```bash
+npm install
+npm run server    # API falsa en http://localhost:3000/api/v1 (base de datos: server/db.json)
+npm start         # aplicación en http://localhost:4200
+```
+
+| Rol | Dirección | Código de acceso |
+|---|---|---|
+| Conductor | `/conductor/login` | `EMP-001` a `EMP-005` |
+| Administrador | `/admin/login` | `ADMIN-001` |
+
+Para ver la sincronización en vivo, se abren dos pestañas del mismo navegador: el conductor en una y el administrador en la otra. Al activar el pánico en la primera, la alerta aparece en la segunda.
+
+**Alcance y limitaciones del Sprint 2**
+
+- Los datos persisten en `server/db.json` mediante json-server (servicios REST simulados). La documentación detallada de los endpoints se presenta en la sección 5.2.2.6.
+- La sincronización en vivo entre conductor y administrador usa `BroadcastChannel`, por lo que funciona entre pestañas del **mismo navegador**; entre dos computadoras requeriría consulta periódica a la API o WebSockets con un backend real.
+- *Pendiente:* la lectura real del código QR con la cámara (hoy es una simulación).
+- *Pendiente:* las User Stories US17 (detección de unidad sin señal), US24 (reintento de envío de alertas), US36 (desvío de ruta), US39 (una sola unidad por conductor activo) y US41 (escalamiento de alertas no atendidas) no están implementadas en esta iteración.
+- Los destinatarios de notificaciones se guardan en el navegador y no en la API.
+- La distancia, los pasajeros y la recaudación del turno son simulados por el frontend.
+
+---
+
+##### 5.2.2.6.Services Documentation Evidence for Sprint Review
+
+
+
+##### 5.2.2.7.Software Deployment Evidence for Sprint Review
+
+
+
+##### 5.2.2.8.Team Collaboration Insights during Sprint.    
