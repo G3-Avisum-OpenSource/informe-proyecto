@@ -79,7 +79,7 @@ El proceso de desarrollo del informe se realizó de forma incremental, incorpora
 
 Asimismo, todos los integrantes participaron activamente en la construcción del informe, realizando aportes continuos que permitieron consolidar una documentación coherente y alineada entre sus distintas secciones. La colaboración se evidencia tanto en la planificación de tareas como en los cambios registrados en el repositorio, los cuales reflejan la participación distribuida del equipo.
 
-<img src="imgs/commits_sprint1.png">
+<img src="UrbanGuard/Resources/imgs/commits_sprint1.png">
 
 ## TB1
 
