@@ -49,6 +49,18 @@ Proyecto
 ---
 </div>
 
+---
+# Registro de Versiones del Informe
+
+<div align="center">
+
+| Version | Fecha | Autor | Descripción de modificación |
+|:------:|:------:|:------:|:---------------------------:|
+| AV1 | 20/09/2026 | Todos los integrantes | Primera Version |
+| TB1 | 09/10/2026 | Todos los integrantes | Primera Version |
+
+---
+
 ## Project Report Collaboration Insights
 
 **Project Report URL:** https://github.com/G3-Avisum-OpenSource/informe-proyecto
@@ -66,6 +78,30 @@ Durante el desarrollo de la entrega AV1, el equipo organizó la elaboración del
 El proceso de desarrollo del informe se realizó de forma incremental, incorporando progresivamente los contenidos conforme se consolidaban los artefactos del proyecto. Esto se refleja en el Registro de Versiones del Informe, donde se evidencia la evolución del documento desde su estructura inicial hasta la inclusión de elementos como Lean UX, entrevistas, user stories, impact maps, event storming, bounded contexts, diagramas C4, diagramas de clases, diseño de base de datos y evidencias de implementación.
 
 Asimismo, todos los integrantes participaron activamente en la construcción del informe, realizando aportes continuos que permitieron consolidar una documentación coherente y alineada entre sus distintas secciones. La colaboración se evidencia tanto en la planificación de tareas como en los cambios registrados en el repositorio, los cuales reflejan la participación distribuida del equipo.
+
+<img src="imgs/commits_sprint1.png">
+
+## TB1
+
+Durante la elaboración de la tb1, el equipo estructuró la elaboración del informe mediante una distribución de tareas por secciones. Esta organización permitió trabajar simultáneamente en actividades de la spint 2, todos los integrantes contribuyeron activamente al proceso, realizando aportes constantes que favorecieron la coherencia y alineación entre las diferentes secciones del documento
+
+
+
+## Repositorio del Landing Page
+
+**URL:** https://github.com/G3-Avisum-OpenSource/avisum-landing
+
+Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Page abarcando desde la estructura inicial hasta el despliegue en producción. A continuación se detalla la participación por integrante:
+
+### Contribuciones por integrante
+
+| Integrante | GitHub Username | Área de contribución |
+|---|---|---|
+|Miraval Pomalaya, Rodrigo Jesus  | RodMiraval | Diseño visual de secciones · Ajustes de interfaz |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | Integración y consolidación de secciones · Despliegue |
+| Blancas Chávez, Carlos Franco | CarlosBlancas969 | Implementación de secciones principales · Navbar · Hero · Características |
+|Reyes Muñoz, Joaquin Leonardo | JoakoRM | Diseño de secciones · Cómo funciona · Segmentos |
+|Portal Inga, Waldo Alonso | apiw-07 | Diseño de secciones · Cómo funciona · Segmentos |
 
 ---
 # Contenido
