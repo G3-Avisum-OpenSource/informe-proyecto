@@ -43,9 +43,15 @@ Proyecto
 
 **Octubre 2026**
 ---
-| Versión | Fecha | Autor/es | Descripción de Modificación |
-|---------|-------|----------|-----------------------------|
-| 0.1 | 20/09/2026 | Todos los integrantes | Agregación de: Carátula, Registro de Versiones del Informe, Project Report Collaboration Insights, Contenido (Índice), Student Outcome, Capítulo I: Introducción, Capítulo II: Requirements Elicitation & Analysis, Capítulo III: Requirements Specification, Capítulo IV: Product Design, Capítulo V: Product Implementation, Validation & Deployment. Avance de: Conclusiones, Bibliografía, Anexos. |
+### Distribución de contribuciones por integrante
+
+| Integrante | Secciones principales del informe |
+|---|---|
+| Blancas Chavez, Carlos Franco | Sprint 1: Sprint Planning 1 (preparación), estructura base del Landing Page, funcionalidades interactivas y configuración del despliegue en Vercel (T-02, T-03, T-04) · Sprint 2: implementación del frontend de la Web Application (áreas de conductor y administrador separadas por rol, gestión de conductores, asignación de unidades, notificaciones, historial de turnos, métricas y sincronización en vivo entre pestañas) · API falsa con json-server · Execution Evidence for Sprint Review (5.2.2.5) y Software Deployment Evidence for Sprint Review (5.2.2.7) · > **PENDIENTE:** capítulos del informe que redactó |
+| Llamozas Diaz, Edson Diego | Sprint 1: integración de contenido del Landing Page (T-06) y liderazgo de la corrección de contenido · Capítulo II: narración del Storytelling del Big Picture EventStorming (Paso 10) · > **PENDIENTE:** demás secciones y contribuciones del Sprint 2 |
+| Miraval Pomalaya, Rodrigo Jesus | Sprint 1: revisión y validación del Landing Page (T-07) y liderazgo de la corrección de contenido · > **PENDIENTE:** demás secciones y contribuciones del Sprint 2 |
+| Portal Inga, Waldo Alonso | Sprint 1: configuración inicial del repositorio (T-01) y liderazgo de la configuración del repositorio y CI/CD · > **PENDIENTE:** demás secciones y contribuciones del Sprint 2 |
+| Reyes Muñoz, Joaquin Leonardo | Sprint 1: implementación de la navegación del Landing Page (T-05) y liderazgo de la corrección de contenido · > **PENDIENTE:** demás secciones y contribuciones del Sprint 2 |
 ---
 </div>
 
@@ -102,6 +108,22 @@ Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Pa
 | Blancas Chávez, Carlos Franco | CarlosBlancas969 | Implementación de secciones principales · Navbar · Hero · Características |
 |Reyes Muñoz, Joaquin Leonardo | JoakoRM | Diseño de secciones · Cómo funciona · Segmentos |
 |Portal Inga, Waldo Alonso | apiw-07 | Diseño de secciones · Cómo funciona · Segmentos |
+
+----
+
+# Repositorio del Frontend
+
+**URL:** > https://github.com/G3-Avisum-OpenSource/Avisum-Frontend-main
+
+### Contribuciones por integrante
+
+| Integrante | GitHub Username | Área de contribución |
+|---|---|---|---|
+| Blancas Chavez, Carlos Franco | CarlosBlancas969 |  área del conductor, Mapa del administrador y despliegue en Vercel |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | Boton de Panico y Notificaciones |
+| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | Gestion de Conductores |
+| Portal Inga, Waldo Alonso | apiw-07 |Gestionde COnductores y Mapa del coductor |
+| Reyes Muñoz, Joaquin Leonardo | JoakoRM | área del administrador y Mapa del conductor |
 
 ---
 # Contenido
