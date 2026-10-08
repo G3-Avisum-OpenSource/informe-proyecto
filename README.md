@@ -198,10 +198,72 @@ Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Pa
 En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC 3:
 > *"Demonstrates an ability to communicate effectively with a range of audiences"*
 
-| Criterio Específico | Evidencias por entrega | Conclusiones |
-|---------------------|-------------------------|--------------|
-| **3.c1. Comunica oralmente con efectividad a diferentes rangos de audiencia** | **AV1**<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 1.<br>• Portal Inga, Waldo Alonso: Execution Evidence. | A través de la AV1, el equipo fortaleció su capacidad para comunicar oralmente los avances y resultados del proyecto, participando en la presentación de las evidencias y explicando de manera clara los aportes realizados durante el desarrollo del proyecto. |
-| **3.c2. Comunica por escrito con efectividad a diferentes rangos de audiencia** | **AV1**<br>• Llamozas Diaz, Edson Diego: Services Documentation Evidence y Software Deployment Evidence.<br>• Reyes Muñoz, Joaquin Leonardo: Development Evidence y Team Collaboration Insights.<br>• Blancas Chavez, Carlos Franco: Sprint Backlog 1.<br>• Portal Inga, Waldo Alonso: Execution Evidence. | En la Av1, el equipo desarrolló y organizó la documentación correspondiente a los diferentes artefactos del proyecto, permitiendo comunicar de manera clara y estructurada los avances, actividades y resultados obtenidos durante el desarrollo. |
+<table>
+  <thead>
+    <tr>
+      <th>Criterio específico</th>
+      <th>Acciones realizadas</th>
+      <th>Conclusiones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Trabaja en equipo para proporcionar liderazgo en forma conjunta.</td>
+      <td>
+        <strong>Miraval Pomalaya, Rodrigo Jesus</strong><br>
+        <em>AV1:</em> Participó en la planificación del Sprint 1 y colaboró en la organización de las actividades iniciales del proyecto, coordinando con el equipo la distribución de tareas y la recopilación de evidencias.<br>
+        <em>TB1:</em> Lideró el desarrollo de las funcionalidades asignadas a su bounded context en el frontend, coordinando con los demás integrantes para asegurar la integración de los módulos y el cumplimiento de los objetivos del Sprint 2.<br><br>
+
+        <strong>Llamozas Diaz, Edson Diego</strong><br>
+        <em>AV1:</em> Participó en la planificación y desarrollo del proyecto, colaborando en la elaboración de la documentación de servicios y en la organización de las evidencias correspondientes al Sprint 1.<br>
+        <em>TB1:</em> Lideró las actividades relacionadas con la documentación e implementación de los servicios correspondientes a su bounded context, coordinando con el equipo para mantener una estructura técnica consistente.<br><br>
+
+        <strong>Reyes Muñoz, Joaquin Leonardo</strong><br>
+        <em>AV1:</em> Colaboró en el desarrollo de las funcionalidades iniciales del proyecto y participó en la organización de las evidencias de desarrollo y colaboración del equipo.<br>
+        <em>TB1:</em> Lideró la implementación de las funcionalidades asignadas a su módulo, participando activamente en la coordinación técnica y en la integración de los componentes desarrollados por el equipo.<br><br>
+
+        <strong>Blancas Chavez, Carlos Franco</strong><br>
+        <em>AV1:</em> Lideró la organización del Sprint Backlog 1 y participó en la planificación de las actividades iniciales, coordinando la distribución de tareas entre los integrantes del equipo.<br>
+        <em>TB1:</em> Lideró el desarrollo de las funcionalidades correspondientes a su módulo, coordinando la implementación frontend y asegurando la integración con las demás partes del sistema.<br><br>
+
+        <strong>Portal Inga, Waldo Alonso</strong><br>
+        <em>AV1:</em> Participó en la implementación de funcionalidades iniciales y en la preparación de las evidencias de ejecución, colaborando con el equipo para validar los resultados obtenidos.<br>
+        <em>TB1:</em> Lideró las actividades de desarrollo y validación correspondientes a su módulo, coordinando con los demás integrantes para garantizar el correcto funcionamiento de las funcionalidades implementadas.
+      </td>
+      <td>
+        A lo largo de AV1 y TB1, el equipo demostró liderazgo compartido mediante la distribución de responsabilidades y la participación activa de cada integrante en las diferentes etapas del proyecto. En AV1, el liderazgo se enfocó en la planificación, organización del Sprint 1, desarrollo inicial y recopilación de evidencias. En TB1, este liderazgo evolucionó hacia la implementación de funcionalidades y la integración de los diferentes módulos, permitiendo que cada integrante asumiera responsabilidades técnicas y colaborara con los demás para alcanzar los objetivos establecidos.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
+      <td>
+        <strong>Miraval Pomalaya, Rodrigo Jesus</strong><br>
+        <em>AV1:</em> Colaboró en la planificación del Sprint 1, participando en la definición de tareas y en la organización de las evidencias necesarias para demostrar el avance del equipo.<br>
+        <em>TB1:</em> Coordinó sus actividades con los demás integrantes para facilitar la integración de las funcionalidades desarrolladas y contribuir al cumplimiento de los objetivos establecidos para el Sprint 2.<br><br>
+
+        <strong>Llamozas Diaz, Edson Diego</strong><br>
+        <em>AV1:</em> Participó en la organización de la documentación y evidencias del proyecto, manteniendo comunicación con el equipo para cumplir las actividades asignadas durante el Sprint 1.<br>
+        <em>TB1:</em> Coordinó la implementación y documentación de los servicios asignados, colaborando con los integrantes responsables de otros módulos para mantener consistencia en la solución desarrollada.<br><br>
+
+        <strong>Reyes Muñoz, Joaquin Leonardo</strong><br>
+        <em>AV1:</em> Participó en las actividades de desarrollo y colaboró en la recopilación de evidencias, manteniendo comunicación constante con los demás integrantes para cumplir las tareas planificadas.<br>
+        <em>TB1:</em> Planificó e implementó las tareas asignadas a su módulo, colaborando en la integración de funcionalidades y resolviendo los ajustes necesarios para alcanzar los objetivos del Sprint 2.<br><br>
+
+        <strong>Blancas Chavez, Carlos Franco</strong><br>
+        <em>AV1:</em> Participó en la planificación del Sprint Backlog 1 y en la distribución de actividades, promoviendo una organización clara de las responsabilidades entre los integrantes del equipo.<br>
+        <em>TB1:</em> Coordinó las tareas de desarrollo de su módulo y colaboró en la integración con los demás componentes, realizando ajustes y validaciones para cumplir con los objetivos definidos.<br><br>
+
+        <strong>Portal Inga, Waldo Alonso</strong><br>
+        <em>AV1:</em> Colaboró en la ejecución de las tareas asignadas y en la recopilación de evidencias de ejecución, contribuyendo al seguimiento de los avances del Sprint 1.<br>
+        <em>TB1:</em> Participó en la implementación y validación de las funcionalidades correspondientes a su módulo, coordinando con el equipo para identificar y resolver problemas durante la integración.
+      </td>
+      <td>
+        Durante AV1 y TB1, el equipo mantuvo un entorno colaborativo mediante la planificación conjunta de actividades, distribución de responsabilidades y comunicación constante entre los integrantes. En AV1 se establecieron las bases del proyecto mediante la organización del Sprint 1, definición de tareas y recopilación de evidencias. En TB1, el trabajo colaborativo se orientó al desarrollo e integración de funcionalidades, permitiendo cumplir progresivamente los objetivos establecidos y fortalecer la coordinación entre los integrantes del equipo.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
 
