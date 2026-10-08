@@ -511,7 +511,7 @@ Durante el Sprint 2 se desplegó la **Web Application de Avisum** (Angular 22) e
 
 | Producto | Plataforma de despliegue | URL pública | Repositorio |
 |---|---|---|---|
-| Web Application (Angular) | Vercel | > https://avisum-front.vercel.app/conductor/login | >  URL del repositorio en GitHub : https://github.com/orgs/G3-Avisum-OpenSource/repositories |
+| Web Application (Angular) | Vercel | >Conductor: https://avisum-front.vercel.app/conductor/login , >Administrador: https://avisum-front.vercel.app/admin/login | >  URL del repositorio en GitHub : https://github.com/orgs/G3-Avisum-OpenSource/repositories |
 
 ###### Entornos de ejecución
 
