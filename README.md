@@ -113,17 +113,17 @@ Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Pa
 
 # Repositorio del Frontend
 
-**URL:** > https://github.com/G3-Avisum-OpenSource/Avisum-Frontend-main
+**URL:** https://github.com/G3-Avisum-OpenSource/Avisum-Frontend-main
 
 ### Contribuciones por integrante
 
 | Integrante | GitHub Username | Área de contribución |
-|---|---|---|---|
-| Blancas Chavez, Carlos Franco | CarlosBlancas969 |  área del conductor, Mapa del administrador y despliegue en Vercel |
-| Llamozas Diaz, Edson Diego | DiegoLlamozas | Boton de Panico y Notificaciones |
-| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | Gestion de Conductores |
-| Portal Inga, Waldo Alonso | apiw-07 |Gestionde COnductores y Mapa del coductor |
-| Reyes Muñoz, Joaquin Leonardo | JoakoRM | área del administrador y Mapa del conductor |
+|---|---|---|
+| Blancas Chavez, Carlos Franco | CarlosBlancas969 | Área del conductor, mapa del administrador y despliegue en Vercel |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | Botón de pánico y notificaciones |
+| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | Gestión de conductores |
+| Portal Inga, Waldo Alonso | apiw-07 | Gestión de conductores y mapa del conductor |
+| Reyes Muñoz, Joaquin Leonardo | JoakoRM | Área del administrador y mapa del conductor |
 
 ---
 # Contenido
