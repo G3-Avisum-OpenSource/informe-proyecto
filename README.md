@@ -196,8 +196,6 @@ Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Pa
 ## Student Outcome
 
 En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC 3:
-> *"Demonstrates an ability to communicate effectively with a range of audiences"*
-
 <table>
   <thead>
     <tr>
@@ -208,7 +206,7 @@ En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC
   </thead>
   <tbody>
     <tr>
-      <td>Trabaja en equipo para proporcionar liderazgo en forma conjunta.</td>
+      <td>Comunica oralmente con efectividad a diferentes rangos de audiencia.</td>
       <td>
         <strong>Miraval Pomalaya, Rodrigo Jesus</strong><br>
         <em>AV1:</em> Participó en la planificación del Sprint 1 y colaboró en la organización de las actividades iniciales del proyecto, aportando en la coordinación del equipo y en la recopilación de evidencias.<br>
@@ -231,7 +229,7 @@ En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC
       </td>
     </tr>
     <tr>
-      <td>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
+      <td>Comunica por escrito con efectividad a diferentes rangos de audiencia.</td>
       <td>
         <strong>Miraval Pomalaya, Rodrigo Jesus</strong><br>
         <em>AV1:</em> Colaboró en la organización del Sprint 1 y en la recopilación de evidencias, contribuyendo a que el equipo mantuviera una planificación y documentación coherente.<br>
@@ -255,8 +253,6 @@ En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC
     </tr>
   </tbody>
 </table>
-
-
 
 
 
