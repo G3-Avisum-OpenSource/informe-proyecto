@@ -303,10 +303,10 @@ A continuación se relaciona cada commit con el Bounded Context o módulo del fr
 | Driver Management | `users/` | `cdf8565`, `f948e7a` | US14, US47, US48 |
 | Emergency & Alert Management | `alert-management/` | `e2457e7`, `0d0095c`, `bbe5a87` | US03, US04, US05, US16, US23, US33, US34, US40, US42 |
 | Fleet & Real-Time Monitoring | `monitoring/`, `shared/fleet-tracking.service.ts` | `f948e7a`, `657daab` | US06, US07, US26, US27, US28, US35, US43, US44 |
-| Driver Profile (fuera del backlog) | `profile/` | `55f8c8e` | — (mejora de experiencia) |
+| Driver Profile (fuera del backlog) | `profile/` | `55f8c8e` | US01 |
 | QR Scanner (soporte a verificación) | `camera/` | `0346009` | US01 |
-| Infraestructura compartida | `shared/` (`fake-api`, `base-*`) | `673a2cb`, `0d0095c` | — (transversal) |
-| Documentación y configuración | `README.md`, TSDoc | `bffef8f`, `55f8c8e` | — (transversal) |
+
+
 
 Los commits `2d769ab` y `e88ed29` corresponden a merges de Pull Requests y no introducen cambios funcionales por sí mismos, pero se incluyen como evidencia de la aplicación de GitFlow y del flujo de revisión por pares durante el Sprint.
 
