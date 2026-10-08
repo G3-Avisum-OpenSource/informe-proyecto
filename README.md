@@ -85,7 +85,7 @@ Asimismo, todos los integrantes participaron activamente en la construcción del
 
 Durante la elaboración de la tb1, el equipo estructuró la elaboración del informe mediante una distribución de tareas por secciones. Esta organización permitió trabajar simultáneamente en actividades de la spint 2, todos los integrantes contribuyeron activamente al proceso, realizando aportes constantes que favorecieron la coherencia y alineación entre las diferentes secciones del documento
 
-
+<img src="UrbanGuard/Resources/imgs/tb1-evidence-commit.png">
 
 ## Repositorio del Landing Page
 
