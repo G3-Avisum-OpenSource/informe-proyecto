@@ -238,7 +238,25 @@ El equipo aplicó GitFlow como estrategia de control de versiones, trabajando en
 
 ##### 5.2.2.3.Sprint Backlog 2.
 
+El objetivo del Sprint 2 fue implementar e integrar las funcionalidades principales de Avisum, incluyendo verificación del conductor, gestión de turnos, alertas de emergencia, monitoreo de flota y herramientas administrativas.
 
+| User Story ID | Título de la historia | Task ID | Tarea | Descripción | Estimación (horas) | Responsable propuesto | Estado |
+|---|---|---|---|---|---|---|---|
+| US01, US14 | Verificar identidad y autorización del conductor | T-01 | Implementar acceso del conductor | Validar el código contra la API simulada, mostrar errores y bloquear el ingreso de conductores desactivados. | 10 | Waldo Portal | Done |
+| US01 | Verificar identidad del conductor | T-02 | Implementar pantalla de verificación QR | Crear la interfaz de escaneo simulado y la alternativa de ingreso manual del código. | 6 | Rodrigo Miraval | Done |
+| US02 | Registrar inicio de turno | T-03 | Registrar acceso autorizado e inicio de turno | Mostrar la confirmación de acceso y guardar el turno asociado al conductor y su unidad en la API simulada. | 8 | Edson Diego Llamozas | Done |
+| US26 | Consultar estado del servicio | T-04 | Implementar dashboard del conductor | Presentar el estado del turno, tiempo transcurrido, ruta y cifras simuladas de distancia, pasajeros y recaudación. | 8 | Waldo Portal | Done |
+| US03, US42 | Activar alerta de pánico y registrar su ubicación | T-05 | Implementar botón de pánico | Registrar una alerta crítica con la unidad y sus coordenadas, y mostrar la confirmación al conductor. | 10 | Carlos Blancas | Done |
+| US04, US40 | Recepción y clasificación de alertas | T-06 | Implementar atención de alertas en la central | Mostrar las alertas recibidas y su gravedad, permitir resolverlas y sincronizar los cambios entre pestañas del mismo navegador. | 10 | Joaquin Reyes | Done |
+| US06, US07, US27, US28, US43 | Estado y ubicación de la flota | T-07 | Implementar monitoreo operacional | Integrar el mapa y la visualización de unidades activas, inactivas y en alerta en el centro de control. | 10 | Rodrigo Miraval | Done |
+| US14, US47, US48 | Autorización, actualización y desactivación de conductores | T-08 | Implementar gestión de conductores | Crear las opciones de registro, edición, desactivación, reactivación y eliminación sobre la API simulada, con validaciones de formulario. | 10 | Edson Diego Llamozas | Done |
+| US15 | Asociar conductor a unidad | T-09 | Implementar asignación de unidades | Mostrar las unidades y permitir reasignar conductores y rutas, guardando los cambios en la API simulada. | 8 | Carlos Blancas | Done |
+| US23, US33 | Confirmación de recepción y notificación a destinatarios | T-10 | Implementar gestión de notificaciones | Administrar destinatarios y mostrar el registro de entregas con confirmación simulada por tiempo. | 8 | Joaquin Reyes | Done |
+| US26 | Consultar estado del servicio | T-11 | Implementar historial de turnos | Mostrar turnos actuales y anteriores, incorporando filtros por conductor y estado y un resumen de totales. | 8 | Rodrigo Miraval | Done |
+| US34, US35, US44 | Tiempo de respuesta y comparación entre unidades | T-12 | Implementar panel de métricas | Calcular indicadores, tiempo promedio de respuesta y comparaciones de kilómetros, pasajeros y recaudación. | 6 | Edson Diego Llamozas | Done |
+| US25 | Registrar cierre de turno | T-13 | Implementar cierre y reporte del servicio | Guardar la finalización del turno y presentar un reporte con duración, recorrido, pasajeros, recaudación y eventos. | 6 | Carlos Blancas | Done |
+| US16 | Consultar historial de emergencias | T-14 | Implementar consulta de alertas registradas | Mostrar las alertas anteriores y el resumen de alertas de pánico asociadas al servicio. | 6 | Joaquin Reyes | Done |
+| US01, US02, US03, US25, US26 | Flujo operativo del conductor | T-15 | Validar integración del flujo | Revisar el recorrido de verificación, inicio de turno, dashboard, alerta y cierre, dentro del entorno de demostración. | 6 | Waldo Portal | Por verificar |
 ---
 
 ##### 5.2.2.4.Development Evidence for Sprint Review.
