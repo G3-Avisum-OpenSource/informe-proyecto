@@ -316,7 +316,6 @@ Los commits `2d769ab` y `e88ed29` corresponden a merges de Pull Requests y no in
 - La corrección de los mensajes de commit para alinearlos al estándar de Conventional Commits queda registrada como acción de mejora para el Sprint 3, junto con la incorporación de pruebas unitarias y de integración al repositorio de Web Services (ver 5.2.3.4).
 - La evidencia de colaboración por autor (gráficos de commits de JoakoRM, DiegoLlamozas y CarlosBlancas969) se detalla y analiza en la sección 5.2.2.8. Team Collaboration Insights during Sprint.
 
-
 ----
 
 ##### 5.2.2.5. Execution Evidence for Sprint Review
