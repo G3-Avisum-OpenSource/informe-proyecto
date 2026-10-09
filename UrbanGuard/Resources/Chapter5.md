@@ -354,7 +354,7 @@ El conductor inicia su jornada ingresando su código de empleado (por ejemplo `E
 ---
 
 **Verificación por QR**
-
+<!-- IMAGEN CONDUCTOR QR -->
 <img src="imgs/s2-conductor-qr.png">
 
 Pantalla alternativa de verificación con un recuadro de escaneo y un campo para ingresar el código manualmente. El escaneo es una **simulación**: a los pocos segundos se selecciona un conductor registrado, y la lectura real con la cámara no está implementada.
