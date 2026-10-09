@@ -611,6 +611,7 @@ Vercel solo sirve archivos estáticos, por lo que **json-server no se despliega*
 
 ###### Paso 1. Preparación del proyecto
 
+
 1. Se comprobó que el build de producción compila sin errores:
 
 ```bash
