@@ -346,7 +346,7 @@ Durante el Sprint 2 se implementó el frontend de la Web Application de Avisum e
 ----
 
 **Acceso del conductor: verificación de identidad**
-
+<!-- IMAGEN CONDUCTOR LOGIN -->
 <img src="imgs/s2-conductor-login.png">
 
 El conductor inicia su jornada ingresando su código de empleado (por ejemplo `EMP-001`). El sistema acepta el código en mayúsculas o minúsculas y con el prefijo `QR-`, lo consulta en la API y, si existe y está activo, lo lleva a la pantalla de acceso autorizado (US01). Los tres mensajes de error se muestran de forma independiente: *Código inválido* cuando el código no existe, y *Conductor no autorizado* cuando el conductor fue desactivado por el administrador (US14). El mensaje *Conflicto de vehículo* está maquetado, pero no tiene una regla de negocio asociada todavía.
