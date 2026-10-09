@@ -362,7 +362,7 @@ Pantalla alternativa de verificación con un recuadro de escaneo y un campo para
 ---
 
 **Acceso autorizado e inicio de turno**
-
+<!-- IMAGEN ACCESO AUTORIZADO -->
 <img src="imgs/s2-acceso-autorizado.png">
 
 Al validar la identidad, el sistema registra el inicio del turno en la API (`POST /shifts`) asociando al conductor con su unidad (US02), y el conductor continúa al dashboard. Si alguien entra al dashboard sin un turno activo, el sistema lo devuelve al inicio de sesión.
