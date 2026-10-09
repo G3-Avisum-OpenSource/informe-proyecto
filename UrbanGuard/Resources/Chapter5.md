@@ -675,6 +675,7 @@ Con la aplicación publicada se realizó la siguiente prueba de humo:
 - [ ] El administrador puede crear un conductor nuevo y este puede iniciar sesión con el código asignado.
 - [ ] El mapa y los íconos cargan correctamente.
 
+
 <img src="imgs/s2-deploy-app-online.png">
 <img src="imgs/s2-deploy-app-online1.png">
 
