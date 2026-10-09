@@ -16,7 +16,6 @@
 | **EPAV07** | Control de acceso por rol | Como sistema, necesito separar el acceso de conductores y administradores, para que cada persona vea y use solo las funciones que le corresponden. |
 
 </details>
-
 <br>
 
 <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
