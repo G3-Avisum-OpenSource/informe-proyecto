@@ -142,7 +142,7 @@ La vista de entrada presenta el navbar con acceso a las secciones "Característi
 
 
 **Sección de estadísticas de impacto**
-
+<!-- IMAGEN ESTADISTICAS -->
 <img src="imgs/landing-stats.png">
 
 Se presentan tres cifras destacadas (rutas monitoreadas, conductores protegidos, reducción de incidentes reportados), correspondientes a US18. *Pendiente de definición:* dado que Avisum aún no opera comercialmente, el equipo debe decidir si estas cifras se presentan como métricas objetivo/proyectadas (con el rótulo correspondiente) o si se sustituyen por las estadísticas de la problemática ya documentadas en el Cap. 1.2.1 (p. ej. los datos de la PNP y el Ministerio Público), para mantener coherencia y transparencia con el resto del informe.
