@@ -246,27 +246,35 @@ El equipo aplicó GitFlow como estrategia de control de versiones, trabajando en
 
 ----
 
-##### 5.2.2.3.Sprint Backlog 2.
+##### 5.2.2.3. Sprint Backlog 2
 
-El objetivo del Sprint 2 fue implementar e integrar las funcionalidades principales de Avisum, incluyendo verificación del conductor, gestión de turnos, alertas de emergencia, monitoreo de flota y herramientas administrativas.
+El objetivo del Sprint 2 fue implementar e integrar las funcionalidades principales de Avisum, incluyendo verificación del conductor, gestión de turnos, alertas de emergencia, monitoreo de flota y herramientas administrativas, separando el acceso del conductor y del administrador y simulando el backend con una API REST falsa (json-server).
 
 | User Story ID | Título de la historia | Task ID | Tarea | Descripción | Estimación (horas) | Responsable propuesto | Estado |
 |---|---|---|---|---|---|---|---|
-| US01, US14 | Verificar identidad y autorización del conductor | T-01 | Implementar acceso del conductor | Validar el código contra la API simulada, mostrar errores y bloquear el ingreso de conductores desactivados. | 10 | Waldo Portal | Done |
-| US01 | Verificar identidad del conductor | T-02 | Implementar pantalla de verificación QR | Crear la interfaz de escaneo simulado y la alternativa de ingreso manual del código. | 6 | Rodrigo Miraval | Done |
-| US02 | Registrar inicio de turno | T-03 | Registrar acceso autorizado e inicio de turno | Mostrar la confirmación de acceso y guardar el turno asociado al conductor y su unidad en la API simulada. | 8 | Edson Diego Llamozas | Done |
-| US26 | Consultar estado del servicio | T-04 | Implementar dashboard del conductor | Presentar el estado del turno, tiempo transcurrido, ruta y cifras simuladas de distancia, pasajeros y recaudación. | 8 | Waldo Portal | Done |
-| US03, US42 | Activar alerta de pánico y registrar su ubicación | T-05 | Implementar botón de pánico | Registrar una alerta crítica con la unidad y sus coordenadas, y mostrar la confirmación al conductor. | 10 | Carlos Blancas | Done |
-| US04, US40 | Recepción y clasificación de alertas | T-06 | Implementar atención de alertas en la central | Mostrar las alertas recibidas y su gravedad, permitir resolverlas y sincronizar los cambios entre pestañas del mismo navegador. | 10 | Joaquin Reyes | Done |
+| US01, US14, US22 | Verificar identidad y autorización del conductor | T-01 | Implementar acceso del conductor | Validar el código (sin distinguir mayúsculas ni espacios) contra la API simulada, mostrar los errores "Código inválido" y "Conductor no autorizado" y bloquear el ingreso de conductores desactivados. | 10 | Waldo Portal | Done |
+| US51 | Verificar identidad mediante QR o código manual | T-02 | Implementar pantalla de verificación QR | Crear la interfaz de escaneo simulado y la alternativa de ingreso manual del código. La lectura real con la cámara queda pendiente. | 6 | Rodrigo Miraval | Done |
+| US02, US11 | Registrar inicio de turno | T-03 | Registrar acceso autorizado e inicio de turno | Mostrar la confirmación de acceso y guardar el turno (POST /shifts) asociado al conductor y su unidad en la API simulada. | 8 | Edson Diego Llamozas | Done |
+| US26 | Consultar estado del servicio | T-04 | Implementar dashboard del conductor | Presentar el estado del turno, el tiempo transcurrido, la ruta y las cifras simuladas de distancia, pasajeros y recaudación. | 8 | Waldo Portal | Done |
+| US03, US05, US12, US42 | Activar alerta de pánico y registrar su ubicación | T-05 | Implementar botón de pánico | Registrar una alerta crítica con la unidad y sus coordenadas en la API (POST /alerts) y mostrar la confirmación al conductor. | 10 | Carlos Blancas | Done |
+| US04, US40, US54 | Recepción, clasificación y resolución de alertas | T-06 | Implementar atención de alertas en la central | Mostrar las alertas recibidas con su gravedad, permitir resolverlas y sincronizar los cambios en vivo entre pestañas del mismo navegador. | 10 | Joaquin Reyes | Done |
 | US06, US07, US27, US28, US43 | Estado y ubicación de la flota | T-07 | Implementar monitoreo operacional | Integrar el mapa y la visualización de unidades activas, inactivas y en alerta en el centro de control. | 10 | Rodrigo Miraval | Done |
-| US14, US47, US48 | Autorización, actualización y desactivación de conductores | T-08 | Implementar gestión de conductores | Crear las opciones de registro, edición, desactivación, reactivación y eliminación sobre la API simulada, con validaciones de formulario. | 10 | Edson Diego Llamozas | Done |
-| US15 | Asociar conductor a unidad | T-09 | Implementar asignación de unidades | Mostrar las unidades y permitir reasignar conductores y rutas, guardando los cambios en la API simulada. | 8 | Carlos Blancas | Done |
-| US23, US33 | Confirmación de recepción y notificación a destinatarios | T-10 | Implementar gestión de notificaciones | Administrar destinatarios y mostrar el registro de entregas con confirmación simulada por tiempo. | 8 | Joaquin Reyes | Done |
-| US26 | Consultar estado del servicio | T-11 | Implementar historial de turnos | Mostrar turnos actuales y anteriores, incorporando filtros por conductor y estado y un resumen de totales. | 8 | Rodrigo Miraval | Done |
-| US34, US35, US44 | Tiempo de respuesta y comparación entre unidades | T-12 | Implementar panel de métricas | Calcular indicadores, tiempo promedio de respuesta y comparaciones de kilómetros, pasajeros y recaudación. | 6 | Edson Diego Llamozas | Done |
-| US25 | Registrar cierre de turno | T-13 | Implementar cierre y reporte del servicio | Guardar la finalización del turno y presentar un reporte con duración, recorrido, pasajeros, recaudación y eventos. | 6 | Carlos Blancas | Done |
-| US16 | Consultar historial de emergencias | T-14 | Implementar consulta de alertas registradas | Mostrar las alertas anteriores y el resumen de alertas de pánico asociadas al servicio. | 6 | Joaquin Reyes | Done |
-| US01, US02, US03, US25, US26 | Flujo operativo del conductor | T-15 | Validar integración del flujo | Revisar el recorrido de verificación, inicio de turno, dashboard, alerta y cierre, dentro del entorno de demostración. | 6 | Waldo Portal | Por verificar |
+| US47, US48, US64, US65, US66, US67, US68 | Gestión de conductores | T-08 | Implementar gestión de conductores | Crear las opciones de búsqueda, registro, edición, desactivación, reactivación y eliminación sobre la API simulada, con validaciones de formulario (DNI, placa y ruta). | 10 | Edson Diego Llamozas | Done |
+| US15, US69, US70, US71 | Asignación de unidades | T-09 | Implementar asignación de unidades | Mostrar las unidades con su estado en vivo y permitir reasignar conductores y rutas, guardando los cambios en la API simulada. | 8 | Carlos Blancas | Done |
+| US23, US33, US56, US57 | Notificación a destinatarios y confirmación de recepción | T-10 | Implementar gestión de notificaciones | Administrar destinatarios (activar, agregar y eliminar) y mostrar el registro de entregas con confirmación simulada por tiempo. | 8 | Joaquin Reyes | Done |
+| US58, US59 | Historial de turnos en vivo | T-11 | Implementar historial de turnos | Mostrar el tablero de conductores actualizado cada segundo y los turnos anteriores, con filtros por conductor y estado y un resumen de totales. | 8 | Rodrigo Miraval | Done |
+| US34, US35, US44, US62, US63 | Métricas y comparación entre unidades | T-12 | Implementar panel de métricas | Calcular indicadores reales, el tiempo promedio de respuesta, las alertas por tipo y las comparaciones de kilómetros, pasajeros y recaudación. | 6 | Edson Diego Llamozas | Done |
+| US25, US52 | Registrar cierre de turno y reporte | T-13 | Implementar cierre y reporte del servicio | Guardar la finalización del turno (PATCH /shifts/{id}/end) y presentar un reporte con duración, recorrido, pasajeros, recaudación y línea de tiempo. | 6 | Carlos Blancas | Done |
+| US16, US55 | Consultar historial de emergencias | T-14 | Implementar consulta de alertas registradas | Mostrar las alertas anteriores del servicio, con su gravedad y estado, y el resumen por tipo. | 6 | Joaquin Reyes | Done |
+| US01, US02, US03, US25, US26 | Flujo operativo del conductor | T-15 | Validar integración del flujo | Revisar el recorrido de verificación, inicio de turno, dashboard, alerta y cierre, dentro del entorno de demostración. | 6 | Waldo Portal | Done |
+| US60 | Visualizar mi ubicación en el mapa | T-16 | Implementar mapa del conductor | Mostrar la posición de la unidad del conductor sobre el mapa, con su tiempo y distancia, actualizada en tiempo real. | 5 | Rodrigo Miraval | Done |
+| US61 | Monitorear el conteo de pasajeros a bordo | T-17 | Implementar conteo de pasajeros | Presentar los pasajeros a bordo, los que abordaron y bajaron, la ocupación y la alerta de anomalía. Las cifras son simuladas. | 5 | Waldo Portal | Done |
+| US53 | Consultar perfil del conductor | T-18 | Implementar perfil del conductor | Crear el carnet digital del conductor con sus datos y el estado de su turno en vivo. | 4 | Carlos Blancas | Done |
+| US50, US72, US73, US74 | Control de acceso por rol | T-19 | Implementar acceso del administrador y separación de roles | Crear el acceso de administrador por código, proteger las rutas de cada rol, quitar los enlaces cruzados y habilitar el cierre de sesión. | 8 | Carlos Blancas | Done |
+| US10, US13, US19, US20, US31, US32, US75, US76, US77, US78 | API REST simulada | T-20 | Configurar la API falsa con json-server | Crear la carpeta `server` con `db.json` y `server.js`, con los endpoints de conductores, unidades, alertas y turnos que consume el frontend. | 12 | Carlos Blancas | Done |
+| — | Despliegue del Sprint 2 | T-21 | Desplegar la aplicación en Vercel | Preparar el build de producción, la configuración de rutas (`vercel.json`) y la API simulada del navegador, y publicar desde GitHub. | 4 | Carlos Blancas | Done |
+
+**Historias del backlog que no se incluyeron en el Sprint 2** y pasan a los siguientes sprints: US17 (detección de unidad inactiva), US24 (reintento de envío de alertas), US36 (detección de desvío de ruta), US39 (un solo turno por conductor), US41 (escalamiento de alertas no atendidas) y US49 (endpoint de métricas).
 ---
 
 ##### 5.2.2.4. Development Evidence for Sprint Review
@@ -324,24 +332,28 @@ Los commits `2d769ab` y `e88ed29` corresponden a merges de Pull Requests y no in
 
 ##### 5.2.2.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 2 se implementó el frontend de la Web Application de Avisum en Angular, consumiendo una API falsa construida con **json-server** (`server/db.json`) en lugar de un backend real. La aplicación quedó dividida en **dos áreas separadas por rol**, cada una con su propio acceso por código y su propia navegación: el área del **conductor** y el área del **administrador**. Un conductor no puede abrir pantallas de administración, ni un administrador las del conductor, aunque escriba la dirección directamente: el sistema lo redirige a su inicio de sesión.
+Durante el Sprint 2 se implementó el frontend de la Web Application de Avisum en Angular, consumiendo una API falsa construida con **json-server** (`server/db.json`) en lugar de un backend real. La aplicación quedó dividida en **dos áreas separadas por rol**, cada una con su propio acceso por código y su propia navegación: el área del **conductor** y el área del **administrador**. Un conductor no puede abrir pantallas de administración, ni un administrador las del conductor, aunque escriba la dirección directamente: el sistema lo redirige a su inicio de sesión (US73).
 
 | Área | Pantalla | Ruta | User Stories relacionadas |
 |---|---|---|---|
-| Conductor | Verificación de identidad (código) | `/conductor/login` | US01, US14 |
-| Conductor | Verificación por QR | `/conductor/qr-scanner` | US01 |
+| Conductor | Verificación de identidad (código) | `/conductor/login` | US01, US14, US22 |
+| Conductor | Verificación por QR | `/conductor/qr-scanner` | US51 |
 | Conductor | Acceso autorizado | `/conductor/access-authorized` | US02 |
-| Conductor | Dashboard del servicio | `/conductor/dashboard` | US26 |
-| Conductor | Alerta de pánico | `/conductor/panic-alert` | US03, US42 |
-| Conductor | Reporte de turno finalizado | `/conductor/service-summary` | US25 |
-| Conductor | Perfil del conductor | `/conductor/profile` | (mejora fuera del backlog) |
-| Administrador | Acceso de administrador | `/admin/login` | — |
-| Administrador | Centro de control | `/admin/control-center` | US04, US06, US07, US16, US27, US28, US40, US43 |
-| Administrador | Gestión de conductores | `/admin/drivers` | US14, US47, US48 |
-| Administrador | Asignación de unidades | `/admin/units` | US15 |
-| Administrador | Notificaciones | `/admin/notifications` | US23, US33 |
-| Administrador | Historial de turnos | `/admin/shifts` | US26 |
-| Administrador | Métricas | `/admin/impact` | US34, US35, US44 |
+| Conductor | Dashboard del servicio | `/conductor/dashboard` | US26, US25 |
+| Conductor | Mapa de la unidad | `/conductor/view-map` | US60 |
+| Conductor | Conteo de pasajeros | `/conductor/passengers` | US61 |
+| Conductor | Registro de alertas | `/conductor/alert-logs` | US55 |
+| Conductor | Alerta de pánico | `/conductor/panic-alert` | US03, US05, US40, US42 |
+| Conductor | Reporte de turno finalizado | `/conductor/service-summary` | US25, US52 |
+| Conductor | Perfil del conductor | `/conductor/profile` | US53 |
+| Administrador | Acceso de administrador | `/admin/login` | US72, US73 |
+| Administrador | Centro de control | `/admin/control-center` | US04, US06, US07, US16, US27, US28, US43, US54 |
+| Administrador | Gestión de conductores | `/admin/drivers` | US14, US47, US48, US64, US65, US66, US67, US68 |
+| Administrador | Asignación de unidades | `/admin/units` | US15, US69, US70, US71 |
+| Administrador | Notificaciones | `/admin/notifications` | US23, US33, US56, US57 |
+| Administrador | Historial de turnos | `/admin/shifts` | US58, US59 |
+| Administrador | Métricas | `/admin/impact` | US34, US35, US44, US62, US63 |
+| Ambas | Cerrar sesión (menú lateral) | — | US74 |
 
 ----
 
@@ -506,89 +518,228 @@ Para ver la sincronización en vivo, se abren dos pestañas del mismo navegador:
 
 ##### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
-Durante el Sprint 2 no se desplegaron Web Services propios con Spring Boot, dado que el alcance del sprint estuvo centrado en la implementación del frontend de Avisum. Para soportar la navegación y las pruebas funcionales de las interfaces, el equipo utilizó datos mock y servicios simulados que representan el comportamiento esperado del futuro RESTful API de UrbanGuard.
+Durante el Sprint 2 no se desarrolló el RESTful API definitivo con Spring Boot, dado que el alcance del sprint estuvo centrado en el frontend de Avisum. En su lugar, el equipo construyó una **API REST simulada con json-server**, que se encuentra en la carpeta `server` del repositorio y que representa el comportamiento esperado del futuro backend:
 
-A continuación se documentan los principales endpoints REST simulados considerados para las funcionalidades implementadas durante este sprint:
+| Archivo | Función |
+|---|---|
+| `server/db.json` | Base de datos de la API: conductores (`employees`), unidades (`bus-units`), alertas (`alerts`) y turnos (`shifts`). |
+| `server/server.js` | Servidor json-server. Resuelve las operaciones estándar de cada recurso (listar, consultar, crear, modificar y eliminar) y define los endpoints propios del negocio (validación por código, fin de turno, resolución de alertas, ubicación de unidades). |
 
-<table border="1" cellpadding="6" cellspacing="0">
-  <tr>
-    <th>Endpoint</th>
-    <th>Verb HTTP</th>
-    <th>Descripción</th>
-    <th>Ejemplo de Response</th>
-  </tr>
-  <tr>
-    <td>/drivers</td>
-    <td>GET</td>
-    <td>Retorna la lista de conductores registrados para la gestión administrativa.</td>
-    <td>{ "id": "drv-01", "name": "Carlos Ramos", "employeeCode": "SB-2048", "status": "active" }</td>
-  </tr>
-  <tr>
-    <td>/drivers?employeeCode=SB-2048</td>
-    <td>GET</td>
-    <td>Simula la validación de identidad del conductor mediante código de empleado o QR.</td>
-    <td>{ "id": "drv-01", "name": "Carlos Ramos", "authorized": true, "assignedVehicleId": "bus-12" }</td>
-  </tr>
-  <tr>
-    <td>/vehicles</td>
-    <td>GET</td>
-    <td>Retorna las unidades de transporte registradas con su estado operativo.</td>
-    <td>{ "id": "bus-12", "plate": "ABC-123", "route": "Ruta 08", "status": "in_service" }</td>
-  </tr>
-  <tr>
-    <td>/vehicles/:id</td>
-    <td>GET</td>
-    <td>Retorna el detalle de una unidad, incluyendo conductor asignado, ubicación, velocidad y pasajeros a bordo.</td>
-    <td>{ "id": "bus-12", "plate": "ABC-123", "driverId": "drv-01", "passengers": 34, "speed": 42 }</td>
-  </tr>
-  <tr>
-    <td>/shifts</td>
-    <td>POST</td>
-    <td>Registra el inicio de servicio del conductor validado y asocia el turno a una unidad.</td>
-    <td>{ "id": "shift-1001", "driverId": "drv-01", "vehicleId": "bus-12", "status": "active" }</td>
-  </tr>
-  <tr>
-    <td>/shifts/:id</td>
-    <td>PATCH</td>
-    <td>Actualiza el estado del turno para registrar la finalización del servicio y generar el resumen operativo.</td>
-    <td>{ "id": "shift-1001", "status": "finished", "distanceKm": 42.5, "passengersTransported": 186 }</td>
-  </tr>
-  <tr>
-    <td>/alerts</td>
-    <td>GET</td>
-    <td>Retorna las alertas de emergencia recibidas por la central de monitoreo.</td>
-    <td>{ "id": "alt-501", "vehicleId": "bus-12", "priority": "critical", "status": "pending" }</td>
-  </tr>
-  <tr>
-    <td>/alerts</td>
-    <td>POST</td>
-    <td>Registra una alerta de pánico enviada por el conductor durante un turno activo.</td>
-    <td>{ "id": "alt-501", "shiftId": "shift-1001", "type": "panic_button", "sent": true }</td>
-  </tr>
-  <tr>
-    <td>/alerts/:id</td>
-    <td>PATCH</td>
-    <td>Actualiza el estado de atención de una alerta desde el panel administrativo.</td>
-    <td>{ "id": "alt-501", "status": "resolved", "responseTimeSeconds": 95 }</td>
-  </tr>
-  <tr>
-    <td>/passenger-counts?vehicleId=bus-12</td>
-    <td>GET</td>
-    <td>Retorna el conteo actual e histórico de pasajeros para una unidad en servicio.</td>
-    <td>{ "vehicleId": "bus-12", "currentPassengers": 34, "capacity": 50, "updatedAt": "2026-05-12T20:00:00Z" }</td>
-  </tr>
-  <tr>
-    <td>/metrics</td>
-    <td>GET</td>
-    <td>Retorna los indicadores principales del dashboard administrativo y de impacto.</td>
-    <td>{ "activeUnits": 12, "activeAlerts": 3, "averageOccupancy": 68, "protectedDrivers": 48 }</td>
-  </tr>
-</table>
+Para ejecutarla, desde la raíz del proyecto:
 
-Estos endpoints sirvieron como referencia para conectar las vistas del conductor y del administrador con datos estructurados durante la revisión del Sprint 2. La implementación formal del RESTful API con Spring Boot será abordada en el Sprint 3, manteniendo como base los recursos definidos para validación de conductores, gestión de unidades, turnos, alertas, ocupación y métricas del sistema.
+```bash
+npm run server   # API disponible en http://localhost:3000/api/v1
+```
 
+**URL base:** `http://localhost:3000/api/v1`
 
+En la versión desplegada en Vercel no se ejecuta json-server (la plataforma solo sirve archivos estáticos). En su lugar, una copia de la API dentro del navegador (`src/app/shared/infrastructure/fake-api`) responde con las mismas rutas y los mismos formatos descritos a continuación.
 
+###### Recursos y endpoints
+
+**Conductores (`/employees`)**
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Códigos de respuesta |
+|---|---|---|---|---|
+| `/employees` | GET | Retorna la lista de conductores registrados para la gestión administrativa. | US64 | 200 |
+| `/employees/code/{código}` | GET | Valida la identidad del conductor por su código de empleado (acepta minúsculas y el prefijo `QR-`). | US01, US10, US14, US22 | 200, 404 (código inexistente), 403 (conductor desactivado) |
+| `/employees` | POST | Registra un conductor. El servidor asigna el `id` y el código `EMP-###`, sin reutilizar los de conductores eliminados. | US65, US75 | 201 |
+| `/employees/{id}` | PATCH | Actualiza datos del conductor (nombres, DNI, placa) o su estado (`ACTIVE` / `INACTIVE`). | US47, US48, US66, US67, US70 | 200, 404 |
+| `/employees/{id}` | DELETE | Elimina un conductor. | US68, US77 | 200, 404 |
+
+**Unidades (`/bus-units`)**
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Códigos de respuesta |
+|---|---|---|---|---|
+| `/bus-units` | GET | Retorna las unidades con su placa, ruta, ubicación y estado. | US27, US32 | 200 |
+| `/bus-units/{id}` | GET | Retorna el detalle de una unidad. | US20 | 200, 404 |
+| `/bus-units` | POST | Registra una unidad. El servidor asigna el `id`, sin reutilizar los eliminados. | US76 | 201 |
+| `/bus-units/{id}` | PATCH | Actualiza la ruta, la placa o el estado de una unidad. | US13, US71 | 200, 404 |
+| `/bus-units/{id}/location` | PATCH | Actualiza la ubicación en vivo de la unidad. | US07, US43 | 200, 404 |
+| `/bus-units/{id}` | DELETE | Elimina una unidad. | US68, US77 | 200, 404 |
+
+**Alertas (`/alerts`)**
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Códigos de respuesta |
+|---|---|---|---|---|
+| `/alerts` | GET | Retorna las alertas registradas. | US05, US16 | 200 |
+| `/alerts` | POST | Registra una alerta enviada por el conductor, con su tipo y coordenadas. Se crea como no resuelta y con la fecha del servidor. | US03, US12, US42 | 201 |
+| `/alerts/{id}/resolve` | PATCH | Marca la alerta como resuelta desde el panel del administrador. | US54, US78 | 200, 404 |
+
+**Turnos (`/shifts`)**
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Códigos de respuesta |
+|---|---|---|---|---|
+| `/shifts` | GET | Retorna el historial de turnos. | US19, US58 | 200 |
+| `/shifts/employee/{id}` | GET | Retorna los turnos de un conductor. | US19 | 200 |
+| `/shifts/bus-unit/{id}/active` | GET | Retorna el turno activo de una unidad. | US39 | 200, 404 |
+| `/shifts` | POST | Registra el inicio de servicio del conductor validado y lo asocia a una unidad y a su ruta. | US02, US11 | 201 |
+| `/shifts/{id}/end` | PATCH | Cierra el turno con sus cifras finales y registra la hora de fin. | US25, US31 | 200, 404 |
+
+**Recursos reservados:** `/drivers`, `/sensors` y `/passenger-counts` existen en la base de datos como colecciones vacías, previstas para los siguientes sprints. El conteo de pasajeros de esta versión es simulado por el frontend.
+
+###### Ejemplos de uso
+
+**Validar un conductor** · `GET /employees/code/EMP-001` → `200 OK`
+
+```json
+{
+  "id": 1,
+  "employeeCode": "EMP-001",
+  "firstName": "Carlos Franco",
+  "lastName": "Blancas Chavez",
+  "fullName": "Carlos Franco Blancas Chavez",
+  "dni": "00000001",
+  "plateNumber": "ABC-1234",
+  "status": "ACTIVE"
+}
+```
+
+Con un código inexistente responde `404`; con un conductor desactivado, `403`:
+
+```json
+{ "message": "Empleado desactivado" }
+```
+
+**Registrar un conductor** · `POST /employees` → `201 Created`
+
+```json
+{
+  "firstName": "Hugo",
+  "lastName": "Mori",
+  "fullName": "Hugo Mori",
+  "dni": "10000009",
+  "plateNumber": "HUG-123",
+  "status": "ACTIVE"
+}
+```
+
+Respuesta (el servidor agrega `id` y `employeeCode`):
+
+```json
+{
+  "firstName": "Hugo",
+  "lastName": "Mori",
+  "fullName": "Hugo Mori",
+  "dni": "10000009",
+  "plateNumber": "HUG-123",
+  "status": "ACTIVE",
+  "id": 6,
+  "employeeCode": "EMP-006"
+}
+```
+
+**Desactivar a un conductor** · `PATCH /employees/6` → `200 OK`
+
+```json
+{ "status": "INACTIVE" }
+```
+
+**Registrar una unidad** · `POST /bus-units` → `201 Created`
+
+```json
+{
+  "plateNumber": "HUG-123",
+  "route": "R-07",
+  "currentLatitude": -12.0464,
+  "currentLongitude": -77.0428,
+  "status": "ACTIVE"
+}
+```
+
+**Actualizar la ubicación de una unidad** · `PATCH /bus-units/1/location` → `200 OK`
+
+```json
+{ "latitude": -12.0431, "longitude": -77.0282 }
+```
+
+**Registrar una alerta de pánico** · `POST /alerts` → `201 Created`
+
+```json
+{
+  "employeeId": 1,
+  "busUnitId": 1,
+  "alertType": "PÁNICO",
+  "description": "Alerta PÁNICO generada en unidad ABC-1234",
+  "latitude": -12.0414,
+  "longitude": -77.0253
+}
+```
+
+Respuesta:
+
+```json
+{
+  "id": 1,
+  "employeeId": 1,
+  "busUnitId": 1,
+  "alertType": "PÁNICO",
+  "description": "Alerta PÁNICO generada en unidad ABC-1234",
+  "latitude": -12.0414,
+  "longitude": -77.0253,
+  "resolved": false,
+  "createdAt": "2026-10-06T21:09:59.533Z"
+}
+```
+
+**Resolver una alerta** · `PATCH /alerts/1/resolve` → `200 OK`, con la alerta devuelta con `"resolved": true`.
+
+**Iniciar un turno** · `POST /shifts` → `201 Created`
+
+```json
+{
+  "employeeId": 1,
+  "busUnitId": 1,
+  "routeOrigin": "Terminal Norte",
+  "routeDestination": "Estación Central"
+}
+```
+
+Respuesta (el servidor completa la ruta de la unidad, las cifras en cero y la hora de inicio):
+
+```json
+{
+  "id": 5,
+  "employeeId": 1,
+  "busUnitId": 1,
+  "routeName": "R-42",
+  "routeOrigin": "Terminal Norte",
+  "routeDestination": "Estación Central",
+  "distanceKm": 0,
+  "durationSeconds": 0,
+  "passengerCount": 0,
+  "fareCollected": 0,
+  "status": "ACTIVE",
+  "startedAt": "2026-10-06T21:57:18.230Z",
+  "endedAt": null
+}
+```
+
+**Finalizar un turno** · `PATCH /shifts/5/end` → `200 OK`
+
+```json
+{
+  "distanceKm": 1.194,
+  "durationSeconds": 398,
+  "passengerCount": 28,
+  "fareCollected": 30.54
+}
+```
+
+El turno regresa con `"status": "FINISHED"` y la hora de fin en `endedAt`.
+
+###### Funcionalidades que no usan la API
+
+| Funcionalidad | Dónde se resuelve | Razón |
+|---|---|---|
+| Acceso del administrador (`ADMIN-001`) | Frontend | Es una única cuenta fija. Con un backend definitivo, la validación del rol debe hacerla el servidor (US50, US73). |
+| Destinatarios de notificaciones | Navegador | Se guardan localmente; aún no existe el recurso en la API. |
+| Métricas y tiempo de respuesta | Frontend | Se calculan a partir de las alertas y los turnos; el endpoint de métricas (US49) queda pendiente. |
+| Sincronización en vivo entre pestañas | Navegador (`BroadcastChannel`) | Sustituye lo que en un backend real harían WebSockets o consultas periódicas. |
+
+Estos endpoints sirvieron como contrato entre el frontend y el futuro backend. La implementación formal del RESTful API con Spring Boot se abordará en el Sprint 3, manteniendo como base los recursos y los formatos definidos aquí para conductores, unidades, alertas y turnos.
+
+----
 
 ##### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
