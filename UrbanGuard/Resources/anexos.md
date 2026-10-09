@@ -1,29 +1,28 @@
+
 # Anexos
- 
+
 En esta seccion se reunen los enlaces principales del proyecto **Avisum** para facilitar la revision de los repositorios, productos desplegados, gestion agil, prototipo y evidencias audiovisuales desarrolladas durante el ciclo del proyecto.
 
 ## Repositorios de código fuente
 
 ### Landing Page
 
-[https://github.com/upc-web-applications/riskguard-landingpage](https://github.com/G3-Avisum-OpenSource/avisum-landing)
+- [Avisum Landing Page](https://github.com/G3-Avisum-OpenSource/avisum-landing)
 
 ### Frontend Web Application
 
-[https://github.com/upc-web-applications/Frontend](https://github.com/G3-Avisum-OpenSource/Avisum-Frontend-main)
+- [Avisum Frontend](https://github.com/G3-Avisum-OpenSource/Avisum-Frontend-main)
 
 ## Productos desplegados
 
-### Landing Page en produccion
+### Landing Page en producción
 
-[https://riskguard-landingpage.vercel.app/](https://avisum-landing.vercel.app/)
+- [Visitar Avisum Landing Page](https://avisum-landing.vercel.app/)
 
-### Aplicacion web Avisum
--Conductor:
-[https://riskguard-a146d.web.app/](https://avisum-front.vercel.app/conductor/login)
+### Aplicación web Avisum
 
--Administrador:
-https://avisum-front.vercel.app/admin/login
+- **Conductor:** [Acceder al portal del conductor](https://avisum-front.vercel.app/conductor/login)
+- **Administrador:** [Acceder al portal del administrador](https://avisum-front.vercel.app/admin/login)
 
 
 
