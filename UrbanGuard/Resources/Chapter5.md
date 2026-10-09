@@ -384,7 +384,7 @@ Pantalla adicional, no incluida en el Product Backlog, que presenta un carnet di
 ----
 
 **Mapa del Conductor**
-
+<!-- IMAGEN CONDUCTOR MAPA -->
 <img src="imgs/mapa-conductor.png">
 
 Muestra en tiempo real el avance del turno: tiempo transcurrido, distancia recorrida, pasajeros y recaudación, junto con la ruta operada, el estado del sistema y un mapa (US26). La barra superior indica la placa real de la unidad del conductor. Desde aquí el conductor puede activar el botón de pánico o finalizar el servicio, como tambien se puede observar el mapa en tiempo real del conductor. Las cifras de distancia, pasajeros y recaudación son **simuladas** por el frontend.
