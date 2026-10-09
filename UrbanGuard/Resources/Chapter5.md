@@ -274,7 +274,7 @@ El objetivo del Sprint 2 fue implementar e integrar las funcionalidades principa
 | US10, US13, US19, US20, US31, US32, US75, US76, US77, US78 | API REST simulada | T-20 | Configurar la API falsa con json-server | Crear la carpeta `server` con `db.json` y `server.js`, con los endpoints de conductores, unidades, alertas y turnos que consume el frontend. | 12 | Carlos Blancas | Done |
 | — | Despliegue del Sprint 2 | T-21 | Desplegar la aplicación en Vercel | Preparar el build de producción, la configuración de rutas (`vercel.json`) y la API simulada del navegador, y publicar desde GitHub. | 4 | Carlos Blancas | Done |
 
-**Historias del backlog que no se incluyeron en el Sprint 2** y pasan a los siguientes sprints: US17 (detección de unidad inactiva), US24 (reintento de envío de alertas), US36 (detección de desvío de ruta), US39 (un solo turno por conductor), US41 (escalamiento de alertas no atendidas) y US49 (endpoint de métricas).
+
 ---
 
 ##### 5.2.2.4. Development Evidence for Sprint Review
