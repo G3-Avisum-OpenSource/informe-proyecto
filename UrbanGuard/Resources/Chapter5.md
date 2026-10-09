@@ -52,6 +52,7 @@ El equipo utiliza GitHub como plataforma de control de versiones, aplicando GitF
 **Conventional Commits:** se aplican los tipos estándar (`feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `chore:`, `test:`), redactados en inglés y en modo imperativo (p. ej. `feat: add hero section with live monitoring widget`).
 
 
+
 ### 5.1.3. Source Code Style Guide & Coding Conventions
 
 - **Angular / TypeScript:** se sigue el [Angular coding style guide](https://angular.io/guide/styleguide) y el [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html). Todo el código (variables, clases, componentes, archivos) se nombra en inglés.
