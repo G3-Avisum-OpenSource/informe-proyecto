@@ -641,7 +641,7 @@ feat: add admin and driver areas with json-server fake API
 ```
 
 4. Con **Publish repository** se publicó el repositorio en GitHub.
-
+<!-- IMAGEN GITHUB -->
 <img src="imgs/s2-deploy-github-desktop.png">
 
 ###### Paso 3. Despliegue en Vercel
