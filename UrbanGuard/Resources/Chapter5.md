@@ -376,7 +376,7 @@ Al validar la identidad, el sistema registra el inicio del turno en la API (`POS
 -----
 
 **Perfil del conductor**
-
+<!-- IMAGEN CONDUCTOR PERFIL -->
 <img src="imgs/s2-conductor-perfil.png">
 
 Pantalla adicional, no incluida en el Product Backlog, que presenta un carnet digital con los datos del conductor (nombre, código, DNI y unidad asignada) junto al estado de su turno actual en vivo. Se documenta como mejora de experiencia de usuario.
