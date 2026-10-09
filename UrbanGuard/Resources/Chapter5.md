@@ -370,7 +370,7 @@ Al validar la identidad, el sistema registra el inicio del turno en la API (`POS
 ----
 
 **Dashboard del servicio**
-
+<!-- IMAGEN CONDUCTOR DASHBOARD -->
 <img src="imgs/s2-conductor-dashboard.png">
 
 -----
