@@ -12,7 +12,6 @@ El estilo visual de Avisum busca transmitir vigilancia, control y respuesta inme
 **Branding**
 
 Elegimos estos colores porque buscamos transmitir vigilancia constante, urgencia cuando es necesario, y control tecnológico. El negro simboliza precisión y seriedad, siendo el color base de toda la interfaz. El verde neón aporta la sensación de "sistema activo" — como el testigo verde de un panel de monitoreo real — y se reserva para indicadores de estado normal y acciones principales. El rojo se usa exclusivamente para alertas y pánico, reforzando su asociación inmediata con peligro.
-
 Buscamos que el usuario perciba el sistema como:
 - Seguro
 - Preciso
@@ -611,7 +610,6 @@ erDiagram
 `panic_alert.latitude/longitude/location_recorded_at` son las columnas embebidas del Value Object `GeoLocation` (US42). `alert_response.panic_alert_id` lleva `UNIQUE` además de `FK`, forzando a nivel de base de datos la multiplicidad `"0..1"` (una alerta tiene, cuando mucho, una respuesta asociada). `panic_alert` se relaciona con `notification_recipient` como `"one-or-many"` (`||--|{`), no `"zero-or-many"`, porque toda alerta activada debe notificar al menos a un destinatario (US33). `shift` aparece aquí solo como referencia liviana desde el Bounded Context de Identidad, ya que `panic_alert.shift_id` es `NOT NULL` (US03: no puede activarse una alerta sin un turno activo).
 
 **Bounded Context 3 — Monitoreo de Flota**
-
 ```mermaid
 erDiagram
     COMPANY {
