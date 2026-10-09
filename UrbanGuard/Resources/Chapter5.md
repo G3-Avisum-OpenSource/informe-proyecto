@@ -657,6 +657,7 @@ feat: add admin and driver areas with json-server fake API
 <img src="imgs/s2-deploy-vercel-exito.png">
 
 ----
+
 ###### Paso 4. Despliegue continuo
 
 Cada vez que se hace un commit y un *push* a la rama principal desde GitHub Desktop, Vercel detecta el cambio, vuelve a construir el proyecto y publica la nueva versión sin pasos manuales. Así, la versión publicada siempre refleja el estado más reciente del repositorio.
