@@ -135,7 +135,7 @@ Registro en GitHub Creamos una cuenta en GitHub para poder gestionar los reposit
 Durante el Sprint 1 se implementó y desplegó la primera versión del Landing Page de Avisum, cubriendo las siguientes vistas:
 
 **Sección Hero y navegación principal**
-
+<!-- IMAGEN HERO SECTION -->
 <img src="imgs/landing-hero.png">
 
 La vista de entrada presenta el navbar con acceso a las secciones "Características", "Cómo Funciona", "Estadística" y "Apoyo" (US21), junto con el mensaje principal de propuesta de valor ("Cortamos la amenaza antes de que suba") y una descripción del servicio orientada a ambos frentes del negocio: verificación de identidad, botón de pánico y seguimiento GPS de flota (US08, US38). Se incluye además un mockup del panel "Central de Operaciones" que anticipa visualmente el panel de monitoreo descrito en el Impact Map (Cap. 3.2).
