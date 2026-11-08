@@ -847,6 +847,38 @@ Durante la elaboración de la tb1, el equipo estructuró la elaboración del inf
 
 ---
 
+#### 5.2.3. Sprint 3
+
+El Sprint 3 se centró en el **backend de Avisum**: un RESTful API con **Spring Boot** y **Java 21**, organizado por *bounded contexts* y con persistencia en **MySQL**. El API reemplaza a la API simulada con json-server del Sprint 2 y conserva los mismos recursos y formatos de respuesta (conductores, unidades, turnos y alertas). La conexión del frontend con este backend se realiza en el Sprint 4.
+
+##### 5.2.3.1. Sprint Planning 3
+
+| Campo | Detalle |
+|---|---|
+| Sprint # | Sprint 3 |
+| Date | > **PENDIENTE:** fecha de la reunión |
+| Time | > **PENDIENTE:** hora |
+| Location | > **PENDIENTE:** lugar o reunión virtual |
+| Prepared By | > **PENDIENTE:** responsable de preparar el planning |
+| Attendees | Blancas Chavez, Carlos / Llamozas Diaz, Edson Diego / Miraval Pomalaya, Rodrigo Jesus / Portal Inga, Waldo Alonso / Reyes Muñoz, Joaquin Leonardo |
+| Sprint N-1 Review Summary | En el Sprint 2 se implementó el frontend de la Web Application en Angular, con áreas separadas para conductor y administrador, consumiendo una API simulada con json-server. De las 78 User Stories del backlog se trabajaron 62 (52 implementadas y 10 parciales). Quedaron pendientes US17, US24, US36, US39, US41 y US49, y varias reglas que en el frontend eran simuladas (validación de roles, notificaciones y métricas) para resolverlas en el backend real. |
+| Sprint N-1 Retrospective Summary | > **PENDIENTE:** resumen de la retrospectiva del Sprint 2 acordada por el equipo |
+| Sprint 3 Goal | Our focus is on developing the Avisum RESTful backend with Spring Boot and MySQL, organized by bounded contexts (identity and shifts, emergency management, and fleet monitoring). We believe it delivers persistent storage and enforced business rules for drivers, units, shifts and alerts, replacing the simulated API used in Sprint 2. This will be confirmed when every endpoint can be exercised through Swagger UI, returns the expected status codes, and the resulting data is stored and visible in MySQL. |
+| Sprint N Velocity | 95 |
+| Sum of Story Points | 95 |
+
+**User Stories comprometidas en el Sprint 3 (25 historias, 95 puntos):**
+
+| Epic | User Stories |
+|---|---|
+| EPAV01 Verificación de identidad y gestión de turnos | US01, US02, US14, US25, US39 |
+| EPAV02 Gestión de emergencias | US03, US05, US16, US34, US42 |
+| EPAV03 Monitoreo de flota y métricas | — (se retoman en el Sprint 4) |
+| EPAV05 API RESTful del sistema | US10, US11, US12, US13, US19, US20, US31, US32, US47, US48, US75, US76, US77, US78 |
+| EPAV06 Administración de conductores y unidades | US15 |
+
+
+
 
 
 
