@@ -878,6 +878,7 @@ El Sprint 3 se centró en el **backend de Avisum**: un RESTful API con **Spring 
 | EPAV06 Administración de conductores y unidades | US15 |
 
 
+##### 5.2.3.2. Aspect Leaders and Collaborators
 
 
 
