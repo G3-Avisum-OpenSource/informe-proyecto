@@ -845,3 +845,638 @@ Durante la elaboración de la tb1, el equipo estructuró la elaboración del inf
 
 <img src="imgs/tb1-evidence-commit.png">
 
+
+#### 5.2.3. Sprint 3
+
+El Sprint 3 se centró en el **backend de Avisum**: un RESTful API con **Spring Boot** y **Java 21**, organizado por *bounded contexts* y con persistencia en **MySQL**. El API reemplaza a la API simulada con json-server del Sprint 2 y conserva los mismos recursos y formatos de respuesta (conductores, unidades, turnos y alertas). La conexión del frontend con este backend se realiza en el Sprint 4.
+
+##### 5.2.3.1. Sprint Planning 3
+
+| Campo | Detalle |
+|---|---|
+| Sprint # | Sprint 3 |
+| Date | > **PENDIENTE:** fecha de la reunión |
+| Time | > **PENDIENTE:** hora |
+| Location | > **PENDIENTE:** lugar o reunión virtual |
+| Prepared By | > **PENDIENTE:** responsable de preparar el planning |
+| Attendees | Blancas Chavez, Carlos / Llamozas Diaz, Edson Diego / Miraval Pomalaya, Rodrigo Jesus / Portal Inga, Waldo Alonso / Reyes Muñoz, Joaquin Leonardo |
+| Sprint N-1 Review Summary | En el Sprint 2 se implementó el frontend de la Web Application en Angular, con áreas separadas para conductor y administrador, consumiendo una API simulada con json-server. De las 78 User Stories del backlog se trabajaron 62 (52 implementadas y 10 parciales). Quedaron pendientes US17, US24, US36, US39, US41 y US49, y varias reglas que en el frontend eran simuladas (validación de roles, notificaciones y métricas) para resolverlas en el backend real. |
+| Sprint N-1 Retrospective Summary | > **PENDIENTE:** resumen de la retrospectiva del Sprint 2 acordada por el equipo |
+| Sprint 3 Goal | Our focus is on developing the Avisum RESTful backend with Spring Boot and MySQL, organized by bounded contexts (identity and shifts, emergency management, and fleet monitoring). We believe it delivers persistent storage and enforced business rules for drivers, units, shifts and alerts, replacing the simulated API used in Sprint 2. This will be confirmed when every endpoint can be exercised through Swagger UI, returns the expected status codes, and the resulting data is stored and visible in MySQL. |
+| Sprint N Velocity | 95 |
+| Sum of Story Points | 95 |
+
+**User Stories comprometidas en el Sprint 3 (25 historias, 95 puntos):**
+
+| Epic | User Stories |
+|---|---|
+| EPAV01 Verificación de identidad y gestión de turnos | US01, US02, US14, US25, US39 |
+| EPAV02 Gestión de emergencias | US03, US05, US16, US34, US42 |
+| EPAV03 Monitoreo de flota y métricas | — (se retoman en el Sprint 4) |
+| EPAV05 API RESTful del sistema | US10, US11, US12, US13, US19, US20, US31, US32, US47, US48, US75, US76, US77, US78 |
+| EPAV06 Administración de conductores y unidades | US15 |
+
+##### 5.2.3.2. Aspect Leaders and Collaborators
+
+| Team Member | GitHub Username | Configuración del proyecto y MySQL (L/C) | BC Fleet (L/C) | BC Identity y turnos (L/C) | BC Emergency (L/C) | Pruebas y documentación (L/C) |
+|---|---|---|---|---|---|---|
+| Blancas Chavez, Carlos | CarlosBlancas969 | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
+| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
+| Portal Inga, Waldo Alonso | apiw-07 | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
+| Reyes Muñoz, Joaquin Leonardo | JoakoRM | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
+
+*(L = Leader, C = Collaborator. Completar según quién lideró y quién colaboró en cada aspecto.)*
+
+##### 5.2.3.3. Sprint Backlog 3
+
+El objetivo del Sprint 3 fue implementar el RESTful API de Avisum con Spring Boot y MySQL, con sus reglas de negocio, validaciones, manejo de errores y documentación OpenAPI, y comprobar su funcionamiento con pruebas sobre Swagger UI y MySQL Workbench.
+
+| User Story ID | Título de la historia | Task ID | Tarea | Descripción | Estimación (horas) | Responsable propuesto | Estado |
+|---|---|---|---|---|---|---|---|
+| — | Configuración inicial | T-01 | Crear el proyecto Spring Boot | Generar el proyecto con Spring Initializr (Java 21, Maven, Spring Web, Spring Data JPA, Validation y MySQL Driver) y agregar springdoc-openapi para Swagger UI. | 3 | Blancas Chavez, Carlos | Done |
+| — | Configuración inicial | T-02 | Configurar MySQL y la conexión | Crear la base de datos `avisum`, el usuario del proyecto y la configuración de `application.properties` (conexión, JPA y variables de entorno para las credenciales). | 3 | Blancas Chavez, Carlos | Done |
+| — | Arquitectura | T-03 | Definir la estructura por bounded contexts | Organizar el código en `identity`, `emergency`, `fleet` y `shared`, con las capas `domain`, `application`, `infrastructure` e `interfaces`. | 2 | Blancas Chavez, Carlos | Done |
+| US13, US20, US32, US76 | Gestión de unidades | T-04 | Implementar el BC Fleet | Crear la entidad `BusUnit`, su repositorio, servicio y controlador: listar, consultar, registrar, modificar, actualizar ubicación y eliminar unidades, con placa única. | 8 | Blancas Chavez, Carlos | Done |
+| US01, US10, US14, US15, US47, US48, US75, US77 | Gestión de conductores | T-05 | Implementar el BC Identity: conductores | Crear la entidad `Employee` con código `EMP-###` asignado por el servidor, validación por código (404 y 403), alta, edición, desactivación lógica y eliminación, con DNI único. | 10 | Blancas Chavez, Carlos | Done |
+| US02, US11, US19, US25, US31, US39 | Gestión de turnos | T-06 | Implementar el BC Identity: turnos | Crear la entidad `Shift` con inicio y cierre de turno, consulta de turnos por conductor y por unidad activa, y la regla de un solo turno activo por conductor. | 10 | Blancas Chavez, Carlos | Done |
+| US03, US05, US12, US16, US34, US42, US78 | Gestión de emergencias | T-07 | Implementar el BC Emergency | Crear la entidad `Alert` con tipo, ubicación, hora de creación y de resolución; registrar alertas (exigiendo turno activo), listarlas y resolverlas. | 8 | Blancas Chavez, Carlos | Done |
+| US01 a US78 (transversal) | Calidad de la API | T-08 | Implementar validaciones y manejo de errores | Validar los datos de entrada con Bean Validation y convertir las excepciones del negocio en respuestas HTTP 400, 403, 404 y 409 con el formato `{ "message": "..." }`. | 4 | Blancas Chavez, Carlos | Done |
+| — | Datos iniciales | T-09 | Cargar datos de ejemplo | Crear `DataSeeder`, que inserta 5 conductores, 5 unidades y 4 turnos de ejemplo cuando las tablas están vacías. | 2 | Blancas Chavez, Carlos | Done |
+| — | Preparación del Sprint 4 | T-10 | Configurar CORS | Permitir las llamadas desde el frontend (local y Vercel) mediante una propiedad de configuración. | 1 | Blancas Chavez, Carlos | Done |
+| US10 a US13, US19, US20, US31, US32, US47, US48, US75 a US78 | Documentación del API | T-11 | Documentar el API con OpenAPI | Exponer la documentación interactiva con Swagger UI y el contrato en `/v3/api-docs`. | 2 | Blancas Chavez, Carlos | Done |
+| US01 a US78 (transversal) | Verificación | T-12 | Probar los endpoints y la base de datos | Ejecutar las pruebas sobre Swagger UI (casos de éxito y de error) y comprobar los registros en MySQL Workbench. | 6 | Blancas Chavez, Carlos | Por verificar |
+| — | Documentación del sprint | T-13 | Documentar el Sprint 3 | Redactar las secciones del informe con las evidencias de desarrollo, ejecución, servicios y despliegue. | 4 | Blancas Chavez, Carlos | Por verificar |
+
+**Historias que no entraron en el Sprint 3** y pasan al Sprint 4 o posteriores:
+
+| Pendiente | User Stories | Detalle |
+|---|---|---|
+| Autenticación y roles en el servidor | US22, US50, US72, US73 | Hoy el acceso del administrador y la separación de roles se controlan en el frontend. |
+| Notificaciones | US23, US33, US56, US57 | Los destinatarios de alertas todavía no se guardan en el backend. |
+| Métricas | US35, US44, US49, US62, US63 | El endpoint de métricas no existe aún; se calculan en el frontend. |
+| Reglas de alertas | US17, US24, US36, US41 | Detección de unidad sin señal, reintento, desvío de ruta y escalamiento. |
+| Integración con el frontend | Todas las del frontend | Se conecta en el Sprint 4. |
+
+##### 5.2.3.4. Development Evidence for Sprint Review
+
+###### Tecnologías utilizadas
+
+| Componente | Tecnología / versión |
+|---|---|
+| Lenguaje | Java 21 |
+| Framework | Spring Boot 4.1.2 (Spring Web, Spring Data JPA, Bean Validation) |
+| ORM | Hibernate ORM 7.4 |
+| Servidor web | Apache Tomcat 11 (embebido) |
+| Base de datos | MySQL 8.0 |
+| Documentación del API | springdoc-openapi (Swagger UI, OpenAPI 3.1) |
+| Gestor de dependencias | Maven (Maven Wrapper del proyecto) |
+| IDE | IntelliJ IDEA |
+| Herramientas de verificación | Swagger UI y MySQL Workbench |
+| Control de versiones | Git y GitHub (GitHub Desktop) |
+
+###### Arquitectura
+
+El código sigue la organización por *bounded contexts* definida en el diseño del informe (sección 4.7). Cada contexto tiene sus propias capas y los contextos se comunican entre sí **a través de servicios de la capa de aplicación**, nunca con relaciones directas entre entidades: los turnos y las alertas guardan el identificador del conductor y de la unidad.
+
+```
+pe.edu.upc.avisum
+├── AvisumApplication.java
+├── shared/                         transversal
+│   ├── config/                     CorsConfig, DataSeeder
+│   ├── exception/                  NotFound/Forbidden/Conflict + ApiExceptionHandler
+│   └── interfaces/rest/            PlaceholderController
+├── fleet/                          BC Monitoreo de flota
+│   ├── domain/model/               BusUnit, BusUnitStatus
+│   ├── application/                BusUnitService
+│   ├── infrastructure/persistence/ BusUnitRepository
+│   └── interfaces/rest/            BusUnitController + Request/Resource
+├── identity/                       BC Identidad y turnos
+│   ├── domain/model/               Employee, EmployeeStatus, Shift, ShiftStatus
+│   ├── application/                EmployeeService, ShiftService
+│   ├── infrastructure/persistence/ EmployeeRepository, ShiftRepository
+│   └── interfaces/rest/            EmployeeController, ShiftController + Request/Resource
+└── emergency/                      BC Gestión de emergencias
+    ├── domain/model/               Alert
+    ├── application/                AlertService
+    ├── infrastructure/persistence/ AlertRepository
+    └── interfaces/rest/            AlertController + Request/Resource
+```
+
+<img src="imgs/s3-estructura-proyecto.png">
+
+Dependencias entre contextos (en una sola dirección, sin ciclos):
+
+```
+emergency  ──▶  identity  ──▶  fleet
+```
+
+###### Dependencias y configuración
+
+<img src="imgs/s3-pom-dependencias.png">
+
+<img src="imgs/s3-application-properties.png">
+
+La conexión a MySQL se configura en `application.properties`. El usuario y la contraseña se pueden sustituir con las variables de entorno `DB_USER` y `DB_PASSWORD`, para no dejar credenciales fijas en el repositorio. Hibernate crea y actualiza las tablas automáticamente (`ddl-auto=update`).
+
+###### Modelo de datos
+
+El modelo implementado es una versión inicial del diseño de la sección 4.8: usa identificadores numéricos autogenerados y cuatro tablas, una por agregado principal.
+
+| Tabla | Columnas principales | Contexto |
+|---|---|---|
+| `employees` | `id`, `employee_code` (único), `first_name`, `last_name`, `full_name`, `dni` (único), `plate_number`, `status` (`ACTIVE` / `INACTIVE`) | Identidad |
+| `bus_units` | `id`, `plate_number` (único), `route`, `current_latitude`, `current_longitude`, `status` (`ACTIVE` / `INACTIVE`) | Flota |
+| `shifts` | `id`, `employee_id`, `bus_unit_id`, `route_name`, `route_origin`, `route_destination`, `distance_km`, `duration_seconds`, `passenger_count`, `fare_collected`, `status` (`ACTIVE` / `FINISHED`), `started_at`, `ended_at` | Identidad y turnos |
+| `alerts` | `id`, `employee_id`, `bus_unit_id`, `alert_type`, `description`, `latitude`, `longitude`, `resolved`, `created_at`, `resolved_at` | Emergencias |
+
+`shifts` y `alerts` se relacionan con `employees` y `bus_units` por `employee_id` y `bus_unit_id`, como referencias entre agregados de distintos contextos. La placa de un conductor no es única en `employees`, porque al reasignar unidades dos conductores intercambian de placa.
+
+###### Reglas de negocio implementadas
+
+| Regla | Clase | User Story |
+|---|---|---|
+| El código de empleado se normaliza (mayúsculas, sin espacios, sin el prefijo `QR-`). Si no existe responde 404, y si el conductor está desactivado, 403. | `EmployeeService.validateByCode` | US01, US10, US14 |
+| El código `EMP-###` lo asigna el servidor a partir del id, y no se reutiliza al eliminar conductores. | `EmployeeService.create` | US75 |
+| El DNI de los conductores y la placa de las unidades son únicos (409 si se repiten). | `EmployeeService`, `BusUnitService` | US47, US76 |
+| Iniciar un turno exige un conductor activo y una unidad existente. | `ShiftService.start` | US02, US11 |
+| Un conductor no puede tener dos turnos activos: al iniciar uno nuevo se cierra el anterior. | `ShiftService.start` | US39 |
+| Una alerta exige un conductor, una unidad y un turno activo (409 si no lo hay). | `AlertService.create` | US03, US12 |
+| Al resolver una alerta se guarda la hora de resolución, que permite medir el tiempo de respuesta. | `Alert.resolve` | US34, US78 |
+| El cierre de un turno guarda sus cifras finales y es idempotente. | `ShiftService.end` | US25, US31 |
+
+Fragmento de la regla US39 (un solo turno activo por conductor):
+
+```java
+@Transactional
+public Shift start(Long employeeId, Long busUnitId, String origin, String destination) {
+    Employee employee = employees.get(employeeId);
+    if (employee.getStatus() != EmployeeStatus.ACTIVE) {
+        throw new ForbiddenException("Empleado desactivado");
+    }
+    BusUnit unit = units.get(busUnitId);
+
+    repository.findByEmployeeIdAndStatus(employeeId, ShiftStatus.ACTIVE)
+            .forEach(Shift::closeAutomatically);
+
+    return repository.save(Shift.start(employeeId, busUnitId, unit.getRoute(), origin, destination));
+}
+```
+
+###### Manejo de errores
+
+Todas las respuestas de error tienen el formato `{ "message": "..." }`.
+
+| Código | Cuándo ocurre |
+|---|---|
+| 400 | Datos inválidos (por ejemplo, un DNI que no tiene 8 dígitos) o cuerpo mal formado. |
+| 403 | Conductor desactivado. |
+| 404 | Recurso inexistente. |
+| 409 | Dato único repetido (DNI o placa) o alerta sin turno activo. |
+
+###### Commits y control de versiones
+
+El backend se subió a un repositorio de GitHub con GitHub Desktop, siguiendo la convención de *Conventional Commits* del equipo (sección 5.1.2).
+
+| Commit | Descripción |
+|---|---|
+| > **PENDIENTE** | > **PENDIENTE:** completar con los commits reales del repositorio del backend |
+
+<img src="imgs/s3-github-backend-commit.png">
+
+##### 5.2.3.5. Execution Evidence for Sprint Review
+
+###### Ejecución del backend
+
+Con MySQL encendido, desde la raíz del proyecto:
+
+```bash
+./mvnw spring-boot:run
+```
+
+El puerto del servidor se define con `server.port` en `application.properties` (9090 en esta ejecución). Al terminar el arranque, la consola muestra `Started AvisumApplication`.
+
+<img src="imgs/s3-consola-arranque.png">
+
+Al arrancar, Hibernate crea las tablas y `DataSeeder` inserta los datos de ejemplo. Se pueden comprobar en MySQL Workbench:
+
+<img src="imgs/s3-mysql-tablas.png">
+
+<img src="imgs/s3-mysql-datos-iniciales.png">
+
+| Tabla | Filas iniciales |
+|---|---|
+| `employees` | 5 (`EMP-001` a `EMP-005`) |
+| `bus_units` | 5 |
+| `shifts` | 4 (todos `FINISHED`) |
+| `alerts` | 0 |
+
+###### Documentación interactiva
+
+El API se documenta y se prueba desde Swagger UI, en `http://localhost:9090/swagger-ui/index.html`. El contrato OpenAPI está en `http://localhost:9090/v3/api-docs`.
+
+<img src="imgs/s3-swagger-general.png">
+
+###### Pruebas de los endpoints
+
+Cada prueba se ejecutó con *Try it out → Execute* en Swagger UI, y se verificó el resultado en MySQL Workbench. Los cuerpos de las solicitudes se encuentran en la sección 5.2.3.6.
+
+| # | Prueba | Resultado esperado | User Stories | Evidencia |
+|---|---|---|---|---|
+| 1 | `GET /api/v1/employees` | 200, lista de 5 conductores | US10 | `s3-test-01-listar-conductores.png` |
+| 2 | `GET /api/v1/employees/code/emp-001` | 200, datos del conductor (acepta minúsculas) | US01, US10 | `s3-test-02-validar-codigo.png` |
+| 3 | `GET /api/v1/employees/code/EMP-999` | 404, "Empleado no encontrado" | US01 | `s3-test-03-codigo-inexistente.png` |
+| 4 | `POST /api/v1/bus-units` (placa `TST-001`) | 201, unidad nueva | US76 | `s3-test-04-crear-unidad.png` |
+| 5 | `POST /api/v1/employees` | 201, recibe el código `EMP-006` | US75 | `s3-test-05-crear-conductor.png` |
+| 6 | `POST /api/v1/employees` con el mismo DNI | 409, no se duplica | US47 | `s3-test-06-dni-duplicado.png` |
+| 7 | `PATCH /api/v1/employees/6` con `{"status":"INACTIVE"}`, y luego `GET /employees/code/emp-006` | 200 y luego 403 | US14, US48 | `s3-test-07-conductor-desactivado.png` |
+| 8 | `POST /api/v1/shifts` | 201, turno `ACTIVE` con la ruta de la unidad | US02, US11 | `s3-test-08-iniciar-turno.png` |
+| 9 | `POST /api/v1/alerts` (conductor con turno activo) | 201, `resolved: false` | US03, US12, US42 | `s3-test-09-crear-alerta.png` |
+| 10 | `PATCH /api/v1/alerts/{id}/resolve` | 200, `resolved: true` y `resolvedAt` | US34, US78 | `s3-test-10-resolver-alerta.png` |
+| 11 | `POST /api/v1/alerts` (conductor sin turno activo) | 409, "El conductor no tiene un turno activo" | US03 | `s3-test-11-alerta-sin-turno.png` |
+| 12 | `PATCH /api/v1/shifts/{id}/end` | 200, estado `FINISHED` con `endedAt` | US25, US31 | `s3-test-12-finalizar-turno.png` |
+| 13 | `PATCH /api/v1/bus-units/1/location` | 200, nueva ubicación | US13 | `s3-test-13-ubicacion-unidad.png` |
+| 14 | `GET /api/v1/shifts` | 200, historial de turnos | US19 | `s3-test-14-historial-turnos.png` |
+| 15 | `DELETE /api/v1/employees/6` y `DELETE /api/v1/bus-units/6` | 200, los registros desaparecen | US77 | `s3-test-15-eliminar.png` |
+
+<img src="imgs/s3-test-01-listar-conductores.png">
+
+<img src="imgs/s3-test-02-validar-codigo.png">
+
+<img src="imgs/s3-test-03-codigo-inexistente.png">
+
+<img src="imgs/s3-test-04-crear-unidad.png">
+
+<img src="imgs/s3-test-05-crear-conductor.png">
+
+<img src="imgs/s3-test-06-dni-duplicado.png">
+
+<img src="imgs/s3-test-07-conductor-desactivado.png">
+
+<img src="imgs/s3-test-08-iniciar-turno.png">
+
+<img src="imgs/s3-test-09-crear-alerta.png">
+
+<img src="imgs/s3-test-10-resolver-alerta.png">
+
+<img src="imgs/s3-test-11-alerta-sin-turno.png">
+
+<img src="imgs/s3-test-12-finalizar-turno.png">
+
+<img src="imgs/s3-test-13-ubicacion-unidad.png">
+
+<img src="imgs/s3-test-14-historial-turnos.png">
+
+<img src="imgs/s3-test-15-eliminar.png">
+
+###### Verificación en la base de datos
+
+Los datos creados desde el API quedan guardados en MySQL. Por ejemplo, el conductor registrado en la prueba 5 aparece en la tabla `employees`:
+
+<img src="imgs/s3-mysql-persistencia.png">
+
+Las tablas se relacionan por sus identificadores. Esta consulta muestra cada turno con su conductor y su unidad:
+
+```sql
+SELECT s.id, e.employee_code, e.full_name, b.plate_number, s.status, s.started_at, s.ended_at
+FROM shifts s
+JOIN employees e ON e.id = s.employee_id
+JOIN bus_units b ON b.id = s.bus_unit_id
+ORDER BY s.id;
+```
+
+<img src="imgs/s3-mysql-join-turnos.png">
+
+El tiempo de respuesta ante una alerta (US34) se calcula con las horas de creación y de resolución:
+
+```sql
+SELECT id, alert_type, created_at, resolved_at,
+       TIMESTAMPDIFF(SECOND, created_at, resolved_at) AS segundos_de_respuesta
+FROM alerts
+WHERE resolved = 1;
+```
+
+<img src="imgs/s3-mysql-tiempo-respuesta.png">
+
+###### Diagrama de la base de datos
+
+Generado con MySQL Workbench (*Database → Reverse Engineer*) a partir del esquema `avisum`.
+
+<img src="imgs/s3-mysql-diagrama.png">
+
+##### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+**URL base:** `http://localhost:9090/api/v1`
+
+**Documentación interactiva:** `http://localhost:9090/swagger-ui/index.html`
+
+Formato de errores en todos los endpoints: `{ "message": "descripción del error" }`.
+
+###### Conductores (`/employees`)
+
+<img src="imgs/s3-swagger-employees.png">
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Respuestas |
+|---|---|---|---|---|
+| `/employees` | GET | Lista los conductores registrados. | US10 | 200 |
+| `/employees/{id}` | GET | Consulta un conductor por su id. | US10 | 200, 404 |
+| `/employees/code/{code}` | GET | Valida la identidad del conductor por su código. Acepta minúsculas y el prefijo `QR-`. | US01, US10, US14 | 200, 404 (inexistente), 403 (desactivado) |
+| `/employees` | POST | Registra un conductor. El servidor asigna el id y el código `EMP-###`. | US75 | 201, 400, 409 (DNI repetido) |
+| `/employees/{id}` | PATCH | Actualiza los datos o el estado (`ACTIVE` / `INACTIVE`) del conductor. | US47, US48 | 200, 400, 404, 409 |
+| `/employees/{id}` | DELETE | Elimina un conductor. | US77 | 200, 404 |
+
+**Registrar un conductor** · `POST /api/v1/employees`
+
+```json
+{
+  "firstName": "Hugo",
+  "lastName": "Mori",
+  "dni": "10000009",
+  "plateNumber": "TST-001"
+}
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id": 6,
+  "employeeCode": "EMP-006",
+  "firstName": "Hugo",
+  "lastName": "Mori",
+  "fullName": "Hugo Mori",
+  "dni": "10000009",
+  "plateNumber": "TST-001",
+  "status": "ACTIVE"
+}
+```
+
+**Desactivar un conductor** · `PATCH /api/v1/employees/6`
+
+```json
+{ "status": "INACTIVE" }
+```
+
+Después, `GET /api/v1/employees/code/emp-006` responde `403` con `{ "message": "Empleado desactivado" }`.
+
+###### Unidades (`/bus-units`)
+
+<img src="imgs/s3-swagger-bus-units.png">
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Respuestas |
+|---|---|---|---|---|
+| `/bus-units` | GET | Lista las unidades con su ruta, ubicación y estado. | US32 | 200 |
+| `/bus-units/{id}` | GET | Consulta una unidad. | US20 | 200, 404 |
+| `/bus-units` | POST | Registra una unidad. | US76 | 201, 400, 409 (placa repetida) |
+| `/bus-units/{id}` | PATCH | Modifica la placa, la ruta o el estado de la unidad. | US13 | 200, 404, 409 |
+| `/bus-units/{id}/location` | PATCH | Actualiza la ubicación en vivo de la unidad. | US13 | 200, 400, 404 |
+| `/bus-units/{id}` | DELETE | Elimina una unidad. | US77 | 200, 404 |
+
+**Registrar una unidad** · `POST /api/v1/bus-units`
+
+```json
+{ "plateNumber": "TST-001", "route": "R-07" }
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id": 6,
+  "plateNumber": "TST-001",
+  "route": "R-07",
+  "currentLatitude": -12.0464,
+  "currentLongitude": -77.0428,
+  "status": "ACTIVE"
+}
+```
+
+**Actualizar la ubicación** · `PATCH /api/v1/bus-units/1/location`
+
+```json
+{ "latitude": -12.05, "longitude": -77.04 }
+```
+
+###### Turnos (`/shifts`)
+
+<img src="imgs/s3-swagger-shifts.png">
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Respuestas |
+|---|---|---|---|---|
+| `/shifts` | GET | Lista el historial de turnos. | US19 | 200 |
+| `/shifts/employee/{employeeId}` | GET | Lista los turnos de un conductor. | US19 | 200 |
+| `/shifts/bus-unit/{busUnitId}/active` | GET | Consulta el turno activo de una unidad. | US39 | 200, 404 |
+| `/shifts` | POST | Inicia el turno de un conductor en una unidad. Cierra el turno activo anterior del conductor, si lo había. | US02, US11, US39 | 201, 400, 403 (conductor desactivado), 404 |
+| `/shifts/{id}/end` | PATCH | Cierra el turno con sus cifras finales. | US25, US31 | 200, 400, 404 |
+
+**Iniciar un turno** · `POST /api/v1/shifts`
+
+```json
+{
+  "employeeId": 1,
+  "busUnitId": 1,
+  "routeOrigin": "Terminal Norte",
+  "routeDestination": "Estación Central"
+}
+```
+
+Respuesta `201 Created` (el servidor completa la ruta de la unidad, las cifras en cero y la hora de inicio):
+
+```json
+{
+  "id": 5,
+  "employeeId": 1,
+  "busUnitId": 1,
+  "routeName": "R-42",
+  "routeOrigin": "Terminal Norte",
+  "routeDestination": "Estación Central",
+  "distanceKm": 0.0,
+  "durationSeconds": 0,
+  "passengerCount": 0,
+  "fareCollected": 0.0,
+  "status": "ACTIVE",
+  "startedAt": "2026-11-06T14:20:11.532Z",
+  "endedAt": null
+}
+```
+
+**Finalizar un turno** · `PATCH /api/v1/shifts/5/end`
+
+```json
+{
+  "distanceKm": 1.5,
+  "durationSeconds": 120,
+  "passengerCount": 8,
+  "fareCollected": 11.5
+}
+```
+
+El turno regresa con `"status": "FINISHED"` y la hora de fin en `endedAt`.
+
+###### Alertas (`/alerts`)
+
+<img src="imgs/s3-swagger-alerts.png">
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Respuestas |
+|---|---|---|---|---|
+| `/alerts` | GET | Lista las alertas registradas. | US05, US16 | 200 |
+| `/alerts` | POST | Registra una alerta de un conductor, con su tipo y coordenadas. Exige un turno activo. | US03, US12, US42 | 201, 400, 404, 409 (sin turno activo) |
+| `/alerts/{id}/resolve` | PATCH | Marca la alerta como resuelta y registra la hora de resolución. | US34, US78 | 200, 404 |
+
+**Registrar una alerta** · `POST /api/v1/alerts`
+
+```json
+{
+  "employeeId": 1,
+  "busUnitId": 1,
+  "alertType": "PÁNICO",
+  "description": "Alerta de prueba",
+  "latitude": -12.0414,
+  "longitude": -77.0253
+}
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id": 1,
+  "employeeId": 1,
+  "busUnitId": 1,
+  "alertType": "PÁNICO",
+  "description": "Alerta de prueba",
+  "latitude": -12.0414,
+  "longitude": -77.0253,
+  "resolved": false,
+  "createdAt": "2026-11-06T14:21:03.118Z",
+  "resolvedAt": null
+}
+```
+
+###### Recursos reservados
+
+`GET /drivers`, `GET /sensors` y `GET /passenger-counts` responden una lista vacía. Están reservados para los siguientes sprints.
+
+###### Funcionalidades todavía no cubiertas por el API
+
+| Funcionalidad | User Stories | Estado |
+|---|---|---|
+| Autenticación y validación de roles en el servidor | US22, US50, US72, US73 | Pendiente (hoy se controla en el frontend) |
+| Destinatarios de notificaciones | US23, US33, US56, US57 | Pendiente |
+| Endpoint de métricas | US35, US44, US49, US62, US63 | Pendiente |
+| Detección de unidad sin señal, desvío de ruta, reintento y escalamiento de alertas | US17, US24, US36, US41 | Pendiente |
+
+##### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 3 el backend se ejecutó y se verificó en un entorno local (MySQL y Spring Boot en la misma máquina), y se preparó para su despliegue. El despliegue en la nube, junto con la conexión del frontend, corresponde al Sprint 4.
+
+| Producto | Entorno | Repositorio |
+|---|---|---|
+| Backend (Spring Boot) | Local: `http://localhost:9090` | > **PENDIENTE:** URL del repositorio del backend |
+| Base de datos (MySQL 8.0) | Local: `localhost:3306`, esquema `avisum` | — |
+
+###### Paso 1. Preparación de la base de datos
+
+En MySQL Workbench se creó el esquema y un usuario propio del proyecto, en lugar de usar `root`:
+
+```sql
+CREATE DATABASE IF NOT EXISTS avisum
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE USER IF NOT EXISTS 'avisum_user'@'localhost' IDENTIFIED BY '<contraseña>';
+GRANT ALL PRIVILEGES ON avisum.* TO 'avisum_user'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+Las tablas no se crean manualmente: Hibernate las genera al arrancar la aplicación.
+
+###### Paso 2. Configuración de las credenciales
+
+El usuario y la contraseña se leen de las variables de entorno `DB_USER` y `DB_PASSWORD`, de modo que no hace falta dejarlas escritas en el repositorio ni en el entorno de despliegue.
+
+```properties
+spring.datasource.username=${DB_USER:avisum_user}
+spring.datasource.password=${DB_PASSWORD:<valor por defecto de desarrollo>}
+```
+
+###### Paso 3. Compilación y empaquetado
+
+```bash
+./mvnw clean package
+```
+
+Maven compila los 39 archivos del proyecto y genera el JAR ejecutable en `target/`.
+
+<img src="imgs/s3-deploy-jar.png">
+
+###### Paso 4. Ejecución del JAR
+
+```bash
+java -jar target/avisum-0.0.1-SNAPSHOT.jar
+```
+
+<img src="imgs/s3-deploy-jar-run.png">
+
+###### Paso 5. Subida del código a GitHub
+
+1. En GitHub Desktop se agregó la carpeta del proyecto (**File → Add local repository…**) y se creó el repositorio local.
+2. Se revisó la lista de cambios para confirmar que no se subieran la carpeta `target` ni archivos del IDE.
+3. Se registró el commit siguiendo la convención del equipo y se presionó **Publish repository**.
+
+<img src="imgs/s3-deploy-repo-github.png">
+
+###### Paso 6. Verificación posterior
+
+- [ ] El JAR arranca y la consola muestra `Started AvisumApplication`.
+- [ ] Swagger UI carga en `/swagger-ui/index.html`.
+- [ ] `GET /api/v1/employees` devuelve los conductores de ejemplo.
+- [ ] Los datos creados desde el API se ven en MySQL Workbench.
+
+###### Despliegue en la nube (pendiente)
+
+Para el Sprint 4 se prevé desplegar el backend y la base de datos en una plataforma en la nube (por ejemplo, Railway o Render), configurando `DB_USER`, `DB_PASSWORD` y la URL de conexión como variables de entorno, y apuntando el frontend a la URL pública del API.
+
+##### 5.2.3.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, el equipo trabajó en el repositorio del backend con GitHub.
+
+| Integrante | GitHub Username | Contribución en el Sprint 3 |
+|---|---|---|
+| Blancas Chavez, Carlos | CarlosBlancas969 | > **PENDIENTE** |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | > **PENDIENTE** |
+| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | > **PENDIENTE** |
+| Portal Inga, Waldo Alonso | apiw-07 | > **PENDIENTE** |
+| Reyes Muñoz, Joaquin Leonardo | JoakoRM | > **PENDIENTE** |
+
+> **PENDIENTE:** indicar las ramas utilizadas, el número de commits por integrante y si se usaron Pull Requests (los datos salen de *Insights → Contributors* y de la pestaña *Branches* del repositorio).
+
+<img src="imgs/s3-github-contributors.png">
+
+<img src="imgs/s3-github-commits.png">
+
+<img src="imgs/s3-github-branches.png">
+
+#### Conclusiones del Sprint 3
+
+1. **Se construyó el backend de Avisum con el contrato del frontend.** El API expone los recursos de conductores, unidades, turnos y alertas con los mismos formatos que usó la API simulada del Sprint 2, de modo que la integración del Sprint 4 no exige rediseñar el frontend.
+
+2. **El código quedó organizado por *bounded contexts*.** Los contextos de identidad y turnos, emergencias y flota están separados en capas y se comunican por servicios, siguiendo el diseño del informe.
+
+3. **Las reglas de negocio pasaron del frontend al servidor.** Quedaron implementadas la validación de conductores desactivados, el código de empleado asignado por el servidor, la unicidad del DNI y la placa, el turno único por conductor (US39) y la exigencia de turno activo para registrar una alerta (US03).
+
+4. **El tiempo de respuesta ante alertas ahora queda registrado.** La hora de resolución de cada alerta se guarda en la base de datos, lo que permite calcular el indicador de la *Hypothesis Statement 2* con datos persistentes.
+
+5. **La documentación interactiva facilita la verificación.** Swagger UI permite que cualquier integrante pruebe el API sin escribir código, y MySQL Workbench permite comprobar que cada operación se guardó.
+
+6. **Quedan pendientes identificados para el Sprint 4.** La conexión con el frontend, la autenticación y los roles en el servidor, las notificaciones y las métricas en el backend, las reglas de detección de alertas y el despliegue en la nube.
+
+#### Estado del Product Backlog al cierre del Sprint 3
+
+| Estado | Cantidad | User Stories |
+|---|---|---|
+| Implementadas en el backend (Sprint 3) | 25 | US01, US02, US03, US05, US10, US11, US12, US13, US14, US15, US16, US19, US20, US25, US31, US32, US34, US39, US42, US47, US48, US75, US76, US77, US78 |
+| Pendientes de backend | 17 | US17, US22, US23, US24, US33, US35, US36, US41, US44, US49, US50, US56, US57, US62, US63, US72, US73 |
+| Dependientes del frontend (Sprint 4) | — | Las historias de las pantallas que consumen el API |
+
+
+
