@@ -505,3 +505,31 @@ Para ver la sincronización en vivo, se abren dos pestañas del mismo navegador:
 
 
 ##### 5.2.2.8.Team Collaboration Insights during Sprint.    
+
+
+##### 5.2.3.5. Execution Evidence for Sprint Review
+
+###### Ejecución del backend
+
+Con MySQL encendido, desde la raíz del proyecto:
+
+```bash
+./mvnw spring-boot:run
+```
+
+El puerto del servidor se define con `server.port` en `application.properties` (9090 en esta ejecución). Al terminar el arranque, la consola muestra `Started AvisumApplication`.
+
+<img src="imgs/s3-consola-arranque.png">
+
+Al arrancar, Hibernate crea las tablas y `DataSeeder` inserta los datos de ejemplo. Se pueden comprobar en MySQL Workbench:
+
+<img src="imgs/s3-mysql-tablas.png">
+
+<img src="imgs/s3-mysql-datos-iniciales.png">
+
+| Tabla | Filas iniciales |
+|---|---|
+| `employees` | 5 (`EMP-001` a `EMP-005`) |
+| `bus_units` | 5 |
+| `shifts` | 4 (todos `FINISHED`) |
+| `alerts` | 0 |
