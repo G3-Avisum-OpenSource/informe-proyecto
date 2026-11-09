@@ -505,3 +505,125 @@ Para ver la sincronización en vivo, se abren dos pestañas del mismo navegador:
 
 
 ##### 5.2.2.8.Team Collaboration Insights during Sprint.    
+
+
+##### 5.2.3.5. Execution Evidence for Sprint Review
+
+###### Ejecución del backend
+
+Con MySQL encendido, desde la raíz del proyecto:
+
+```bash
+./mvnw spring-boot:run
+```
+
+El puerto del servidor se define con `server.port` en `application.properties` (9090 en esta ejecución). Al terminar el arranque, la consola muestra `Started AvisumApplication`.
+
+<img src="imgs/s3-consola-arranque.png">
+
+Al arrancar, Hibernate crea las tablas y `DataSeeder` inserta los datos de ejemplo. Se pueden comprobar en MySQL Workbench:
+
+<img src="imgs/s3-mysql-tablas.png">
+
+<img src="imgs/s3-mysql-datos-iniciales.png">
+
+| Tabla | Filas iniciales |
+|---|---|
+| `employees` | 5 (`EMP-001` a `EMP-005`) |
+| `bus_units` | 5 |
+| `shifts` | 4 (todos `FINISHED`) |
+| `alerts` | 0 |
+
+###### Documentación interactiva
+
+El API se documenta y se prueba desde Swagger UI, en `http://localhost:9090/swagger-ui/index.html`. El contrato OpenAPI está en `http://localhost:9090/v3/api-docs`.
+
+<img src="imgs/s3-swagger-general.png">
+
+###### Pruebas de los endpoints
+
+Cada prueba se ejecutó con *Try it out → Execute* en Swagger UI, y se verificó el resultado en MySQL Workbench. Los cuerpos de las solicitudes se encuentran en la sección 5.2.3.6.
+
+| # | Prueba | Resultado esperado | User Stories | Evidencia |
+|---|---|---|---|---|
+| 1 | `GET /api/v1/employees` | 200, lista de 5 conductores | US10 | `s3-test-01-listar-conductores.png` |
+| 2 | `GET /api/v1/employees/code/emp-001` | 200, datos del conductor (acepta minúsculas) | US01, US10 | `s3-test-02-validar-codigo.png` |
+| 3 | `GET /api/v1/employees/code/EMP-999` | 404, "Empleado no encontrado" | US01 | `s3-test-03-codigo-inexistente.png` |
+| 4 | `POST /api/v1/bus-units` (placa `TST-001`) | 201, unidad nueva | US76 | `s3-test-04-crear-unidad.png` |
+| 5 | `POST /api/v1/employees` | 201, recibe el código `EMP-006` | US75 | `s3-test-05-crear-conductor.png` |
+| 6 | `POST /api/v1/employees` con el mismo DNI | 409, no se duplica | US47 | `s3-test-06-dni-duplicado.png` |
+| 7 | `PATCH /api/v1/employees/6` con `{"status":"INACTIVE"}`, y luego `GET /employees/code/emp-006` | 200 y luego 403 | US14, US48 | `s3-test-07-conductor-desactivado.png` |
+| 8 | `POST /api/v1/shifts` | 201, turno `ACTIVE` con la ruta de la unidad | US02, US11 | `s3-test-08-iniciar-turno.png` |
+| 9 | `POST /api/v1/alerts` (conductor con turno activo) | 201, `resolved: false` | US03, US12, US42 | `s3-test-09-crear-alerta.png` |
+| 10 | `PATCH /api/v1/alerts/{id}/resolve` | 200, `resolved: true` y `resolvedAt` | US34, US78 | `s3-test-10-resolver-alerta.png` |
+| 11 | `POST /api/v1/alerts` (conductor sin turno activo) | 409, "El conductor no tiene un turno activo" | US03 | `s3-test-11-alerta-sin-turno.png` |
+| 12 | `PATCH /api/v1/shifts/{id}/end` | 200, estado `FINISHED` con `endedAt` | US25, US31 | `s3-test-12-finalizar-turno.png` |
+| 13 | `PATCH /api/v1/bus-units/1/location` | 200, nueva ubicación | US13 | `s3-test-13-ubicacion-unidad.png` |
+| 14 | `GET /api/v1/shifts` | 200, historial de turnos | US19 | `s3-test-14-historial-turnos.png` |
+| 15 | `DELETE /api/v1/employees/6` y `DELETE /api/v1/bus-units/6` | 200, los registros desaparecen | US77 | `s3-test-15-eliminar.png` |
+
+<img src="imgs/s3-test-01-listar-conductores.png">
+
+<img src="imgs/s3-test-02-validar-codigo.png">
+
+<img src="imgs/s3-test-03-codigo-inexistente.png">
+
+<img src="imgs/s3-test-04-crear-unidad.png">
+
+<img src="imgs/s3-test-05-crear-conductor.png">
+
+<img src="imgs/s3-test-06-dni-duplicado.png">
+
+<img src="imgs/s3-test-07-conductor-desactivado.png">
+
+<img src="imgs/s3-test-08-iniciar-turno.png">
+
+<img src="imgs/s3-test-09-crear-alerta.png">
+
+<img src="imgs/s3-test-10-resolver-alerta.png">
+
+<img src="imgs/s3-test-11-alerta-sin-turno.png">
+
+<img src="imgs/s3-test-12-finalizar-turno.png">
+
+<img src="imgs/s3-test-13-ubicacion-unidad.png">
+
+<img src="imgs/s3-test-14-historial-turnos.png">
+
+<img src="imgs/s3-test-15-eliminar.png">
+
+
+###### Verificación en la base de datos
+
+Los datos creados desde el API quedan guardados en MySQL. Por ejemplo, el conductor registrado en la prueba 5 aparece en la tabla `employees`:
+
+<img src="imgs/s3-mysql-persistencia.png">
+
+Las tablas se relacionan por sus identificadores. Esta consulta muestra cada turno con su conductor y su unidad:
+
+```sql
+SELECT s.id, e.employee_code, e.full_name, b.plate_number, s.status, s.started_at, s.ended_at
+FROM shifts s
+JOIN employees e ON e.id = s.employee_id
+JOIN bus_units b ON b.id = s.bus_unit_id
+ORDER BY s.id;
+```
+
+<img src="imgs/s3-mysql-join-turnos.png">
+
+El tiempo de respuesta ante una alerta (US34) se calcula con las horas de creación y de resolución:
+
+```sql
+SELECT id, alert_type, created_at, resolved_at,
+       TIMESTAMPDIFF(SECOND, created_at, resolved_at) AS segundos_de_respuesta
+FROM alerts
+WHERE resolved = 1;
+```
+
+<img src="imgs/s3-mysql-tiempo-respuesta.png">
+
+###### Diagrama de la base de datos
+
+Generado con MySQL Workbench (*Database → Reverse Engineer*) a partir del esquema `avisum`.
+
+<img src="imgs/s3-mysql-diagrama.png">
