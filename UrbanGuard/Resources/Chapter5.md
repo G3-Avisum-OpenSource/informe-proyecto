@@ -591,3 +591,39 @@ Cada prueba se ejecutó con *Try it out → Execute* en Swagger UI, y se verific
 <img src="imgs/s3-test-14-historial-turnos.png">
 
 <img src="imgs/s3-test-15-eliminar.png">
+
+
+###### Verificación en la base de datos
+
+Los datos creados desde el API quedan guardados en MySQL. Por ejemplo, el conductor registrado en la prueba 5 aparece en la tabla `employees`:
+
+<img src="imgs/s3-mysql-persistencia.png">
+
+Las tablas se relacionan por sus identificadores. Esta consulta muestra cada turno con su conductor y su unidad:
+
+```sql
+SELECT s.id, e.employee_code, e.full_name, b.plate_number, s.status, s.started_at, s.ended_at
+FROM shifts s
+JOIN employees e ON e.id = s.employee_id
+JOIN bus_units b ON b.id = s.bus_unit_id
+ORDER BY s.id;
+```
+
+<img src="imgs/s3-mysql-join-turnos.png">
+
+El tiempo de respuesta ante una alerta (US34) se calcula con las horas de creación y de resolución:
+
+```sql
+SELECT id, alert_type, created_at, resolved_at,
+       TIMESTAMPDIFF(SECOND, created_at, resolved_at) AS segundos_de_respuesta
+FROM alerts
+WHERE resolved = 1;
+```
+
+<img src="imgs/s3-mysql-tiempo-respuesta.png">
+
+###### Diagrama de la base de datos
+
+Generado con MySQL Workbench (*Database → Reverse Engineer*) a partir del esquema `avisum`.
+
+<img src="imgs/s3-mysql-diagrama.png">
