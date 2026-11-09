@@ -893,4 +893,19 @@ El Sprint 3 se centró en el **backend de Avisum**: un RESTful API con **Spring 
 
 
 
+##### 5.2.3.4. Development Evidence for Sprint Review
 
+###### Tecnologías utilizadas
+
+| Componente | Tecnología / versión |
+|---|---|
+| Lenguaje | Java 21 |
+| Framework | Spring Boot 4.1.2 (Spring Web, Spring Data JPA, Bean Validation) |
+| ORM | Hibernate ORM 7.4 |
+| Servidor web | Apache Tomcat 11 (embebido) |
+| Base de datos | MySQL 8.0 |
+| Documentación del API | springdoc-openapi (Swagger UI, OpenAPI 3.1) |
+| Gestor de dependencias | Maven (Maven Wrapper del proyecto) |
+| IDE | IntelliJ IDEA |
+| Herramientas de verificación | Swagger UI y MySQL Workbench |
+| Control de versiones | Git y GitHub (GitHub Desktop) |
