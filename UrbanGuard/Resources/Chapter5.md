@@ -936,7 +936,7 @@ El objetivo del Sprint 3 fue implementar el RESTful API de Avisum con Spring Boo
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-Durante el Sprint 3 el backend se ejecutó y se verificó en un entorno local (MySQL y Spring Boot en la misma máquina) y después se desplegó en la nube: el código se publicó en GitHub, la base de datos se creó en TiDB Cloud y el servicio se publicó en Render mediante Docker. El 10/11/2026 el despliegue quedó en estado **Live** y el API respondió con datos reales almacenados en la nube.
+Durante el Sprint 3 el backend se desarrolló y se probó en un entorno local (MySQL y Spring Boot en la misma máquina) y después se desplegó en la nube: el código se publicó en GitHub, la base de datos se creó en TiDB Cloud y el servicio se publicó en Render mediante Docker. El 10/11/2026 el despliegue quedó en estado **Live** y el API respondió con datos reales almacenados en la nube.
 
 | Producto | Entorno | URL / Repositorio |
 |---|---|---|
@@ -970,25 +970,7 @@ spring.datasource.password=${DB_PASSWORD:}
 
 El puerto también se toma de la variable `PORT`, que Render asigna automáticamente.
 
-###### Paso 3. Compilación y empaquetado
-
-```bash
-./mvnw clean package
-```
-
-Maven compila los 39 archivos del proyecto y genera el JAR ejecutable en `target/`.
-
-<img src="imgs/s3-deploy-jar.png">
-
-###### Paso 4. Ejecución del JAR en local
-
-```bash
-java -jar target/avisum-0.0.1-SNAPSHOT.jar
-```
-
-<img src="imgs/s3-deploy-jar-run.png">
-
-###### Paso 5. Subida del código a GitHub
+###### Paso 3. Subida del código a GitHub
 
 1. Se agregó la carpeta del proyecto en GitHub Desktop y se creó el repositorio en la organización `G3-Avisum-OpenSource`.
 2. Se revisó la lista de cambios para confirmar que no se subieran la carpeta `target`, archivos del IDE ni la contraseña de la base de datos.
@@ -996,7 +978,7 @@ java -jar target/avisum-0.0.1-SNAPSHOT.jar
 
 <img src="imgs/s3-deploy-repo-github.png">
 
-###### Paso 6. Creación de la base de datos en la nube (TiDB Cloud)
+###### Paso 4. Creación de la base de datos en la nube (TiDB Cloud)
 
 Se eligió TiDB Cloud porque es compatible con MySQL, por lo que el backend no requirió cambios de código, y su plan Starter no solicita tarjeta de crédito. Render no ofrece MySQL propio.
 
@@ -1024,7 +1006,7 @@ CREATE DATABASE avisum;
 
 <img src="imgs/s3-deploy-tidb-bd.png">
 
-###### Paso 7. Contenedor Docker del backend
+###### Paso 5. Contenedor Docker del backend
 
 Render compila el proyecto con el siguiente `Dockerfile`, que usa dos etapas: una para compilar con Maven y otra, más liviana, para ejecutar el JAR.
 
@@ -1040,7 +1022,7 @@ COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
 ```
 
-###### Paso 8. Creación del Web Service en Render
+###### Paso 6. Creación del Web Service en Render
 
 Se creó un Web Service conectado al repositorio `avisum-backend` con la siguiente configuración:
 
@@ -1054,7 +1036,7 @@ Se creó un Web Service conectado al repositorio `avisum-backend` con la siguien
 
 <img src="imgs/s3-deploy-render-config.png">
 
-###### Paso 9. Variables de entorno
+###### Paso 7. Variables de entorno
 
 Las credenciales se configuraron como variables de entorno en Render, sin escribirlas en el código.
 
@@ -1069,13 +1051,13 @@ Las credenciales se configuraron como variables de entorno en Render, sin escrib
 
 <img src="imgs/s3-deploy-render-env.png">
 
-###### Paso 10. Incidente durante el despliegue y solución
+###### Paso 8. Incidente durante el despliegue y solución
 
 El primer despliegue falló durante la compilación con Maven. El log indicaba que el plugin `maven-resources-plugin` no pudo procesar `application.properties` por un error `MalformedInputException`. La causa fue que el archivo contenía caracteres con tilde (en los comentarios) que no estaban guardados en UTF-8. Se corrigió reemplazándolos por caracteres sin tilde, se confirmó el cambio en GitHub y se lanzó un nuevo despliegue desde Render con **Deploy latest commit**.
 
 <img src="imgs/s3-deploy-render-error.png">
 
-###### Paso 11. Resultado del despliegue
+###### Paso 9. Resultado del despliegue
 
 El segundo despliegue terminó correctamente. El log muestra que Hibernate inicializó la conexión con TiDB y que Spring Boot arrancó (`Started AvisumApplication`).
 
@@ -1088,7 +1070,7 @@ El segundo despliegue terminó correctamente. El log muestra que Hibernate inici
 
 <img src="imgs/s3-deploy-render-live.png">
 
-###### Paso 12. Verificación posterior
+###### Paso 10. Verificación posterior
 
 - [x] El servicio arranca y el log muestra `Started AvisumApplication`.
 - [x] Swagger UI carga en `/swagger-ui.html`.
@@ -1111,5 +1093,4 @@ SELECT * FROM employees;
 - En el plan gratuito de Render el servicio se suspende tras un período de inactividad, por lo que la primera petición puede tardar hasta un minuto.
 - El plan Starter de TiDB tiene una cuota gratuita mensual; con el límite de gasto en $0 la base se limita al agotarla, sin generar cobros.
 - Pendiente: apuntar el frontend a `https://avisum-api.onrender.com` y actualizar el monitor de disponibilidad (sección 7.4) a la nueva URL.
-
 
