@@ -891,6 +891,26 @@ El Sprint 3 se centró en el **backend de Avisum**: un RESTful API con **Spring 
 
 *(L = Leader, C = Collaborator. Completar según quién lideró y quién colaboró en cada aspecto.)*
 
+##### 5.2.3.3. Sprint Backlog 3
+
+El objetivo del Sprint 3 fue implementar el RESTful API de Avisum con Spring Boot y MySQL, con sus reglas de negocio, validaciones, manejo de errores y documentación OpenAPI, y comprobar su funcionamiento con pruebas sobre Swagger UI y MySQL Workbench.
+
+| User Story ID | Título de la historia | Task ID | Tarea | Descripción | Estimación (horas) | Responsable propuesto | Estado |
+|---|---|---|---|---|---|---|---|
+| — | Configuración inicial | T-01 | Crear el proyecto Spring Boot | Generar el proyecto con Spring Initializr (Java 21, Maven, Spring Web, Spring Data JPA, Validation y MySQL Driver) y agregar springdoc-openapi para Swagger UI. | 3 | Blancas Chavez, Carlos | Done |
+| — | Configuración inicial | T-02 | Configurar MySQL y la conexión | Crear la base de datos `avisum`, el usuario del proyecto y la configuración de `application.properties` (conexión, JPA y variables de entorno para las credenciales). | 3 | Blancas Chavez, Carlos | Done |
+| — | Arquitectura | T-03 | Definir la estructura por bounded contexts | Organizar el código en `identity`, `emergency`, `fleet` y `shared`, con las capas `domain`, `application`, `infrastructure` e `interfaces`. | 2 | Blancas Chavez, Carlos | Done |
+| US13, US20, US32, US76 | Gestión de unidades | T-04 | Implementar el BC Fleet | Crear la entidad `BusUnit`, su repositorio, servicio y controlador: listar, consultar, registrar, modificar, actualizar ubicación y eliminar unidades, con placa única. | 8 | Blancas Chavez, Carlos | Done |
+| US01, US10, US14, US15, US47, US48, US75, US77 | Gestión de conductores | T-05 | Implementar el BC Identity: conductores | Crear la entidad `Employee` con código `EMP-###` asignado por el servidor, validación por código (404 y 403), alta, edición, desactivación lógica y eliminación, con DNI único. | 10 | Blancas Chavez, Carlos | Done |
+| US02, US11, US19, US25, US31, US39 | Gestión de turnos | T-06 | Implementar el BC Identity: turnos | Crear la entidad `Shift` con inicio y cierre de turno, consulta de turnos por conductor y por unidad activa, y la regla de un solo turno activo por conductor. | 10 | Blancas Chavez, Carlos | Done |
+| US03, US05, US12, US16, US34, US42, US78 | Gestión de emergencias | T-07 | Implementar el BC Emergency | Crear la entidad `Alert` con tipo, ubicación, hora de creación y de resolución; registrar alertas (exigiendo turno activo), listarlas y resolverlas. | 8 | Blancas Chavez, Carlos | Done |
+| US01 a US78 (transversal) | Calidad de la API | T-08 | Implementar validaciones y manejo de errores | Validar los datos de entrada con Bean Validation y convertir las excepciones del negocio en respuestas HTTP 400, 403, 404 y 409 con el formato `{ "message": "..." }`. | 4 | Blancas Chavez, Carlos | Done |
+| — | Datos iniciales | T-09 | Cargar datos de ejemplo | Crear `DataSeeder`, que inserta 5 conductores, 5 unidades y 4 turnos de ejemplo cuando las tablas están vacías. | 2 | Blancas Chavez, Carlos | Done |
+| — | Preparación del Sprint 4 | T-10 | Configurar CORS | Permitir las llamadas desde el frontend (local y Vercel) mediante una propiedad de configuración. | 1 | Blancas Chavez, Carlos | Done |
+| US10 a US13, US19, US20, US31, US32, US47, US48, US75 a US78 | Documentación del API | T-11 | Documentar el API con OpenAPI | Exponer la documentación interactiva con Swagger UI y el contrato en `/v3/api-docs`. | 2 | Blancas Chavez, Carlos | Done |
+| US01 a US78 (transversal) | Verificación | T-12 | Probar los endpoints y la base de datos | Ejecutar las pruebas sobre Swagger UI (casos de éxito y de error) y comprobar los registros en MySQL Workbench. | 6 | Blancas Chavez, Carlos | Por verificar |
+| — | Documentación del sprint | T-13 | Documentar el Sprint 3 | Redactar las secciones del informe con las evidencias de desarrollo, ejecución, servicios y despliegue. | 4 | Blancas Chavez, Carlos | Por verificar |
+
 
 
 ##### 5.2.3.4. Development Evidence for Sprint Review
