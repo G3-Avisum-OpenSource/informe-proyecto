@@ -883,11 +883,11 @@ El Sprint 3 se centró en el **backend de Avisum**: un RESTful API con **Spring 
 
 | Team Member | GitHub Username | Configuración del proyecto y MySQL (L/C) | BC Fleet (L/C) | BC Identity y turnos (L/C) | BC Emergency (L/C) | Pruebas y documentación (L/C) |
 |---|---|---|---|---|---|---|
-| Blancas Chavez, Carlos | CarlosBlancas969 | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
-| Llamozas Diaz, Edson Diego | DiegoLlamozas | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
-| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
-| Portal Inga, Waldo Alonso | apiw-07 | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
-| Reyes Muñoz, Joaquin Leonardo | JoakoRM | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** | > **PENDIENTE** |
+| Blancas Chavez, Carlos | CarlosBlancas969 | > **L** | > **L** | > **L** | > **L** | > **L** |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | > **C** | > **C** | > **C** | > **C** | > **C** |
+| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | > **C** | > **C** | > **C** | > **C** | > **C** |
+| Portal Inga, Waldo Alonso | apiw-07 | > **C** | > **C** | > **C** | > **C** | > **C** |
+| Reyes Muñoz, Joaquin Leonardo | JoakoRM | > **C** | > **C** | > **C** | > **C** | > **C** |
 
 *(L = Leader, C = Collaborator. Completar según quién lideró y quién colaboró en cada aspecto.)*
 
