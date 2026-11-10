@@ -856,10 +856,10 @@ El Sprint 3 se centró en el **backend de Avisum**: un RESTful API con **Spring 
 | Campo | Detalle |
 |---|---|
 | Sprint # | Sprint 3 |
-| Date | > **PENDIENTE:** fecha de la reunión |
-| Time | > **PENDIENTE:** hora |
-| Location | > **PENDIENTE:** lugar o reunión virtual |
-| Prepared By | > **PENDIENTE:** responsable de preparar el planning |
+| Date | > 2026-11-01 |
+| Time | > 09:00 PM |
+| Location | > Reunión virtual vía Meet |
+| Prepared By | > 	Reyes Muñoz, Joaquin Leonardo|
 | Attendees | Blancas Chavez, Carlos / Llamozas Diaz, Edson Diego / Miraval Pomalaya, Rodrigo Jesus / Portal Inga, Waldo Alonso / Reyes Muñoz, Joaquin Leonardo |
 | Sprint N-1 Review Summary | En el Sprint 2 se implementó el frontend de la Web Application en Angular, con áreas separadas para conductor y administrador, consumiendo una API simulada con json-server. De las 78 User Stories del backlog se trabajaron 62 (52 implementadas y 10 parciales). Quedaron pendientes US17, US24, US36, US39, US41 y US49, y varias reglas que en el frontend eran simuladas (validación de roles, notificaciones y métricas) para resolverlas en el backend real. |
 | Sprint N-1 Retrospective Summary | > **PENDIENTE:** resumen de la retrospectiva del Sprint 2 acordada por el equipo |
