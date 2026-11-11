@@ -930,7 +930,41 @@ El objetivo del Sprint 3 fue implementar el RESTful API de Avisum con Spring Boo
 | Herramientas de verificación | Swagger UI y MySQL Workbench |
 | Control de versiones | Git y GitHub (GitHub Desktop) |
 
+###### Arquitectura
 
+El código sigue la organización por *bounded contexts* definida en el diseño del informe (sección 4.7). Cada contexto tiene sus propias capas y los contextos se comunican entre sí **a través de servicios de la capa de aplicación**, nunca con relaciones directas entre entidades: los turnos y las alertas guardan el identificador del conductor y de la unidad.
+
+```
+pe.edu.upc.avisum
+├── AvisumApplication.java
+├── shared/                         transversal
+│   ├── config/                     CorsConfig, DataSeeder
+│   ├── exception/                  NotFound/Forbidden/Conflict + ApiExceptionHandler
+│   └── interfaces/rest/            PlaceholderController
+├── fleet/                          BC Monitoreo de flota
+│   ├── domain/model/               BusUnit, BusUnitStatus
+│   ├── application/                BusUnitService
+│   ├── infrastructure/persistence/ BusUnitRepository
+│   └── interfaces/rest/            BusUnitController + Request/Resource
+├── identity/                       BC Identidad y turnos
+│   ├── domain/model/               Employee, EmployeeStatus, Shift, ShiftStatus
+│   ├── application/                EmployeeService, ShiftService
+│   ├── infrastructure/persistence/ EmployeeRepository, ShiftRepository
+│   └── interfaces/rest/            EmployeeController, ShiftController + Request/Resource
+└── emergency/                      BC Gestión de emergencias
+    ├── domain/model/               Alert
+    ├── application/                AlertService
+    ├── infrastructure/persistence/ AlertRepository
+    └── interfaces/rest/            AlertController + Request/Resource
+```
+
+<img src="imgs/s3-estructura-proyecto.png">
+
+Dependencias entre contextos (en una sola dirección, sin ciclos):
+
+```
+emergency  ──▶  identity  ──▶  fleet
+```
 
 
 ---
