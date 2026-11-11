@@ -965,7 +965,57 @@ Dependencias entre contextos (en una sola dirección, sin ciclos):
 ```
 emergency  ──▶  identity  ──▶  fleet
 ```
+###### Dependencias y configuración
 
+<img src="imgs/s3-pom-dependencias.png">
+
+<img src="imgs/s3-application-properties.png">
+
+La conexión a MySQL se configura en `application.properties`. El usuario y la contraseña se pueden sustituir con las variables de entorno `DB_USER` y `DB_PASSWORD`, para no dejar credenciales fijas en el repositorio. Hibernate crea y actualiza las tablas automáticamente (`ddl-auto=update`).
+
+###### Modelo de datos
+
+El modelo implementado es una versión inicial del diseño de la sección 4.8: usa identificadores numéricos autogenerados y cuatro tablas, una por agregado principal.
+
+| Tabla | Columnas principales | Contexto |
+|---|---|---|
+| `employees` | `id`, `employee_code` (único), `first_name`, `last_name`, `full_name`, `dni` (único), `plate_number`, `status` (`ACTIVE` / `INACTIVE`) | Identidad |
+| `bus_units` | `id`, `plate_number` (único), `route`, `current_latitude`, `current_longitude`, `status` (`ACTIVE` / `INACTIVE`) | Flota |
+| `shifts` | `id`, `employee_id`, `bus_unit_id`, `route_name`, `route_origin`, `route_destination`, `distance_km`, `duration_seconds`, `passenger_count`, `fare_collected`, `status` (`ACTIVE` / `FINISHED`), `started_at`, `ended_at` | Identidad y turnos |
+| `alerts` | `id`, `employee_id`, `bus_unit_id`, `alert_type`, `description`, `latitude`, `longitude`, `resolved`, `created_at`, `resolved_at` | Emergencias |
+
+`shifts` y `alerts` se relacionan con `employees` y `bus_units` por `employee_id` y `bus_unit_id`, como referencias entre agregados de distintos contextos. La placa de un conductor no es única en `employees`, porque al reasignar unidades dos conductores intercambian de placa.
+
+###### Reglas de negocio implementadas
+
+| Regla | Clase | User Story |
+|---|---|---|
+| El código de empleado se normaliza (mayúsculas, sin espacios, sin el prefijo `QR-`). Si no existe responde 404, y si el conductor está desactivado, 403. | `EmployeeService.validateByCode` | US01, US10, US14 |
+| El código `EMP-###` lo asigna el servidor a partir del id, y no se reutiliza al eliminar conductores. | `EmployeeService.create` | US75 |
+| El DNI de los conductores y la placa de las unidades son únicos (409 si se repiten). | `EmployeeService`, `BusUnitService` | US47, US76 |
+| Iniciar un turno exige un conductor activo y una unidad existente. | `ShiftService.start` | US02, US11 |
+| Un conductor no puede tener dos turnos activos: al iniciar uno nuevo se cierra el anterior. | `ShiftService.start` | US39 |
+| Una alerta exige un conductor, una unidad y un turno activo (409 si no lo hay). | `AlertService.create` | US03, US12 |
+| Al resolver una alerta se guarda la hora de resolución, que permite medir el tiempo de respuesta. | `Alert.resolve` | US34, US78 |
+| El cierre de un turno guarda sus cifras finales y es idempotente. | `ShiftService.end` | US25, US31 |
+
+Fragmento de la regla US39 (un solo turno activo por conductor):
+
+```java
+@Transactional
+public Shift start(Long employeeId, Long busUnitId, String origin, String destination) {
+    Employee employee = employees.get(employeeId);
+    if (employee.getStatus() != EmployeeStatus.ACTIVE) {
+        throw new ForbiddenException("Empleado desactivado");
+    }
+    BusUnit unit = units.get(busUnitId);
+
+    repository.findByEmployeeIdAndStatus(employeeId, ShiftStatus.ACTIVE)
+            .forEach(Shift::closeAutomatically);
+
+    return repository.save(Shift.start(employeeId, busUnitId, unit.getRoute(), origin, destination));
+}
+```
 
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
