@@ -1237,6 +1237,24 @@ Respuesta `201 Created`:
 }
 ```
 
+**Actualizar la ubicación** · `PATCH /api/v1/bus-units/1/location`
+
+```json
+{ "latitude": -12.05, "longitude": -77.04 }
+```
+
+###### Turnos (`/shifts`)
+
+<img src="imgs/s3-swagger-shifts.png">
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Respuestas |
+|---|---|---|---|---|
+| `/shifts` | GET | Lista el historial de turnos. | US19 | 200 |
+| `/shifts/employee/{employeeId}` | GET | Lista los turnos de un conductor. | US19 | 200 |
+| `/shifts/bus-unit/{busUnitId}/active` | GET | Consulta el turno activo de una unidad. | US39 | 200, 404 |
+| `/shifts` | POST | Inicia el turno de un conductor en una unidad. Cierra el turno activo anterior del conductor, si lo había. | US02, US11, US39 | 201, 400, 403 (conductor desactivado), 404 |
+| `/shifts/{id}/end` | PATCH | Cierra el turno con sus cifras finales. | US25, US31 | 200, 400, 404 |
+
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
