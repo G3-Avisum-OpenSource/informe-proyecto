@@ -64,6 +64,7 @@ Proyecto
 |:------:|:------:|:------:|:---------------------------:|
 | AV1 | 20/09/2026 | Todos los integrantes | Primera Version |
 | TB1 | 09/10/2026 | Todos los integrantes | Primera Version |
+| AV2 | 12/11/2026 | Todos los integrantes | Segunda Version: backend, despliegue en la nube y evidencias del Sprint 3 |
 
 ---
 
@@ -92,6 +93,14 @@ Asimismo, todos los integrantes participaron activamente en la construcción del
 Durante la elaboración de la tb1, el equipo estructuró la elaboración del informe mediante una distribución de tareas por secciones. Esta organización permitió trabajar simultáneamente en actividades de la spint 2, todos los integrantes contribuyeron activamente al proceso, realizando aportes constantes que favorecieron la coherencia y alineación entre las diferentes secciones del documento
 
 <img src="UrbanGuard/Resources/imgs/tb1-evidence-commit.png">
+
+## AV2
+
+Durante la elaboración de la entrega AV2, el equipo organizó el trabajo mediante la distribución de tareas por módulos, esta vez orientadas al backend del proyecto. Cada integrante asumió el desarrollo de un grupo de servicios del API (conductores, unidades, alertas y ubicación), mientras que la configuración del repositorio, la base de datos en la nube y el despliegue del servicio se coordinaron de forma conjunta.
+
+El proceso se realizó de forma incremental: primero se construyeron y probaron los servicios en un entorno local, luego se publicó el código en el repositorio del backend y finalmente se desplegó el servicio en la nube (TiDB Cloud para la base de datos y Render para la aplicación), verificando su funcionamiento mediante Swagger UI. Todos los integrantes participaron activamente, realizando aportes continuos que se reflejan en los commits registrados en el repositorio.
+
+<img src="UrbanGuard/Resources/imgs/av2-evidence-commit.png">
 
 ## Repositorio del Landing Page
 
@@ -124,6 +133,23 @@ Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Pa
 | Miraval Pomalaya, Rodrigo Jesus | RodMiraval | Gestión de conductores |
 | Portal Inga, Waldo Alonso | apiw-07 | Gestión de conductores y mapa del conductor |
 | Reyes Muñoz, Joaquin Leonardo | JoakoRM | Área del administrador y mapa del conductor |
+
+---
+
+# Repositorio del Backend
+
+**URL:** https://github.com/G3-Avisum-OpenSource/avisum-backend
+
+### Contribuciones por integrante
+
+| Integrante | GitHub Username | Área de contribución |
+|---|---|---|
+| Blancas Chavez, Carlos Franco | CarlosBlancas969 | Configuración del repositorio, base de datos en la nube (TiDB Cloud) y despliegue en Render |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | Servicios de alertas de pánico |
+| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | Servicios de gestión de conductores |
+| Portal Inga, Waldo Alonso | apiw-07 | Servicios de ubicación y verificación del API con Swagger |
+| Reyes Muñoz, Joaquin Leonardo | JoakoRM | Servicios de gestión de unidades (buses) |
+
 
 ---
 # Contenido
@@ -244,22 +270,27 @@ En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC
       <td>
         <strong>Miraval Pomalaya, Rodrigo Jesus</strong><br>
         <em>AV1:</em> Participó en la planificación del Sprint 1 y colaboró en la organización de las actividades iniciales del proyecto, aportando en la coordinación del equipo y en la recopilación de evidencias.<br>
-        <em>TB1:</em> Lideró el desarrollo de las funcionalidades asignadas, coordinando con los demás integrantes la integración de los módulos y el cumplimiento de los objetivos del Sprint 2.<br><br>
+        <em>TB1:</em> Lideró el desarrollo de las funcionalidades asignadas, coordinando con los demás integrantes la integración de los módulos y el cumplimiento de los objetivos del Sprint 2.<br>
+        <em>AV2:</em> Lideró el desarrollo de los servicios del backend para la gestión de conductores, coordinando con el equipo la definición de los endpoints y su integración con el frontend.<br><br>
         <strong>Llamozas Diaz, Edson Diego</strong><br>
         <em>AV1:</em> Participó en la planificación y desarrollo de las actividades iniciales, colaborando en la documentación de servicios y en la organización de las evidencias del proyecto.<br>
-        <em>TB1:</em> Lideró las actividades relacionadas con la implementación y documentación de los servicios asignados, coordinando con el equipo para mantener una estructura técnica consistente.<br><br>
+        <em>TB1:</em> Lideró las actividades relacionadas con la implementación y documentación de los servicios asignados, coordinando con el equipo para mantener una estructura técnica consistente.<br>
+        <em>AV2:</em> Lideró la implementación de los servicios de alertas de pánico en el backend, coordinando con el equipo el formato de los datos y su consumo desde la aplicación web.<br><br>
         <strong>Reyes Muñoz, Joaquin Leonardo</strong><br>
         <em>AV1:</em> Colaboró en el desarrollo de las funcionalidades iniciales y en la organización de las evidencias de desarrollo, participando activamente en la coordinación del equipo.<br>
-        <em>TB1:</em> Lideró el desarrollo de las funcionalidades correspondientes a su módulo, coordinando con los demás integrantes la integración de los componentes implementados.<br><br>
+        <em>TB1:</em> Lideró el desarrollo de las funcionalidades correspondientes a su módulo, coordinando con los demás integrantes la integración de los componentes implementados.<br>
+        <em>AV2:</em> Lideró la implementación de los servicios de gestión de unidades en el backend, coordinando con el equipo la integración de los endpoints con el área del administrador.<br><br>
         <strong>Blancas Chavez, Carlos Franco</strong><br>
         <em>AV1:</em> Lideró la planificación y organización del Sprint Backlog 1, coordinando la distribución de tareas y el desarrollo de las actividades iniciales del proyecto.<br>
-        <em>TB1:</em> Lideró el desarrollo de las funcionalidades asignadas a su módulo, coordinando su integración con los demás componentes desarrollados por el equipo.<br><br>
+        <em>TB1:</em> Lideró el desarrollo de las funcionalidades asignadas a su módulo, coordinando su integración con los demás componentes desarrollados por el equipo.<br>
+        <em>AV2:</em> Lideró la configuración del repositorio del backend, la base de datos en la nube (TiDB Cloud) y el despliegue del servicio en Render, coordinando con el equipo la publicación del código y la configuración de las variables de entorno.<br><br>
         <strong>Portal Inga, Waldo Alonso</strong><br>
         <em>AV1:</em> Participó en la implementación de las funcionalidades iniciales y en la preparación de las evidencias de ejecución, colaborando con el equipo en la validación de los resultados.<br>
-        <em>TB1:</em> Lideró las actividades de implementación y validación correspondientes a su módulo, coordinando con los demás integrantes para garantizar el correcto funcionamiento de las funcionalidades.
+        <em>TB1:</em> Lideró las actividades de implementación y validación correspondientes a su módulo, coordinando con los demás integrantes para garantizar el correcto funcionamiento de las funcionalidades.<br>
+        <em>AV2:</em> Lideró la implementación de los servicios de ubicación en el backend y su validación mediante Swagger UI, coordinando con el equipo la verificación del correcto funcionamiento del API.
       </td>
       <td>
-        A lo largo de AV1 y TB1, el equipo demostró liderazgo compartido al distribuir responsabilidades según las fortalezas técnicas de cada integrante. En AV1 el liderazgo se concentró en la planificación, organización y desarrollo inicial del proyecto; mientras que en TB1 se orientó hacia la implementación e integración de las funcionalidades. Esta progresión evidencia que el equipo no dependió de un único líder, sino que cada integrante asumió responsabilidades de liderazgo en su área y colaboró con los demás para cumplir el objetivo común.
+        A lo largo de AV1, TB1 y AV2, el equipo demostró liderazgo compartido al distribuir responsabilidades según las fortalezas técnicas de cada integrante. En AV1 el liderazgo se concentró en la planificación, organización y desarrollo inicial del proyecto; en TB1 se orientó hacia la implementación e integración de las funcionalidades; y en AV2 se enfocó en el backend, donde cada integrante lideró un grupo de servicios del API y se coordinó el despliegue en la nube. Esta progresión evidencia que el equipo no dependió de un único líder, sino que cada integrante asumió responsabilidades de liderazgo en su área y colaboró con los demás para cumplir el objetivo común.
       </td>
     </tr>
     <tr>
@@ -267,22 +298,27 @@ En Ingeniería de Software el logro contribuye a alcanzar el Student Outcome EAC
       <td>
         <strong>Miraval Pomalaya, Rodrigo Jesus</strong><br>
         <em>AV1:</em> Colaboró en la organización del Sprint 1 y en la recopilación de evidencias, contribuyendo a que el equipo mantuviera una planificación y documentación coherente.<br>
-        <em>TB1:</em> Coordinó sus avances con los demás integrantes, reportando dependencias y apoyando la integración de las funcionalidades desarrolladas durante el Sprint 2.<br><br>
+        <em>TB1:</em> Coordinó sus avances con los demás integrantes, reportando dependencias y apoyando la integración de las funcionalidades desarrolladas durante el Sprint 2.<br>
+        <em>AV2:</em> Documentó los servicios del backend relacionados con la gestión de conductores, describiendo sus endpoints y formatos de solicitud y respuesta.<br><br>
         <strong>Llamozas Diaz, Edson Diego</strong><br>
         <em>AV1:</em> Colaboró en la organización de la documentación y evidencias del proyecto, manteniendo comunicación con los integrantes para cumplir las actividades asignadas.<br>
-        <em>TB1:</em> Planificó y desarrolló las tareas relacionadas con los servicios asignados, coordinando con el equipo para mantener consistencia entre los diferentes módulos.<br><br>
+        <em>TB1:</em> Planificó y desarrolló las tareas relacionadas con los servicios asignados, coordinando con el equipo para mantener consistencia entre los diferentes módulos.<br>
+        <em>AV2:</em> Documentó los servicios de alertas de pánico del backend y registró las evidencias de su funcionamiento para la revisión del sprint.<br><br>
         <strong>Reyes Muñoz, Joaquin Leonardo</strong><br>
         <em>AV1:</em> Participó en las actividades de desarrollo y colaboró en la recopilación de evidencias, manteniendo comunicación constante con los demás integrantes para cumplir las tareas planificadas.<br>
-        <em>TB1:</em> Planificó e implementó las tareas correspondientes a su módulo, colaborando en la integración de funcionalidades y en los ajustes necesarios para alcanzar los objetivos del Sprint 2.<br><br>
+        <em>TB1:</em> Planificó e implementó las tareas correspondientes a su módulo, colaborando en la integración de funcionalidades y en los ajustes necesarios para alcanzar los objetivos del Sprint 2.<br>
+        <em>AV2:</em> Documentó los servicios de gestión de unidades del backend y colaboró en la revisión de las evidencias del Sprint 3.<br><br>
         <strong>Blancas Chavez, Carlos Franco</strong><br>
         <em>AV1:</em> Colaboró con el equipo en la planificación del Sprint Backlog 1 y en la distribución de actividades, promoviendo una organización clara de las responsabilidades.<br>
-        <em>TB1:</em> Planificó e implementó las tareas asignadas, colaborando en la integración de los módulos y realizando las validaciones necesarias para cumplir con los objetivos establecidos.<br><br>
+        <em>TB1:</em> Planificó e implementó las tareas asignadas, colaborando en la integración de los módulos y realizando las validaciones necesarias para cumplir con los objetivos establecidos.<br>
+        <em>AV2:</em> Documentó paso a paso el despliegue del backend en la nube (TiDB Cloud y Render), incluyendo la configuración, las variables de entorno, el incidente encontrado durante el despliegue y su solución, junto con las evidencias de verificación.<br><br>
         <strong>Portal Inga, Waldo Alonso</strong><br>
         <em>AV1:</em> Participó en la ejecución de las tareas asignadas y en la recopilación de evidencias de ejecución, contribuyendo al seguimiento de los avances del equipo.<br>
-        <em>TB1:</em> Participó en la implementación y validación de las funcionalidades correspondientes a su módulo, coordinando con el equipo para identificar y resolver problemas durante la integración.
+        <em>TB1:</em> Participó en la implementación y validación de las funcionalidades correspondientes a su módulo, coordinando con el equipo para identificar y resolver problemas durante la integración.<br>
+        <em>AV2:</em> Documentó la verificación de los servicios de ubicación del backend mediante Swagger UI, registrando las pruebas realizadas y sus resultados.
       </td>
       <td>
-        El equipo mantuvo un entorno colaborativo e inclusivo durante AV1 y TB1 mediante reuniones de planificación, división de tareas por sprint, uso de ramas en GitHub, seguimiento en Trello y revisión constante de evidencias. Las metas evolucionaron desde una primera organización y desarrollo inicial en AV1 hacia un trabajo más enfocado en la implementación e integración de funcionalidades en TB1. La participación de cada integrante demuestra que el equipo planificó, comunicó avances, resolvió dependencias y cumplió objetivos incrementales durante el desarrollo del proyecto.
+        El equipo mantuvo un entorno colaborativo e inclusivo durante AV1, TB1 y AV2 mediante reuniones de planificación, división de tareas por sprint, uso de ramas en GitHub, seguimiento en Trello y revisión constante de evidencias. Las metas evolucionaron desde una primera organización y desarrollo inicial en AV1, hacia la implementación e integración de funcionalidades en TB1 y, en AV2, hacia el desarrollo, la documentación y el despliegue en la nube del backend. La participación de cada integrante demuestra que el equipo planificó, comunicó avances, resolvió dependencias y cumplió objetivos incrementales durante el desarrollo del proyecto.
       </td>
     </tr>
   </tbody>
