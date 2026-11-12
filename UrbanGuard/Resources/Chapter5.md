@@ -1170,6 +1170,42 @@ Formato de errores en todos los endpoints: `{ "message": "descripción del error
 | `/employees/{id}` | PATCH | Actualiza los datos o el estado (`ACTIVE` / `INACTIVE`) del conductor. | US47, US48 | 200, 400, 404, 409 |
 | `/employees/{id}` | DELETE | Elimina un conductor. | US77 | 200, 404 |
 
+
+**Registrar un conductor** · `POST /api/v1/employees`
+
+```json
+{
+  "firstName": "Hugo",
+  "lastName": "Mori",
+  "dni": "10000009",
+  "plateNumber": "TST-001"
+}
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id": 6,
+  "employeeCode": "EMP-006",
+  "firstName": "Hugo",
+  "lastName": "Mori",
+  "fullName": "Hugo Mori",
+  "dni": "10000009",
+  "plateNumber": "TST-001",
+  "status": "ACTIVE"
+}
+```
+
+**Desactivar un conductor** · `PATCH /api/v1/employees/6`
+
+```json
+{ "status": "INACTIVE" }
+```
+
+Después, `GET /api/v1/employees/code/emp-006` responde `403` con `{ "message": "Empleado desactivado" }`.
+
+
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
