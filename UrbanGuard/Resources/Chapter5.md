@@ -1205,6 +1205,37 @@ Respuesta `201 Created`:
 
 Después, `GET /api/v1/employees/code/emp-006` responde `403` con `{ "message": "Empleado desactivado" }`.
 
+###### Unidades (`/bus-units`)
+
+<img src="imgs/s3-swagger-bus-units.png">
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Respuestas |
+|---|---|---|---|---|
+| `/bus-units` | GET | Lista las unidades con su ruta, ubicación y estado. | US32 | 200 |
+| `/bus-units/{id}` | GET | Consulta una unidad. | US20 | 200, 404 |
+| `/bus-units` | POST | Registra una unidad. | US76 | 201, 400, 409 (placa repetida) |
+| `/bus-units/{id}` | PATCH | Modifica la placa, la ruta o el estado de la unidad. | US13 | 200, 404, 409 |
+| `/bus-units/{id}/location` | PATCH | Actualiza la ubicación en vivo de la unidad. | US13 | 200, 400, 404 |
+| `/bus-units/{id}` | DELETE | Elimina una unidad. | US77 | 200, 404 |
+
+**Registrar una unidad** · `POST /api/v1/bus-units`
+
+```json
+{ "plateNumber": "TST-001", "route": "R-07" }
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id": 6,
+  "plateNumber": "TST-001",
+  "route": "R-07",
+  "currentLatitude": -12.0464,
+  "currentLongitude": -77.0428,
+  "status": "ACTIVE"
+}
+```
 
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
