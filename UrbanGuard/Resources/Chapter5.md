@@ -1300,6 +1300,18 @@ Respuesta `201 Created` (el servidor completa la ruta de la unidad, las cifras e
 
 El turno regresa con `"status": "FINISHED"` y la hora de fin en `endedAt`.
 
+
+###### Alertas (`/alerts`)
+
+<img src="imgs/s3-swagger-alerts.png">
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Respuestas |
+|---|---|---|---|---|
+| `/alerts` | GET | Lista las alertas registradas. | US05, US16 | 200 |
+| `/alerts` | POST | Registra una alerta de un conductor, con su tipo y coordenadas. Exige un turno activo. | US03, US12, US42 | 201, 400, 404, 409 (sin turno activo) |
+| `/alerts/{id}/resolve` | PATCH | Marca la alerta como resuelta y registra la hora de resolución. | US34, US78 | 200, 404 |
+
+
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
