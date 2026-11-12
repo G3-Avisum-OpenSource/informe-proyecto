@@ -1311,3 +1311,11 @@ SELECT * FROM employees;
 - El plan Starter de TiDB tiene una cuota gratuita mensual; con el límite de gasto en $0 la base se limita al agotarla, sin generar cobros.
 - Pendiente: apuntar el frontend a `https://avisum-api.onrender.com` y actualizar el monitor de disponibilidad (sección 7.4) a la nueva URL.
 
+#### Estado del Product Backlog al cierre del Sprint 3
+
+| Estado | Cantidad | User Stories |
+|---|---|---|
+| Implementadas en el backend (Sprint 3) | 25 | US01, US02, US03, US05, US10, US11, US12, US13, US14, US15, US16, US19, US20, US25, US31, US32, US34, US39, US42, US47, US48, US75, US76, US77, US78 |
+| Pendientes de backend | 17 | US17, US22, US23, US24, US33, US35, US36, US41, US44, US49, US50, US56, US57, US62, US63, US72, US73 |
+| Dependientes del frontend (Sprint 4) | — | Las historias de las pantallas que consumen el API |
+
