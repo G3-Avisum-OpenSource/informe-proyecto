@@ -1027,15 +1027,6 @@ Todas las respuestas de error tienen el formato `{ "message": "..." }`.
 | 404 | Recurso inexistente. |
 | 409 | Dato único repetido (DNI o placa) o alerta sin turno activo. |
 
-###### Commits y control de versiones
-
-El backend se subió a un repositorio de GitHub con GitHub Desktop, siguiendo la convención de *Conventional Commits* del equipo (sección 5.1.2).
-
-| Commit | Descripción |
-|---|---|
-| > **PENDIENTE** | > **PENDIENTE:** completar con los commits reales del repositorio del backend |
-
-<img src="imgs/s3-github-backend-commit.png">
 
 ---
 ##### 5.2.3.5. Execution Evidence for Sprint Review
