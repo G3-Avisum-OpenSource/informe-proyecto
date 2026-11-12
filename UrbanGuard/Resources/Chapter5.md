@@ -1255,6 +1255,38 @@ Respuesta `201 Created`:
 | `/shifts` | POST | Inicia el turno de un conductor en una unidad. Cierra el turno activo anterior del conductor, si lo había. | US02, US11, US39 | 201, 400, 403 (conductor desactivado), 404 |
 | `/shifts/{id}/end` | PATCH | Cierra el turno con sus cifras finales. | US25, US31 | 200, 400, 404 |
 
+
+**Iniciar un turno** · `POST /api/v1/shifts`
+
+```json
+{
+  "employeeId": 1,
+  "busUnitId": 1,
+  "routeOrigin": "Terminal Norte",
+  "routeDestination": "Estación Central"
+}
+```
+
+Respuesta `201 Created` (el servidor completa la ruta de la unidad, las cifras en cero y la hora de inicio):
+
+```json
+{
+  "id": 5,
+  "employeeId": 1,
+  "busUnitId": 1,
+  "routeName": "R-42",
+  "routeOrigin": "Terminal Norte",
+  "routeDestination": "Estación Central",
+  "distanceKm": 0.0,
+  "durationSeconds": 0,
+  "passengerCount": 0,
+  "fareCollected": 0.0,
+  "status": "ACTIVE",
+  "startedAt": "2026-11-06T14:20:11.532Z",
+  "endedAt": null
+}
+```
+
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
