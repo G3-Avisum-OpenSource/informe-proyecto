@@ -1016,7 +1016,26 @@ public Shift start(Long employeeId, Long busUnitId, String origin, String destin
     return repository.save(Shift.start(employeeId, busUnitId, unit.getRoute(), origin, destination));
 }
 ```
+###### Manejo de errores
 
+Todas las respuestas de error tienen el formato `{ "message": "..." }`.
+
+| Código | Cuándo ocurre |
+|---|---|
+| 400 | Datos inválidos (por ejemplo, un DNI que no tiene 8 dígitos) o cuerpo mal formado. |
+| 403 | Conductor desactivado. |
+| 404 | Recurso inexistente. |
+| 409 | Dato único repetido (DNI o placa) o alerta sin turno activo. |
+
+###### Commits y control de versiones
+
+El backend se subió a un repositorio de GitHub con GitHub Desktop, siguiendo la convención de *Conventional Commits* del equipo (sección 5.1.2).
+
+| Commit | Descripción |
+|---|---|
+| > **PENDIENTE** | > **PENDIENTE:** completar con los commits reales del repositorio del backend |
+
+<img src="imgs/s3-github-backend-commit.png">
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
