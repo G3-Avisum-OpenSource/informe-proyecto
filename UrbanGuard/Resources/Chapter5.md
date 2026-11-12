@@ -912,6 +912,15 @@ El objetivo del Sprint 3 fue implementar el RESTful API de Avisum con Spring Boo
 | — | Documentación del sprint | T-13 | Documentar el Sprint 3 | Redactar las secciones del informe con las evidencias de desarrollo, ejecución, servicios y despliegue. | 4 | Blancas Chavez, Carlos | Por verificar |
 
 
+**Historias que no entraron en el Sprint 3** y pasan al Sprint 4 o posteriores:
+
+| Pendiente | User Stories | Detalle |
+|---|---|---|
+| Autenticación y roles en el servidor | US22, US50, US72, US73 | Hoy el acceso del administrador y la separación de roles se controlan en el frontend. |
+| Notificaciones | US23, US33, US56, US57 | Los destinatarios de alertas todavía no se guardan en el backend. |
+| Métricas | US35, US44, US49, US62, US63 | El endpoint de métricas no existe aún; se calculan en el frontend. |
+| Reglas de alertas | US17, US24, US36, US41 | Detección de unidad sin señal, reintento, desvío de ruta y escalamiento. |
+| Integración con el frontend | Todas las del frontend | Se conecta en el Sprint 4. |
 
 ##### 5.2.3.4. Development Evidence for Sprint Review
 
