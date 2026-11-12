@@ -1149,6 +1149,13 @@ Generado con MySQL Workbench (*Database → Reverse Engineer*) a partir del esqu
 
 <img src="imgs/s3-mysql-diagrama.png">
 
+##### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+**URL base:** `http://localhost:9090/api/v1`
+
+**Documentación interactiva:** `http://localhost:9090/swagger-ui/index.html`
+
+Formato de errores en todos los endpoints: `{ "message": "descripción del error" }`.
 
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
