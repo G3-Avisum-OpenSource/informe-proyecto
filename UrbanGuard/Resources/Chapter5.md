@@ -1341,6 +1341,21 @@ Respuesta `201 Created`:
   "resolvedAt": null
 }
 ```
+
+###### Recursos reservados
+
+`GET /drivers`, `GET /sensors` y `GET /passenger-counts` responden una lista vacía. Están reservados para los siguientes sprints.
+
+###### Funcionalidades todavía no cubiertas por el API
+
+| Funcionalidad | User Stories | Estado |
+|---|---|---|
+| Autenticación y validación de roles en el servidor | US22, US50, US72, US73 | Pendiente (hoy se controla en el frontend) |
+| Destinatarios de notificaciones | US23, US33, US56, US57 | Pendiente |
+| Endpoint de métricas | US35, US44, US49, US62, US63 | Pendiente |
+| Detección de unidad sin señal, desvío de ruta, reintento y escalamiento de alertas | US17, US24, US36, US41 | Pendiente |
+
+
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
