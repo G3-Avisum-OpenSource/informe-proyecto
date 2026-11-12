@@ -1157,6 +1157,19 @@ Generado con MySQL Workbench (*Database → Reverse Engineer*) a partir del esqu
 
 Formato de errores en todos los endpoints: `{ "message": "descripción del error" }`.
 
+###### Conductores (`/employees`)
+
+<img src="imgs/s3-swagger-employees.png">
+
+| Endpoint | Verb HTTP | Descripción | User Stories | Respuestas |
+|---|---|---|---|---|
+| `/employees` | GET | Lista los conductores registrados. | US10 | 200 |
+| `/employees/{id}` | GET | Consulta un conductor por su id. | US10 | 200, 404 |
+| `/employees/code/{code}` | GET | Valida la identidad del conductor por su código. Acepta minúsculas y el prefijo `QR-`. | US01, US10, US14 | 200, 404 (inexistente), 403 (desactivado) |
+| `/employees` | POST | Registra un conductor. El servidor asigna el id y el código `EMP-###`. | US75 | 201, 400, 409 (DNI repetido) |
+| `/employees/{id}` | PATCH | Actualiza los datos o el estado (`ACTIVE` / `INACTIVE`) del conductor. | US47, US48 | 200, 400, 404, 409 |
+| `/employees/{id}` | DELETE | Elimina un conductor. | US77 | 200, 404 |
+
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
