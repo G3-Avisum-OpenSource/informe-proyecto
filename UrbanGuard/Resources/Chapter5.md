@@ -1287,6 +1287,19 @@ Respuesta `201 Created` (el servidor completa la ruta de la unidad, las cifras e
 }
 ```
 
+**Finalizar un turno** · `PATCH /api/v1/shifts/5/end`
+
+```json
+{
+  "distanceKm": 1.5,
+  "durationSeconds": 120,
+  "passengerCount": 8,
+  "fareCollected": 11.5
+}
+```
+
+El turno regresa con `"status": "FINISHED"` y la hora de fin en `endedAt`.
+
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
