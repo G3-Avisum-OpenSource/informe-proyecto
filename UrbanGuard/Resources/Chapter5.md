@@ -1312,6 +1312,35 @@ El turno regresa con `"status": "FINISHED"` y la hora de fin en `endedAt`.
 | `/alerts/{id}/resolve` | PATCH | Marca la alerta como resuelta y registra la hora de resolución. | US34, US78 | 200, 404 |
 
 
+**Registrar una alerta** · `POST /api/v1/alerts`
+
+```json
+{
+  "employeeId": 1,
+  "busUnitId": 1,
+  "alertType": "PÁNICO",
+  "description": "Alerta de prueba",
+  "latitude": -12.0414,
+  "longitude": -77.0253
+}
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id": 1,
+  "employeeId": 1,
+  "busUnitId": 1,
+  "alertType": "PÁNICO",
+  "description": "Alerta de prueba",
+  "latitude": -12.0414,
+  "longitude": -77.0253,
+  "resolved": false,
+  "createdAt": "2026-11-06T14:21:03.118Z",
+  "resolvedAt": null
+}
+```
 ---
 ##### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
