@@ -41,7 +41,7 @@ Proyecto
 
 ### **Período 202620**
 
-**Octubre 2026**
+**Noviembre 2026**
 ---
 ### Distribución de contribuciones por integrante
 
