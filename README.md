@@ -104,9 +104,11 @@ El proceso se realizó de forma incremental: primero se construyeron y probaron 
 
 ## Repositorio del Landing Page
 
-Nueva Versión : **URL:** https://github.com/G3-Avisum-OpenSource/avisum-landing
+ **URL:** https://github.com/G3-Avisum-OpenSource/avisum-landing
 
 Durante el Sprint 1, el equipo realizó commits en el repositorio del Landing Page abarcando desde la estructura inicial hasta el despliegue en producción. A continuación se detalla la participación por integrante:
+
+Durante el desarrollo del Sprint 3 se implemento una nueva version de la Landing Page : https://avisum-landing.vercel.app/
 
 ### Contribuciones por integrante
 
