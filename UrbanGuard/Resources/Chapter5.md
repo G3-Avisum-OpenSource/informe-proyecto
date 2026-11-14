@@ -1093,35 +1093,52 @@ Cada prueba se ejecutó con *Try it out → Execute* en Swagger UI, y se verific
 | 14 | `GET /api/v1/shifts` | 200, historial de turnos | US19 | `s3-test-14-historial-turnos.png` |
 | 15 | `DELETE /api/v1/employees/6` y `DELETE /api/v1/bus-units/6` | 200, los registros desaparecen | US77 | `s3-test-15-eliminar.png` |
 
+
+- 1.  `GET /api/v1/employees`
 <img src="imgs/s3-test-01-listar-conductores.png">
 
+- 2.  `GET /api/v1/employees/code/emp-001`
 <img src="imgs/s3-test-02-validar-codigo.png">
 
+-3. `GET /api/v1/employees/code/EMP-999`
 <img src="imgs/s3-test-03-codigo-inexistente.png">
 
+-4. `POST /api/v1/bus-units`
 <img src="imgs/s3-test-04-crear-unidad.png">
 
+-5. `POST /api/v1/employees`
 <img src="imgs/s3-test-05-crear-conductor.png">
 
+-6. `POST /api/v1/employees`
 <img src="imgs/s3-test-06-dni-duplicado.png">
 
+-7. `PATCH /api/v1/employees/6`
 <img src="imgs/s3-test-07-conductor-desactivado.png">
 
+-8. `POST /api/v1/shifts`
 <img src="imgs/s3-test-08-iniciar-turno.png">
 
+-9.  `POST /api/v1/alerts`
 <img src="imgs/s3-test-09-crear-alerta.png">
 
+-10. `PATCH /api/v1/alerts/{id}/resolve`
 <img src="imgs/s3-test-10-resolver-alerta.png">
 
+-11.  `POST /api/v1/alerts`
 <img src="imgs/s3-test-11-alerta-sin-turno.png">
 
+-12. `PATCH /api/v1/shifts/{id}/end`
 <img src="imgs/s3-test-12-finalizar-turno.png">
 
+-13. `PATCH /api/v1/bus-units/1/location`
 <img src="imgs/s3-test-13-ubicacion-unidad.png">
 
+-14. `GET /api/v1/shifts`
 <img src="imgs/s3-test-14-historial-turnos.png">
 
+-15. `DELETE /api/v1/employees/6`
 <img src="imgs/s3-test-15-eliminar.png">
+
 
 ###### Verificación en la base de datos
 
