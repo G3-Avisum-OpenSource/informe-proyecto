@@ -249,7 +249,7 @@ Durante el desarrollo del Sprint 3 se implemento una nueva version de la Landing
             - [5.2.2.6. Services Documentation Evidence for Sprint Review](UrbanGuard/Resources/Chapter5.md#5216-services-documentation-evidence-for-sprint-review)
             - [5.2.2.7. Software Deployment Evidence for Sprint Review](UrbanGuard/Resources/Chapter5.md#5217-software-deployment-evidence-for-sprint-review)
             - [5.2.2.8. Team Collaboration Insights during Sprint](UrbanGuard/Resources/Chapter5.md#5218-team-collaboration-insights-during-sprint)
-        - [5.2.3. Sprint 3](UrbanGuard/Resources/Chapter5.md#521-sprint-1)
+        - [5.2.3. Sprint 3](UrbanGuard/Resources/Chapter5.md#523-sprint-3)
             - [5.2.3.1. Sprint Planning 3](UrbanGuard/Chapter5.md#5211-sprint-planning-1)
             - [5.2.3.2. Aspect Leaders and Collaborators](UrbanGuard/Resources/Chapter5.md#5212-aspect-leaders-and-collaborators)
             - [5.2.3.3. Sprint Backlog 3](UrbanGuard/Resources/Chapter5.md#5213-sprint-backlog-1)
