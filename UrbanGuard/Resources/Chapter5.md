@@ -1075,26 +1075,26 @@ El API se documenta y se prueba desde Swagger UI, en `http://localhost:9090/swag
 
 Cada prueba se ejecutó con *Try it out → Execute* en Swagger UI, y se verificó el resultado en MySQL Workbench. Los cuerpos de las solicitudes se encuentran en la sección 5.2.3.6.
 
-| # | Prueba | Resultado esperado | User Stories | 
-|---|---|---|---|---|
-| 1 | `GET /api/v1/employees` | 200, lista de 5 conductores | US10 | 
-| 2 | `GET /api/v1/employees/code/emp-001` | 200, datos del conductor (acepta minúsculas) | US01, US10 | 
-| 3 | `GET /api/v1/employees/code/EMP-999` | 404, "Empleado no encontrado" | US01 |
-| 4 | `POST /api/v1/bus-units` (placa `TST-001`) | 201, unidad nueva | US76 | 
-| 5 | `POST /api/v1/employees` | 201, recibe el código `EMP-006` | US75 | 
-| 6 | `POST /api/v1/employees` con el mismo DNI | 409, no se duplica | US47 | 
-| 7 | `PATCH /api/v1/employees/6` con `{"status":"INACTIVE"}`, y luego `GET /employees/code/emp-006` | 200 y luego 403 | US14, US48 | 
-| 8 | `POST /api/v1/shifts` | 201, turno `ACTIVE` con la ruta de la unidad | US02, US11 | 
-| 9 | `POST /api/v1/alerts` (conductor con turno activo) | 201, `resolved: false` | US03, US12, US42 | 
-| 10 | `PATCH /api/v1/alerts/{id}/resolve` | 200, `resolved: true` y `resolvedAt` | US34, US78 | 
-| 11 | `POST /api/v1/alerts` (conductor sin turno activo) | 409, "El conductor no tiene un turno activo" | US03 | 
-| 12 | `PATCH /api/v1/shifts/{id}/end` | 200, estado `FINISHED` con `endedAt` | US25, US31 | 
-| 13 | `PATCH /api/v1/bus-units/1/location` | 200, nueva ubicación | US13 | 
-| 14 | `GET /api/v1/shifts` | 200, historial de turnos | US19 |
-| 15 | `DELETE /api/v1/employees/6` y `DELETE /api/v1/bus-units/6` | 200, los registros desaparecen | US77 | 
+| # | Prueba | Resultado esperado | User Stories |
+|---|---|---|---|
+| 1 | `GET /api/v1/employees` | **200 OK**, lista de 5 conductores | US10 |
+| 2 | `GET /api/v1/employees/code/emp-001` | **200 OK**, datos del conductor; acepta códigos en minúsculas | US01, US10 |
+| 3 | `GET /api/v1/employees/code/EMP-999` | **404 Not Found**, `"Empleado no encontrado"` | US01 |
+| 4 | `POST /api/v1/bus-units` (placa `TST-001`) | **201 Created**, unidad creada correctamente | US76 |
+| 5 | `POST /api/v1/employees` | **201 Created**, recibe el código `EMP-006` | US75 |
+| 6 | `POST /api/v1/employees` con el mismo DNI | **409 Conflict**, no se permite duplicar el DNI | US47 |
+| 7 | `PATCH /api/v1/employees/6` con `{"status":"INACTIVE"}` y luego `GET /api/v1/employees/code/emp-006` | **200 OK** al actualizar y luego **403 Forbidden** al consultar el empleado inactivo | US14, US48 |
+| 8 | `POST /api/v1/shifts` | **201 Created**, turno creado con estado `ACTIVE` y ruta de la unidad asignada | US02, US11 |
+| 9 | `POST /api/v1/alerts` con conductor que tiene un turno activo | **201 Created**, alerta creada con `resolved: false` | US03, US12, US42 |
+| 10 | `PATCH /api/v1/alerts/{id}/resolve` | **200 OK**, alerta actualizada con `resolved: true` y `resolvedAt` | US34, US78 |
+| 11 | `POST /api/v1/alerts` con conductor sin turno activo | **409 Conflict**, `"El conductor no tiene un turno activo"` | US03 |
+| 12 | `PATCH /api/v1/shifts/{id}/end` | **200 OK**, turno actualizado a `FINISHED` con `endedAt` registrado | US25, US31 |
+| 13 | `PATCH /api/v1/bus-units/1/location` | **200 OK**, ubicación de la unidad actualizada correctamente | US13 |
+| 14 | `GET /api/v1/shifts` | **200 OK**, historial de turnos | US19 |
+| 15 | `DELETE /api/v1/employees/6` y `DELETE /api/v1/bus-units/6` | **200 OK**, registros eliminados correctamente | US77 |
 
 
-Evidencias:
+## Evidencias:
 
 - 1.  `GET /api/v1/employees`
 <img src="imgs/s3-test-01-listar-conductores.png">
