@@ -1576,7 +1576,7 @@ La entrevista de validación de Avisum se centra en el flujo de atención de ale
 **Segmento #1: Conductores (operarios) de transporte público**
 **User: Conductores (operarios) de transporte público**
 
-<br><br>
+<br>El diseño de la entrevista de validación para este segmento tiene como objetivo evaluar la usabilidad, claridad y utilidad operativa del prototipo funcional de la aplicación Avisum desde la perspectiva de un conductor en ruta. Se busca validar tanto el flujo directo de la interfaz del operario (ingreso, monitoreo de viaje, conteo de pasajeros, emisión de alertas de pánico y cierre de turno) como la comprensión general de la sincronización con el panel de control del administrador.<br>
 
 **Segmento #2: Empresas o consorcios de transporte público**
 **User: Personal de operaciones y monitoreo de empresas de transporte público**
