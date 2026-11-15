@@ -1553,6 +1553,19 @@ SELECT * FROM employees;
 | Pendientes de backend | 17 | US17, US22, US23, US24, US33, US35, US36, US41, US44, US49, US50, US56, US57, US62, US63, US72, US73 |
 | Dependientes del frontend (Sprint 4) | — | Las historias de las pantallas que consumen el API |
 
+##### 5.2.3.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, el equipo trabajó en el repositorio del backend con GitHub.
+
+| Integrante | GitHub Username | Contribución en el Sprint 3 |
+|---|---|---|
+| Blancas Chavez, Carlos | CarlosBlancas969 | Creación y configuración del proyecto Spring Boot, conexión con la base de datos y estructura por bounded contexts · Configuración de CORS y documentación OpenAPI con Swagger UI · Publicación del código en GitHub, creación de la base de datos en TiDB Cloud y despliegue del backend en Render con Docker · Verificación del API y documentación de las evidencias del sprint |
+| Llamozas Diaz, Edson Diego | DiegoLlamozas | Colaboración en el BC Emergency: registro, listado y resolución de alertas de pánico · Validación de la regla que exige un turno activo para emitir una alerta · Pruebas de los endpoints de alertas desde Swagger UI |
+| Miraval Pomalaya, Rodrigo Jesus | RodMiraval | Colaboración en el BC Identity: gestión de conductores con código de empleado, DNI único, alta, edición y desactivación lógica · Validaciones de entrada y manejo de errores del API (400, 403, 404 y 409) · Documentación de los endpoints de conductores |
+| Portal Inga, Waldo Alonso | apiw-07 | Colaboración en el BC Identity: inicio y cierre de turnos, consulta de turnos por conductor y regla de un solo turno activo · Carga de datos de ejemplo (DataSeeder) con conductores, unidades y turnos · Verificación de los datos almacenados en la base de datos |
+| Reyes Muñoz, Joaquin Leonardo | JoakoRM | Colaboración en el BC Fleet: gestión de unidades (listar, consultar, registrar, modificar, actualizar ubicación y eliminar) con placa única · Pruebas de los endpoints de unidades desde Swagger UI · Preparación del Sprint Planning 3 y revisión de las evidencias |
+
+<img src="UrbanGuard/Resources/imgs/av2-evidence-commit.png">
 
 ### 5.3. Validation Interviews
 
