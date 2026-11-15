@@ -1565,7 +1565,7 @@ Durante el Sprint 3, el equipo trabajó en el repositorio del backend con GitHub
 | Portal Inga, Waldo Alonso | apiw-07 | Colaboración en el BC Identity: inicio y cierre de turnos, consulta de turnos por conductor y regla de un solo turno activo · Carga de datos de ejemplo (DataSeeder) con conductores, unidades y turnos · Verificación de los datos almacenados en la base de datos |
 | Reyes Muñoz, Joaquin Leonardo | JoakoRM | Colaboración en el BC Fleet: gestión de unidades (listar, consultar, registrar, modificar, actualizar ubicación y eliminar) con placa única · Pruebas de los endpoints de unidades desde Swagger UI · Preparación del Sprint Planning 3 y revisión de las evidencias |
 
-<img src="UrbanGuard/Resources/imgs/av2-evidence-commit.png">
+<img src="imgs/av2-evidence-commit.png">
 
 ### 5.3. Validation Interviews
 
