@@ -1594,20 +1594,20 @@ Después de la demostración, se formulan las siguientes preguntas abiertas:
 
 **User: Conductores (operarios) de transporte público**
 
-**Entrevistado: Diego Fernández Rojas**
+**Entrevistado: Gerico Brisolessi**
 
-- **Edad:** 
-- **Cargo:** 
-- **Empresa:** 
-- **Sector:** 
-- **Experiencia:** 
-- **Fecha y duración de la entrevista de validación:** 
-- **Link del video:** [Agregar enlace de la entrevista de validación]
+- **Edad: 26 años** 
+- **Cargo: Conductor de bus** 
+- **Empresa:  Consorcio Transporte Arequipa S. A.** 
+- **Sector: Cercado de Lima** 
+- **Experiencia: 2 años** 
+- **Fecha y duración de la entrevista de validación: 15 de noviembre de 2026 | Duración: 14 minutos y 28 segundos** 
+- **Link del video: https://youtu.be/a79Cepg2uAw ** 
 
 <!-- Insertar aquí una captura de la entrevista de validación. -->
 
 **Resumen de la entrevista:**
-
+Durante la sesión de validación se presentó al entrevistado el prototipo funcional de la aplicación Avisum, mostrando tanto la interfaz del conductor como su interacción en tiempo real con el panel del administrador. El usuario destacó que la plataforma es muy directa, sencilla de entender y cómoda para operar, valorando positivamente el acceso mediante código QR o código de empleado, la visualización de métricas clave (tiempo en servicio, kilometraje, pasajeros a bordo y dinero recaudado), así como el flujo de emisión y resolución de alertas de pánico conectado con la central y la policía. Como oportunidades de mejora, el entrevistado señaló que le gustaría visualizar en el mapa el trazado exacto del camino que debe seguir durante la ruta y recomendó fusionar las pestañas de Gestión de conductores y Asignación de unidades para evitar datos repetitivos y simplificar la navegación. Finalmente, afirmó que la aplicación está muy bien lograda en el apartado de seguridad y que sí la utilizaría en su trabajo diario.
 
 ---
 
@@ -1633,7 +1633,7 @@ Durante la entrevista de validación se presentó a Diego Fernández Rojas, asis
 Se realizó una revisión preliminar del flujo documentado de alertas aplicando tres heurísticas de usabilidad de Nielsen. La revisión se centra en lo que muestra la interfaz al generar, recibir y resolver una alerta.
 
 | Heurística | Observación sobre la aplicación | Mejora propuesta |
-| --- | --- | --- |
+| Visibilidad del estado del sistema | Al generar una alerta de pánico, el sistema muestra una confirmación de envío al centro de operaciones y cambia el estado visual del indicador del conductor de verde a rojo activo en el panel de control. Sin embargo, en el flujo de alertas pendientes no se evidencia un indicador porcentual o contador dinámico inmediato cuando existen múltiples alertas sin resolver.| Incorporar indicadores visuales en tiempo real tanto para el conductor (confirmación de que la central ya visualizó y atendió la alerta) como en el panel central (desglose numérico de alertas activas vs. resueltas, como "2 de 3 generadas", acompañado de alertas cromáticas en rojo).|
 | Visibilidad del estado del sistema | Al activar el botón de pánico, el conductor recibe una confirmación y la alerta aparece en el Centro de Control en la demostración. El reintento de envío estaba pendiente en la versión documentada. | Mostrar si la alerta está pendiente, si llegó a la central o si falló el envío. En monitoreo, indicar la hora de la última ubicación registrada. |
 | Reconocimiento antes que recuerdo | El Centro de Control permite consultar la unidad y la ubicación asociadas a la alerta. Estos datos ayudan a identificar el incidente desde la misma pantalla. | Mostrar la unidad, la hora y el estado en la lista de alertas, con acceso al mapa desde el detalle. |
 | Prevención de errores | Marcar una alerta como resuelta cambia su estado. La revisión del flujo documentado deja pendiente verificar si la interfaz pide confirmar el cierre. | Si la interfaz aún permite cerrar una alerta con un solo clic, pedir confirmación e identificar la unidad antes de guardar el cambio. |
