@@ -1553,3 +1553,76 @@ SELECT * FROM employees;
 | Pendientes de backend | 17 | US17, US22, US23, US24, US33, US35, US36, US41, US44, US49, US50, US56, US57, US62, US63, US72, US73 |
 | Dependientes del frontend (Sprint 4) | — | Las historias de las pantallas que consumen el API |
 
+
+### 5.3. Validation Interviews
+
+La entrevista de validación de Avisum se centra en el flujo de atención de alertas de emergencia. Para ello, se planteó una demostración de la aplicación web a un integrante del personal de operaciones de transporte público, con el objetivo de conocer si la información del Centro de Control le permitiría actuar ante un incidente y qué necesitaría cuando la conexión del conductor sea inestable.
+
+#### 5.3.1. Diseño de Entrevistas
+
+**Segmento #1: Conductores (operarios) de transporte público**
+**User: Conductores (operarios) de transporte público**
+
+<br><br>
+
+**Segmento #2: Empresas o consorcios de transporte público**
+**User: Personal de operaciones y monitoreo de empresas de transporte público**
+
+La entrevista se diseñó en dos partes. Primero, se presenta la aplicación web de Avisum y se demuestra el flujo desde ambos accesos. En el portal del conductor se inicia un turno de prueba y se activa el botón de pánico. Luego, en el Centro de Control, se muestra cómo identificar la unidad que generó la alerta, consultar la ubicación registrada y marcar el incidente como resuelto. La demostración utiliza dos pestañas del mismo navegador.
+
+Después de la demostración, se formulan las siguientes preguntas abiertas:
+1. Si esta alerta llegara durante uno de tus turnos, ¿qué harías primero y qué información necesitarías ver en la pantalla para actuar?
+2. Si el conductor presiona el botón en una zona con mala señal, ¿qué debería mostrar la aplicación al conductor y qué necesitarías saber tú desde monitoreo?
+3. Si recibieras varias alertas al mismo tiempo, ¿cómo decidirías cuál atender primero y qué necesitarías ver en el Centro de Control para tomar esa decisión?
+4. Antes de marcar una alerta como resuelta, ¿qué tendría que confirmar tu equipo y qué datos sería útil guardar para revisar el caso después?
+5. Pensando en cómo coordinan actualmente los incidentes, ¿en qué parte de su protocolo usarías Avisum y qué cambiarías para que encaje en el trabajo de tu equipo?
+
+#### 5.3.2. Registro de Entrevistas
+
+**User: Conductores (operarios) de transporte público**
+
+**Entrevistado: Diego Fernández Rojas**
+
+- **Edad:** 
+- **Cargo:** 
+- **Empresa:** 
+- **Sector:** 
+- **Experiencia:** 
+- **Fecha y duración de la entrevista de validación:** 
+- **Link del video:** [Agregar enlace de la entrevista de validación]
+
+<!-- Insertar aquí una captura de la entrevista de validación. -->
+
+**Resumen de la entrevista:**
+
+
+---
+
+**User: Personal de operaciones y monitoreo de empresas de transporte público**
+
+**Entrevistado: Diego Fernández Rojas**
+
+- **Edad:** 25 años
+- **Cargo:** Asistente de Operaciones
+- **Empresa:** Consorcio Transporte Arequipa S. A.
+- **Sector:** Transporte público – Corredor Azul
+- **Experiencia:** 2 años
+- **Fecha y duración de la entrevista de validación:** 
+- **Link del video:**
+
+<!-- Insertar aquí una captura de la entrevista de validación. -->
+
+**Resumen de la entrevista:**
+Durante la entrevista de validación se presentó a Diego Fernández Rojas, asistente de operaciones del Corredor Azul, el flujo de atención de alertas en Avisum. La demostración mostró cómo el conductor activa el botón de pánico y cómo el personal de monitoreo recibe la alerta, identifica la unidad, consulta su ubicación y marca el incidente como resuelto desde el Centro de Control. Las respuestas de ejemplo plantean que, para atender una alerta, el operador necesita ver la unidad, la ubicación, la hora y, si se conoce, el tipo de incidente. Si llegan varias alertas a la vez, se priorizarían las de mayor riesgo para el conductor o los pasajeros y, entre las de gravedad similar, las que llevan más tiempo sin atención. En zonas con poca señal, sería útil que el conductor pudiera distinguir si la alerta sigue pendiente o ya llegó a la central, y que el operador viera cuándo se actualizó por última vez la ubicación. Antes de cerrar el caso, el equipo confirmaría con el conductor o el supervisor de ruta que el incidente fue atendido y registraría quién intervino, qué acciones tomó y a qué hora se cerró. Avisum se incorporaría al inicio del protocolo, al recibir el aviso y ubicar la unidad, con la posibilidad de asignar un responsable a cada alerta para evitar duplicar la coordinación.
+
+#### 5.3.3. Evaluaciones según heurísticas
+
+Se realizó una revisión preliminar del flujo documentado de alertas aplicando tres heurísticas de usabilidad de Nielsen. La revisión se centra en lo que muestra la interfaz al generar, recibir y resolver una alerta.
+
+| Heurística | Observación sobre la aplicación | Mejora propuesta |
+| --- | --- | --- |
+| Visibilidad del estado del sistema | Al activar el botón de pánico, el conductor recibe una confirmación y la alerta aparece en el Centro de Control en la demostración. El reintento de envío estaba pendiente en la versión documentada. | Mostrar si la alerta está pendiente, si llegó a la central o si falló el envío. En monitoreo, indicar la hora de la última ubicación registrada. |
+| Reconocimiento antes que recuerdo | El Centro de Control permite consultar la unidad y la ubicación asociadas a la alerta. Estos datos ayudan a identificar el incidente desde la misma pantalla. | Mostrar la unidad, la hora y el estado en la lista de alertas, con acceso al mapa desde el detalle. |
+| Prevención de errores | Marcar una alerta como resuelta cambia su estado. La revisión del flujo documentado deja pendiente verificar si la interfaz pide confirmar el cierre. | Si la interfaz aún permite cerrar una alerta con un solo clic, pedir confirmación e identificar la unidad antes de guardar el cambio. |
+
+La primera pregunta permite contrastar si los datos visibles son suficientes para atender un incidente. La segunda permite contrastar qué estados de envío y qué información sobre la ubicación necesita cada rol cuando la conexión es inestable. Las tres preguntas restantes exploran la priorización de alertas, el registro de su cierre y la integración de Avisum en el protocolo de operaciones.
