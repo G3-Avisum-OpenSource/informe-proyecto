@@ -1615,15 +1615,15 @@ Durante la sesión de validación se presentó al entrevistado el prototipo func
 
 **Entrevistado: Diego Fernández Rojas**
 
-- **Edad:** 25 años
-- **Cargo:** Asistente de Operaciones
-- **Empresa:** Consorcio Transporte Arequipa S. A.
-- **Sector:** Transporte público – Corredor Azul
-- **Experiencia:** 2 años
-- **Fecha y duración de la entrevista de validación:** 
-- **Link del video:**
+- **Edad: 25 años**
+- **Cargo: Asistente de Operaciones**
+- **Empresa: Consorcio Transporte Arequipa S. A.**
+- **Sector: Transporte público – Corredor Azul**
+- **Experiencia: 2 años**
+- **Fecha y duración de la entrevista de validación: 15 de noviembre de 2026 | Duración: 6 minutos y 07 segundos** 
+- **Link del video: https://youtu.be/ZPFRV3-PZ8I**
 
-<!-- Insertar aquí una captura de la entrevista de validación. -->
+<img src="imgs/validacionentrevista2.png">
 
 **Resumen de la entrevista:**
 Durante la entrevista de validación se presentó a Diego Fernández Rojas, asistente de operaciones del Corredor Azul, el flujo de atención de alertas en Avisum. La demostración mostró cómo el conductor activa el botón de pánico y cómo el personal de monitoreo recibe la alerta, identifica la unidad, consulta su ubicación y marca el incidente como resuelto desde el Centro de Control. Las respuestas de ejemplo plantean que, para atender una alerta, el operador necesita ver la unidad, la ubicación, la hora y, si se conoce, el tipo de incidente. Si llegan varias alertas a la vez, se priorizarían las de mayor riesgo para el conductor o los pasajeros y, entre las de gravedad similar, las que llevan más tiempo sin atención. En zonas con poca señal, sería útil que el conductor pudiera distinguir si la alerta sigue pendiente o ya llegó a la central, y que el operador viera cuándo se actualizó por última vez la ubicación. Antes de cerrar el caso, el equipo confirmaría con el conductor o el supervisor de ruta que el incidente fue atendido y registraría quién intervino, qué acciones tomó y a qué hora se cerró. Avisum se incorporaría al inicio del protocolo, al recibir el aviso y ubicar la unidad, con la posibilidad de asignar un responsable a cada alerta para evitar duplicar la coordinación.
