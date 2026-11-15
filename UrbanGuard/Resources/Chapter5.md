@@ -1604,7 +1604,7 @@ Después de la demostración, se formulan las siguientes preguntas abiertas:
 - **Fecha y duración de la entrevista de validación: 15 de noviembre de 2026 | Duración: 14 minutos y 28 segundos** 
 - **Link del video: https://youtu.be/a79Cepg2uAw ** 
 
-<!-- Insertar aquí una captura de la entrevista de validación. -->
+<img src="imgs/validacionentrevista1.png">
 
 **Resumen de la entrevista:**
 Durante la sesión de validación se presentó al entrevistado el prototipo funcional de la aplicación Avisum, mostrando tanto la interfaz del conductor como su interacción en tiempo real con el panel del administrador. El usuario destacó que la plataforma es muy directa, sencilla de entender y cómoda para operar, valorando positivamente el acceso mediante código QR o código de empleado, la visualización de métricas clave (tiempo en servicio, kilometraje, pasajeros a bordo y dinero recaudado), así como el flujo de emisión y resolución de alertas de pánico conectado con la central y la policía. Como oportunidades de mejora, el entrevistado señaló que le gustaría visualizar en el mapa el trazado exacto del camino que debe seguir durante la ruta y recomendó fusionar las pestañas de Gestión de conductores y Asignación de unidades para evitar datos repetitivos y simplificar la navegación. Finalmente, afirmó que la aplicación está muy bien lograda en el apartado de seguridad y que sí la utilizaría en su trabajo diario.
